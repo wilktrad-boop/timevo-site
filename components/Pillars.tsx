@@ -100,12 +100,13 @@ function PillarCard({ tag, count, title, items, cta, illustration }: {
             }}>{it}</span>
           ))}
         </div>
-        <div style={{
+        <a href="#contact" style={{
           marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 8,
           color: "var(--accent-soft)", fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
+          textDecoration: "none",
         }}>
           {cta} <Arrow size={12} />
-        </div>
+        </a>
       </div>
     </div>
   );

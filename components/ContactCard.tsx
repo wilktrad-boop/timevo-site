@@ -39,8 +39,6 @@ export default function ContactCard() {
             display: "flex", justifyContent: "center", gap: 28, flexWrap: "wrap",
             fontFamily: "var(--font-geist-mono)", fontSize: 12, color: "var(--dim)", letterSpacing: "0.04em",
           }}>
-            <span>{t("phone")}</span>
-            <span>·</span>
             <a href={`mailto:${t("email")}`} style={{ color: "var(--dim)", textDecoration: "none" }}>{t("email")}</a>
             <span>·</span>
             <span>{t("city")}</span>

@@ -2,6 +2,13 @@
 
 import { useTranslations } from "next-intl";
 
+// Anchor each footer column maps to
+const COL_ANCHORS: Record<string, string> = {
+  "Solutions": "#solutions",
+  "Méthode": "#methode",
+  "Method": "#methode",
+};
+
 export default function FooterDkdp() {
   const t = useTranslations("footer");
   const cols = t.raw("cols") as { title: string; items: string[] }[];
@@ -30,37 +37,43 @@ export default function FooterDkdp() {
               color: "var(--dim)", lineHeight: 1.7,
             }}>
               {t("address")}<br />
-              +33 1 XX XX XX XX<br />
-              hello@timevo.fr
+              <a href="mailto:hello@timevo.fr" style={{ color: "var(--dim)", textDecoration: "none" }}>
+                hello@timevo.fr
+              </a>
             </div>
           </div>
-          {cols.map(({ title, items }) => (
-            <div key={title}>
-              <div style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
-                color: "var(--text)", marginBottom: 16,
-              }}>{title}</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {items.map(it => (
-                  <span key={it} style={{
-                    fontFamily: "var(--font-geist-sans)", fontSize: 13, color: "var(--dim)", cursor: "pointer",
-                  }}>{it}</span>
-                ))}
+
+          {cols.map(({ title, items }) => {
+            const anchor = COL_ANCHORS[title] ?? "#contact";
+            return (
+              <div key={title}>
+                <div style={{
+                  fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
+                  color: "var(--text)", marginBottom: 16,
+                }}>{title}</div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                  {items.map(it => (
+                    <a key={it} href={anchor} style={{
+                      fontFamily: "var(--font-geist-sans)", fontSize: 13,
+                      color: "var(--dim)", textDecoration: "none",
+                      transition: "color .15s",
+                    }}
+                      onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
+                      onMouseLeave={e => (e.currentTarget.style.color = "var(--dim)")}>
+                      {it}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
         <div style={{
           borderTop: "1px solid var(--border)", paddingTop: 24,
-          display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16,
           fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim-2)",
         }}>
           <span>{t("copyright")}</span>
-          <div style={{ display: "flex", gap: 20 }}>
-            <span style={{ cursor: "pointer" }}>{t("legal")}</span>
-            <span style={{ cursor: "pointer" }}>{t("privacy")}</span>
-            <span style={{ cursor: "pointer" }}>{t("gdpr")}</span>
-          </div>
         </div>
       </div>
     </footer>
