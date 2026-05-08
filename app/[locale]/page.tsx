@@ -13,9 +13,39 @@ import ContactCard from "@/components/ContactCard";
 import FooterDkdp from "@/components/FooterDkdp";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Timevo",
+  url: "https://www.timevo.io",
+  logo: "https://www.timevo.io/icon.svg",
+  email: "hello@timevo.io",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Paris",
+    addressCountry: "FR",
+    postalCode: "75002",
+  },
+  areaServed: ["FR", "BE", "CH"],
+  description:
+    "Agence d'automatisation pour PME. Devis, relances, rapports et support automatisés avec n8n et agents IA.",
+  priceRange: "€€",
+  serviceType: [
+    "Automatisation de processus",
+    "Agents IA",
+    "Création de sites web",
+    "SEO",
+  ],
+  sameAs: ["https://www.linkedin.com/company/timevo"],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <NavDkdp />
       <main>
         <HeroDkdp />
