@@ -145,16 +145,40 @@
     ]
   },
   "estimator": {
-    "label": "Simulateur en ligne",
-    "h3": "Estimez les heures que Timevo peut vous rendre.",
-    "subtitle": "5 questions sur votre semaine, 5 minutes de votre temps. À la fin, un chiffrage transparent et une projection ROI.",
-    "meta_time": "5 minutes",
-    "meta_no_commitment": "Sans engagement",
-    "meta_instant": "Résultat instantané",
-    "cta": "Estimer mon projet",
-    "question_label": "Question 3 / 5",
-    "question": "Combien de devis envoyez-vous par mois ?",
-    "options": ["Moins de 20", "Entre 20 et 80", "Plus de 80"]
+    "label": "Simulateur",
+    "h2": "Combien d'heures perdez-vous chaque semaine ?",
+    "subtitle": "5 questions sur votre activité. Résultat immédiat, sans engagement.",
+    "counter": "Question {n} / 5",
+    "next": "Suivant →",
+    "restart": "Recommencer",
+    "questions": [
+      {
+        "q": "Combien de personnes dans votre équipe ?",
+        "opts": ["1 à 5 personnes", "6 à 15 personnes", "16 à 50 personnes"]
+      },
+      {
+        "q": "Combien de devis envoyez-vous par mois ?",
+        "opts": ["Moins de 20", "Entre 20 et 80", "Plus de 80"]
+      },
+      {
+        "q": "Combien d'heures par semaine sur des tâches répétitives ?",
+        "opts": ["Moins de 5h", "Entre 5h et 15h", "Plus de 15h"]
+      },
+      {
+        "q": "Avez-vous un CRM en place ?",
+        "opts": ["Oui, bien utilisé", "Oui, peu ou pas utilisé", "Non"]
+      },
+      {
+        "q": "Quel est votre ticket moyen ?",
+        "opts": ["Moins de 1 000€", "Entre 1 000€ et 5 000€", "Plus de 5 000€"]
+      }
+    ],
+    "result_label": "Votre estimation",
+    "result_hours_label": "heures récupérables / mois",
+    "result_value_label": "valeur mensuelle estimée",
+    "result_roi_label": "semaines pour rentabiliser",
+    "result_disclaimer": "Estimation basée sur les moyennes observées chez nos clients. Le chiffre réel est validé lors de l'audit gratuit.",
+    "result_cta": "Réserver l'audit gratuit"
   },
   "faq": {
     "label": "Questions fréquentes",
@@ -186,9 +210,8 @@
     "privacy": "Politique de confidentialité",
     "gdpr": "RGPD",
     "cols": [
-      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Audit gratuit", "Formation équipe", "Maintenance"] },
-      { "title": "Méthode", "items": ["Diagnostic", "Cartographie", "Build", "Maintenance", "Évolutions"] },
-      { "title": "Agence", "items": ["À propos", "Tarifs", "Cas clients", "Blog", "Contact"] }
+      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Conseil & Audit", "Création de sites", "SEO"] },
+      { "title": "Méthode", "items": ["Premier échange", "Diagnostic", "Proposition", "Réalisation", "Maintenance"] }
     ]
   },
   "metadata": {

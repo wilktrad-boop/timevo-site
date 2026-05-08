@@ -53,10 +53,10 @@ export default function Home() {
         <ScrollFadeIn><PainPoints /></ScrollFadeIn>
         <ScrollFadeIn><Pillars /></ScrollFadeIn>
         <ScrollFadeIn><StatsBlock /></ScrollFadeIn>
+        <ScrollFadeIn><EstimatorCard /></ScrollFadeIn>
         <ScrollFadeIn><MethodDkdp /></ScrollFadeIn>
         <ScrollFadeIn><TestimonialBlock /></ScrollFadeIn>
         <ScrollFadeIn><TeamGrid /></ScrollFadeIn>
-        <ScrollFadeIn><EstimatorCard /></ScrollFadeIn>
         <ScrollFadeIn><FaqDkdp /></ScrollFadeIn>
         <ScrollFadeIn><ContactCard /></ScrollFadeIn>
       </main>

@@ -9,7 +9,7 @@ export default function FooterDkdp() {
   return (
     <footer style={{ padding: "64px 28px 32px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}
+        <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 48, marginBottom: 48 }}
           className="footer-grid">
           <div>
             <div style={{

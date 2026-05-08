@@ -115,14 +115,14 @@ body {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .estimator-inner {
+  .estimator-result-grid {
     grid-template-columns: 1fr !important;
-    padding: 36px !important;
   }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 32px !important;
+    row-gap: 40px !important;
   }
 }
 
@@ -142,7 +142,7 @@ body {
     grid-template-columns: 1fr !important;
   }
 
-  .estimator-inner {
-    padding: 28px !important;
+  .estimator-result-grid > div {
+    padding: 16px !important;
   }
 }
