@@ -36,7 +36,7 @@ export default function MethodDkdp() {
                 fontFamily: "var(--font-geist-sans)", fontSize: 28, fontWeight: 500,
                 letterSpacing: "-0.02em", margin: 0, color: "var(--text)",
               }}>{title}</h3>
-              <p style={{ fontFamily: "var(--font-geist-sans)", fontSize: 15, color: "var(--dim)", margin: 0, lineHeight: 1.55 }}>{desc}</p>
+              <p className="method-desc" style={{ fontFamily: "var(--font-geist-sans)", fontSize: 15, color: "var(--dim)", margin: 0, lineHeight: 1.55 }}>{desc}</p>
             </div>
           ))}
           <div style={{ borderTop: "1px solid var(--border)" }} />

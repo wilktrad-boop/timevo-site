@@ -49,3 +49,100 @@ body {
   .fade-up { opacity: 1; transform: none; transition: none; }
   .ticker-track, .ticker-track-slow { animation: none; }
 }
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+/* Nav */
+.nav-links     { display: flex; }
+.nav-hamburger { display: none; }
+.nav-mobile    { display: none; }
+
+/* Mobile menu: only show when open class is present (nav hamburger is ≤900px) */
+@media (max-width: 900px) {
+  .nav-mobile.open { display: flex !important; }
+}
+
+/* Tablet ≤ 900px */
+@media (max-width: 900px) {
+  section { padding-left: 20px !important; padding-right: 20px !important; }
+  footer  { padding-left: 20px !important; padding-right: 20px !important; }
+  nav     { padding-left: 20px !important; padding-right: 20px !important; }
+
+  .nav-links     { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+
+  .hero-subrow {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .hero-ctas {
+    justify-content: flex-start !important;
+  }
+
+  .pain-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pain-grid > * {
+    border-right: none !important;
+  }
+
+  .pillars-row1 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .pillars-row2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .method-row {
+    grid-template-columns: 64px 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 16px !important;
+    row-gap: 4px !important;
+  }
+  .method-desc {
+    grid-column: 1 / -1 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .estimator-inner {
+    grid-template-columns: 1fr !important;
+    padding: 36px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* Mobile ≤ 600px */
+@media (max-width: 600px) {
+
+  .pillars-row1,
+  .pillars-row2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .estimator-inner {
+    padding: 28px !important;
+  }
+}

@@ -44,13 +44,14 @@ export default function Pillars() {
           {t("subtitle")}
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 16 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 16 }}
+          className="pillars-row1">
           {row1.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[i]} />)}
         </div>
         <div style={{
           display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16,
           maxWidth: "calc(66.666% + 8px)", margin: "0 auto",
-        }}>
+        }} className="pillars-row2">
           {row2.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[3 + i]} />)}
         </div>
       </div>
