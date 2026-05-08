@@ -136,7 +136,7 @@
   },
   "team": {
     "label": "L'équipe",
-    "h2": "Deux experts, une seule équipe.",
+    "h2": "Deux experts, une même vision.",
     "members": [
       { "name": "Max", "role": "Sales · Stratégie", "initials": "M", "bio": "10 ans à signer dans l'immobilier, les jeux et le marketing. Parle votre langue avant celle des outils." },
       { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 ans à construire des systèmes éditoriaux et SEO multi-marchés. Connaît n8n par cœur." },
