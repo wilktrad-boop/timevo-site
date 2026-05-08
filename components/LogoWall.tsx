@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 const logos = [
   "Aquaviva", "Berney & Cie", "Vergers SAS", "Mobilier&Co", "Pool France",
-  "IMRO", "Habitat Plus", "Concorde", "Polomarco", "Paris Immo", "Solid SA", "Strike",
+  "IMRO", "Habitat Plus", "Concorde", "Polomarco", "Leman Immo", "Solid SA", "Strike",
 ];
 const repeated = [...logos, ...logos, ...logos];
 

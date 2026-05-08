@@ -22,9 +22,8 @@ const jsonLd = {
   email: "hello@timevo.io",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Paris",
+    addressLocality: "France",
     addressCountry: "FR",
-    postalCode: "75002",
   },
   areaServed: ["FR", "BE", "CH"],
   description:

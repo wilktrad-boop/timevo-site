@@ -189,7 +189,7 @@
       ["What if we don't have a CRM?", "We set one up as part of the package if needed. Notion, Airtable or a classic CRM depending on your maturity."],
       ["Do we keep control of the system?", "Yes. The code and workflows belong to you. No lock-in. If we part ways, you keep everything."],
       ["Do you charge by the hour?", "No. Fixed setup fee + maintenance subscription. Clear, predictable, no surprises."],
-      ["Do you only work in Paris?", "Our base is in Paris but we work remotely across France and with French-speaking neighbours."]
+      ["Where are you based?", "Thonon-les-Bains and Montpellier. We work remotely across France and with French-speaking neighbours."]
     ]
   },
   "contact": {
@@ -199,13 +199,13 @@
     "cta": "Book your free call",
     "phone": "+33 1 XX XX XX XX",
     "email": "hello@timevo.fr",
-    "city": "Paris, France",
+    "city": "Thonon-les-Bains · Montpellier",
     "response": "Response within 24h"
   },
   "footer": {
-    "tagline": "Automation agency based in Paris.\nn8n · AI Agents · Processes for SMBs.",
-    "address": "75002 Paris · France",
-    "copyright": "© 2026 Timevo · Automation service based in Paris, France",
+    "tagline": "Independent automation agency.\nn8n · AI Agents · Processes for SMBs.",
+    "address": "Thonon-les-Bains · Montpellier · France",
+    "copyright": "© 2026 Timevo · Automation agency, France",
     "legal": "Legal notice",
     "privacy": "Privacy policy",
     "gdpr": "GDPR",
@@ -217,7 +217,7 @@
   "metadata": {
     "title": "Timevo — Business Automation Agency | Quotes, Follow-ups, Reports",
     "description": "Timevo automates the repetitive tasks costing your teams time: quotes, follow-ups, reports, customer support. Setup in 2–3 weeks. Measurable results from month one.",
-    "keywords": "business automation agency, process automation SMB, n8n automation, automatic quotes, automated follow-ups, Paris automation agency, time saving business, AI agents SMB",
+    "keywords": "business automation agency, process automation SMB, n8n automation, automatic quotes, automated follow-ups, France automation agency, time saving business, AI agents SMB",
     "og_title": "Timevo — 20 hours lost every week. We give them back.",
     "og_description": "Automation agency for high-ticket SMBs. Quotes, follow-ups, reports and support automated. Setup in 2–3 weeks, from €1,800.",
     "og_image_alt": "Timevo — Business automation agency for SMBs"

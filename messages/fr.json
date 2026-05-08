@@ -189,7 +189,7 @@
       ["Et si on n'a pas de CRM ?", "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."],
       ["On garde la main sur le système ?", "Oui. Le code et les workflows vous appartiennent. Pas de lock-in. Si on se sépare, vous gardez tout."],
       ["Vous facturez à l'heure ?", "Non. Forfait setup + abonnement maintenance. Lisible, prévisible, sans surprise."],
-      ["Vous travaillez uniquement à Paris ?", "Notre base est à Paris mais on travaille en distanciel partout en France et chez les francophones limitrophes."]
+      ["Vous êtes où, exactement ?", "Thonon-les-Bains et Montpellier. On travaille en distanciel partout en France et chez les francophones limitrophes."]
     ]
   },
   "contact": {
@@ -199,13 +199,13 @@
     "cta": "Réservez votre appel gratuit",
     "phone": "+33 1 XX XX XX XX",
     "email": "hello@timevo.fr",
-    "city": "Paris, France",
+    "city": "Thonon-les-Bains · Montpellier",
     "response": "Réponse sous 24h"
   },
   "footer": {
-    "tagline": "Agence d'automatisation à Paris.\nn8n · Agents IA · Process pour PME.",
-    "address": "75002 Paris · France",
-    "copyright": "© 2026 Timevo · Service d'automatisation basé à Paris, France",
+    "tagline": "Agence d'automatisation indépendante.\nn8n · Agents IA · Process pour PME.",
+    "address": "Thonon-les-Bains · Montpellier · France",
+    "copyright": "© 2026 Timevo · Agence d'automatisation, France",
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
     "gdpr": "RGPD",
@@ -217,7 +217,7 @@
   "metadata": {
     "title": "Timevo — Automatisation pour PME | Devis, Relances, Rapports",
     "description": "Timevo automatise les tâches répétitives qui coûtent du temps à vos équipes : devis, relances, rapports, support client. Setup en 2–3 semaines. Résultats mesurables dès le premier mois.",
-    "keywords": "automatisation PME, automatisation processus, n8n, devis automatique, relances automatiques, agence automatisation Paris, gain de temps entreprise, agents IA PME",
+    "keywords": "automatisation PME, automatisation processus, n8n, devis automatique, relances automatiques, agence automatisation France, gain de temps entreprise, agents IA PME",
     "og_title": "Timevo — 20 heures perdues chaque semaine. On vous les rend.",
     "og_description": "Agence d'automatisation pour PME haut ticket. Devis, relances, rapports et support automatisés. Setup en 2–3 semaines, à partir de 1 800 €.",
     "og_image_alt": "Timevo — Agence d'automatisation pour PME"
