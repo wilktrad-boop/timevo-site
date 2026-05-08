@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "methode": "Method",
+    "resultats": "Results",
+    "equipe": "Team",
+    "contact": "Contact",
+    "cta": "Book a call"
+  },
+  "hero": {
+    "eyebrow": "AUTOMATION AGENCY · FRANCE",
+    "eyebrow2": "100% French team",
+    "h1_line1": "20 hours lost",
+    "h1_line2": "every week.",
+    "h1_line3": "We give them back.",
+    "subtitle": "We take care of everything that eats into your days so your teams can focus on what actually drives revenue.",
+    "cta_primary": "Book a call",
+    "cta_secondary": "↓ Discover"
+  },
+  "logowall": {
+    "label": "Trusted by"
+  },
+  "pain": {
+    "label": "The problem",
+    "h2": "Sound familiar?",
+    "subtitle": "If you recognise yourself in at least one of these three scenarios, you're in the right place.",
+    "items": [
+      {
+        "n": "01",
+        "title": "Your team loses 20h/week on repetitive tasks",
+        "desc": "Quotes, follow-ups, reports, data entry. Hours wasted every week on things technology handles in 5 minutes."
+      },
+      {
+        "n": "02",
+        "title": "Your prospects aren't getting fast enough responses",
+        "desc": "A lead that waits 4 hours is a lead your competitor already answered. Your response rates are hitting a ceiling."
+      },
+      {
+        "n": "03",
+        "title": "Your competitors are automating and you aren't yet",
+        "desc": "While your team does things manually, others have already plugged in the right tools. The gap is widening."
+      }
+    ],
+    "closing": "We solve all three.",
+    "closing_dim": "That's what we do."
+  },
+  "pillars": {
+    "label": "Our expertise",
+    "h2_line1": "Automation, websites and SEO.",
+    "h2_line2": "One point of contact.",
+    "subtitle": "Five areas of expertise, one team. From acquisition to conversion.",
+    "items": [
+      {
+        "tag": "Automation",
+        "count": "6 workflows",
+        "title": "Process automation",
+        "items": ["Auto quotes", "Follow-ups", "Reports", "CRM sync", "Onboarding", "Custom n8n"],
+        "cta": "Learn more"
+      },
+      {
+        "tag": "AI Agents",
+        "count": "4 solutions",
+        "title": "AI agents for your clients",
+        "items": ["Support chatbot", "Lead pre-qualification", "Phone assistant", "Email triage"],
+        "cta": "Learn more"
+      },
+      {
+        "tag": "Consulting",
+        "count": "3 formats",
+        "title": "Audit & support",
+        "items": ["30-min audit", "Process mapping", "Team training", "Maintenance"],
+        "cta": "Learn more"
+      },
+      {
+        "tag": "Websites",
+        "count": "All types",
+        "title": "Website creation",
+        "items": ["Showcase", "Landing page", "Multi-page", "E-commerce", "Redesign"],
+        "cta": "Learn more"
+      },
+      {
+        "tag": "SEO",
+        "count": "All types",
+        "title": "Search engine optimisation",
+        "items": ["Local SEO", "Technical SEO", "Content SEO", "International SEO", "SEO audit"],
+        "cta": "Learn more"
+      }
+    ]
+  },
+  "stats": {
+    "label": "They trusted us",
+    "h2_line1": "French SMBs that stopped",
+    "h2_line2": "wasting time.",
+    "items": [
+      { "value": 12, "suffix": "+", "label": "SMBs supported in France" },
+      { "value": 1100, "suffix": "h", "label": "Recovered every month for our clients" },
+      { "value": 34, "suffix": "%", "label": "Average conversion rate increase" },
+      { "value": 3, "suffix": " wks", "label": "Average delivery time" }
+    ]
+  },
+  "method": {
+    "label": "Our method",
+    "h2": "How it works",
+    "subtitle": "5 clear steps, a proven process.",
+    "steps": [
+      ["01", "First conversation", "30 free minutes to understand your situation. We'll tell you honestly whether and how we can help."],
+      ["02", "Diagnosis", "Mapping your processes. We identify the tasks that cost the most time for the least expertise."],
+      ["03", "Proposal", "A concrete action plan with deliverables, timelines and prices. Everything fixed upfront, in writing."],
+      ["04", "Delivery", "We execute. Weekly check-ins, real-time progress access. You stay in control of the project."],
+      ["05", "Maintenance", "Delivery, tool training, and performance monitoring. We stay with you after launch."]
+    ]
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "h2": "What our clients say",
+    "items": [
+      {
+        "name": "Marc R.",
+        "role": "Pool installer · Lyon",
+        "initials": "MR",
+        "quote": "We used to spend 30 hours a month on quotes and follow-ups. Now it's 5 hours, and we convert twice as much. Timevo paid for itself in 6 weeks."
+      },
+      {
+        "name": "Léa V.",
+        "role": "Real estate agency · Bordeaux",
+        "initials": "LV",
+        "quote": "The AI agent handles 70% of repetitive questions. My brokers only deal with the genuinely hot files now."
+      },
+      {
+        "name": "Antoine D.",
+        "role": "Furniture distributor · Nantes",
+        "initials": "AD",
+        "quote": "My reps used to close a quote every three days. Now every call ends with a quote sent within 4 minutes."
+      }
+    ]
+  },
+  "team": {
+    "label": "The team",
+    "h2": "Two experts, one team.",
+    "members": [
+      { "name": "Max", "role": "Sales · Strategy", "initials": "M", "bio": "10 years closing deals in real estate, gaming and marketing. Speaks your language before tech." },
+      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 years building editorial and SEO systems across multiple markets. Knows n8n inside out." },
+      { "name": "AI", "role": "Agent · Documentation", "initials": "◉", "bio": "Our internal agent. Maps your processes, drafts workflows, never sleeps." },
+      { "name": "+", "role": "Trusted freelancers", "initials": "+", "bio": "For peak loads — designer, developer, copywriter. All vetted, all French." }
+    ]
+  },
+  "estimator": {
+    "label": "Online simulator",
+    "h3": "Estimate the hours Timevo can give back to you.",
+    "subtitle": "5 questions about your week, 5 minutes of your time. You'll get a transparent estimate and ROI projection.",
+    "meta_time": "5 minutes",
+    "meta_no_commitment": "No commitment",
+    "meta_instant": "Instant result",
+    "cta": "Estimate my project",
+    "question_label": "Question 3 / 5",
+    "question": "How many quotes do you send per month?",
+    "options": ["Fewer than 20", "Between 20 and 80", "More than 80"]
+  },
+  "faq": {
+    "label": "FAQ",
+    "h2": "What we're often asked",
+    "items": [
+      ["How long does it take to deliver an automation?", "2 to 3 weeks after the audit. We commit to the date in writing and we deliver."],
+      ["Which tools do you work with?", "CRM (HubSpot, Pipedrive, Salesforce), email, telephony, accounting. We plug into what you already have — no forced migration."],
+      ["What if we don't have a CRM?", "We set one up as part of the package if needed. Notion, Airtable or a classic CRM depending on your maturity."],
+      ["Do we keep control of the system?", "Yes. The code and workflows belong to you. No lock-in. If we part ways, you keep everything."],
+      ["Do you charge by the hour?", "No. Fixed setup fee + maintenance subscription. Clear, predictable, no surprises."],
+      ["Do you only work in Paris?", "Our base is in Paris but we work remotely across France and with French-speaking neighbours."]
+    ]
+  },
+  "contact": {
+    "label": "Timevo",
+    "h2": "Let's talk about your week.",
+    "subtitle": "30 minutes, it's free, and we'll tell you honestly where you're losing the most time — and how much we can give back.",
+    "cta": "Book your free call",
+    "phone": "+33 1 XX XX XX XX",
+    "email": "hello@timevo.fr",
+    "city": "Paris, France",
+    "response": "Response within 24h"
+  },
+  "footer": {
+    "tagline": "Automation agency based in Paris.\nn8n · AI Agents · Processes for SMBs.",
+    "address": "75002 Paris · France",
+    "copyright": "© 2026 Timevo · Automation service based in Paris, France",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "gdpr": "GDPR",
+    "cols": [
+      { "title": "Solutions", "items": ["Automation", "AI Agents", "Free audit", "Team training", "Maintenance"] },
+      { "title": "Method", "items": ["Diagnosis", "Mapping", "Build", "Maintenance", "Updates"] },
+      { "title": "Agency", "items": ["About", "Pricing", "Case studies", "Blog", "Contact"] }
+    ]
+  },
+  "metadata": {
+    "title": "Timevo — The agency that gives time back to SMBs",
+    "description": "Timevo automates your repetitive tasks — quotes, follow-ups, reports, support. Setup in 2–3 weeks, measurable results."
+  }
+}

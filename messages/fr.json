@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "methode": "Méthode",
+    "resultats": "Résultats",
+    "equipe": "Équipe",
+    "contact": "Contact",
+    "cta": "Réservez un appel"
+  },
+  "hero": {
+    "eyebrow": "AGENCE D'AUTOMATISATION · FRANCE",
+    "eyebrow2": "Équipe 100% française",
+    "h1_line1": "20 heures perdues",
+    "h1_line2": "chaque semaine.",
+    "h1_line3": "On vous les rend.",
+    "subtitle": "On prend en charge tout ce qui ronge vos journées pour que vos équipes restent concentrées sur ce qui génère du chiffre.",
+    "cta_primary": "Réservez un appel",
+    "cta_secondary": "↓ Découvrir"
+  },
+  "logowall": {
+    "label": "Ils nous font confiance"
+  },
+  "pain": {
+    "label": "Le problème",
+    "h2": "Ça vous ressemble ?",
+    "subtitle": "Si vous vous reconnaissez dans au moins un de ces trois scénarios, vous êtes au bon endroit.",
+    "items": [
+      {
+        "n": "01",
+        "title": "Votre équipe perd 20h/semaine sur des tâches répétitives",
+        "desc": "Devis, relances, rapports, saisies. Des heures qui partent en fumée chaque semaine sur des choses que la techno fait en 5 minutes."
+      },
+      {
+        "n": "02",
+        "title": "Vos prospects ne reçoivent pas de réponse assez vite",
+        "desc": "Un lead qui attend 4h, c'est un lead qui s'est fait répondre par un concurrent. Vos taux de réponse plafonnent."
+      },
+      {
+        "n": "03",
+        "title": "Vos concurrents automatisent et vous pas encore",
+        "desc": "Pendant que vos équipes font les choses manuellement, d'autres ont déjà branché les bons outils. L'écart se creuse."
+      }
+    ],
+    "closing": "On résout ces trois problèmes.",
+    "closing_dim": "C'est notre travail."
+  },
+  "pillars": {
+    "label": "Nos expertises",
+    "h2_line1": "Automatisation, sites web et SEO.",
+    "h2_line2": "Un seul interlocuteur.",
+    "subtitle": "Cinq expertises, une seule équipe. De l'acquisition à la conversion.",
+    "items": [
+      {
+        "tag": "Automatisation",
+        "count": "6 workflows",
+        "title": "Automatisation des process",
+        "items": ["Devis auto", "Relances", "Rapports", "Synchros CRM", "Onboarding", "n8n sur mesure"],
+        "cta": "En savoir plus"
+      },
+      {
+        "tag": "Agents IA",
+        "count": "4 solutions",
+        "title": "Agents IA pour vos clients",
+        "items": ["Chatbot SAV", "Pré-qualification leads", "Standard téléphonique", "Email triage"],
+        "cta": "En savoir plus"
+      },
+      {
+        "tag": "Conseil",
+        "count": "3 formats",
+        "title": "Audit & accompagnement",
+        "items": ["Audit 30 min", "Cartographie", "Formation équipe", "Maintenance"],
+        "cta": "En savoir plus"
+      },
+      {
+        "tag": "Sites web",
+        "count": "Tous types",
+        "title": "Création de sites web",
+        "items": ["Vitrine", "Landing page", "Multi-pages", "E-commerce", "Refonte"],
+        "cta": "En savoir plus"
+      },
+      {
+        "tag": "SEO",
+        "count": "Tous types",
+        "title": "Référencement naturel",
+        "items": ["SEO local", "SEO technique", "SEO contenu", "SEO international", "Audit SEO"],
+        "cta": "En savoir plus"
+      }
+    ]
+  },
+  "stats": {
+    "label": "Ils nous ont fait confiance",
+    "h2_line1": "Des PME françaises qui ont arrêté",
+    "h2_line2": "de perdre du temps.",
+    "items": [
+      { "value": 12, "suffix": "+", "label": "PME accompagnées en France" },
+      { "value": 1100, "suffix": "h", "label": "Récupérées chaque mois pour nos clients" },
+      { "value": 34, "suffix": "%", "label": "Taux de conversion moyen en hausse" },
+      { "value": 3, "suffix": " sem.", "label": "Délai moyen de livraison" }
+    ]
+  },
+  "method": {
+    "label": "Notre méthode",
+    "h2": "Comment ça marche",
+    "subtitle": "5 étapes claires, un processus éprouvé.",
+    "steps": [
+      ["01", "Premier échange", "30 minutes gratuites pour comprendre votre situation. On vous dit honnêtement si on peut vous aider et comment."],
+      ["02", "Diagnostic", "Cartographie de vos process. On identifie les tâches qui coûtent le plus de temps pour le moins d'expertise."],
+      ["03", "Proposition", "Un plan d'action concret avec les livrables, les délais et les prix. Tout est fixé à l'avance, par écrit."],
+      ["04", "Réalisation", "On exécute. Points hebdomadaires, accès en temps réel à l'avancement. Vous restez maître du projet."],
+      ["05", "Maintenance", "Livraison, formation à l'outil, et suivi des performances. On reste là même après."]
+    ]
+  },
+  "testimonials": {
+    "label": "Témoignages",
+    "h2": "Ce que disent nos clients",
+    "items": [
+      {
+        "name": "Marc R.",
+        "role": "Pisciniste · Lyon",
+        "initials": "MR",
+        "quote": "On passait 30h par mois sur les devis et les relances. Aujourd'hui c'est 5h, et on convertit deux fois plus. Timevo a payé son installation en 6 semaines."
+      },
+      {
+        "name": "Léa V.",
+        "role": "Cabinet immobilier · Bordeaux",
+        "initials": "LV",
+        "quote": "L'agent IA répond aux 70% de questions répétitives. Mes négociateurs ne traitent plus que les vrais dossiers chauds."
+      },
+      {
+        "name": "Antoine D.",
+        "role": "Distributeur mobilier · Nantes",
+        "initials": "AD",
+        "quote": "Mes commerciaux signaient un devis tous les trois jours. Maintenant chaque appel se termine par un devis envoyé dans les 4 minutes."
+      }
+    ]
+  },
+  "team": {
+    "label": "L'équipe",
+    "h2": "Deux experts, une seule équipe.",
+    "members": [
+      { "name": "Max", "role": "Sales · Stratégie", "initials": "M", "bio": "10 ans à signer dans l'immobilier, les jeux et le marketing. Parle votre langue avant celle des outils." },
+      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 ans à construire des systèmes éditoriaux et SEO multi-marchés. Connaît n8n par cœur." },
+      { "name": "IA", "role": "Agent · Documentation", "initials": "◉", "bio": "Notre agent interne. Cartographie vos process, drafts les workflows, ne dort jamais." },
+      { "name": "+", "role": "Freelances de confiance", "initials": "+", "bio": "Pour les pics de charge — designer, intégrateur, copywriter. Tous testés, tous français." }
+    ]
+  },
+  "estimator": {
+    "label": "Simulateur en ligne",
+    "h3": "Estimez les heures que Timevo peut vous rendre.",
+    "subtitle": "5 questions sur votre semaine, 5 minutes de votre temps. À la fin, un chiffrage transparent et une projection ROI.",
+    "meta_time": "5 minutes",
+    "meta_no_commitment": "Sans engagement",
+    "meta_instant": "Résultat instantané",
+    "cta": "Estimer mon projet",
+    "question_label": "Question 3 / 5",
+    "question": "Combien de devis envoyez-vous par mois ?",
+    "options": ["Moins de 20", "Entre 20 et 80", "Plus de 80"]
+  },
+  "faq": {
+    "label": "Questions fréquentes",
+    "h2": "Ce qu'on nous demande souvent",
+    "items": [
+      ["Combien de temps pour livrer une automation ?", "2 à 3 semaines après l'audit. On commit sur la date à l'écrit, et on tient."],
+      ["Vous travaillez avec quels outils ?", "CRM (HubSpot, Pipedrive, Salesforce), email, téléphonie, comptabilité. On branche sur ce que vous avez déjà — pas de migration imposée."],
+      ["Et si on n'a pas de CRM ?", "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."],
+      ["On garde la main sur le système ?", "Oui. Le code et les workflows vous appartiennent. Pas de lock-in. Si on se sépare, vous gardez tout."],
+      ["Vous facturez à l'heure ?", "Non. Forfait setup + abonnement maintenance. Lisible, prévisible, sans surprise."],
+      ["Vous travaillez uniquement à Paris ?", "Notre base est à Paris mais on travaille en distanciel partout en France et chez les francophones limitrophes."]
+    ]
+  },
+  "contact": {
+    "label": "Timevo",
+    "h2": "Parlons de votre semaine.",
+    "subtitle": "30 minutes, c'est gratuit, et on vous dit honnêtement où vous perdez le plus de temps — et combien on peut vous en rendre.",
+    "cta": "Réservez votre appel gratuit",
+    "phone": "+33 1 XX XX XX XX",
+    "email": "hello@timevo.fr",
+    "city": "Paris, France",
+    "response": "Réponse sous 24h"
+  },
+  "footer": {
+    "tagline": "Agence d'automatisation à Paris.\nn8n · Agents IA · Process pour PME.",
+    "address": "75002 Paris · France",
+    "copyright": "© 2026 Timevo · Service d'automatisation basé à Paris, France",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "gdpr": "RGPD",
+    "cols": [
+      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Audit gratuit", "Formation équipe", "Maintenance"] },
+      { "title": "Méthode", "items": ["Diagnostic", "Cartographie", "Build", "Maintenance", "Évolutions"] },
+      { "title": "Agence", "items": ["À propos", "Tarifs", "Cas clients", "Blog", "Contact"] }
+    ]
+  },
+  "metadata": {
+    "title": "Timevo — L'agence qui rend du temps aux PME",
+    "description": "Timevo automatise vos tâches répétitives — devis, relances, rapports, support. Setup en 2–3 semaines, résultats mesurables."
+  }
+}
