@@ -23,7 +23,7 @@
   "pain": {
     "label": "Le problème",
     "h2": "Ça vous ressemble ?",
-    "subtitle": "Si vous vous reconnaissez dans au moins un de ces trois scénarios, vous êtes au bon endroit.",
+    "subtitle": "Trois symptômes. Un seul diagnostic.",
     "items": [
       {
         "n": "01",
@@ -32,7 +32,7 @@
       },
       {
         "n": "02",
-        "title": "Vos prospects ne reçoivent pas de réponse assez vite",
+        "title": "Vos leads attendent. Vos concurrents, non.",
         "desc": "Un lead qui attend 4h, c'est un lead qui s'est fait répondre par un concurrent. Vos taux de réponse plafonnent."
       },
       {
@@ -41,8 +41,8 @@
         "desc": "Pendant que vos équipes font les choses manuellement, d'autres ont déjà branché les bons outils. L'écart se creuse."
       }
     ],
-    "closing": "On résout ces trois problèmes.",
-    "closing_dim": "C'est notre travail."
+    "closing": "On résout les trois.",
+    "closing_dim": ""
   },
   "pillars": {
     "label": "Nos expertises",
