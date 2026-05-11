@@ -13,7 +13,7 @@
     "h1_line1": "20 hours lost",
     "h1_line2": "every week.",
     "h1_line3": "We give them back.",
-    "subtitle": "Your team's time is your most valuable resource. We stop letting it go to waste.",
+    "subtitle": "Your team's time is your most valuable asset. We make sure none of it goes to waste.",
     "cta_primary": "Book a call",
     "cta_secondary": "↓ Discover"
   },
@@ -23,7 +23,7 @@
   "pain": {
     "label": "The problem",
     "h2": "Sound familiar?",
-    "subtitle": "If you recognise yourself in at least one of these three scenarios, you're in the right place.",
+    "subtitle": "Three symptoms. One diagnosis.",
     "items": [
       {
         "n": "01",
@@ -32,7 +32,7 @@
       },
       {
         "n": "02",
-        "title": "Your prospects aren't getting fast enough responses",
+        "title": "Your leads are waiting. Your competitors aren't.",
         "desc": "A lead that waits 4 hours is a lead your competitor already answered. Your response rates are hitting a ceiling."
       },
       {
@@ -42,12 +42,12 @@
       }
     ],
     "closing": "We solve all three.",
-    "closing_dim": "That's what we do."
+    "closing_dim": ""
   },
   "pillars": {
     "label": "Our expertise",
     "h2_line1": "Automation, websites and SEO.",
-    "h2_line2": "One point of contact.",
+    "h2_line2": "One team.",
     "subtitle": "Five areas of expertise, one team. From acquisition to conversion.",
     "items": [
       {
@@ -88,7 +88,7 @@
     ]
   },
   "stats": {
-    "label": "They trusted us",
+    "label": "The numbers.",
     "h2_line1": "French SMBs that stopped",
     "h2_line2": "wasting time.",
     "items": [
@@ -100,7 +100,7 @@
   },
   "method": {
     "label": "Our method",
-    "h2": "How it works",
+    "h2": "Five steps, no surprises.",
     "subtitle": "5 clear steps, a proven process.",
     "steps": [
       ["01", "First conversation", "30 free minutes to understand your situation. We'll tell you honestly whether and how we can help."],
@@ -140,7 +140,7 @@
     "members": [
       { "name": "Max", "role": "Sales · Strategy", "initials": "M", "bio": "10 years closing deals in real estate, gaming and marketing. Speaks your language before tech." },
       { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 years building editorial and SEO systems across multiple markets. Knows n8n inside out." },
-      { "name": "AI", "role": "Agent · Documentation", "initials": "◉", "bio": "Our internal agent. Maps your processes, drafts workflows, never sleeps." },
+      { "name": "AI", "role": "Agent · Documentation", "initials": "◉", "bio": "Our internal agent. Maps your processes, writes workflows, never sleeps." },
       { "name": "+", "role": "Trusted freelancers", "initials": "+", "bio": "For peak loads — designer, developer, copywriter. All vetted, all French." }
     ]
   },
@@ -195,7 +195,7 @@
   "contact": {
     "label": "Timevo",
     "h2": "Let's talk about your week.",
-    "subtitle": "30 minutes, it's free, and we'll tell you honestly where you're losing the most time — and how much we can give back.",
+    "subtitle": "30 minutes, it's free. We'll tell you honestly where your time goes — and what we can recover.",
     "cta": "Book your free call",
     "phone": "+33 1 XX XX XX XX",
     "email": "hello@timevo.fr",
