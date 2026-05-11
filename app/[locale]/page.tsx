@@ -51,7 +51,7 @@ export default function Home() {
         {/* <LogoWall /> */}
         <ScrollFadeIn><PainPoints /></ScrollFadeIn>
         <ScrollFadeIn><Pillars /></ScrollFadeIn>
-        <ScrollFadeIn><StatsBlock /></ScrollFadeIn>
+        {/* <ScrollFadeIn><StatsBlock /></ScrollFadeIn> */}
         <ScrollFadeIn><EstimatorCard /></ScrollFadeIn>
         <ScrollFadeIn><MethodDkdp /></ScrollFadeIn>
         {/* <ScrollFadeIn><TestimonialBlock /></ScrollFadeIn> */}
