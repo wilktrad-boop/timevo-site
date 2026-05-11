@@ -48,7 +48,7 @@ export default function Home() {
       <NavDkdp />
       <main>
         <HeroDkdp />
-        <LogoWall />
+        {/* <LogoWall /> */}
         <ScrollFadeIn><PainPoints /></ScrollFadeIn>
         <ScrollFadeIn><Pillars /></ScrollFadeIn>
         <ScrollFadeIn><StatsBlock /></ScrollFadeIn>
