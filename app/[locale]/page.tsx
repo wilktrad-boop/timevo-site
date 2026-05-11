@@ -54,7 +54,7 @@ export default function Home() {
         <ScrollFadeIn><StatsBlock /></ScrollFadeIn>
         <ScrollFadeIn><EstimatorCard /></ScrollFadeIn>
         <ScrollFadeIn><MethodDkdp /></ScrollFadeIn>
-        <ScrollFadeIn><TestimonialBlock /></ScrollFadeIn>
+        {/* <ScrollFadeIn><TestimonialBlock /></ScrollFadeIn> */}
         <ScrollFadeIn><TeamGrid /></ScrollFadeIn>
         <ScrollFadeIn><FaqDkdp /></ScrollFadeIn>
         <ScrollFadeIn><ContactCard /></ScrollFadeIn>
