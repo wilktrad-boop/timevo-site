@@ -47,7 +47,7 @@
   "pillars": {
     "label": "Nos expertises",
     "h2_line1": "Automatisation, sites web et SEO.",
-    "h2_line2": "Un seul interlocuteur.",
+    "h2_line2": "Une seule équipe.",
     "subtitle": "Cinq expertises, une seule équipe. De l'acquisition à la conversion.",
     "items": [
       {
@@ -88,7 +88,7 @@
     ]
   },
   "stats": {
-    "label": "Ils nous ont fait confiance",
+    "label": "Ce que ça change, en chiffres",
     "h2_line1": "Des PME françaises qui ont arrêté",
     "h2_line2": "de perdre du temps.",
     "items": [
@@ -100,7 +100,7 @@
   },
   "method": {
     "label": "Notre méthode",
-    "h2": "Comment ça marche",
+    "h2": "Cinq étapes, zéro surprise.",
     "subtitle": "5 étapes claires, un processus éprouvé.",
     "steps": [
       ["01", "Premier échange", "30 minutes gratuites pour comprendre votre situation. On vous dit honnêtement si on peut vous aider et comment."],
@@ -140,7 +140,7 @@
     "members": [
       { "name": "Max", "role": "Sales · Stratégie", "initials": "M", "bio": "10 ans à signer dans l'immobilier, les jeux et le marketing. Parle votre langue avant celle des outils." },
       { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 ans à construire des systèmes éditoriaux et SEO multi-marchés. Connaît n8n par cœur." },
-      { "name": "IA", "role": "Agent · Documentation", "initials": "◉", "bio": "Notre agent interne. Cartographie vos process, drafts les workflows, ne dort jamais." },
+      { "name": "IA", "role": "Agent · Documentation", "initials": "◉", "bio": "Notre agent interne. Cartographie vos process, rédige les workflows, ne dort jamais." },
       { "name": "+", "role": "Freelances de confiance", "initials": "+", "bio": "Pour les pics de charge — designer, intégrateur, copywriter. Tous testés, tous français." }
     ]
   },
@@ -195,7 +195,7 @@
   "contact": {
     "label": "Timevo",
     "h2": "Parlons de votre semaine.",
-    "subtitle": "30 minutes, c'est gratuit, et on vous dit honnêtement où vous perdez le plus de temps — et combien on peut vous en rendre.",
+    "subtitle": "30 minutes, c'est gratuit. On vous dit honnêtement où votre temps part — et ce qu'on peut récupérer.",
     "cta": "Réservez votre appel gratuit",
     "phone": "+33 1 XX XX XX XX",
     "email": "hello@timevo.fr",
