@@ -104,9 +104,9 @@
     "subtitle": "5 étapes claires, un processus éprouvé.",
     "steps": [
       ["01", "Premier échange", "30 minutes gratuites pour comprendre votre situation. On vous dit honnêtement si on peut vous aider et comment."],
-      ["02", "Diagnostic", "Cartographie de vos process. On identifie les tâches qui coûtent le plus de temps pour le moins d'expertise."],
-      ["03", "Proposition", "Un plan d'action concret avec les livrables, les délais et les prix. Tout est fixé à l'avance, par écrit."],
-      ["04", "Réalisation", "On exécute. Points hebdomadaires, accès en temps réel à l'avancement. Vous restez maître du projet."],
+      ["02", "Audit", "Cartographie de vos process. On identifie les tâches qui coûtent le plus de temps pour le moins d'expertise."],
+      ["03", "Rapport", "Un plan d'action concret avec les livrables, les délais et les prix. Tout est fixé à l'avance, par écrit."],
+      ["04", "Implémentation", "On exécute. Points hebdomadaires, accès en temps réel à l'avancement. Vous restez maître du projet."],
       ["05", "Maintenance", "Livraison, formation à l'outil, et suivi des performances. On reste là même après."]
     ]
   },
@@ -139,9 +139,7 @@
     "h2": "Deux experts, une même vision.",
     "members": [
       { "name": "Max", "role": "Sales · Stratégie", "initials": "M", "bio": "10 ans à signer dans l'immobilier, les jeux et le marketing. Parle votre langue avant celle des outils." },
-      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 ans à construire des systèmes éditoriaux et SEO multi-marchés. Connaît n8n par cœur." },
-      { "name": "IA", "role": "Agent · Documentation", "initials": "◉", "bio": "Notre agent interne. Cartographie vos process, rédige les workflows, ne dort jamais." },
-      { "name": "+", "role": "Freelances de confiance", "initials": "+", "bio": "Pour les pics de charge — designer, intégrateur, copywriter. Tous testés, tous français." }
+      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 ans à construire des systèmes éditoriaux et SEO multi-marchés. Connaît n8n par cœur." }
     ]
   },
   "estimator": {

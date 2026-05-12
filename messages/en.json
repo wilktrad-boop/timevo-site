@@ -104,9 +104,9 @@
     "subtitle": "5 clear steps, a proven process.",
     "steps": [
       ["01", "First conversation", "30 free minutes to understand your situation. We'll tell you honestly whether and how we can help."],
-      ["02", "Diagnosis", "Mapping your processes. We identify the tasks that cost the most time for the least expertise."],
-      ["03", "Proposal", "A concrete action plan with deliverables, timelines and prices. Everything fixed upfront, in writing."],
-      ["04", "Delivery", "We execute. Weekly check-ins, real-time progress access. You stay in control of the project."],
+      ["02", "Audit", "Mapping your processes. We identify the tasks that cost the most time for the least expertise."],
+      ["03", "Report", "A concrete action plan with deliverables, timelines and prices. Everything fixed upfront, in writing."],
+      ["04", "Implementation", "We execute. Weekly check-ins, real-time progress access. You stay in control of the project."],
       ["05", "Maintenance", "Delivery, tool training, and performance monitoring. We stay with you after launch."]
     ]
   },
@@ -139,9 +139,7 @@
     "h2": "Two experts, one vision.",
     "members": [
       { "name": "Max", "role": "Sales · Strategy", "initials": "M", "bio": "10 years closing deals in real estate, gaming and marketing. Speaks your language before tech." },
-      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 years building editorial and SEO systems across multiple markets. Knows n8n inside out." },
-      { "name": "AI", "role": "Agent · Documentation", "initials": "◉", "bio": "Our internal agent. Maps your processes, writes workflows, never sleeps." },
-      { "name": "+", "role": "Trusted freelancers", "initials": "+", "bio": "For peak loads — designer, developer, copywriter. All vetted, all French." }
+      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "10 years building editorial and SEO systems across multiple markets. Knows n8n inside out." }
     ]
   },
   "estimator": {

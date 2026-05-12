@@ -22,7 +22,7 @@ export default function TeamGrid() {
           {t("h2")}
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }} className="team-grid">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, maxWidth: 720 }} className="team-grid">
           {members.map((m, idx) => (
             <div key={m.name} style={{
               background: "var(--card)", border: "1px solid var(--border)",
