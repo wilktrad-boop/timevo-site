@@ -112,6 +112,11 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} h-full`}
     >
       <body style={{ background: "var(--bg)", color: "var(--text)" }}>
+        <script
+          src="https://app.rybbit.io/api/script.js"
+          data-site-id="3c0df62af0c0"
+          defer
+        />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
