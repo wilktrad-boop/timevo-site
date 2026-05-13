@@ -1,6 +1,7 @@
 {
   "nav": {
     "solutions": "Solutions",
+    "solutions_items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO"],
     "methode": "Méthode",
     "resultats": "Résultats",
     "equipe": "Équipe",
