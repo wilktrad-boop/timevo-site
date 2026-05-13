@@ -1,17 +1,29 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
-// Anchor each footer column maps to
+const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo"] as const;
+const SOLUTIONS_TITLES = new Set(["Solutions"]);
+
+// For non-Solutions columns, fall back to a single anchor on the home
 const COL_ANCHORS: Record<string, string> = {
-  "Solutions": "#solutions",
   "Méthode": "#methode",
   "Method": "#methode",
 };
 
 export default function FooterDkdp() {
   const t = useTranslations("footer");
+  const locale = useLocale();
   const cols = t.raw("cols") as { title: string; items: string[] }[];
+
+  function getItemHref(colTitle: string, itemIdx: number): string {
+    if (SOLUTIONS_TITLES.has(colTitle)) {
+      const slug = SERVICE_SLUGS[itemIdx] ?? "automatisation";
+      return `/${locale}/solutions/${slug}`;
+    }
+    const anchor = COL_ANCHORS[colTitle] ?? "#contact";
+    return `/${locale}${anchor}`;
+  }
 
   return (
     <footer style={{ padding: "64px 28px 32px", borderTop: "1px solid var(--border)" }}>
@@ -43,30 +55,27 @@ export default function FooterDkdp() {
             </div>
           </div>
 
-          {cols.map(({ title, items }) => {
-            const anchor = COL_ANCHORS[title] ?? "#contact";
-            return (
-              <div key={title}>
-                <div style={{
-                  fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
-                  color: "var(--text)", marginBottom: 16,
-                }}>{title}</div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                  {items.map(it => (
-                    <a key={it} href={anchor} style={{
-                      fontFamily: "var(--font-geist-sans)", fontSize: 13,
-                      color: "var(--dim)", textDecoration: "none",
-                      transition: "color .15s",
-                    }}
-                      onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
-                      onMouseLeave={e => (e.currentTarget.style.color = "var(--dim)")}>
-                      {it}
-                    </a>
-                  ))}
-                </div>
+          {cols.map(({ title, items }) => (
+            <div key={title}>
+              <div style={{
+                fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
+                color: "var(--text)", marginBottom: 16,
+              }}>{title}</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {items.map((it, i) => (
+                  <a key={it} href={getItemHref(title, i)} style={{
+                    fontFamily: "var(--font-geist-sans)", fontSize: 13,
+                    color: "var(--dim)", textDecoration: "none",
+                    transition: "color .15s",
+                  }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "var(--dim)")}>
+                    {it}
+                  </a>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         <div style={{
