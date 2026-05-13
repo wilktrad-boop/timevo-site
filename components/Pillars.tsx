@@ -1,22 +1,25 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Arrow } from "./primitives";
 import {
-  IllustrationAutomatisation, IllustrationAgentsIA, IllustrationConseil,
+  IllustrationAutomatisation, IllustrationAgentsIA, IllustrationFormation,
   IllustrationSitesWeb, IllustrationSEO,
 } from "./PillarIllustrations";
 
 const illustrations = [
   <IllustrationAutomatisation key="auto" />,
   <IllustrationAgentsIA key="ia" />,
-  <IllustrationConseil key="conseil" />,
+  <IllustrationFormation key="formation" />,
   <IllustrationSitesWeb key="sites" />,
   <IllustrationSEO key="seo" />,
 ];
 
+const SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo"] as const;
+
 export default function Pillars() {
   const t = useTranslations("pillars");
+  const locale = useLocale();
   const items = t.raw("items") as { tag: string; count: string; title: string; items: string[]; cta: string }[];
   const [row1, row2] = [items.slice(0, 3), items.slice(3)];
 
@@ -46,21 +49,21 @@ export default function Pillars() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 16 }}
           className="pillars-row1">
-          {row1.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[i]} />)}
+          {row1.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[i]} href={`/${locale}/solutions/${SLUGS[i]}`} />)}
         </div>
         <div style={{
           display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16,
           maxWidth: "calc(66.666% + 8px)", margin: "0 auto",
         }} className="pillars-row2">
-          {row2.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[3 + i]} />)}
+          {row2.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[3 + i]} href={`/${locale}/solutions/${SLUGS[3 + i]}`} />)}
         </div>
       </div>
     </section>
   );
 }
 
-function PillarCard({ tag, count, title, items, cta, illustration }: {
-  tag: string; count: string; title: string; items: string[]; cta: string; illustration: React.ReactNode;
+function PillarCard({ tag, count, title, items, cta, illustration, href }: {
+  tag: string; count: string; title: string; items: string[]; cta: string; illustration: React.ReactNode; href: string;
 }) {
   return (
     <div style={{
@@ -100,7 +103,7 @@ function PillarCard({ tag, count, title, items, cta, illustration }: {
             }}>{it}</span>
           ))}
         </div>
-        <a href="#contact" style={{
+        <a href={href} style={{
           marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 8,
           color: "var(--accent-soft)", fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
           textDecoration: "none",

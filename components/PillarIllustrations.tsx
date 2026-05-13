@@ -66,36 +66,57 @@ export function IllustrationAgentsIA() {
   );
 }
 
-export function IllustrationConseil() {
+export function IllustrationFormation() {
   return (
     <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg"
       style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.55 }}>
-      {/* Ligne de timeline */}
-      <line x1="40" y1="100" x2="360" y2="100" stroke="#5fa8ff" strokeWidth="1.5" />
-
-      {/* Points et étapes */}
-      {[60, 140, 220, 300, 360].map((x, i) => (
-        <g key={x}>
-          <circle cx={x} cy="100" r={i === 4 ? 10 : 7}
-            stroke={i === 4 ? "#7c4dff" : "#5fa8ff"}
-            strokeWidth="1.5"
-            fill={i === 4 ? "rgba(124,77,255,0.15)" : "rgba(10,10,10,0.8)"} />
-          {i < 4 && <circle cx={x} cy="100" r="3" fill="#5fa8ff" opacity="0.6" />}
-          {i === 4 && <circle cx={x} cy="100" r="4" fill="#7c4dff" opacity="0.8" />}
-          {/* Labels alternés haut/bas */}
-          <rect x={x - 24} y={i % 2 === 0 ? 64 : 116} width="48" height="7" rx="3.5"
-            fill={i === 4 ? "#7c4dff" : "#5fa8ff"}
-            opacity={i === 4 ? 0.5 : 0.3} />
-          {i < 3 && (
-            <rect x={x - 16} y={i % 2 === 0 ? 76 : 128} width="32" height="5" rx="2.5"
-              fill="#5fa8ff" opacity="0.15" />
+      {/* Cinq modules empilés en cascade — 4 standards + 1 accent (le module en cours) */}
+      {[
+        { y: 28, op: 0.18, accent: false },
+        { y: 52, op: 0.25, accent: false },
+        { y: 76, op: 0.32, accent: false },
+        { y: 100, op: 0.40, accent: false },
+        { y: 124, op: 0.55, accent: true },
+      ].map((m, i) => (
+        <g key={i}>
+          <rect
+            x={64} y={m.y} width="272" height="32" rx="6"
+            stroke={m.accent ? "#7c4dff" : "#5fa8ff"}
+            strokeWidth="1.2"
+            fill={m.accent ? "rgba(124,77,255,0.08)" : "transparent"}
+            opacity={m.accent ? 1 : 0.55}
+          />
+          {/* Numéro de module */}
+          <rect
+            x={76} y={m.y + 10} width="12" height="12" rx="3"
+            fill={m.accent ? "#7c4dff" : "#5fa8ff"}
+            opacity={m.accent ? 0.8 : m.op}
+          />
+          {/* Titre du module */}
+          <rect
+            x={100} y={m.y + 12} width={120 + i * 10} height="8" rx="4"
+            fill={m.accent ? "#7c4dff" : "#5fa8ff"}
+            opacity={m.accent ? 0.55 : m.op}
+          />
+          {/* Indicateur de progression à droite */}
+          {m.accent && (
+            <>
+              <rect x={250} y={m.y + 11} width="74" height="10" rx="5"
+                stroke="#7c4dff" strokeWidth="1" opacity="0.4" />
+              <rect x={252} y={m.y + 13} width="44" height="6" rx="3"
+                fill="#7c4dff" opacity="0.6" />
+            </>
           )}
-          {/* Trait vertical */}
-          <line x1={x} y1="100" x2={x} y2={i % 2 === 0 ? 71 : 123}
-            stroke={i === 4 ? "#7c4dff" : "#5fa8ff"}
-            strokeWidth="1" opacity="0.4" strokeDasharray="3 2" />
+          {!m.accent && (
+            <circle cx={324} cy={m.y + 16} r="3.5"
+              fill="#5fa8ff" opacity={m.op * 0.8} />
+          )}
         </g>
       ))}
+
+      {/* Curseur de lecture (caret) sur le module accent */}
+      <path d="M52 134 L60 140 L52 146 Z"
+        fill="#7c4dff" opacity="0.7" />
     </svg>
   );
 }

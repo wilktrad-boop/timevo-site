@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Arrow } from "./primitives";
 import LocaleSwitcher from "./LocaleSwitcher";
 
@@ -8,13 +8,14 @@ const CALENDLY_URL = "https://calendly.com/timevo/audit";
 
 export default function NavDkdp() {
   const t = useTranslations("nav");
+  const locale = useLocale();
 
   const links = [
-    { key: "solutions", href: "#solutions" },
-    { key: "methode", href: "#methode" },
-    { key: "resultats", href: "#resultats" },
-    { key: "equipe", href: "#equipe" },
-    { key: "contact", href: "#contact" },
+    { key: "solutions", href: `/${locale}/solutions` },
+    { key: "methode", href: `/${locale}#methode` },
+    { key: "resultats", href: `/${locale}#resultats` },
+    { key: "equipe", href: `/${locale}#equipe` },
+    { key: "contact", href: `/${locale}#contact` },
   ] as const;
 
   return (

@@ -65,10 +65,10 @@
         "cta": "En savoir plus"
       },
       {
-        "tag": "Conseil",
-        "count": "3 formats",
-        "title": "Audit & accompagnement",
-        "items": ["Audit 30 min", "Cartographie", "Formation équipe", "Maintenance"],
+        "tag": "Formation",
+        "count": "5 modules",
+        "title": "Formation des équipes",
+        "items": ["IA & prompting", "Automatisation n8n", "Création de contenu", "LinkedIn pro", "SEO essentiels"],
         "cta": "En savoir plus"
       },
       {
@@ -185,7 +185,7 @@
       ["Combien de temps pour livrer une automation ?", "2 à 3 semaines après l'audit. On commit sur la date à l'écrit, et on tient."],
       ["Vous travaillez avec quels outils ?", "CRM (HubSpot, Pipedrive, Salesforce), email, téléphonie, comptabilité. On branche sur ce que vous avez déjà — pas de migration imposée."],
       ["Et si on n'a pas de CRM ?", "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."],
-      ["On garde la main sur le système ?", "Oui. Le code et les workflows vous appartiennent. Pas de lock-in. Si on se sépare, vous gardez tout."],
+      ["On garde la main sur le système ?", "Oui. Le code et les workflows vous appartiennent. Aucune dépendance. Si on se sépare, vous gardez tout."],
       ["Vous facturez à l'heure ?", "Non. Forfait setup + abonnement maintenance. Lisible, prévisible, sans surprise."],
       ["Vous êtes où, exactement ?", "Thonon-les-Bains et Montpellier. On travaille en distanciel partout en France et chez les francophones limitrophes."]
     ]
@@ -208,9 +208,459 @@
     "privacy": "Politique de confidentialité",
     "gdpr": "RGPD",
     "cols": [
-      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Conseil & Audit", "Création de sites", "SEO"] },
+      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO"] },
       { "title": "Méthode", "items": ["Premier échange", "Diagnostic", "Proposition", "Réalisation", "Maintenance"] }
     ]
+  },
+  "solutions_index": {
+    "meta_title": "Solutions Timevo : automatisation, agents IA, formation, sites web, SEO",
+    "meta_description": "Cinq expertises pour rendre du temps aux PME : automatisation des processus, agents IA, formation, création de sites web, référencement naturel.",
+    "eyebrow": "NOS SOLUTIONS",
+    "h1": "Cinq expertises. Une seule équipe.",
+    "subtitle": "Automatisation, agents IA, formation, création de sites web et SEO. On couvre toute la chaîne — de l'acquisition à la conversion, du process interne à la visibilité externe."
+  },
+  "services": {
+    "automatisation": {
+      "meta_title": "Automatisation des processus pour PME — Timevo",
+      "meta_description": "Automatisation des processus métiers pour PME : devis, relances, rapports, synchros CRM. Workflows n8n et agents IA, livrés en 2-3 semaines.",
+      "hero": {
+        "eyebrow": "AUTOMATISATION DES PROCESSUS",
+        "h1": "Automatisation des processus. Vos tâches répétitives en arrière-plan.",
+        "subtitle": "On automatise les devis, les relances, le reporting et la synchro entre vos outils. Vos équipes gagnent du temps tous les jours, sans rien apprendre.",
+        "cta_primary": "Réserver un audit gratuit",
+        "cta_secondary": "↓ Voir les workflows"
+      },
+      "audience": {
+        "label": "Pour qui",
+        "items": ["Habitat & équipement", "Mobilité premium", "Services à valeur"]
+      },
+      "problem": {
+        "label": "Le problème",
+        "h2": "Ce qui ronge vos semaines.",
+        "items": [
+          { "n": "01", "title": "20 minutes par devis, 80 devis par mois", "desc": "Vos commerciaux passent leurs soirées sur la rédaction de devis qui pourraient partir dans les 4 minutes qui suivent l'appel." },
+          { "n": "02", "title": "Des relances oubliées, des deals perdus", "desc": "Sans un système qui relance automatiquement, 30 à 50% des leads chauds finissent froids — juste parce que personne n'a eu le temps de rappeler." },
+          { "n": "03", "title": "Trois outils qui ne se parlent pas", "desc": "CRM, email, comptabilité, planning. Quand chaque info se recopie à la main, vous perdez des heures et vous accumulez les erreurs." }
+        ]
+      },
+      "deliverables": {
+        "label": "Ce qu'on livre",
+        "h2": "Six workflows prêts à brancher.",
+        "subtitle": "Six chantiers concrets, identifiés pendant l'audit, déployés en 2 à 3 semaines selon vos priorités.",
+        "items": [
+          { "title": "Devis automatiques", "desc": "L'appel se termine, le résumé est rédigé, le devis prérempli, l'email envoyé. 20 min récupérées par devis." },
+          { "title": "Relances commerciales", "desc": "Email + SMS, sur 30 jours, dans le ton de la marque. Le commercial n'est notifié que quand le prospect répond." },
+          { "title": "Rapports hebdomadaires", "desc": "Pipeline, ventes, leads à relancer, KPIs commerciaux. Dans votre boîte mail tous les lundis à 8h." },
+          { "title": "Synchros CRM", "desc": "Vos outils se parlent enfin. Email, téléphonie, comptabilité, planning — tout remonte au bon endroit, automatiquement." },
+          { "title": "Onboarding clients", "desc": "Dès la signature, l'email de bienvenue, les accès, le RDV de kick-off et les premiers documents partent tout seuls." },
+          { "title": "Workflows n8n sur mesure", "desc": "Tout ce qui est répétitif chez vous et qu'on ne couvre pas dans la liste ci-dessus. On le construit dans l'audit." }
+        ]
+      },
+      "case": {
+        "label": "Cas représentatif",
+        "h2": "Un pisciniste régional.",
+        "before_label": "Avant",
+        "after_label": "Après",
+        "before": [
+          "80 devis/mois rédigés à la main, en soirée",
+          "20 min par devis en moyenne",
+          "1 relance sur 2 oubliée",
+          "27h/mois sur de l'admin"
+        ],
+        "after": [
+          "Devis envoyé dans les 4 min après l'appel",
+          "Relances email + SMS sur 30 jours",
+          "Taux de signature × 2 sur 6 semaines",
+          "27h récupérées chaque mois"
+        ],
+        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "roi_label": "Retour sur investissement",
+        "roi_value": "6 semaines"
+      },
+      "method": {
+        "label": "Comment ça se passe",
+        "h2": "Audit, cartographie, déploiement.",
+        "steps": [
+          ["01", "Audit", "30 minutes pour cartographier vos process. On identifie les 2 ou 3 workflows à plus fort impact ROI."],
+          ["02", "Cartographie", "On modélise chaque workflow sur le papier avant de coder. Vous validez le plan d'exécution, étape par étape."],
+          ["03", "Déploiement", "On code, on branche, on teste sur vos vrais cas. Formation de l'équipe, documentation, et maintenance pour faire évoluer le système."]
+        ]
+      },
+      "pricing": {
+        "label": "L'offre",
+        "h2": "Pack Démarrage.",
+        "price": "1 800 – 2 500 €",
+        "price_suffix": "setup",
+        "monthly": "250 €/mois",
+        "monthly_suffix": "maintenance",
+        "delay": "2 à 3 semaines",
+        "delay_suffix": "de l'audit à la mise en production",
+        "includes_label": "Inclus",
+        "includes": [
+          "2 à 3 automations cœur de métier identifiées dans l'audit",
+          "Intégration aux outils existants (CRM, email, téléphonie, comptabilité)",
+          "Formation de l'équipe au système livré",
+          "Tableau de bord centralisé",
+          "Maintenance, évolutions et nouveaux workflows inclus"
+        ],
+        "upsell_label": "À la carte",
+        "upsell": [
+          "Agent IA pour le support client",
+          "Générateur de devis avancé (multi-pricing, signature électronique)",
+          "Reporting commercial dédié",
+          "Workflows additionnels au-delà des 3 inclus"
+        ],
+        "footnote": "Forfait fixe, pas de facturation à l'heure. Le code vous appartient, aucune dépendance."
+      },
+      "faq": {
+        "label": "Questions fréquentes",
+        "h2": "Avant d'en parler.",
+        "items": [
+          ["Combien de temps pour livrer ?", "2 à 3 semaines après l'audit. On commit sur la date à l'écrit."],
+          ["On garde le contrôle du système ?", "Oui. Le code et les workflows vous appartiennent. Si on se sépare, vous gardez tout, hébergement compris."],
+          ["Et si on n'a pas de CRM ?", "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."],
+          ["Vous remplacez nos commerciaux ?", "Non. On les libère de tout ce qui n'est pas commercial pour qu'ils passent leur temps à vendre."]
+        ]
+      },
+      "cta": {
+        "h2": "30 minutes pour cartographier votre semaine.",
+        "subtitle": "On identifie 2 ou 3 process à automatiser. Vous repartez avec un diagnostic écrit, que vous bossiez avec nous ou pas.",
+        "cta": "Réserver l'audit gratuit",
+        "reassurance": "30 minutes · Gratuit · Sans engagement · Diagnostic écrit"
+      }
+    },
+    "agents-ia": {
+      "meta_title": "Agent IA pour entreprise — Timevo",
+      "meta_description": "Agents IA pour PME : chatbot SAV, pré-qualification de leads, standard téléphonique, triage email. Disponibles 24/7, formés sur vos données.",
+      "hero": {
+        "eyebrow": "AGENT IA POUR ENTREPRISE",
+        "h1": "Agent IA pour entreprise. Vos questions répétitives traitées 24/7.",
+        "subtitle": "Disponible jour et nuit, formé sur vos documents, dans le ton de votre marque. L'agent IA Timevo absorbe le SAV, qualifie les leads et libère vos équipes de tout ce qui se répète.",
+        "cta_primary": "Réserver un audit gratuit",
+        "cta_secondary": "↓ Voir les solutions"
+      },
+      "audience": {
+        "label": "Pour qui",
+        "items": ["Immobilier & service client", "SAV à fort volume", "Activités à forte récurrence"]
+      },
+      "problem": {
+        "label": "Le problème",
+        "h2": "Ce que vos équipes répètent dix fois par jour.",
+        "items": [
+          { "n": "01", "title": "70% des appels sont les mêmes questions", "desc": "Disponibilités, prix, délais, suivi de commande. Vos équipes passent leurs journées à répondre aux mêmes 15 questions, encore et encore." },
+          { "n": "02", "title": "Vos leads attendent. Vos concurrents répondent.", "desc": "Hors heures de bureau, le soir, le week-end : un lead qui arrive et personne pour répondre. Le temps que vous rappeliez, il a déjà signé ailleurs." },
+          { "n": "03", "title": "Votre service client coûte cher, et il est lent", "desc": "Embaucher pour traiter des questions triviales, c'est cher. Et ça ne scale pas. Un agent IA traite 200 demandes simultanément, sans fatigue ni erreur." }
+        ]
+      },
+      "deliverables": {
+        "label": "Ce qu'on livre",
+        "h2": "Cinq agents standards. Plus du sur mesure.",
+        "subtitle": "Cinq agents prêts à l'emploi, plus la possibilité de construire votre cas spécifique pendant l'audit. Tous branchés sur vos outils et formés sur vos données.",
+        "items": [
+          { "title": "Chatbot SAV", "desc": "Sur votre site ou WhatsApp. Répond aux questions répétitives, traite les demandes de suivi, ouvre un ticket quand c'est complexe." },
+          { "title": "Pré-qualification leads", "desc": "Un lead arrive ? L'agent qualifie en 60 secondes (budget, timing, besoin) et notifie le bon commercial avec un résumé propre." },
+          { "title": "Standard téléphonique IA", "desc": "Prend les appels, route vers la bonne personne, prend les messages, transcrit les vocaux. Plus jamais d'appel manqué." },
+          { "title": "Triage email automatique", "desc": "Urgent vs non-urgent, devis vs SAV, ancien client vs prospect. L'agent priorise et attribue. Vos équipes ne traitent que ce qui compte." },
+          { "title": "Agent commercial assistant", "desc": "Prépare les RDV, récupère le contexte du prospect, rédige les comptes-rendus. Vos commerciaux arrivent en réunion préparés." },
+          { "title": "Agent sur mesure", "desc": "Un cas spécifique que les 5 précédents ne couvrent pas ? On le construit pendant l'audit, branché sur vos outils." }
+        ]
+      },
+      "case": {
+        "label": "Cas représentatif",
+        "h2": "Un cabinet immobilier.",
+        "before_label": "Avant",
+        "after_label": "Après",
+        "before": [
+          "200 appels/jour, 70% questions répétitives",
+          "4 négociateurs saturés sur le standard",
+          "Leads hors horaires bureau perdus",
+          "Temps de qualification moyen : 12 min"
+        ],
+        "after": [
+          "140 appels/jour absorbés par l'agent IA",
+          "Négociateurs concentrés sur les dossiers chauds",
+          "Réponse instantanée 24/7 sur WhatsApp",
+          "Qualification automatique en 60 secondes"
+        ],
+        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "roi_label": "Retour sur investissement",
+        "roi_value": "8 semaines"
+      },
+      "method": {
+        "label": "Comment ça se passe",
+        "h2": "Audit, entraînement, mise en service.",
+        "steps": [
+          ["01", "Audit", "On identifie où un agent IA peut décharger vos équipes. Volume de demandes, ton de marque, outils en place."],
+          ["02", "Entraînement", "On forme l'agent sur vos documents, vos FAQ, vos process. Test sur des cas réels avant déploiement."],
+          ["03", "Mise en service", "Bascule progressive, monitoring des conversations, ajustements continus. L'agent apprend avec vous."]
+        ]
+      },
+      "faq": {
+        "label": "Questions fréquentes",
+        "h2": "Avant d'en parler.",
+        "items": [
+          ["L'agent est connecté à nos données ?", "Oui. CRM, base de connaissances, catalogue produits, planning. L'agent répond avec votre information, pas une connaissance générique."],
+          ["Comment on évite les hallucinations ?", "L'agent est bridé sur votre périmètre métier, avec des garde-fous et un handoff humain dès qu'il y a doute."],
+          ["Et la confidentialité des données ?", "Hébergement européen, données chiffrées, possibilité d'utiliser des modèles auto-hébergés pour les cas sensibles."],
+          ["Si l'agent bloque, que se passe-t-il ?", "Handoff automatique vers un humain avec tout le contexte de la conversation. Aucun lead ne tombe dans le vide."]
+        ]
+      },
+      "cta": {
+        "h2": "30 minutes pour identifier votre premier agent.",
+        "subtitle": "On regarde les volumes de demandes, les questions qui reviennent, et on vous dit lequel des 4 agents standards est le bon pour démarrer.",
+        "cta": "Réserver l'audit gratuit",
+        "reassurance": "30 minutes · Gratuit · Sans engagement · Diagnostic écrit"
+      }
+    },
+    "formation": {
+      "meta_title": "Formation IA et automatisation en entreprise — Timevo",
+      "meta_description": "Formation IA, automatisation n8n, création de contenu, LinkedIn, SEO. 5 modules pour équipes de 3 à 15 personnes. En intra ou à distance.",
+      "hero": {
+        "eyebrow": "FORMATION IA & AUTOMATISATION",
+        "h1": "Formation IA et automatisation pour vos équipes.",
+        "subtitle": "Cinq modules courts pour que vos équipes maîtrisent l'IA, l'automatisation et leur visibilité en ligne. En intra ou à distance, pour groupes de 3 à 15.",
+        "cta_primary": "Réserver un audit gratuit",
+        "cta_secondary": "↓ Voir les modules"
+      },
+      "audience": {
+        "label": "Pour qui",
+        "items": ["Équipes commerciales", "Marketing & communication", "Dirigeants & cadres"]
+      },
+      "problem": {
+        "label": "Le problème",
+        "h2": "Ce que coûte une équipe pas formée.",
+        "items": [
+          { "n": "01", "title": "Vos équipes utilisent l'IA mal, ou pas du tout", "desc": "ChatGPT au feeling, prompts pauvres, résultats médiocres. Le potentiel est énorme, l'usage ridicule." },
+          { "n": "02", "title": "Les outils changent tous les mois", "desc": "Votre dernière formation date de 18 mois. Entre temps, GPT-5, Claude 4.7, n8n a doublé ses intégrations. Vos équipes restent en 2024." },
+          { "n": "03", "title": "Une vidéo YouTube ne forme personne", "desc": "Apprendre seul, sans cas concret, sans accompagnement, sans pratique : trois jours plus tard, plus personne ne l'utilise." }
+        ]
+      },
+      "deliverables": {
+        "label": "Ce qu'on livre",
+        "h2": "Cinq modules standards. Plus du sur mesure.",
+        "subtitle": "Chaque module mêle théorie courte et mise en pratique sur vos vrais cas. Et la possibilité d'un programme totalement sur mesure pour votre équipe.",
+        "items": [
+          { "title": "IA & prompting", "desc": "ChatGPT, Claude, Gemini. Prompts efficaces, cas d'usage par métier, gestion des limites. 1 jour intensif." },
+          { "title": "Automatisation n8n", "desc": "Construire ses premiers workflows. Brancher CRM, email, Slack. Automatiser sans coder. 2 jours pratiques." },
+          { "title": "Création de contenu", "desc": "Rédiger plus vite avec l'IA, générer visuels et vidéos, structurer une production hebdo. 1 jour atelier." },
+          { "title": "LinkedIn pro", "desc": "Profil qui convertit, contenu qui engage, prospection automatisée. Pensé pour commerciaux et dirigeants. 1 jour." },
+          { "title": "SEO essentiels", "desc": "Comprendre Google, écrire pour le web, audit de base, suivi des positions. Pour marketeurs et dirigeants. 1 jour." },
+          { "title": "Programme sur mesure", "desc": "Un besoin spécifique (vente, négociation, outils métier) ? On construit le module à partir de vos cas concrets." }
+        ]
+      },
+      "case": {
+        "label": "Cas représentatif",
+        "h2": "Une équipe commerciale d'une dizaine de personnes.",
+        "before_label": "Avant",
+        "after_label": "Après",
+        "before": [
+          "0 utilisation structurée de l'IA",
+          "4h/sem par négociateur sur la rédaction d'annonces",
+          "Prospection LinkedIn opportuniste",
+          "Aucune ligne éditoriale cohérente"
+        ],
+        "after": [
+          "11h/sem rendues par négociateur",
+          "5 outils maîtrisés (Claude, n8n, etc.)",
+          "Prospection LinkedIn cadrée et automatisée",
+          "Calendrier éditorial collectif"
+        ],
+        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "roi_label": "Retour sur investissement",
+        "roi_value": "1 mois"
+      },
+      "method": {
+        "label": "Comment ça se passe",
+        "h2": "Diagnostic, programme, animation.",
+        "steps": [
+          ["01", "Diagnostic", "30 min pour cartographier les usages actuels, identifier les modules à prioriser, valider le format."],
+          ["02", "Programme", "Construction du contenu adapté à votre métier, intégration de vos vrais cas, planification des sessions."],
+          ["03", "Animation", "Sessions interactives, exercices sur vos données. Support 30 jours après la formation pour ancrer durablement les pratiques."]
+        ]
+      },
+      "faq": {
+        "label": "Questions fréquentes",
+        "h2": "Avant d'en parler.",
+        "items": [
+          ["Vous êtes Qualiopi / éligible CPF ?", "Pas encore Qualiopi. La certification est en cours pour 2026. Pour l'instant, formations facturables en direct, pas via OPCO."],
+          ["Intra ou inter-entreprises ?", "Intra uniquement. Programme calé sur votre métier, vos outils, vos cas. C'est ce qui fait la différence."],
+          ["Combien de jours par module ?", "1 à 2 jours par module, selon profondeur souhaitée. Groupes de 3 à 15 personnes maximum pour rester interactif."],
+          ["En distanciel ou en présentiel ?", "Les deux. Présentiel à Thonon ou Montpellier, ou chez vous. Distanciel sur Meet ou Teams, avec exercices live."]
+        ]
+      },
+      "cta": {
+        "h2": "30 minutes pour calibrer le programme.",
+        "subtitle": "On regarde votre équipe, vos outils, ce qui bloque, et on vous propose un programme. Pas de catalogue figé.",
+        "cta": "Réserver l'audit gratuit",
+        "reassurance": "30 minutes · Gratuit · Sans engagement · Diagnostic écrit"
+      }
+    },
+    "sites-web": {
+      "meta_title": "Création de site web pour PME — Timevo",
+      "meta_description": "Création de site web pour PME : vitrine, landing page, e-commerce, refonte. Code propre, performant, qui vous appartient. Pas de Wix, pas de dépendance.",
+      "hero": {
+        "eyebrow": "CRÉATION DE SITE WEB",
+        "h1": "Création de site web pour PME. Pensé pour convertir, pas pour décorer.",
+        "subtitle": "Vitrines, landing pages, e-commerce, refontes. Code propre, performant, optimisé pour le SEO. Vous restez propriétaire de tout.",
+        "cta_primary": "Réserver un audit gratuit",
+        "cta_secondary": "↓ Voir les formats"
+      },
+      "audience": {
+        "label": "Pour qui",
+        "items": ["Artisans & commerces", "PME services", "E-commerce"]
+      },
+      "problem": {
+        "label": "Le problème",
+        "h2": "Ce que votre site vous coûte vraiment.",
+        "items": [
+          { "n": "01", "title": "Un site cher qui ne convertit pas", "desc": "Vous avez payé 8 000 € pour un site qui ressemble à un brochure. Joli, peut-être. Demandes de devis : zéro." },
+          { "n": "02", "title": "Vous êtes prisonnier d'un outil", "desc": "Wix, Shopify, agence qui vous facture chaque modification : impossible de partir sans tout refaire. Vous êtes coincé chez eux." },
+          { "n": "03", "title": "Refonte qui n'en finit plus", "desc": "Annoncée en 6 semaines, livrée en 8 mois. Cahier des charges flou, validations interminables, contenu qui n'arrive jamais." }
+        ]
+      },
+      "deliverables": {
+        "label": "Ce qu'on livre",
+        "h2": "Tous les formats. Aucune dépendance.",
+        "subtitle": "Vitrine, landing, multi-pages, e-commerce. Code propre, hébergement chez vous, contenu modifiable. Vous partez quand vous voulez, vous emportez tout.",
+        "items": [
+          { "title": "Site vitrine", "desc": "5 à 10 pages, design custom, performant. Pour une présence pro qui sert de carte de visite et de canal d'acquisition." },
+          { "title": "Landing page", "desc": "Une page focus conversion, A/B test ready, intégrée à votre CRM. Idéale pour les campagnes payantes ou un lancement." },
+          { "title": "Site multi-pages", "desc": "10+ pages, blog, espace clients, formulaires multiples. Pour les activités à plusieurs lignes de service." },
+          { "title": "E-commerce", "desc": "Catalogue produits, panier, paiement, gestion stock. Stack moderne (Shopify Hydrogen, Medusa, ou Next.js + Stripe selon besoin)." },
+          { "title": "Refonte complète", "desc": "Audit de l'existant, plan de refonte, migration sans perte de SEO. Pour passer d'un site qui plombe à un site qui sert." },
+          { "title": "Migration / sortie de Wix", "desc": "On vous sort de Wix, Squarespace ou Shopify. Vous récupérez le contrôle du code et de l'hébergement." }
+        ]
+      },
+      "case": {
+        "label": "Cas représentatif",
+        "h2": "Une refonte de site pisciniste.",
+        "before_label": "Avant",
+        "after_label": "Après",
+        "before": [
+          "Site Wix lent (5s de chargement)",
+          "Taux de demande de devis : 0,8%",
+          "Invisible sur Google (page 4+)",
+          "Modifications facturées 80 € pièce"
+        ],
+        "after": [
+          "Site Next.js, chargement en 1,2 s",
+          "Taux de demande de devis : 3,4%",
+          "Page 1 Google sur 12 mots-clés locaux",
+          "Modifications libres, propriétaire du code"
+        ],
+        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "roi_label": "Retour sur investissement",
+        "roi_value": "14 semaines"
+      },
+      "method": {
+        "label": "Comment ça se passe",
+        "h2": "Brief, build, mise en ligne.",
+        "steps": [
+          ["01", "Brief", "30 min pour comprendre votre activité, vos cibles, vos objectifs. On revient avec une proposition de structure, design et délai."],
+          ["02", "Build", "Design puis développement. Maquettes validées avant le code. Démo intermédiaire chaque semaine pour ajuster en cours de route."],
+          ["03", "Mise en ligne", "Migration, redirection SEO, formation pour que vous puissiez gérer le contenu en autonomie. Maintenance optionnelle."]
+        ]
+      },
+      "faq": {
+        "label": "Questions fréquentes",
+        "h2": "Avant d'en parler.",
+        "items": [
+          ["Combien de pages ?", "Site vitrine : 5 à 10. Multi-pages : 10+. E-commerce : selon catalogue. Pas de barème rigide, on cale ensemble pendant le brief."],
+          ["Quel CMS / stack ?", "Next.js pour la performance et le SEO, ou WordPress headless si vous préférez. Pas de Wix, Squarespace, ou autre solution fermée."],
+          ["Et l'hébergement ?", "Sur votre compte (Vercel, Cloudflare, OVH au choix). Vous restez propriétaire. On peut s'en occuper si vous voulez, en option."],
+          ["Vous faites le contenu ?", "Pour la copy oui (vos textes optimisés SEO). Pour les visuels, soit on vous fournit, soit on utilise les vôtres. À voir au brief."]
+        ]
+      },
+      "cta": {
+        "h2": "30 minutes pour cadrer votre projet web.",
+        "subtitle": "On regarde votre site actuel (ou votre absence de site), vos cibles, vos contraintes, et on vous propose une route claire.",
+        "cta": "Réserver l'audit gratuit",
+        "reassurance": "30 minutes · Gratuit · Sans engagement · Diagnostic écrit"
+      }
+    },
+    "seo": {
+      "meta_title": "Agence de référencement naturel pour PME — Timevo",
+      "meta_description": "Agence de référencement naturel pour PME : SEO local, technique, contenu, international. Du trafic qui convertit, pas du volume vide.",
+      "hero": {
+        "eyebrow": "RÉFÉRENCEMENT NATUREL",
+        "h1": "Agence de référencement naturel pour PME.",
+        "subtitle": "SEO local, technique, contenu, international. On vise du trafic qualifié qui convertit, pas du volume vide. Méthode, pas magie noire.",
+        "cta_primary": "Réserver un audit gratuit",
+        "cta_secondary": "↓ Voir les expertises"
+      },
+      "audience": {
+        "label": "Pour qui",
+        "items": ["PME locales", "E-commerce", "B2B services"]
+      },
+      "problem": {
+        "label": "Le problème",
+        "h2": "Pourquoi vous êtes invisible sur Google.",
+        "items": [
+          { "n": "01", "title": "Vous êtes invisible sur ce qui rapporte", "desc": "Vos clients tapent leurs requêtes. Vous n'apparaissez nulle part. Vos concurrents, eux, sont là, page 1, depuis 18 mois." },
+          { "n": "02", "title": "Vous payez Google Ads pour exister", "desc": "Sans SEO, chaque clic coûte 2 à 8 €. Avec un bon SEO, le même trafic devient gratuit après quelques mois. Le calcul est simple." },
+          { "n": "03", "title": "Votre agence SEO sortait des rapports en 2020", "desc": "Liens douteux, contenu mince, sur-optimisation. L'IA a tout changé. Aujourd'hui Google récompense le contenu utile et la performance, pas le SEO de papa." }
+        ]
+      },
+      "deliverables": {
+        "label": "Ce qu'on livre",
+        "h2": "Toutes les briques du SEO moderne.",
+        "subtitle": "Six expertises, déclinables selon votre marché et votre maturité actuelle. On priorise pendant l'audit.",
+        "items": [
+          { "title": "SEO local", "desc": "Google Business Profile, citations, avis, ranking carte. Pour artisans, commerces, professions libérales sur des zones géographiques précises." },
+          { "title": "SEO technique", "desc": "Performance, indexation, données structurées, Core Web Vitals. La base qu'aucun contenu ne compense si elle est cassée." },
+          { "title": "SEO contenu", "desc": "Recherche de mots-clés, briefs éditoriaux, rédaction, optimisation de l'existant. Du contenu qui ranke et qui convertit." },
+          { "title": "SEO international", "desc": "Hreflang, structure multi-marchés, traduction SEO. Pour étendre votre visibilité sur plusieurs pays sans dupliquer ni se cannibaliser." },
+          { "title": "Audit SEO", "desc": "Diagnostic technique, contenu, backlinks, concurrence. Plan d'action priorisé, livré par écrit, valable même sans nous." },
+          { "title": "Netlinking ciblé", "desc": "À la carte. Pas de PBN, pas de masse, juste des liens éditoriaux pertinents qui renforcent votre autorité progressivement." }
+        ]
+      },
+      "case": {
+        "label": "Cas représentatif",
+        "h2": "Un artisan en SEO local.",
+        "before_label": "Avant",
+        "after_label": "Après",
+        "before": [
+          "Invisible sur Google Maps",
+          "0 demande en ligne entrante",
+          "Pas de Google Business Profile optimisé",
+          "Concurrents en page 1 sur toutes les requêtes"
+        ],
+        "after": [
+          "Top 3 Google Maps sur 8 requêtes locales",
+          "40 demandes entrantes par mois",
+          "Profil GMB complet avec avis automatisés",
+          "Trafic organique × 5 sur 4 mois"
+        ],
+        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "roi_label": "Retour sur investissement",
+        "roi_value": "4 mois"
+      },
+      "method": {
+        "label": "Comment ça se passe",
+        "h2": "Audit, roadmap, exécution mensuelle.",
+        "steps": [
+          ["01", "Audit", "Diagnostic technique, contenu, backlinks, positions actuelles. Comparaison avec vos concurrents directs. Plan priorisé."],
+          ["02", "Roadmap", "Plan d'action sur 6 à 12 mois. On sépare les quick wins (semaine 1-4) et le travail de fond. Vous validez avant qu'on exécute."],
+          ["03", "Exécution mensuelle", "Mise en œuvre cadencée, reporting tous les 30 jours, ajustements selon ce que dit la data. Pas de boîte noire, pas de rapport flou."]
+        ]
+      },
+      "faq": {
+        "label": "Questions fréquentes",
+        "h2": "Avant d'en parler.",
+        "items": [
+          ["Combien de temps pour voir des résultats ?", "Quick wins techniques : 2 à 4 semaines. SEO local : 2 à 4 mois. SEO de contenu sur des requêtes compétitives : 6 à 12 mois. On vous le dit dès l'audit."],
+          ["L'IA tue-t-elle le SEO ?", "Non, elle l'accélère. On utilise l'IA pour produire des briefs, rédiger, auditer plus vite — mais le ranking, lui, dépend toujours de contenu utile + technique + autorité."],
+          ["Vous faites du netlinking ?", "Oui, mais ciblé. Pas de PBN, pas de masse de liens douteux. Que des liens éditoriaux sur des sites pertinents, négociés un par un."],
+          ["SEO local ou national ?", "Les deux. Mais pour une PME locale (artisan, commerce), commencer par le local est presque toujours le meilleur ROI."]
+        ]
+      },
+      "cta": {
+        "h2": "30 minutes pour auditer votre SEO.",
+        "subtitle": "On regarde vos positions actuelles, vos concurrents, votre site. Vous repartez avec 3 priorités claires, que vous bossiez avec nous ou pas.",
+        "cta": "Réserver l'audit gratuit",
+        "reassurance": "30 minutes · Gratuit · Sans engagement · Diagnostic écrit"
+      }
+    }
   },
   "metadata": {
     "title": "Timevo — Automatisation pour PME | Devis, Relances, Rapports",
