@@ -28,16 +28,17 @@ export default function NavDkdp() {
       WebkitBackdropFilter: "blur(12px)",
       borderBottom: "1px solid var(--border)",
     }}>
-      <div style={{
+      <a href={`/${locale}`} aria-label="Timevo — accueil" style={{
         fontFamily: "var(--font-geist-sans)", fontSize: 20, fontWeight: 600,
         letterSpacing: "-0.04em", color: "var(--text)",
+        textDecoration: "none",
       }}>
         Timevo<span style={{
           background: "var(--accent-gradient)",
           WebkitBackgroundClip: "text", backgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}>.</span>
-      </div>
+      </a>
 
       <div style={{ display: "flex", gap: 28, fontFamily: "var(--font-geist-sans)", fontSize: 13, color: "var(--dim)" }}
         className="nav-links">
