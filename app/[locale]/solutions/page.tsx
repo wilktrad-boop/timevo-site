@@ -87,7 +87,6 @@ export default async function SolutionsIndexPage({
             </h1>
 
             <p style={{
-              marginTop: 28,
               fontFamily: "var(--font-geist-sans)", fontSize: 18, lineHeight: 1.5,
               color: "var(--dim)", margin: 0, marginTop: 28,
               maxWidth: 720,
