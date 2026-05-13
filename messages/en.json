@@ -116,7 +116,7 @@
     "items": [
       {
         "name": "Marc R.",
-        "role": "Pool installer · Lyon",
+        "role": "Kitchen designer · Lyon",
         "initials": "MR",
         "quote": "We used to spend 30 hours a month on quotes and follow-ups. Now it's 5 hours, and we convert twice as much. Timevo paid for itself in 6 weeks."
       },
@@ -258,7 +258,7 @@
       },
       "case": {
         "label": "Representative case",
-        "h2": "A regional pool installer.",
+        "h2": "A high-end kitchen designer.",
         "before_label": "Before",
         "after_label": "After",
         "before": [
@@ -507,7 +507,7 @@
       },
       "audience": {
         "label": "For whom",
-        "items": ["Artisans & retailers", "Service SMBs", "E-commerce"]
+        "items": ["Home equipment & retail", "Service SMBs", "E-commerce"]
       },
       "problem": {
         "label": "The problem",
@@ -533,7 +533,7 @@
       },
       "case": {
         "label": "Representative case",
-        "h2": "A pool installer's website redesign.",
+        "h2": "A kitchen designer's website redesign.",
         "before_label": "Before",
         "after_label": "After",
         "before": [
@@ -606,7 +606,7 @@
         "h2": "Every brick of modern SEO.",
         "subtitle": "Six expertises, adapted to your market and your current maturity. We prioritise during the audit.",
         "items": [
-          { "title": "Local SEO", "desc": "Google Business Profile, citations, reviews, map rankings. For artisans, retailers, professionals working on specific geographic zones." },
+          { "title": "Local SEO", "desc": "Google Business Profile, citations, reviews, map rankings. For distributors, professional firms, businesses working on specific geographic zones." },
           { "title": "Technical SEO", "desc": "Performance, indexability, structured data, Core Web Vitals. The foundation no content can compensate for if it's broken." },
           { "title": "Content SEO", "desc": "Keyword research, editorial briefs, copywriting, optimisation of existing pages. Content that ranks and converts." },
           { "title": "International SEO", "desc": "Hreflang, multi-market structure, SEO translation. To grow visibility across countries without duplicating or cannibalising." },
@@ -616,7 +616,7 @@
       },
       "case": {
         "label": "Representative case",
-        "h2": "An artisan in local SEO.",
+        "h2": "A kitchen designer in local SEO.",
         "before_label": "Before",
         "after_label": "After",
         "before": [
@@ -651,7 +651,7 @@
           ["How long until results?", "Technical quick wins: 2 to 4 weeks. Local SEO: 2 to 4 months. Content SEO on competitive queries: 6 to 12 months. We tell you at the audit."],
           ["Is AI killing SEO?", "No, it accelerates it. We use AI for briefs, drafting, faster audits — but rankings still depend on useful content + technical health + authority."],
           ["Do you do link building?", "Yes, but targeted. No PBNs, no mass shady links. Only editorial links on relevant sites, negotiated one by one."],
-          ["Local or national SEO?", "Both. But for a local SMB (artisan, retailer), starting local is almost always the best ROI."]
+          ["Local or national SEO?", "Both. But for a local SMB (professional firm, distributor), starting local is almost always the best ROI."]
         ]
       },
       "cta": {

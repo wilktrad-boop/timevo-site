@@ -116,7 +116,7 @@
     "items": [
       {
         "name": "Marc R.",
-        "role": "Pisciniste · Lyon",
+        "role": "Cuisiniste · Lyon",
         "initials": "MR",
         "quote": "On passait 30h par mois sur les devis et les relances. Aujourd'hui c'est 5h, et on convertit deux fois plus. Timevo a payé son installation en 6 semaines."
       },
@@ -258,7 +258,7 @@
       },
       "case": {
         "label": "Cas représentatif",
-        "h2": "Un pisciniste régional.",
+        "h2": "Un cuisiniste haut de gamme.",
         "before_label": "Avant",
         "after_label": "Après",
         "before": [
@@ -507,7 +507,7 @@
       },
       "audience": {
         "label": "Pour qui",
-        "items": ["Artisans & commerces", "PME services", "E-commerce"]
+        "items": ["Habitat & équipement", "PME services", "E-commerce"]
       },
       "problem": {
         "label": "Le problème",
@@ -533,7 +533,7 @@
       },
       "case": {
         "label": "Cas représentatif",
-        "h2": "Une refonte de site pisciniste.",
+        "h2": "Une refonte pour un cuisiniste.",
         "before_label": "Avant",
         "after_label": "Après",
         "before": [
@@ -606,7 +606,7 @@
         "h2": "Toutes les briques du SEO moderne.",
         "subtitle": "Six expertises, déclinables selon votre marché et votre maturité actuelle. On priorise pendant l'audit.",
         "items": [
-          { "title": "SEO local", "desc": "Google Business Profile, citations, avis, ranking carte. Pour artisans, commerces, professions libérales sur des zones géographiques précises." },
+          { "title": "SEO local", "desc": "Google Business Profile, citations, avis, ranking carte. Pour distributeurs, cabinets, professions libérales sur des zones géographiques précises." },
           { "title": "SEO technique", "desc": "Performance, indexation, données structurées, Core Web Vitals. La base qu'aucun contenu ne compense si elle est cassée." },
           { "title": "SEO contenu", "desc": "Recherche de mots-clés, briefs éditoriaux, rédaction, optimisation de l'existant. Du contenu qui ranke et qui convertit." },
           { "title": "SEO international", "desc": "Hreflang, structure multi-marchés, traduction SEO. Pour étendre votre visibilité sur plusieurs pays sans dupliquer ni se cannibaliser." },
@@ -616,7 +616,7 @@
       },
       "case": {
         "label": "Cas représentatif",
-        "h2": "Un artisan en SEO local.",
+        "h2": "Un cuisiniste en SEO local.",
         "before_label": "Avant",
         "after_label": "Après",
         "before": [
@@ -651,7 +651,7 @@
           ["Combien de temps pour voir des résultats ?", "Quick wins techniques : 2 à 4 semaines. SEO local : 2 à 4 mois. SEO de contenu sur des requêtes compétitives : 6 à 12 mois. On vous le dit dès l'audit."],
           ["L'IA tue-t-elle le SEO ?", "Non, elle l'accélère. On utilise l'IA pour produire des briefs, rédiger, auditer plus vite — mais le ranking, lui, dépend toujours de contenu utile + technique + autorité."],
           ["Vous faites du netlinking ?", "Oui, mais ciblé. Pas de PBN, pas de masse de liens douteux. Que des liens éditoriaux sur des sites pertinents, négociés un par un."],
-          ["SEO local ou national ?", "Les deux. Mais pour une PME locale (artisan, commerce), commencer par le local est presque toujours le meilleur ROI."]
+          ["SEO local ou national ?", "Les deux. Mais pour une PME locale (cabinet, distributeur), commencer par le local est presque toujours le meilleur ROI."]
         ]
       },
       "cta": {
