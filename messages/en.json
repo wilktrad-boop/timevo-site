@@ -155,7 +155,7 @@
         "opts": ["1 to 5 people", "6 to 15 people", "16 to 50 people"]
       },
       {
-        "q": "How many quotes do you send per month?",
+        "q": "How many inbound requests per month? (quotes, leads, proposals)",
         "opts": ["Fewer than 20", "Between 20 and 80", "More than 80"]
       },
       {
@@ -163,11 +163,11 @@
         "opts": ["Less than 5h", "Between 5h and 15h", "More than 15h"]
       },
       {
-        "q": "Do you have a CRM in place?",
+        "q": "Do you have a tool to track clients and prospects?",
         "opts": ["Yes, well used", "Yes, barely used", "No"]
       },
       {
-        "q": "What is your average deal size?",
+        "q": "Average revenue per client? (one-shot or annual)",
         "opts": ["Under €1,000", "€1,000 to €5,000", "Over €5,000"]
       }
     ],

@@ -155,7 +155,7 @@
         "opts": ["1 à 5 personnes", "6 à 15 personnes", "16 à 50 personnes"]
       },
       {
-        "q": "Combien de devis envoyez-vous par mois ?",
+        "q": "Combien de demandes entrantes par mois ? (devis, leads, propositions)",
         "opts": ["Moins de 20", "Entre 20 et 80", "Plus de 80"]
       },
       {
@@ -163,11 +163,11 @@
         "opts": ["Moins de 5h", "Entre 5h et 15h", "Plus de 15h"]
       },
       {
-        "q": "Avez-vous un CRM en place ?",
+        "q": "Avez-vous un outil pour suivre clients et prospects ?",
         "opts": ["Oui, bien utilisé", "Oui, peu ou pas utilisé", "Non"]
       },
       {
-        "q": "Quel est votre ticket moyen ?",
+        "q": "Quel revenu moyen par client ? (one-shot ou annuel)",
         "opts": ["Moins de 1 000€", "Entre 1 000€ et 5 000€", "Plus de 5 000€"]
       }
     ],
