@@ -89,8 +89,85 @@ export default async function ServicePage({
 
   setRequestLocale(locale);
 
+  const tService = await getTranslations({ locale, namespace: `services.${slug}` });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const pageUrl = `https://www.timevo.io/${locale}/solutions/${slug}`;
+  const homeUrl = `https://www.timevo.io/${locale}`;
+  const solutionsUrl = `https://www.timevo.io/${locale}/solutions`;
+  const breadcrumbLabel = (tNav.raw("solutions_items") as string[])[SERVICE_SLUGS.indexOf(slug)];
+  const faqItems = tService.raw("faq.items") as [string, string][];
+
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: tService("meta_title"),
+    description: tService("meta_description"),
+    url: pageUrl,
+    serviceType: breadcrumbLabel,
+    provider: {
+      "@type": "ProfessionalService",
+      name: "Timevo",
+      url: "https://www.timevo.io",
+    },
+    areaServed: ["FR", "BE", "CH"],
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: locale === "fr" ? "PME haut ticket" : "Premium SMBs",
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "fr" ? "Accueil" : "Home",
+        item: homeUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Solutions",
+        item: solutionsUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: breadcrumbLabel,
+        item: pageUrl,
+      },
+    ],
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <NavDkdp />
       <main>
         <ServiceTemplate slug={slug} />

@@ -68,6 +68,8 @@ export async function generateMetadata({
   };
 }
 
+const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
+
 export default async function SolutionsIndexPage({
   params,
 }: {
@@ -78,9 +80,63 @@ export default async function SolutionsIndexPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "solutions_index" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const homeUrl = `https://www.timevo.io/${locale}`;
+  const solutionsUrl = `https://www.timevo.io/${locale}/solutions`;
+  const serviceLabels = tNav.raw("solutions_items") as string[];
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "fr" ? "Accueil" : "Home",
+        item: homeUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Solutions",
+        item: solutionsUrl,
+      },
+    ],
+  };
+
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: t("meta_title"),
+    description: t("meta_description"),
+    url: solutionsUrl,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Timevo",
+      url: "https://www.timevo.io",
+    },
+    hasPart: SERVICE_SLUGS.map((slug, i) => ({
+      "@type": "Service",
+      name: serviceLabels[i],
+      url: `${solutionsUrl}/${slug}`,
+      provider: {
+        "@type": "ProfessionalService",
+        name: "Timevo",
+        url: "https://www.timevo.io",
+      },
+    })),
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
       <NavDkdp />
       <main>
         <section style={{ padding: "72px 28px 32px", position: "relative" }}>
