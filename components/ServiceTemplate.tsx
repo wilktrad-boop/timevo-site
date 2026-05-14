@@ -5,7 +5,7 @@ import { Arrow, PillPrimary, PillGhost, MonoLabel } from "./primitives";
 import ScrollFadeIn from "./ScrollFadeIn";
 import {
   IllustrationAutomatisation, IllustrationAgentsIA, IllustrationFormation,
-  IllustrationSitesWeb, IllustrationSEO,
+  IllustrationSitesWeb, IllustrationSEO, IllustrationReseauxSociaux,
 } from "./PillarIllustrations";
 
 const CALENDLY_URL = "https://calendly.com/timevo/audit";
@@ -16,6 +16,7 @@ const HERO_ILLUSTRATIONS: Record<string, React.ReactNode> = {
   "formation": <IllustrationFormation />,
   "sites-web": <IllustrationSitesWeb />,
   "seo": <IllustrationSEO />,
+  "reseaux-sociaux": <IllustrationReseauxSociaux />,
 };
 
 export default function ServiceTemplate({ slug }: { slug: string }) {

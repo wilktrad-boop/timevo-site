@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 const BASE = "https://www.timevo.io";
 
-const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo"] as const;
+const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 
-const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo"] as const;
+const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 const SOLUTIONS_TITLES = new Set(["Solutions"]);
 
 // For non-Solutions columns, fall back to a single anchor on the home

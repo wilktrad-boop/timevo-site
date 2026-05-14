@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Arrow } from "./primitives";
 import {
   IllustrationAutomatisation, IllustrationAgentsIA, IllustrationFormation,
-  IllustrationSitesWeb, IllustrationSEO,
+  IllustrationSitesWeb, IllustrationSEO, IllustrationReseauxSociaux,
 } from "./PillarIllustrations";
 
 const illustrations = [
@@ -13,9 +13,10 @@ const illustrations = [
   <IllustrationFormation key="formation" />,
   <IllustrationSitesWeb key="sites" />,
   <IllustrationSEO key="seo" />,
+  <IllustrationReseauxSociaux key="reseaux" />,
 ];
 
-const SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo"] as const;
+const SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 
 export default function Pillars() {
   const t = useTranslations("pillars");
@@ -52,8 +53,7 @@ export default function Pillars() {
           {row1.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[i]} href={`/${locale}/solutions/${SLUGS[i]}`} />)}
         </div>
         <div style={{
-          display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16,
-          maxWidth: "calc(66.666% + 8px)", margin: "0 auto",
+          display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16,
         }} className="pillars-row2">
           {row2.map((p, i) => <PillarCard key={p.tag} {...p} illustration={illustrations[3 + i]} href={`/${locale}/solutions/${SLUGS[3 + i]}`} />)}
         </div>

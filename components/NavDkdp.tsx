@@ -6,7 +6,7 @@ import { Arrow } from "./primitives";
 import LocaleSwitcher from "./LocaleSwitcher";
 
 const CALENDLY_URL = "https://calendly.com/timevo/audit";
-const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo"] as const;
+const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 
 export default function NavDkdp() {
   const t = useTranslations("nav");

@@ -1,7 +1,7 @@
 {
   "nav": {
     "solutions": "Solutions",
-    "solutions_items": ["Automation", "AI Agents", "Training", "Website creation", "SEO"],
+    "solutions_items": ["Automation", "AI Agents", "Training", "Website creation", "SEO", "Social media"],
     "methode": "Method",
     "resultats": "Results",
     "equipe": "Team",
@@ -84,6 +84,13 @@
         "count": "All types",
         "title": "Search engine optimisation",
         "items": ["Local SEO", "Technical SEO", "Content SEO", "International SEO", "SEO audit"],
+        "cta": "Learn more"
+      },
+      {
+        "tag": "Social media",
+        "count": "Multi-platform",
+        "title": "Audience growth & content",
+        "items": ["Instagram growth", "LinkedIn content", "YouTube videos", "Editorial strategy", "Publishing & engagement"],
         "cta": "Learn more"
       }
     ]
@@ -209,16 +216,16 @@
     "privacy": "Privacy policy",
     "gdpr": "GDPR",
     "cols": [
-      { "title": "Solutions", "items": ["Automation", "AI Agents", "Training", "Website creation", "SEO"] },
+      { "title": "Solutions", "items": ["Automation", "AI Agents", "Training", "Website creation", "SEO", "Social media"] },
       { "title": "Method", "items": ["First conversation", "Diagnosis", "Proposal", "Delivery", "Maintenance"] }
     ]
   },
   "solutions_index": {
-    "meta_title": "Timevo solutions: automation, AI agents, training, websites, SEO",
-    "meta_description": "Five areas of expertise to give time back to SMBs: process automation, AI agents, training, website creation, search engine optimisation.",
+    "meta_title": "Timevo solutions: automation, AI, training, websites, SEO, social media",
+    "meta_description": "Six areas of expertise to give time back to SMBs: automation, AI agents, training, websites, SEO and social media management.",
     "eyebrow": "OUR SOLUTIONS",
-    "h1": "Five areas of expertise. One team.",
-    "subtitle": "Automation, AI agents, training, website creation and SEO. We cover the whole chain — from acquisition to conversion, from internal process to external visibility."
+    "h1": "Six areas of expertise. One team.",
+    "subtitle": "Automation, AI agents, training, websites, SEO and social media. We cover the whole chain — from internal process to external visibility, from acquisition to conversion."
   },
   "services": {
     "automatisation": {
@@ -658,6 +665,89 @@
       "cta": {
         "h2": "30 minutes to audit your SEO.",
         "subtitle": "We look at your current rankings, your competitors, your site. You walk away with 3 clear priorities, whether you work with us or not.",
+        "cta": "Book the free audit",
+        "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
+      }
+    },
+    "reseaux-sociaux": {
+      "meta_title": "Social media management for SMBs — Timevo",
+      "meta_description": "Instagram growth, LinkedIn content, YouTube videos. Turn-key social media strategy, content and publishing for premium SMBs.",
+      "hero": {
+        "eyebrow": "SOCIAL MEDIA",
+        "h1": "Social media on autopilot. Your audience grows, your content follows.",
+        "subtitle": "Strategy, content creation, publishing, engagement. We handle the full chain while you run your business. Brand voice preserved, no generic content.",
+        "cta_primary": "Book a free audit",
+        "cta_secondary": "↓ See the solutions"
+      },
+      "audience": {
+        "label": "For whom",
+        "items": ["Premium brands", "Founder experts", "Creators & venues"]
+      },
+      "problem": {
+        "label": "The problem",
+        "h2": "What social really costs you.",
+        "items": [
+          { "n": "01", "title": "Your account stalls despite your efforts", "desc": "You post irregularly, without strategy, and the algorithm forgets you. Month after month, reach plateaus and the audience doesn't grow." },
+          { "n": "02", "title": "Creating regular content eats your time", "desc": "Writing, shooting, editing, publishing: 6 to 10 hours a week you can't spend on your actual business." },
+          { "n": "03", "title": "You post on 3 platforms with no plan", "desc": "LinkedIn, Instagram, YouTube — each platform needs a different format. Without a plan, you scatter effort and get no measurable result." }
+        ]
+      },
+      "deliverables": {
+        "label": "What we deliver",
+        "h2": "The whole chain, from strategy to reporting.",
+        "subtitle": "An approach built to grow your audience without diluting your brand. We start on the highest-impact channel, then expand.",
+        "items": [
+          { "title": "Multi-platform strategy", "desc": "Audit of your current accounts, priority channel definition, editorial line and positioning. Everything is framed before we produce anything." },
+          { "title": "Instagram growth", "desc": "The core of the service. Targeted organic growth strategy, visual content (posts, reels, stories), qualified engagement. Monthly follower tracking." },
+          { "title": "LinkedIn content", "desc": "Pro posts and long-form articles, written in your voice. Built to generate authority and qualified leads." },
+          { "title": "YouTube videos & Shorts", "desc": "Scripts, editing, YouTube SEO. Long form for authority, Shorts for reach. Can be adapted for TikTok too." },
+          { "title": "Publishing & engagement", "desc": "Publishing calendar, automated posting, replies to comments and targeted DMs. You keep the final word, we handle execution." },
+          { "title": "Monthly reporting", "desc": "Growth, engagement, inbound leads, formats that work. A written monthly review to adjust strategy on what the data actually says." }
+        ]
+      },
+      "case": {
+        "label": "Representative case",
+        "h2": "A premium furniture brand.",
+        "before_label": "Before",
+        "after_label": "After 6 months",
+        "before": [
+          "1,200 Instagram followers, flat growth",
+          "No LinkedIn presence",
+          "Irregular posting (1-2 / month)",
+          "Inbound enquiries from social: nearly zero"
+        ],
+        "after": [
+          "+6,000 Instagram followers, qualified audience",
+          "50 LinkedIn posts published by the founder",
+          "Consistent calendar (4 posts / week on average)",
+          "+35% inbound enquiries attributed to social"
+        ],
+        "footnote": "Representative case based on ongoing installations. Exact figures are validated during the free audit.",
+        "roi_label": "Payback period",
+        "roi_value": "5 months"
+      },
+      "method": {
+        "label": "How it works",
+        "h2": "Audit, production, growth.",
+        "steps": [
+          ["01", "Audit", "30 min to understand your brand, voice, audiences. Diagnosis of current accounts and identification of the highest-leverage channel."],
+          ["02", "Production", "Editorial strategy, first content calibrated to your voice, calendar approved with you. You keep the final word before publishing."],
+          ["03", "Growth", "Regular publishing, targeted engagement, monthly reporting. We adjust each month based on what actually works for you."]
+        ]
+      },
+      "faq": {
+        "label": "FAQ",
+        "h2": "Before we talk.",
+        "items": [
+          ["Who writes the content?", "Our editorial teams, calibrated on your voice during onboarding. Every post is reviewed and adapted to your tone before publishing."],
+          ["Do we keep control of what goes out?", "Yes. You approve every calendar upfront. No content goes out without your sign-off — it's your voice, it's your brand."],
+          ["How many followers do you guarantee?", "No fixed guarantee. Fixed growth promises on social usually hide fake followers. We aim for qualified growth, validated during the audit."],
+          ["How many posts per month?", "Varies by channel and need. Typically: 12-20 Instagram posts + daily stories, 8-16 LinkedIn posts, 2-4 long-form YouTube videos. To frame together."]
+        ]
+      },
+      "cta": {
+        "h2": "30 minutes to frame your social strategy.",
+        "subtitle": "We look at your accounts, your market, your audiences. You walk away with a concrete action plan, whether you work with us or not.",
         "cta": "Book the free audit",
         "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
       }

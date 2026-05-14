@@ -1,7 +1,7 @@
 {
   "nav": {
     "solutions": "Solutions",
-    "solutions_items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO"],
+    "solutions_items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO", "Réseaux sociaux"],
     "methode": "Méthode",
     "resultats": "Résultats",
     "equipe": "Équipe",
@@ -84,6 +84,13 @@
         "count": "Tous types",
         "title": "Référencement naturel",
         "items": ["SEO local", "SEO technique", "SEO contenu", "SEO international", "Audit SEO"],
+        "cta": "En savoir plus"
+      },
+      {
+        "tag": "Réseaux sociaux",
+        "count": "Multi-plateformes",
+        "title": "Croissance & contenu social",
+        "items": ["Croissance Instagram", "Contenu LinkedIn", "Vidéos YouTube", "Stratégie éditoriale", "Publication & engagement"],
         "cta": "En savoir plus"
       }
     ]
@@ -209,16 +216,16 @@
     "privacy": "Politique de confidentialité",
     "gdpr": "RGPD",
     "cols": [
-      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO"] },
+      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO", "Réseaux sociaux"] },
       { "title": "Méthode", "items": ["Premier échange", "Diagnostic", "Proposition", "Réalisation", "Maintenance"] }
     ]
   },
   "solutions_index": {
-    "meta_title": "Solutions Timevo : automatisation, agents IA, formation, sites web, SEO",
-    "meta_description": "Cinq expertises pour rendre du temps aux PME : automatisation des processus, agents IA, formation, création de sites web, référencement naturel.",
+    "meta_title": "Solutions Timevo : automatisation, IA, formation, sites web, SEO, réseaux sociaux",
+    "meta_description": "Six expertises pour rendre du temps aux PME : automatisation, agents IA, formation, sites web, SEO et gestion des réseaux sociaux.",
     "eyebrow": "NOS SOLUTIONS",
-    "h1": "Cinq expertises. Une seule équipe.",
-    "subtitle": "Automatisation, agents IA, formation, création de sites web et SEO. On couvre toute la chaîne — de l'acquisition à la conversion, du process interne à la visibilité externe."
+    "h1": "Six expertises. Une seule équipe.",
+    "subtitle": "Automatisation, agents IA, formation, sites web, SEO et réseaux sociaux. On couvre toute la chaîne — du process interne à la visibilité externe, de l'acquisition à la conversion."
   },
   "services": {
     "automatisation": {
@@ -658,6 +665,89 @@
       "cta": {
         "h2": "30 minutes pour auditer votre SEO.",
         "subtitle": "On regarde vos positions actuelles, vos concurrents, votre site. Vous repartez avec 3 priorités claires, que vous bossiez avec nous ou pas.",
+        "cta": "Réserver l'audit gratuit",
+        "reassurance": "30 minutes · Gratuit · Sans engagement · Diagnostic écrit"
+      }
+    },
+    "reseaux-sociaux": {
+      "meta_title": "Gestion des réseaux sociaux pour PME — Timevo",
+      "meta_description": "Croissance Instagram, contenu LinkedIn, vidéos YouTube. Stratégie, création et publication des réseaux sociaux clé en main pour PME premium.",
+      "hero": {
+        "eyebrow": "RÉSEAUX SOCIAUX",
+        "h1": "Réseaux sociaux pilotés. Votre audience grandit, votre contenu suit.",
+        "subtitle": "Stratégie, création de contenu, publication, engagement. On s'occupe de toute la chaîne pendant que vous gérez votre business. Voix de marque préservée, pas de contenu générique.",
+        "cta_primary": "Réserver un audit gratuit",
+        "cta_secondary": "↓ Voir les solutions"
+      },
+      "audience": {
+        "label": "Pour qui",
+        "items": ["Marques premium", "Dirigeants experts", "Créateurs & lieux"]
+      },
+      "problem": {
+        "label": "Le problème",
+        "h2": "Ce que les réseaux vous coûtent vraiment.",
+        "items": [
+          { "n": "01", "title": "Votre compte stagne malgré vos efforts", "desc": "Vous publiez sans régularité, sans stratégie, et l'algorithme vous oublie. Mois après mois, les vues plafonnent et l'audience ne grossit pas." },
+          { "n": "02", "title": "Créer du contenu régulier prend tout votre temps", "desc": "Entre l'écriture, le tournage, le montage et la publication, c'est 6 à 10 heures par semaine que vous ne pouvez pas mettre sur votre métier." },
+          { "n": "03", "title": "Vous postez sur 3 réseaux sans stratégie", "desc": "LinkedIn, Instagram, YouTube : chaque plateforme demande un format différent. Sans plan, vous éparpillez vos efforts sans résultat mesurable." }
+        ]
+      },
+      "deliverables": {
+        "label": "Ce qu'on livre",
+        "h2": "Toute la chaîne, de la stratégie au reporting.",
+        "subtitle": "Une approche pensée pour grossir votre audience sans diluer votre marque. On commence par le canal à plus fort impact, puis on étend.",
+        "items": [
+          { "title": "Stratégie multi-plateforme", "desc": "Audit de vos comptes actuels, définition du canal prioritaire, ligne éditoriale et positionnement. Tout est cadré avant qu'on produise." },
+          { "title": "Croissance Instagram", "desc": "Le cœur du service. Stratégie de croissance organique ciblée, création de contenu visuel (posts, reels, stories), engagement qualifié. Suivi mensuel des followers." },
+          { "title": "Contenu LinkedIn", "desc": "Posts pro et articles longs format, écrits dans votre voix. Pensés pour générer de l'autorité et des leads qualifiés." },
+          { "title": "Vidéos YouTube & Shorts", "desc": "Scripts, montage, optimisation SEO YouTube. Format long pour l'autorité, Shorts pour la visibilité. On peut aussi adapter pour TikTok." },
+          { "title": "Publication & engagement", "desc": "Calendrier de publication, mise en ligne automatique, réponses aux commentaires et DM ciblés. Vous gardez la validation finale, on s'occupe de l'exécution." },
+          { "title": "Reporting mensuel", "desc": "Croissance, engagement, leads entrants, formats qui fonctionnent. Un point écrit chaque mois pour ajuster la stratégie sur ce que dit la data." }
+        ]
+      },
+      "case": {
+        "label": "Cas représentatif",
+        "h2": "Une marque de mobilier premium.",
+        "before_label": "Avant",
+        "after_label": "Après 6 mois",
+        "before": [
+          "1 200 followers Instagram, croissance plate",
+          "Aucune présence LinkedIn",
+          "Posts irréguliers (1 à 2 / mois)",
+          "Demandes entrantes via réseaux : presque nulles"
+        ],
+        "after": [
+          "+6 000 followers Instagram, audience qualifiée",
+          "50 posts LinkedIn publiés par le dirigeant",
+          "Calendrier régulier (4 posts / semaine en moyenne)",
+          "+35% de demandes entrantes attribuées aux réseaux"
+        ],
+        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "roi_label": "Retour sur investissement",
+        "roi_value": "5 mois"
+      },
+      "method": {
+        "label": "Comment ça se passe",
+        "h2": "Audit, production, croissance.",
+        "steps": [
+          ["01", "Audit", "30 min pour comprendre votre marque, votre voix, vos cibles. Diagnostic des comptes actuels et identification du canal à plus fort potentiel."],
+          ["02", "Production", "Stratégie éditoriale, premiers contenus calibrés sur votre voix, calendrier validé avec vous. Vous gardez le dernier mot avant publication."],
+          ["03", "Croissance", "Publication régulière, engagement ciblé, reporting mensuel. On ajuste chaque mois selon ce qui fonctionne réellement chez vous."]
+        ]
+      },
+      "faq": {
+        "label": "Questions fréquentes",
+        "h2": "Avant d'en parler.",
+        "items": [
+          ["Qui écrit le contenu ?", "Nos équipes éditoriales, calibrées sur votre voix lors de l'onboarding. Chaque post est relu et adapté à votre ton avant publication."],
+          ["On garde la main sur ce qui sort ?", "Oui. Vous validez chaque calendrier en amont. Aucun contenu ne part sans votre accord — c'est votre voix, c'est votre marque."],
+          ["Combien de followers garantis ?", "Pas de garantie chiffrée. Les promesses de croissance fixes sur les réseaux cachent souvent des fake followers. On vise la croissance qualifiée, validable lors de l'audit."],
+          ["Combien de posts par mois ?", "Variable selon le canal et votre besoin. Typiquement : 12 à 20 posts Instagram + stories quotidiennes, 8 à 16 posts LinkedIn, 2 à 4 vidéos YouTube longues. À caler ensemble."]
+        ]
+      },
+      "cta": {
+        "h2": "30 minutes pour cadrer votre stratégie sociale.",
+        "subtitle": "On regarde vos comptes, votre marché, vos cibles. Vous repartez avec un plan d'action concret, que vous bossiez avec nous ou pas.",
         "cta": "Réserver l'audit gratuit",
         "reassurance": "30 minutes · Gratuit · Sans engagement · Diagnostic écrit"
       }

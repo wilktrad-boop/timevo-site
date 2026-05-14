@@ -6,7 +6,7 @@ import NavDkdp from "@/components/NavDkdp";
 import FooterDkdp from "@/components/FooterDkdp";
 import ServiceTemplate from "@/components/ServiceTemplate";
 
-const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo"] as const;
+const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 type ServiceSlug = (typeof SERVICE_SLUGS)[number];
 type Locale = (typeof routing.locales)[number];
 

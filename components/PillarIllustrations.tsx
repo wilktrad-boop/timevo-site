@@ -160,6 +160,62 @@ export function IllustrationSitesWeb() {
   );
 }
 
+export function IllustrationReseauxSociaux() {
+  return (
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.55 }}>
+      {/* Courbe de croissance des followers (en arrière-plan) */}
+      <path d="M28 160 C 90 150, 140 130, 200 110 C 260 90, 320 60, 372 38"
+        stroke="#7c4dff" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+
+      {/* Halo final sur la courbe */}
+      <circle cx="372" cy="38" r="12" fill="rgba(124,77,255,0.18)" />
+      <circle cx="372" cy="38" r="5" fill="#7c4dff" opacity="0.85" />
+
+      {/* Trois cartes "post" alignées */}
+      {[
+        { x: 36, y: 64 },
+        { x: 144, y: 56 },
+        { x: 252, y: 48 },
+      ].map(({ x, y }, i) => (
+        <g key={i}>
+          {/* Container */}
+          <rect x={x} y={y} width="88" height="88" rx="10"
+            stroke={i === 2 ? "#7c4dff" : "#5fa8ff"}
+            strokeWidth="1.2"
+            fill={i === 2 ? "rgba(124,77,255,0.08)" : "rgba(95,168,255,0.04)"}
+            opacity={0.6 + i * 0.1} />
+
+          {/* Mini visuel (haut de la carte) */}
+          <rect x={x + 8} y={y + 8} width="72" height="40" rx="6"
+            fill={i === 2 ? "#7c4dff" : "#5fa8ff"}
+            opacity={0.18 + i * 0.05} />
+
+          {/* Lignes de texte */}
+          <rect x={x + 8} y={y + 56} width="60" height="5" rx="2.5"
+            fill={i === 2 ? "#7c4dff" : "#5fa8ff"} opacity="0.35" />
+          <rect x={x + 8} y={y + 67} width="40" height="4" rx="2"
+            fill="#5fa8ff" opacity="0.2" />
+
+          {/* Indicateur engagement (heart + count) */}
+          <circle cx={x + 14} cy={y + 80} r="2.5"
+            fill={i === 2 ? "#7c4dff" : "#5fa8ff"} opacity="0.7" />
+          <rect x={x + 20} y={y + 78} width="18" height="4" rx="2"
+            fill="#5fa8ff" opacity="0.3" />
+        </g>
+      ))}
+
+      {/* Petit indicateur "+followers" en bas droite */}
+      <rect x={272} y={166} width="100" height="22" rx="11"
+        stroke="#7c4dff" strokeWidth="1" opacity="0.4"
+        fill="rgba(124,77,255,0.08)" />
+      <circle cx={284} cy={177} r="3" fill="#7c4dff" opacity="0.6" />
+      <rect x={292} y={174} width="70" height="6" rx="3"
+        fill="#7c4dff" opacity="0.4" />
+    </svg>
+  );
+}
+
 export function IllustrationSEO() {
   return (
     <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg"
