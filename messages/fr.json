@@ -221,7 +221,7 @@
     ]
   },
   "solutions_index": {
-    "meta_title": "Solutions Timevo : automatisation, IA, formation, sites web, SEO, réseaux sociaux",
+    "meta_title": "Solutions : automatisation, IA, formation, sites web, SEO, réseaux sociaux",
     "meta_description": "Six expertises pour rendre du temps aux PME : automatisation, agents IA, formation, sites web, SEO et gestion des réseaux sociaux.",
     "eyebrow": "NOS SOLUTIONS",
     "h1": "Six expertises. Une seule équipe.",
@@ -229,7 +229,7 @@
   },
   "services": {
     "automatisation": {
-      "meta_title": "Automatisation des processus pour PME — Timevo",
+      "meta_title": "Automatisation des processus pour PME",
       "meta_description": "Automatisation des processus métiers pour PME : devis, relances, rapports, synchros CRM. Workflows n8n et agents IA, livrés en 2-3 semaines.",
       "hero": {
         "eyebrow": "AUTOMATISATION DES PROCESSUS",
@@ -338,7 +338,7 @@
       }
     },
     "agents-ia": {
-      "meta_title": "Agent IA pour entreprise — Timevo",
+      "meta_title": "Agent IA pour entreprise",
       "meta_description": "Agents IA pour PME : chatbot SAV, pré-qualification de leads, standard téléphonique, triage email. Disponibles 24/7, formés sur vos données.",
       "hero": {
         "eyebrow": "AGENT IA POUR ENTREPRISE",
@@ -421,7 +421,7 @@
       }
     },
     "formation": {
-      "meta_title": "Formation IA et automatisation en entreprise — Timevo",
+      "meta_title": "Formation IA et automatisation en entreprise",
       "meta_description": "Formation IA, automatisation n8n, création de contenu, LinkedIn, SEO. 5 modules pour équipes de 3 à 15 personnes. En intra ou à distance.",
       "hero": {
         "eyebrow": "FORMATION IA & AUTOMATISATION",
@@ -504,7 +504,7 @@
       }
     },
     "sites-web": {
-      "meta_title": "Création de site web pour PME — Timevo",
+      "meta_title": "Création de site web pour PME",
       "meta_description": "Création de site web pour PME : vitrine, landing page, e-commerce, refonte. Code propre, performant, qui vous appartient. Pas de Wix, pas de dépendance.",
       "hero": {
         "eyebrow": "CRÉATION DE SITE WEB",
@@ -587,7 +587,7 @@
       }
     },
     "seo": {
-      "meta_title": "Agence de référencement naturel pour PME — Timevo",
+      "meta_title": "Agence de référencement naturel pour PME",
       "meta_description": "Agence de référencement naturel pour PME : SEO local, technique, contenu, international. Du trafic qui convertit, pas du volume vide.",
       "hero": {
         "eyebrow": "RÉFÉRENCEMENT NATUREL",
@@ -670,7 +670,7 @@
       }
     },
     "reseaux-sociaux": {
-      "meta_title": "Gestion des réseaux sociaux pour PME — Timevo",
+      "meta_title": "Gestion des réseaux sociaux pour PME",
       "meta_description": "Croissance Instagram, contenu LinkedIn, vidéos YouTube. Stratégie, création et publication des réseaux sociaux clé en main pour PME premium.",
       "hero": {
         "eyebrow": "RÉSEAUX SOCIAUX",

@@ -27,17 +27,43 @@ export async function generateMetadata({
   if (!isValidLocale(locale)) return {};
 
   const t = await getTranslations({ locale, namespace: "solutions_index" });
+  const pageUrl = `https://www.timevo.io/${locale}/solutions`;
+  const title = t("meta_title");
+  const description = t("meta_description");
 
   return {
-    title: t("meta_title"),
-    description: t("meta_description"),
+    title,
+    description,
     alternates: {
-      canonical: `https://www.timevo.io/${locale}/solutions`,
+      canonical: pageUrl,
       languages: {
         fr: "https://www.timevo.io/fr/solutions",
         en: "https://www.timevo.io/en/solutions",
         "x-default": "https://www.timevo.io/fr/solutions",
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: pageUrl,
+      siteName: "Timevo",
+      locale: locale === "fr" ? "fr_FR" : "en_GB",
+      alternateLocale: locale === "fr" ? "en_GB" : "fr_FR",
+      type: "website",
+      images: [
+        {
+          url: "https://www.timevo.io/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.timevo.io/og-image.png"],
     },
   };
 }

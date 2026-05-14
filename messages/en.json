@@ -221,7 +221,7 @@
     ]
   },
   "solutions_index": {
-    "meta_title": "Timevo solutions: automation, AI, training, websites, SEO, social media",
+    "meta_title": "Our solutions: automation, AI, training, websites, SEO, social media",
     "meta_description": "Six areas of expertise to give time back to SMBs: automation, AI agents, training, websites, SEO and social media management.",
     "eyebrow": "OUR SOLUTIONS",
     "h1": "Six areas of expertise. One team.",
@@ -229,7 +229,7 @@
   },
   "services": {
     "automatisation": {
-      "meta_title": "Business process automation for SMBs — Timevo",
+      "meta_title": "Business process automation for SMBs",
       "meta_description": "Business process automation for SMBs: quotes, follow-ups, reports, CRM sync. n8n workflows and AI agents, delivered in 2-3 weeks.",
       "hero": {
         "eyebrow": "BUSINESS PROCESS AUTOMATION",
@@ -338,7 +338,7 @@
       }
     },
     "agents-ia": {
-      "meta_title": "AI agents for business — Timevo",
+      "meta_title": "AI agents for business",
       "meta_description": "AI agents for SMBs: support chatbots, lead pre-qualification, phone assistants, email triage. Available 24/7, trained on your data.",
       "hero": {
         "eyebrow": "AI AGENTS FOR BUSINESS",
@@ -421,7 +421,7 @@
       }
     },
     "formation": {
-      "meta_title": "AI and automation training for businesses — Timevo",
+      "meta_title": "AI and automation training for businesses",
       "meta_description": "AI training, n8n automation, content creation, LinkedIn, SEO. 5 modules for teams of 3 to 15. On-site or remote.",
       "hero": {
         "eyebrow": "AI & AUTOMATION TRAINING",
@@ -504,7 +504,7 @@
       }
     },
     "sites-web": {
-      "meta_title": "Website creation for SMBs — Timevo",
+      "meta_title": "Website creation for SMBs",
       "meta_description": "Website creation for SMBs: showcase, landing page, e-commerce, redesign. Clean, performant code that you own. No Wix, no dependency.",
       "hero": {
         "eyebrow": "WEBSITE CREATION",
@@ -587,7 +587,7 @@
       }
     },
     "seo": {
-      "meta_title": "SEO agency for SMBs — Timevo",
+      "meta_title": "SEO agency for SMBs",
       "meta_description": "SEO agency for SMBs: local, technical, content, international SEO. Qualified traffic that converts, not empty volume.",
       "hero": {
         "eyebrow": "SEARCH ENGINE OPTIMISATION",
@@ -670,7 +670,7 @@
       }
     },
     "reseaux-sociaux": {
-      "meta_title": "Social media management for SMBs — Timevo",
+      "meta_title": "Social media management for SMBs",
       "meta_description": "Instagram growth, LinkedIn content, YouTube videos. Turn-key social media strategy, content and publishing for premium SMBs.",
       "hero": {
         "eyebrow": "SOCIAL MEDIA",
