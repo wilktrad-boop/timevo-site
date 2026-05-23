@@ -8,7 +8,7 @@ import {
   IllustrationSitesWeb, IllustrationSEO, IllustrationReseauxSociaux,
 } from "./PillarIllustrations";
 
-const CALENDLY_URL = "https://calendly.com/timevo/audit";
+const CONTACT_HREF = "mailto:hello@timevo.io";
 
 const HERO_ILLUSTRATIONS: Record<string, React.ReactNode> = {
   "automatisation": <IllustrationAutomatisation />,
@@ -101,7 +101,7 @@ function ServiceHero({ t, slug }: { t: T; slug: string }) {
             {t("hero.subtitle")}
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "flex-end" }} className="hero-ctas">
-            <PillPrimary href={CALENDLY_URL} large>
+            <PillPrimary href={CONTACT_HREF} large>
               {t("hero.cta_primary")} <Arrow color="#fff" size={14} />
             </PillPrimary>
             <PillGhost href="#deliverables" large>
@@ -585,7 +585,7 @@ function ServiceCta({ t }: { t: T }) {
         }}>
           {t("cta.subtitle")}
         </p>
-        <PillPrimary href={CALENDLY_URL} large>
+        <PillPrimary href={CONTACT_HREF} large>
           {t("cta.cta")} <Arrow color="#fff" size={14} />
         </PillPrimary>
         <div style={{

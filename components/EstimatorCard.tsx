@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Arrow, PillPrimary } from "./primitives";
 
-const CALENDLY_URL = "https://calendly.com/timevo/audit";
+const CONTACT_HREF = "mailto:hello@timevo.io";
 
 // Logical values behind each option index
 const TEAM_SIZE  = [3, 10, 30];      // people
@@ -214,7 +214,7 @@ export default function EstimatorCard() {
 
               {/* CTA */}
               <div style={{ marginBottom: 20 }}>
-                <PillPrimary href={CALENDLY_URL} large>
+                <PillPrimary href={CONTACT_HREF} large>
                   {t("result_cta")} <Arrow color="#fff" />
                 </PillPrimary>
               </div>

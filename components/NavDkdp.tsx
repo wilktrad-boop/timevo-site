@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Arrow } from "./primitives";
 import LocaleSwitcher from "./LocaleSwitcher";
 
-const CALENDLY_URL = "https://calendly.com/timevo/audit";
+const CONTACT_HREF = "mailto:hello@timevo.io";
 const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 
 export default function NavDkdp() {
@@ -129,7 +129,7 @@ export default function NavDkdp() {
 
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <LocaleSwitcher />
-        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{
+        <a href={CONTACT_HREF} style={{
           padding: "10px 18px",
           background: "var(--text)", color: "var(--bg)",
           borderRadius: 999,

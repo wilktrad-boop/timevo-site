@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Arrow, PillPrimary, PillGhost } from "./primitives";
 
-const CALENDLY_URL = "https://calendly.com/timevo/audit";
+const CONTACT_HREF = "mailto:hello@timevo.io";
 
 export default function HeroDkdp() {
   const t = useTranslations("hero");
@@ -48,7 +48,7 @@ export default function HeroDkdp() {
             {t("subtitle")}
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "flex-end" }} className="hero-ctas">
-            <PillPrimary href={CALENDLY_URL} large>
+            <PillPrimary href={CONTACT_HREF} large>
               {t("cta_primary")} <Arrow color="#fff" size={14} />
             </PillPrimary>
             <PillGhost href="#solutions" large>

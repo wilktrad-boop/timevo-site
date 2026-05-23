@@ -49,8 +49,8 @@ export default function FooterDkdp() {
               color: "var(--dim)", lineHeight: 1.7,
             }}>
               {t("address")}<br />
-              <a href="mailto:hello@timevo.fr" style={{ color: "var(--dim)", textDecoration: "none" }}>
-                hello@timevo.fr
+              <a href="mailto:hello@timevo.io" style={{ color: "var(--dim)", textDecoration: "none" }}>
+                hello@timevo.io
               </a>
             </div>
           </div>

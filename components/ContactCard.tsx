@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Arrow, PillPrimary } from "./primitives";
 
-const CALENDLY_URL = "https://calendly.com/timevo/audit";
+const CONTACT_HREF = "mailto:hello@timevo.io";
 
 export default function ContactCard() {
   const t = useTranslations("contact");
@@ -31,7 +31,7 @@ export default function ContactCard() {
             {t("subtitle")}
           </p>
           <div style={{ marginBottom: 40 }}>
-            <PillPrimary href={CALENDLY_URL} large>
+            <PillPrimary href={CONTACT_HREF} large>
               {t("cta")} <Arrow color="#fff" />
             </PillPrimary>
           </div>
