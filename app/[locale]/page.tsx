@@ -28,7 +28,6 @@ const jsonLd = {
   areaServed: ["FR", "BE", "CH"],
   description:
     "Agence d'automatisation pour PME. Devis, relances, rapports et support automatisés avec n8n et agents IA.",
-  priceRange: "€€",
   serviceType: [
     "Automatisation de processus",
     "Agents IA",
