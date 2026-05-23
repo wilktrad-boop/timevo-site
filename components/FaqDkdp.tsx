@@ -8,8 +8,22 @@ export default function FaqDkdp() {
   const items = t.raw("items") as string[][];
   const [open, setOpen] = useState<number>(0);
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  };
+
   return (
     <section id="faq" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{
           fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim)",

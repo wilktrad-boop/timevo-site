@@ -34,7 +34,6 @@ const jsonLd = {
     "Création de sites web",
     "SEO",
   ],
-  sameAs: ["https://www.linkedin.com/company/timevo"],
 };
 
 export default function Home() {
