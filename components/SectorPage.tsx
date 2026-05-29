@@ -4,23 +4,27 @@ import { useState } from "react";
 import { Arrow, PillPrimary, PillGhost, MonoLabel } from "./primitives";
 import ScrollFadeIn from "./ScrollFadeIn";
 import type { SectorContent } from "@/lib/sectors";
+import { SECTOR_LABELS, type Locale } from "@/lib/pageLabels";
 
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
-export default function SectorPage({ s }: { s: SectorContent }) {
+export default function SectorPage({ s, locale }: { s: SectorContent; locale: Locale }) {
+  const L = SECTOR_LABELS[locale];
   return (
     <>
-      <SectorHero s={s} />
-      <ScrollFadeIn><SectorProblem s={s} /></ScrollFadeIn>
-      <ScrollFadeIn><SectorWorkflows s={s} /></ScrollFadeIn>
-      <ScrollFadeIn><SectorCase s={s} /></ScrollFadeIn>
-      <ScrollFadeIn><SectorFaq s={s} /></ScrollFadeIn>
-      <ScrollFadeIn><SectorCta s={s} /></ScrollFadeIn>
+      <SectorHero s={s} L={L} />
+      <ScrollFadeIn><SectorProblem s={s} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><SectorWorkflows s={s} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><SectorCase s={s} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><SectorFaq s={s} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><SectorCta s={s} L={L} /></ScrollFadeIn>
     </>
   );
 }
 
-function SectorHero({ s }: { s: SectorContent }) {
+type Labels = typeof SECTOR_LABELS[Locale];
+
+function SectorHero({ s, L }: { s: SectorContent; L: Labels }) {
   return (
     <section id="hero" style={{ padding: "72px 28px 80px", position: "relative", overflow: "hidden" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -63,10 +67,10 @@ function SectorHero({ s }: { s: SectorContent }) {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "flex-end" }} className="hero-ctas">
             <PillPrimary href={CONTACT_HREF} large>
-              Réserver un audit gratuit <Arrow color="#fff" size={14} />
+              {L.cta_primary} <Arrow color="#fff" size={14} />
             </PillPrimary>
             <PillGhost href="#workflows" large>
-              ↓ Voir les workflows
+              {L.cta_secondary}
             </PillGhost>
           </div>
         </div>
@@ -100,11 +104,11 @@ function SectorHero({ s }: { s: SectorContent }) {
   );
 }
 
-function SectorProblem({ s }: { s: SectorContent }) {
+function SectorProblem({ s, L }: { s: SectorContent; L: Labels }) {
   return (
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <MonoLabel>Le problème</MonoLabel>
+        <MonoLabel>{L.problem}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
@@ -144,11 +148,11 @@ function SectorProblem({ s }: { s: SectorContent }) {
   );
 }
 
-function SectorWorkflows({ s }: { s: SectorContent }) {
+function SectorWorkflows({ s, L }: { s: SectorContent; L: Labels }) {
   return (
     <section id="workflows" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <MonoLabel>Ce qu'on automatise</MonoLabel>
+        <MonoLabel>{L.workflows}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
@@ -190,11 +194,11 @@ function SectorWorkflows({ s }: { s: SectorContent }) {
   );
 }
 
-function SectorCase({ s }: { s: SectorContent }) {
+function SectorCase({ s, L }: { s: SectorContent; L: Labels }) {
   return (
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <MonoLabel>Scénario type</MonoLabel>
+        <MonoLabel>{L.case}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
@@ -208,8 +212,8 @@ function SectorCase({ s }: { s: SectorContent }) {
           border: "1px solid var(--border)", borderRadius: 24, overflow: "hidden",
         }} className="pain-grid">
           {[
-            { label: "Avant", items: s.before, accent: false },
-            { label: "Après", items: s.after, accent: true },
+            { label: L.before, items: s.before, accent: false },
+            { label: L.after, items: s.after, accent: true },
           ].map((col, idx) => (
             <div key={col.label} style={{
               padding: 36,
@@ -293,13 +297,13 @@ function SectorCase({ s }: { s: SectorContent }) {
   );
 }
 
-function SectorFaq({ s }: { s: SectorContent }) {
+function SectorFaq({ s, L }: { s: SectorContent; L: Labels }) {
   const [open, setOpen] = useState<number>(0);
 
   return (
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <MonoLabel>Questions fréquentes</MonoLabel>
+        <MonoLabel>{L.faq}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
           letterSpacing: "-0.04em", lineHeight: 1.0, margin: 0, marginBottom: 48, color: "var(--text)",
@@ -343,7 +347,7 @@ function SectorFaq({ s }: { s: SectorContent }) {
   );
 }
 
-function SectorCta({ s }: { s: SectorContent }) {
+function SectorCta({ s, L }: { s: SectorContent; L: Labels }) {
   return (
     <section id="contact" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -362,14 +366,14 @@ function SectorCta({ s }: { s: SectorContent }) {
             {s.ctaSubtitle}
           </p>
           <PillPrimary href={CONTACT_HREF} large>
-            Réserver l'audit gratuit <Arrow color="#fff" />
+            {L.cta_final} <Arrow color="#fff" />
           </PillPrimary>
           <p style={{
             marginTop: 24,
             fontFamily: "var(--font-geist-mono)", fontSize: 12,
             color: "var(--dim-2)", letterSpacing: "0.04em",
           }}>
-            30 minutes · Gratuit · Sans engagement · Diagnostic écrit
+            {L.reassurance}
           </p>
         </div>
       </div>

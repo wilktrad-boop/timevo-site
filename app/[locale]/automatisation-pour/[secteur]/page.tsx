@@ -7,18 +7,18 @@ import FooterDkdp from "@/components/FooterDkdp";
 import SectorPage from "@/components/SectorPage";
 import StickyMobileCta from "@/components/StickyMobileCta";
 import { SECTORS, SECTOR_SLUGS } from "@/lib/sectors";
+import type { Locale } from "@/lib/pageLabels";
 
 const BASE = "https://www.timevo.io";
-
-type Locale = (typeof routing.locales)[number];
 
 function isValidLocale(value: string): value is Locale {
   return (routing.locales as readonly string[]).includes(value);
 }
 
 export function generateStaticParams() {
-  // FR only at launch — EN versions can be added later
-  return SECTOR_SLUGS.map(secteur => ({ locale: "fr", secteur }));
+  return routing.locales.flatMap(locale =>
+    SECTOR_SLUGS.map(secteur => ({ locale, secteur }))
+  );
 }
 
 export async function generateMetadata({
@@ -27,10 +27,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string; secteur: string }>;
 }): Promise<Metadata> {
   const { locale, secteur } = await params;
-  const s = SECTORS[secteur];
-  if (!isValidLocale(locale) || !s || locale !== "fr") return {};
+  if (!isValidLocale(locale) || !SECTORS[secteur]) return {};
+  const s = SECTORS[secteur][locale];
 
-  const url = `${BASE}/${locale}/automatisation-pour/${secteur}`;
+  const pageUrlFr = `${BASE}/fr/automatisation-pour/${secteur}`;
+  const pageUrlEn = `${BASE}/en/automatisation-pour/${secteur}`;
+  const url = locale === "fr" ? pageUrlFr : pageUrlEn;
 
   return {
     title: s.metaTitle,
@@ -38,8 +40,9 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        fr: url,
-        "x-default": url,
+        fr: pageUrlFr,
+        en: pageUrlEn,
+        "x-default": pageUrlFr,
       },
     },
     openGraph: {
@@ -47,7 +50,8 @@ export async function generateMetadata({
       description: s.metaDescription,
       url,
       siteName: "Timevo",
-      locale: "fr_FR",
+      locale: locale === "fr" ? "fr_FR" : "en_GB",
+      alternateLocale: locale === "fr" ? "en_GB" : "fr_FR",
       type: "website",
       images: [
         {
@@ -73,9 +77,8 @@ export default async function SectorPageRoute({
   params: Promise<{ locale: string; secteur: string }>;
 }) {
   const { locale, secteur } = await params;
-  const s = SECTORS[secteur];
-
-  if (!isValidLocale(locale) || !s || locale !== "fr") notFound();
+  if (!isValidLocale(locale) || !SECTORS[secteur]) notFound();
+  const s = SECTORS[secteur][locale];
 
   setRequestLocale(locale);
 
@@ -87,7 +90,7 @@ export default async function SectorPageRoute({
     name: s.metaTitle,
     description: s.metaDescription,
     url,
-    serviceType: "Automatisation de processus",
+    serviceType: locale === "fr" ? "Automatisation de processus" : "Process automation",
     provider: {
       "@type": "ProfessionalService",
       name: "Timevo",
@@ -104,8 +107,8 @@ export default async function SectorPageRoute({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: `${BASE}/${locale}` },
-      { "@type": "ListItem", position: 2, name: "Automatisation par secteur", item: `${BASE}/${locale}` },
+      { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${BASE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: locale === "fr" ? "Automatisation par secteur" : "Automation by sector", item: `${BASE}/${locale}` },
       { "@type": "ListItem", position: 3, name: s.h1, item: url },
     ],
   };
@@ -127,7 +130,7 @@ export default async function SectorPageRoute({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <NavDkdp />
       <main>
-        <SectorPage s={s} />
+        <SectorPage s={s} locale={locale} />
       </main>
       <FooterDkdp />
       <StickyMobileCta />

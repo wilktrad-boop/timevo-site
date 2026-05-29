@@ -96,32 +96,64 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     ]),
 
-    // Sector pages (FR only)
-    ...SECTOR_SLUGS.map(secteur => ({
-      url: `${BASE}/fr/automatisation-pour/${secteur}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${BASE}/fr/automatisation-pour/${secteur}`,
-          "x-default": `${BASE}/fr/automatisation-pour/${secteur}`,
+    // Sector pages (FR + EN)
+    ...SECTOR_SLUGS.flatMap(secteur => [
+      {
+        url: `${BASE}/fr/automatisation-pour/${secteur}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        alternates: {
+          languages: {
+            fr: `${BASE}/fr/automatisation-pour/${secteur}`,
+            en: `${BASE}/en/automatisation-pour/${secteur}`,
+            "x-default": `${BASE}/fr/automatisation-pour/${secteur}`,
+          },
         },
       },
-    })),
+      {
+        url: `${BASE}/en/automatisation-pour/${secteur}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        alternates: {
+          languages: {
+            fr: `${BASE}/fr/automatisation-pour/${secteur}`,
+            en: `${BASE}/en/automatisation-pour/${secteur}`,
+            "x-default": `${BASE}/fr/automatisation-pour/${secteur}`,
+          },
+        },
+      },
+    ]),
 
-    // Geo / city pages (FR only)
-    ...CITY_SLUGS.map(city => ({
-      url: `${BASE}/fr/agence-automatisation-${city}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${BASE}/fr/agence-automatisation-${city}`,
-          "x-default": `${BASE}/fr/agence-automatisation-${city}`,
+    // Geo / city pages (FR + EN)
+    ...CITY_SLUGS.flatMap(city => [
+      {
+        url: `${BASE}/fr/agence-automatisation-${city}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        alternates: {
+          languages: {
+            fr: `${BASE}/fr/agence-automatisation-${city}`,
+            en: `${BASE}/en/agence-automatisation-${city}`,
+            "x-default": `${BASE}/fr/agence-automatisation-${city}`,
+          },
         },
       },
-    })),
+      {
+        url: `${BASE}/en/agence-automatisation-${city}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        alternates: {
+          languages: {
+            fr: `${BASE}/fr/agence-automatisation-${city}`,
+            en: `${BASE}/en/agence-automatisation-${city}`,
+            "x-default": `${BASE}/fr/agence-automatisation-${city}`,
+          },
+        },
+      },
+    ]),
   ];
 }

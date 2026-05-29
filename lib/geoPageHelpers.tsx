@@ -4,26 +4,31 @@ import FooterDkdp from "@/components/FooterDkdp";
 import GeoPage from "@/components/GeoPage";
 import StickyMobileCta from "@/components/StickyMobileCta";
 import { CITIES } from "@/lib/cities";
+import type { Locale } from "@/lib/pageLabels";
 
 const BASE = "https://www.timevo.io";
 
-export function geoMetadata(citySlug: string, locale: string): Metadata {
-  const c = CITIES[citySlug];
-  if (!c) return {};
-  const url = `${BASE}/${locale}/agence-automatisation-${citySlug}`;
+export function geoMetadata(citySlug: string, locale: Locale): Metadata {
+  const city = CITIES[citySlug];
+  if (!city) return {};
+  const c = city.content[locale];
+  const urlFr = `${BASE}/fr/agence-automatisation-${citySlug}`;
+  const urlEn = `${BASE}/en/agence-automatisation-${citySlug}`;
+  const url = locale === "fr" ? urlFr : urlEn;
   return {
     title: c.metaTitle,
     description: c.metaDescription,
     alternates: {
       canonical: url,
-      languages: { fr: url, "x-default": url },
+      languages: { fr: urlFr, en: urlEn, "x-default": urlFr },
     },
     openGraph: {
       title: c.metaTitle,
       description: c.metaDescription,
       url,
       siteName: "Timevo",
-      locale: "fr_FR",
+      locale: locale === "fr" ? "fr_FR" : "en_GB",
+      alternateLocale: locale === "fr" ? "en_GB" : "fr_FR",
       type: "website",
       images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: c.metaTitle }],
     },
@@ -36,9 +41,10 @@ export function geoMetadata(citySlug: string, locale: string): Metadata {
   };
 }
 
-export function GeoPageContent({ citySlug, locale }: { citySlug: string; locale: string }) {
-  const c = CITIES[citySlug];
-  if (!c) return null;
+export function GeoPageContent({ citySlug, locale }: { citySlug: string; locale: Locale }) {
+  const city = CITIES[citySlug];
+  if (!city) return null;
+  const c = city.content[locale];
 
   const url = `${BASE}/${locale}/agence-automatisation-${citySlug}`;
 
@@ -52,30 +58,28 @@ export function GeoPageContent({ citySlug, locale }: { citySlug: string; locale:
     address: {
       "@type": "PostalAddress",
       addressLocality: c.city,
-      postalCode: c.geo.postalCode,
+      postalCode: city.geo.postalCode,
       addressRegion: c.region,
-      addressCountry: c.geo.addressCountry,
+      addressCountry: city.geo.addressCountry,
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: c.geo.latitude,
-      longitude: c.geo.longitude,
+      latitude: city.geo.latitude,
+      longitude: city.geo.longitude,
     },
-    areaServed: c.geo.areaServed.map(a => ({ "@type": "City", name: a })),
+    areaServed: city.geo.areaServed.map(a => ({ "@type": "City", name: a })),
     priceRange: "€€",
-    serviceType: [
-      "Automatisation de processus",
-      "Agents IA",
-      "Création de sites web",
-      "SEO",
-    ],
+    serviceType:
+      locale === "fr"
+        ? ["Automatisation de processus", "Agents IA", "Création de sites web", "SEO"]
+        : ["Process automation", "AI agents", "Website creation", "SEO"],
   };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: `${BASE}/${locale}` },
+      { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${BASE}/${locale}` },
       { "@type": "ListItem", position: 2, name: c.h1, item: url },
     ],
   };
@@ -97,7 +101,7 @@ export function GeoPageContent({ citySlug, locale }: { citySlug: string; locale:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <NavDkdp />
       <main>
-        <GeoPage c={c} />
+        <GeoPage c={c} locale={locale} />
       </main>
       <FooterDkdp />
       <StickyMobileCta />

@@ -4,23 +4,27 @@ import { useState } from "react";
 import { Arrow, PillPrimary, PillGhost, MonoLabel } from "./primitives";
 import ScrollFadeIn from "./ScrollFadeIn";
 import type { CityContent } from "@/lib/cities";
+import { GEO_LABELS, type Locale } from "@/lib/pageLabels";
 
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
-export default function GeoPage({ c }: { c: CityContent }) {
+export default function GeoPage({ c, locale }: { c: CityContent; locale: Locale }) {
+  const L = GEO_LABELS[locale];
   return (
     <>
-      <GeoHero c={c} />
-      <ScrollFadeIn><GeoWhy c={c} /></ScrollFadeIn>
-      <ScrollFadeIn><GeoWhat c={c} /></ScrollFadeIn>
-      <ScrollFadeIn><GeoCase c={c} /></ScrollFadeIn>
-      <ScrollFadeIn><GeoFaq c={c} /></ScrollFadeIn>
-      <ScrollFadeIn><GeoCta c={c} /></ScrollFadeIn>
+      <GeoHero c={c} L={L} />
+      <ScrollFadeIn><GeoWhy c={c} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><GeoWhat c={c} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><GeoCase c={c} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><GeoFaq c={c} L={L} /></ScrollFadeIn>
+      <ScrollFadeIn><GeoCta c={c} L={L} /></ScrollFadeIn>
     </>
   );
 }
 
-function GeoHero({ c }: { c: CityContent }) {
+type Labels = typeof GEO_LABELS[Locale];
+
+function GeoHero({ c, L }: { c: CityContent; L: Labels }) {
   return (
     <section id="hero" style={{ padding: "72px 28px 80px", position: "relative", overflow: "hidden" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -63,10 +67,10 @@ function GeoHero({ c }: { c: CityContent }) {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "flex-end" }} className="hero-ctas">
             <PillPrimary href={CONTACT_HREF} large>
-              Réserver un audit gratuit <Arrow color="#fff" size={14} />
+              {L.cta_primary} <Arrow color="#fff" size={14} />
             </PillPrimary>
             <PillGhost href="#expertises" large>
-              ↓ Nos expertises
+              {L.cta_secondary}
             </PillGhost>
           </div>
         </div>
@@ -100,11 +104,11 @@ function GeoHero({ c }: { c: CityContent }) {
   );
 }
 
-function GeoWhy({ c }: { c: CityContent }) {
+function GeoWhy({ c, L }: { c: CityContent; L: Labels }) {
   return (
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <MonoLabel>Pourquoi local</MonoLabel>
+        <MonoLabel>{L.why}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
@@ -144,11 +148,11 @@ function GeoWhy({ c }: { c: CityContent }) {
   );
 }
 
-function GeoWhat({ c }: { c: CityContent }) {
+function GeoWhat({ c, L }: { c: CityContent; L: Labels }) {
   return (
     <section id="expertises" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <MonoLabel>Nos expertises</MonoLabel>
+        <MonoLabel>{L.expertises}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
@@ -193,7 +197,7 @@ function GeoWhat({ c }: { c: CityContent }) {
                 color: "var(--accent-soft)", fontFamily: "var(--font-geist-sans)",
                 fontSize: 13, fontWeight: 600,
               }}>
-                Voir la page <Arrow size={12} />
+                {L.see_page} <Arrow size={12} />
               </div>
             </a>
           ))}
@@ -203,11 +207,11 @@ function GeoWhat({ c }: { c: CityContent }) {
   );
 }
 
-function GeoCase({ c }: { c: CityContent }) {
+function GeoCase({ c, L }: { c: CityContent; L: Labels }) {
   return (
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <MonoLabel>Scénario type</MonoLabel>
+        <MonoLabel>{L.case}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
@@ -221,8 +225,8 @@ function GeoCase({ c }: { c: CityContent }) {
           border: "1px solid var(--border)", borderRadius: 24, overflow: "hidden",
         }} className="pain-grid">
           {[
-            { label: "Avant", items: c.before, accent: false },
-            { label: "Après", items: c.after, accent: true },
+            { label: L.before, items: c.before, accent: false },
+            { label: L.after, items: c.after, accent: true },
           ].map((col, idx) => (
             <div key={col.label} style={{
               padding: 36,
@@ -306,13 +310,13 @@ function GeoCase({ c }: { c: CityContent }) {
   );
 }
 
-function GeoFaq({ c }: { c: CityContent }) {
+function GeoFaq({ c, L }: { c: CityContent; L: Labels }) {
   const [open, setOpen] = useState<number>(0);
 
   return (
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <MonoLabel>Questions fréquentes</MonoLabel>
+        <MonoLabel>{L.faq}</MonoLabel>
         <h2 style={{
           fontFamily: "var(--font-geist-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
           letterSpacing: "-0.04em", lineHeight: 1.0, margin: 0, marginBottom: 48, color: "var(--text)",
@@ -356,7 +360,7 @@ function GeoFaq({ c }: { c: CityContent }) {
   );
 }
 
-function GeoCta({ c }: { c: CityContent }) {
+function GeoCta({ c, L }: { c: CityContent; L: Labels }) {
   return (
     <section id="contact" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -375,14 +379,14 @@ function GeoCta({ c }: { c: CityContent }) {
             {c.ctaSubtitle}
           </p>
           <PillPrimary href={CONTACT_HREF} large>
-            Réserver l'audit gratuit <Arrow color="#fff" />
+            {L.cta_final} <Arrow color="#fff" />
           </PillPrimary>
           <p style={{
             marginTop: 24,
             fontFamily: "var(--font-geist-mono)", fontSize: 12,
             color: "var(--dim-2)", letterSpacing: "0.04em",
           }}>
-            30 minutes · Gratuit · Sans engagement · Diagnostic écrit
+            {L.reassurance}
           </p>
         </div>
       </div>

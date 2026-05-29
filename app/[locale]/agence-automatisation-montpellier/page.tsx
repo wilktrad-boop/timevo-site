@@ -3,16 +3,16 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { geoMetadata, GeoPageContent } from "@/lib/geoPageHelpers";
+import type { Locale } from "@/lib/pageLabels";
 
 const CITY_SLUG = "montpellier";
 
-type Locale = (typeof routing.locales)[number];
 function isValidLocale(v: string): v is Locale {
   return (routing.locales as readonly string[]).includes(v);
 }
 
 export function generateStaticParams() {
-  return [{ locale: "fr" }];
+  return routing.locales.map(locale => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -21,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  if (locale !== "fr") return {};
+  if (!isValidLocale(locale)) return {};
   return geoMetadata(CITY_SLUG, locale);
 }
 
@@ -31,7 +31,7 @@ export default async function Page({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!isValidLocale(locale) || locale !== "fr") notFound();
+  if (!isValidLocale(locale)) notFound();
   setRequestLocale(locale);
   return <GeoPageContent citySlug={CITY_SLUG} locale={locale} />;
 }
