@@ -10,7 +10,6 @@
   },
   "hero": {
     "eyebrow": "AGENCE D'AUTOMATISATION · FRANCE",
-    "eyebrow2": "Équipe 100% française",
     "h1_line1": "20 heures perdues",
     "h1_line2": "chaque semaine.",
     "h1_line3": "On vous les rend.",
@@ -182,7 +181,7 @@
     "result_label": "Votre estimation",
     "result_hours_label": "heures récupérables / mois",
     "result_value_label": "valeur mensuelle estimée",
-    "result_roi_label": "semaines pour rentabiliser",
+    "result_yearly_label": "valeur sur 12 mois",
     "result_disclaimer": "Estimation basée sur les moyennes observées chez nos clients. Le chiffre réel est validé lors de l'audit gratuit.",
     "result_cta": "Réserver l'audit gratuit"
   },
@@ -265,7 +264,7 @@
         ]
       },
       "case": {
-        "label": "Cas représentatif",
+        "label": "Scénario type",
         "h2": "Un cuisiniste haut de gamme.",
         "before_label": "Avant",
         "after_label": "Après",
@@ -281,7 +280,7 @@
           "Taux de signature × 2 sur 6 semaines",
           "27h récupérées chaque mois"
         ],
-        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "footnote": "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
         "roi_label": "Retour sur investissement",
         "roi_value": "6 semaines"
       },
@@ -297,10 +296,10 @@
       "pricing": {
         "label": "L'offre",
         "h2": "Pack Démarrage.",
-        "price": "1 800 – 2 500 €",
-        "price_suffix": "setup",
-        "monthly": "250 €/mois",
-        "monthly_suffix": "maintenance",
+        "price": "Sur devis",
+        "price_suffix": "Défini après l'audit",
+        "monthly": "Inclus",
+        "monthly_suffix": "Maintenance & évolutions",
         "delay": "2 à 3 semaines",
         "delay_suffix": "de l'audit à la mise en production",
         "includes_label": "Inclus",
@@ -374,7 +373,7 @@
         ]
       },
       "case": {
-        "label": "Cas représentatif",
+        "label": "Scénario type",
         "h2": "Un cabinet immobilier.",
         "before_label": "Avant",
         "after_label": "Après",
@@ -390,7 +389,7 @@
           "Réponse instantanée 24/7 sur WhatsApp",
           "Qualification automatique en 60 secondes"
         ],
-        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "footnote": "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
         "roi_label": "Retour sur investissement",
         "roi_value": "8 semaines"
       },
@@ -457,7 +456,7 @@
         ]
       },
       "case": {
-        "label": "Cas représentatif",
+        "label": "Scénario type",
         "h2": "Une équipe commerciale d'une dizaine de personnes.",
         "before_label": "Avant",
         "after_label": "Après",
@@ -473,7 +472,7 @@
           "Prospection LinkedIn cadrée et automatisée",
           "Calendrier éditorial collectif"
         ],
-        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "footnote": "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
         "roi_label": "Retour sur investissement",
         "roi_value": "1 mois"
       },
@@ -540,7 +539,7 @@
         ]
       },
       "case": {
-        "label": "Cas représentatif",
+        "label": "Scénario type",
         "h2": "Une refonte pour un cuisiniste.",
         "before_label": "Avant",
         "after_label": "Après",
@@ -556,7 +555,7 @@
           "Page 1 Google sur 12 mots-clés locaux",
           "Modifications libres, propriétaire du code"
         ],
-        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "footnote": "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
         "roi_label": "Retour sur investissement",
         "roi_value": "14 semaines"
       },
@@ -623,7 +622,7 @@
         ]
       },
       "case": {
-        "label": "Cas représentatif",
+        "label": "Scénario type",
         "h2": "Un cuisiniste en SEO local.",
         "before_label": "Avant",
         "after_label": "Après",
@@ -639,7 +638,7 @@
           "Profil GMB complet avec avis automatisés",
           "Trafic organique × 5 sur 4 mois"
         ],
-        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "footnote": "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
         "roi_label": "Retour sur investissement",
         "roi_value": "4 mois"
       },
@@ -706,7 +705,7 @@
         ]
       },
       "case": {
-        "label": "Cas représentatif",
+        "label": "Scénario type",
         "h2": "Une marque de mobilier premium.",
         "before_label": "Avant",
         "after_label": "Après 6 mois",
@@ -722,7 +721,7 @@
           "Calendrier régulier (4 posts / semaine en moyenne)",
           "+35% de demandes entrantes attribuées aux réseaux"
         ],
-        "footnote": "Cas représentatif basé sur des installations en cours. Les chiffres exacts sont validés lors de l'audit gratuit.",
+        "footnote": "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
         "roi_label": "Retour sur investissement",
         "roi_value": "5 mois"
       },

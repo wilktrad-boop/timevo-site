@@ -10,7 +10,6 @@
   },
   "hero": {
     "eyebrow": "AUTOMATION AGENCY · FRANCE",
-    "eyebrow2": "100% French team",
     "h1_line1": "20 hours lost",
     "h1_line2": "every week.",
     "h1_line3": "We give them back.",
@@ -182,7 +181,7 @@
     "result_label": "Your estimate",
     "result_hours_label": "recoverable hours / month",
     "result_value_label": "estimated monthly value",
-    "result_roi_label": "weeks to break even",
+    "result_yearly_label": "value over 12 months",
     "result_disclaimer": "Estimate based on averages observed with our clients. Exact figures validated during the free audit.",
     "result_cta": "Book the free audit"
   },
@@ -265,7 +264,7 @@
         ]
       },
       "case": {
-        "label": "Representative case",
+        "label": "Typical scenario",
         "h2": "A high-end kitchen designer.",
         "before_label": "Before",
         "after_label": "After",
@@ -281,7 +280,7 @@
           "Signature rate × 2 over 6 weeks",
           "27h recovered every month"
         ],
-        "footnote": "Representative case based on ongoing installations. Exact figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
         "roi_label": "Payback period",
         "roi_value": "6 weeks"
       },
@@ -297,10 +296,10 @@
       "pricing": {
         "label": "The offer",
         "h2": "Starter Pack.",
-        "price": "€1,800 – €2,500",
-        "price_suffix": "setup",
-        "monthly": "€250/month",
-        "monthly_suffix": "maintenance",
+        "price": "On request",
+        "price_suffix": "Defined after the audit",
+        "monthly": "Included",
+        "monthly_suffix": "Maintenance & evolutions",
         "delay": "2 to 3 weeks",
         "delay_suffix": "from audit to production",
         "includes_label": "Included",
@@ -374,7 +373,7 @@
         ]
       },
       "case": {
-        "label": "Representative case",
+        "label": "Typical scenario",
         "h2": "A real estate agency.",
         "before_label": "Before",
         "after_label": "After",
@@ -390,7 +389,7 @@
           "Instant 24/7 response on WhatsApp",
           "Automated qualification in 60 seconds"
         ],
-        "footnote": "Representative case based on ongoing installations. Exact figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
         "roi_label": "Payback period",
         "roi_value": "8 weeks"
       },
@@ -457,7 +456,7 @@
         ]
       },
       "case": {
-        "label": "Representative case",
+        "label": "Typical scenario",
         "h2": "A sales team of around a dozen people.",
         "before_label": "Before",
         "after_label": "After",
@@ -473,7 +472,7 @@
           "Framed and automated LinkedIn prospecting",
           "Collective editorial calendar"
         ],
-        "footnote": "Representative case based on ongoing installations. Exact figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
         "roi_label": "Payback period",
         "roi_value": "1 month"
       },
@@ -540,7 +539,7 @@
         ]
       },
       "case": {
-        "label": "Representative case",
+        "label": "Typical scenario",
         "h2": "A kitchen designer's website redesign.",
         "before_label": "Before",
         "after_label": "After",
@@ -556,7 +555,7 @@
           "Page 1 on Google for 12 local keywords",
           "Free edits, owner of the code"
         ],
-        "footnote": "Representative case based on ongoing installations. Exact figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
         "roi_label": "Payback period",
         "roi_value": "14 weeks"
       },
@@ -623,7 +622,7 @@
         ]
       },
       "case": {
-        "label": "Representative case",
+        "label": "Typical scenario",
         "h2": "A kitchen designer in local SEO.",
         "before_label": "Before",
         "after_label": "After",
@@ -639,7 +638,7 @@
           "Complete GBP with automated reviews",
           "Organic traffic × 5 in 4 months"
         ],
-        "footnote": "Representative case based on ongoing installations. Exact figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
         "roi_label": "Payback period",
         "roi_value": "4 months"
       },
@@ -706,7 +705,7 @@
         ]
       },
       "case": {
-        "label": "Representative case",
+        "label": "Typical scenario",
         "h2": "A premium furniture brand.",
         "before_label": "Before",
         "after_label": "After 6 months",
@@ -722,7 +721,7 @@
           "Consistent calendar (4 posts / week on average)",
           "+35% inbound enquiries attributed to social"
         ],
-        "footnote": "Representative case based on ongoing installations. Exact figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
         "roi_label": "Payback period",
         "roi_value": "5 months"
       },
