@@ -62,7 +62,7 @@ export default function EstimatorCard() {
   const result = step === 5 ? calcResult(answers) : null;
 
   return (
-    <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
+    <section id="resultats" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* Header */}
