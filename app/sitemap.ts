@@ -1,4 +1,6 @@
 import { MetadataRoute } from "next";
+import { SECTOR_SLUGS } from "@/lib/sectors";
+import { CITY_SLUGS } from "@/lib/cities";
 
 const BASE = "https://www.timevo.io";
 
@@ -93,5 +95,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     ]),
+
+    // Sector pages (FR only)
+    ...SECTOR_SLUGS.map(secteur => ({
+      url: `${BASE}/fr/automatisation-pour/${secteur}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          fr: `${BASE}/fr/automatisation-pour/${secteur}`,
+          "x-default": `${BASE}/fr/automatisation-pour/${secteur}`,
+        },
+      },
+    })),
+
+    // Geo / city pages (FR only)
+    ...CITY_SLUGS.map(city => ({
+      url: `${BASE}/fr/agence-automatisation-${city}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          fr: `${BASE}/fr/agence-automatisation-${city}`,
+          "x-default": `${BASE}/fr/agence-automatisation-${city}`,
+        },
+      },
+    })),
   ];
 }
