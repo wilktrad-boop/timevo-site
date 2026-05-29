@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Arrow, PillPrimary, PillGhost } from "./primitives";
 
-const CONTACT_HREF = "mailto:hello@timevo.io";
+const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
 export default function HeroDkdp() {
   const t = useTranslations("hero");
@@ -18,8 +18,6 @@ export default function HeroDkdp() {
           marginBottom: 28,
         }}>
           <span>{t("eyebrow")}</span>
-          <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--border-strong)" }} />
-          <span>{t("eyebrow2")}</span>
         </div>
 
         <h1 style={{

@@ -7,6 +7,7 @@ import FooterDkdp from "@/components/FooterDkdp";
 import Pillars from "@/components/Pillars";
 import ContactCard from "@/components/ContactCard";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import StickyMobileCta from "@/components/StickyMobileCta";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -182,6 +183,7 @@ export default async function SolutionsIndexPage({
         <ScrollFadeIn><ContactCard /></ScrollFadeIn>
       </main>
       <FooterDkdp />
+      <StickyMobileCta />
     </>
   );
 }

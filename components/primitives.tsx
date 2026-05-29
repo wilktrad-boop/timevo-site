@@ -79,13 +79,21 @@ export const PillPrimary = ({
     textDecoration: "none",
     whiteSpace: "nowrap",
   };
-  if (href) return (
-    <a href={href} style={style}
-      onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-1px)")}
-      onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}>
-      {children}
-    </a>
-  );
+  if (href) {
+    const external = /^https?:/i.test(href);
+    return (
+      <a
+        href={href}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener" : undefined}
+        style={style}
+        onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-1px)")}
+        onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}
+      >
+        {children}
+      </a>
+    );
+  }
   return (
     <button style={style} onClick={onClick}
       onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-1px)")}

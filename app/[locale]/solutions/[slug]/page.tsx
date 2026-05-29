@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import NavDkdp from "@/components/NavDkdp";
 import FooterDkdp from "@/components/FooterDkdp";
 import ServiceTemplate from "@/components/ServiceTemplate";
+import StickyMobileCta from "@/components/StickyMobileCta";
 
 const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 type ServiceSlug = (typeof SERVICE_SLUGS)[number];
@@ -173,6 +174,7 @@ export default async function ServicePage({
         <ServiceTemplate slug={slug} />
       </main>
       <FooterDkdp />
+      <StickyMobileCta />
     </>
   );
 }

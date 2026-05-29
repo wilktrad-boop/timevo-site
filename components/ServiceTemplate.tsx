@@ -8,7 +8,7 @@ import {
   IllustrationSitesWeb, IllustrationSEO, IllustrationReseauxSociaux,
 } from "./PillarIllustrations";
 
-const CONTACT_HREF = "mailto:hello@timevo.io";
+const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
 const HERO_ILLUSTRATIONS: Record<string, React.ReactNode> = {
   "automatisation": <IllustrationAutomatisation />,

@@ -12,6 +12,7 @@ import FaqDkdp from "@/components/FaqDkdp";
 import ContactCard from "@/components/ContactCard";
 import FooterDkdp from "@/components/FooterDkdp";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import StickyMobileCta from "@/components/StickyMobileCta";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -58,6 +59,7 @@ export default function Home() {
         <ScrollFadeIn><ContactCard /></ScrollFadeIn>
       </main>
       <FooterDkdp />
+      <StickyMobileCta />
     </>
   );
 }

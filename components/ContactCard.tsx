@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Arrow, PillPrimary } from "./primitives";
 
-const CONTACT_HREF = "mailto:hello@timevo.io";
+const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
 export default function ContactCard() {
   const t = useTranslations("contact");

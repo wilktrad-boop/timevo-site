@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Arrow, PillPrimary } from "./primitives";
 
-const CONTACT_HREF = "mailto:hello@timevo.io";
+const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
 // Logical values behind each option index
 const TEAM_SIZE  = [3, 10, 30];      // people
@@ -24,9 +24,9 @@ function calcResult(ans: number[]) {
   const quoteSaving = quotes * 0.4;                      // 24 min saved per quote
   const totalHours  = Math.round((repetitive + quoteSaving) * mult);
   const monthlyGain = Math.round((totalHours * rate) / 100) * 100;
-  const roiWeeks    = Math.max(1, Math.ceil(1800 / (monthlyGain / 4.3)));
+  const yearlyGain  = monthlyGain * 12;
 
-  return { totalHours, monthlyGain, roiWeeks };
+  return { totalHours, monthlyGain, yearlyGain };
 }
 
 export default function EstimatorCard() {
@@ -209,7 +209,7 @@ export default function EstimatorCard() {
                 className="estimator-result-grid">
                 <ResultStat value={`${result.totalHours}h`} label={t("result_hours_label")} accent />
                 <ResultStat value={`${result.monthlyGain.toLocaleString("fr-FR")}€`} label={t("result_value_label")} />
-                <ResultStat value={`${result.roiWeeks}`} label={t("result_roi_label")} />
+                <ResultStat value={`${result.yearlyGain.toLocaleString("fr-FR")}€`} label={t("result_yearly_label")} />
               </div>
 
               {/* CTA */}
