@@ -1,12 +1,10 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Arrow, PillPrimary } from "./primitives";
 
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
-export default function ContactCard() {
-  const t = useTranslations("contact");
+export default async function ContactCard() {
+  const t = await getTranslations("contact");
 
   return (
     <section id="contact" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>

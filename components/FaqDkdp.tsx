@@ -1,12 +1,9 @@
-"use client";
+import { getTranslations } from "next-intl/server";
+import FaqAccordion from "./FaqAccordion";
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
-
-export default function FaqDkdp() {
-  const t = useTranslations("faq");
-  const items = t.raw("items") as string[][];
-  const [open, setOpen] = useState<number>(0);
+export default async function FaqDkdp() {
+  const t = await getTranslations("faq");
+  const items = t.raw("items") as [string, string][];
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -37,38 +34,7 @@ export default function FaqDkdp() {
         }}>
           {t("h2")}
         </h2>
-        <div>
-          {items.map(([q, a], idx) => (
-            <div key={idx} onClick={() => setOpen(open === idx ? -1 : idx)}
-              style={{
-                borderTop: "1px solid var(--border)",
-                borderBottom: idx === items.length - 1 ? "1px solid var(--border)" : "none",
-                padding: "24px 0", cursor: "pointer",
-              }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24 }}>
-                <h3 style={{
-                  fontFamily: "var(--font-geist-sans)", fontSize: 18, fontWeight: 500,
-                  letterSpacing: "-0.01em", margin: 0, color: "var(--text)", flex: 1,
-                }}>{q}</h3>
-                <span style={{
-                  width: 32, height: 32, borderRadius: 999, flexShrink: 0,
-                  border: "1px solid var(--border-strong)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: open === idx ? "var(--accent)" : "var(--dim)",
-                  fontSize: 16,
-                  transform: open === idx ? "rotate(45deg)" : "rotate(0deg)",
-                  transition: "transform .2s ease, color .2s ease",
-                }}>+</span>
-              </div>
-              {open === idx && (
-                <p style={{
-                  fontFamily: "var(--font-geist-sans)", fontSize: 15, color: "var(--dim)",
-                  margin: "14px 56px 0 0", lineHeight: 1.6,
-                }}>{a}</p>
-              )}
-            </div>
-          ))}
-        </div>
+        <FaqAccordion items={items} idPrefix="faq" />
       </div>
     </section>
   );

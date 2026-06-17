@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import NavDkdp from "@/components/NavDkdp";
 import HeroDkdp from "@/components/HeroDkdp";
 import LogoWall from "@/components/LogoWall";
@@ -37,7 +38,14 @@ const jsonLd = {
   ],
 };
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <script

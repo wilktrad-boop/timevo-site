@@ -1,9 +1,7 @@
-"use client";
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl";
-
-export default function TeamGrid() {
-  const t = useTranslations("team");
+export default async function TeamGrid() {
+  const t = await getTranslations("team");
   const members = t.raw("members") as { name: string; role: string; initials: string; bio: string }[];
 
   return (

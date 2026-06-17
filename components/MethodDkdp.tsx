@@ -1,9 +1,7 @@
-"use client";
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl";
-
-export default function MethodDkdp() {
-  const t = useTranslations("method");
+export default async function MethodDkdp() {
+  const t = await getTranslations("method");
   const steps = t.raw("steps") as string[][];
 
   return (

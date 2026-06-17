@@ -56,6 +56,13 @@ export default function NavDkdp() {
         <div
           onMouseEnter={() => setSolutionsOpen(true)}
           onMouseLeave={() => setSolutionsOpen(false)}
+          onFocus={() => setSolutionsOpen(true)}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget as Node)) setSolutionsOpen(false);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setSolutionsOpen(false);
+          }}
           style={{ position: "relative" }}
         >
           <a
@@ -139,7 +146,7 @@ export default function NavDkdp() {
         <a
           href={CONTACT_HREF}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           style={{
             padding: "10px 18px",
             background: "var(--text)", color: "var(--bg)",
@@ -242,7 +249,7 @@ export default function NavDkdp() {
         <a
           href={CONTACT_HREF}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           onClick={() => setMobileOpen(false)}
           style={{
             marginTop: 24,

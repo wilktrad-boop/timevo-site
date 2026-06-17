@@ -1,8 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import { Arrow, PillPrimary, PillGhost, MonoLabel } from "./primitives";
 import ScrollFadeIn from "./ScrollFadeIn";
+import FaqAccordion from "./FaqAccordion";
 import type { CityContent } from "@/lib/cities";
 import { GEO_LABELS, type Locale } from "@/lib/pageLabels";
 
@@ -311,8 +309,6 @@ function GeoCase({ c, L }: { c: CityContent; L: Labels }) {
 }
 
 function GeoFaq({ c, L }: { c: CityContent; L: Labels }) {
-  const [open, setOpen] = useState<number>(0);
-
   return (
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -323,38 +319,7 @@ function GeoFaq({ c, L }: { c: CityContent; L: Labels }) {
         }}>
           {c.faqH2}
         </h2>
-        <div>
-          {c.faqs.map(([q, a], idx) => (
-            <div key={idx} onClick={() => setOpen(open === idx ? -1 : idx)}
-              style={{
-                borderTop: "1px solid var(--border)",
-                borderBottom: idx === c.faqs.length - 1 ? "1px solid var(--border)" : "none",
-                padding: "24px 0", cursor: "pointer",
-              }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24 }}>
-                <h3 style={{
-                  fontFamily: "var(--font-geist-sans)", fontSize: 18, fontWeight: 500,
-                  letterSpacing: "-0.01em", margin: 0, color: "var(--text)", flex: 1,
-                }}>{q}</h3>
-                <span style={{
-                  width: 32, height: 32, borderRadius: 999, flexShrink: 0,
-                  border: "1px solid var(--border-strong)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: open === idx ? "var(--accent)" : "var(--dim)",
-                  fontSize: 16,
-                  transform: open === idx ? "rotate(45deg)" : "rotate(0deg)",
-                  transition: "transform .2s ease, color .2s ease",
-                }}>+</span>
-              </div>
-              {open === idx && (
-                <p style={{
-                  fontFamily: "var(--font-geist-sans)", fontSize: 15, color: "var(--dim)",
-                  margin: "14px 56px 0 0", lineHeight: 1.6,
-                }}>{a}</p>
-              )}
-            </div>
-          ))}
-        </div>
+        <FaqAccordion items={c.faqs} idPrefix="geo-faq" />
       </div>
     </section>
   );

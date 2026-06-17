@@ -35,9 +35,10 @@ export default function StickyMobileCta() {
     <a
       href={CALENDLY}
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       className="sticky-cta-mobile"
       aria-hidden={!show}
+      tabIndex={show ? 0 : -1}
       style={{
         position: "fixed",
         bottom: 16, left: 16, right: 16,

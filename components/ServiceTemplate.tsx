@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Arrow, PillPrimary, PillGhost, MonoLabel } from "./primitives";
 import ScrollFadeIn from "./ScrollFadeIn";
 import {
@@ -19,8 +17,8 @@ const HERO_ILLUSTRATIONS: Record<string, React.ReactNode> = {
   "reseaux-sociaux": <IllustrationReseauxSociaux />,
 };
 
-export default function ServiceTemplate({ slug }: { slug: string }) {
-  const t = useTranslations(`services.${slug}`);
+export default async function ServiceTemplate({ slug }: { slug: string }) {
+  const t = await getTranslations(`services.${slug}`);
 
   return (
     <>
@@ -35,7 +33,7 @@ export default function ServiceTemplate({ slug }: { slug: string }) {
   );
 }
 
-type T = ReturnType<typeof useTranslations>;
+type T = Awaited<ReturnType<typeof getTranslations>>;
 
 // ── 1. Hero ──────────────────────────────────────────────────────────
 

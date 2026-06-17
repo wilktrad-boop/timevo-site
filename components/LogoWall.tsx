@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 const logos = [
   "Aquaviva", "Berney & Cie", "Vergers SAS", "Mobilier&Co", "Pool France",
@@ -8,8 +6,8 @@ const logos = [
 ];
 const repeated = [...logos, ...logos, ...logos];
 
-export default function LogoWall() {
-  const t = useTranslations("logowall");
+export default async function LogoWall() {
+  const t = await getTranslations("logowall");
 
   return (
     <section style={{

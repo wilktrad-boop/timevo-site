@@ -1,9 +1,7 @@
-"use client";
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl";
-
-export default function PainPoints() {
-  const t = useTranslations("pain");
+export default async function PainPoints() {
+  const t = await getTranslations("pain");
   const items = t.raw("items") as { n: string; title: string; desc: string }[];
 
   return (

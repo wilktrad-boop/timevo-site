@@ -1,6 +1,4 @@
-"use client";
-
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Arrow } from "./primitives";
 import {
   IllustrationAutomatisation, IllustrationAgentsIA, IllustrationFormation,
@@ -18,9 +16,9 @@ const illustrations = [
 
 const SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 
-export default function Pillars() {
-  const t = useTranslations("pillars");
-  const locale = useLocale();
+export default async function Pillars() {
+  const t = await getTranslations("pillars");
+  const locale = await getLocale();
   const items = t.raw("items") as { tag: string; count: string; title: string; items: string[]; cta: string }[];
   const [row1, row2] = [items.slice(0, 3), items.slice(3)];
 

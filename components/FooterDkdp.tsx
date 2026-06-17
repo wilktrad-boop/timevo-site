@@ -1,6 +1,4 @@
-"use client";
-
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations, getLocale } from "next-intl/server";
 
 const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 const SOLUTIONS_TITLES = new Set(["Solutions"]);
@@ -11,9 +9,9 @@ const COL_ANCHORS: Record<string, string> = {
   "Method": "#methode",
 };
 
-export default function FooterDkdp() {
-  const t = useTranslations("footer");
-  const locale = useLocale();
+export default async function FooterDkdp() {
+  const t = await getTranslations("footer");
+  const locale = await getLocale();
   const cols = t.raw("cols") as { title: string; items: string[] }[];
 
   function getItemHref(colTitle: string, itemIdx: number): string {
@@ -63,13 +61,9 @@ export default function FooterDkdp() {
               }}>{title}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {items.map((it, i) => (
-                  <a key={it} href={getItemHref(title, i)} style={{
+                  <a key={it} href={getItemHref(title, i)} className="footer-link" style={{
                     fontFamily: "var(--font-geist-sans)", fontSize: 13,
-                    color: "var(--dim)", textDecoration: "none",
-                    transition: "color .15s",
-                  }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "var(--dim)")}>
+                  }}>
                     {it}
                   </a>
                 ))}
@@ -81,8 +75,27 @@ export default function FooterDkdp() {
         <div style={{
           borderTop: "1px solid var(--border)", paddingTop: 24,
           fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim-2)",
+          display: "flex", justifyContent: "space-between", alignItems: "center",
+          gap: 16, flexWrap: "wrap",
         }}>
           <span>{t("copyright")}</span>
+          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+            <a href={`/${locale}/mentions-legales`} className="footer-link" style={{
+              fontFamily: "var(--font-geist-mono)", fontSize: 11,
+            }}>
+              {t("legal")}
+            </a>
+            <a href={`/${locale}/politique-de-confidentialite`} className="footer-link" style={{
+              fontFamily: "var(--font-geist-mono)", fontSize: 11,
+            }}>
+              {t("privacy")}
+            </a>
+            <a href={`/${locale}/cgv`} className="footer-link" style={{
+              fontFamily: "var(--font-geist-mono)", fontSize: 11,
+            }}>
+              CGV
+            </a>
+          </div>
         </div>
       </div>
     </footer>

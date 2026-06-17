@@ -108,8 +108,7 @@ export default async function SectorPageRoute({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${BASE}/${locale}` },
-      { "@type": "ListItem", position: 2, name: locale === "fr" ? "Automatisation par secteur" : "Automation by sector", item: `${BASE}/${locale}` },
-      { "@type": "ListItem", position: 3, name: s.h1, item: url },
+      { "@type": "ListItem", position: 2, name: s.h1, item: url },
     ],
   };
 

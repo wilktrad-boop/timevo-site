@@ -85,7 +85,7 @@ export const PillPrimary = ({
       <a
         href={href}
         target={external ? "_blank" : undefined}
-        rel={external ? "noopener" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
         style={style}
         onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-1px)")}
         onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}

@@ -1,12 +1,10 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Arrow, PillPrimary, PillGhost } from "./primitives";
 
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
-export default function HeroDkdp() {
-  const t = useTranslations("hero");
+export default async function HeroDkdp() {
+  const t = await getTranslations("hero");
 
   return (
     <section style={{ padding: "72px 28px 80px", position: "relative" }}>
