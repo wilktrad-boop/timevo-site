@@ -59,7 +59,7 @@ export default async function CgvPage({
           Les prestations sont fournies par <Strong>Maxime Doublet</Strong>, entrepreneur individuel sous le
           régime de la micro-entreprise, exerçant sous le nom commercial «&nbsp;<Strong>Timevo</Strong>&nbsp;»,
           immatriculé au Registre du Commerce et des Sociétés de Thonon-les-Bains sous le numéro
-          843&nbsp;505&nbsp;249, SIRET (siège) 843&nbsp;505&nbsp;249&nbsp;00022, code APE 47.91A, dont le siège
+          843&nbsp;505&nbsp;249, SIRET (siège) 843&nbsp;505&nbsp;249&nbsp;00022, dont le siège
           est situé 13 route de la Visitation, 74200 Thonon-les-Bains (ci-après le «&nbsp;<Strong>Prestataire</Strong>&nbsp;»).
         </P>
         <P>
@@ -67,7 +67,7 @@ export default async function CgvPage({
           <a href="mailto:hello@timevo.io" style={{ color: "var(--accent)", textDecoration: "none" }}>
             hello@timevo.io
           </a>
-          . Numéro de TVA intracommunautaire : FR32&nbsp;843&nbsp;505&nbsp;249.
+          .
         </P>
         <P>
           Le Prestataire relève de la franchise en base de TVA :{" "}

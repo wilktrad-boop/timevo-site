@@ -64,13 +64,7 @@ export default async function MentionsLegalesPage({
           <br />
           Immatriculé au RCS de Thonon-les-Bains sous le numéro 843&nbsp;505&nbsp;249.
           <br />
-          SIRET (siège) : 843&nbsp;505&nbsp;249&nbsp;00022 — Code APE : 47.91A.
-          <br />
-          N° de TVA intracommunautaire : FR32&nbsp;843&nbsp;505&nbsp;249.
-        </P>
-        <P>
-          Le Prestataire relève de la franchise en base de TVA :{" "}
-          <Strong>« TVA non applicable, art. 293 B du CGI »</Strong>.
+          SIRET (siège) : 843&nbsp;505&nbsp;249&nbsp;00022.
         </P>
         <P>
           Contact : <A href="mailto:hello@timevo.io">hello@timevo.io</A>.
@@ -88,6 +82,8 @@ export default async function MentionsLegalesPage({
         <P>
           Le site est hébergé par <Strong>Vercel Inc.</Strong>, 340 S Lemon Ave #4133, Walnut, CA 91789,
           États-Unis.
+          <br />
+          Téléphone : +1&nbsp;951-381-9319.
         </P>
         <P>
           Site : <A href="https://vercel.com">vercel.com</A>.
