@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Inter : la police de la plaquette commerciale, pour une identité typographique unique.
+const sans = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"], // 300 & 700 declared but never used in the codebase
+  weight: ["400", "500", "600"],
 });
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Geist Mono reste : Inter n'a pas de compagne monospace, et le mono ne sert
+// que pour les eyebrows et les libellés techniques.
+const mono = Geist_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
 });
@@ -104,7 +107,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${sans.variable} ${mono.variable} h-full`}
     >
       <body style={{ background: "var(--bg)", color: "var(--text)" }}>
         <script

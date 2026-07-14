@@ -28,7 +28,7 @@ function GeoHero({ c, L }: { c: CityContent; L: Labels }) {
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 12,
-          fontFamily: "var(--font-geist-mono)", fontSize: 11,
+          fontFamily: "var(--font-mono)", fontSize: 11,
           color: "var(--accent-soft)", letterSpacing: "0.12em", textTransform: "uppercase",
           marginBottom: 28,
           padding: "6px 12px",
@@ -41,7 +41,7 @@ function GeoHero({ c, L }: { c: CityContent; L: Labels }) {
         </div>
 
         <h1 style={{
-          fontFamily: "var(--font-geist-sans)",
+          fontFamily: "var(--font-sans)",
           fontSize: "clamp(40px, 6.5vw, 92px)",
           fontWeight: 500,
           letterSpacing: "-0.05em",
@@ -58,7 +58,7 @@ function GeoHero({ c, L }: { c: CityContent; L: Labels }) {
           display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 64, alignItems: "end",
         }} className="hero-subrow">
           <p style={{
-            fontFamily: "var(--font-geist-sans)", fontSize: 18, lineHeight: 1.5,
+            fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5,
             color: "var(--dim)", margin: 0, maxWidth: 600,
           }}>
             {c.subtitle}
@@ -79,7 +79,7 @@ function GeoHero({ c, L }: { c: CityContent; L: Labels }) {
           flexWrap: "wrap",
         }}>
           <span style={{
-            fontFamily: "var(--font-geist-mono)", fontSize: 11,
+            fontFamily: "var(--font-mono)", fontSize: 11,
             color: "var(--dim-2)", letterSpacing: "0.12em", textTransform: "uppercase",
           }}>
             {c.audienceLabel}
@@ -91,7 +91,7 @@ function GeoHero({ c, L }: { c: CityContent; L: Labels }) {
                 padding: "6px 12px",
                 border: "1px solid var(--border-strong)",
                 borderRadius: 999,
-                fontFamily: "var(--font-geist-sans)", fontSize: 12,
+                fontFamily: "var(--font-sans)", fontSize: 12,
                 color: "var(--text)",
               }}>{item}</span>
             ))}
@@ -108,7 +108,7 @@ function GeoWhy({ c, L }: { c: CityContent; L: Labels }) {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <MonoLabel>{L.why}</MonoLabel>
         <h2 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
+          fontFamily: "var(--font-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
           margin: 0, marginBottom: 56, color: "var(--text)", maxWidth: 800,
         }}>
@@ -126,16 +126,16 @@ function GeoWhy({ c, L }: { c: CityContent; L: Labels }) {
               background: "var(--card)",
             }}>
               <div style={{
-                fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--accent-soft)",
+                fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--accent-soft)",
                 marginBottom: 16, letterSpacing: "0.08em",
               }}>{p.n}</div>
               <h3 style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: 20, fontWeight: 500,
+                fontFamily: "var(--font-sans)", fontSize: 20, fontWeight: 500,
                 letterSpacing: "-0.02em", margin: 0, marginBottom: 12, color: "var(--text)",
                 lineHeight: 1.25,
               }}>{p.title}</h3>
               <p style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: 14, lineHeight: 1.55,
+                fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.55,
                 color: "var(--dim)", margin: 0,
               }}>{p.desc}</p>
             </div>
@@ -152,14 +152,14 @@ function GeoWhat({ c, L }: { c: CityContent; L: Labels }) {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <MonoLabel>{L.expertises}</MonoLabel>
         <h2 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
+          fontFamily: "var(--font-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
           margin: 0, marginBottom: 16, color: "var(--text)", maxWidth: 800,
         }}>
           {c.whatH2}
         </h2>
         <p style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: 16, color: "var(--dim)",
+          fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--dim)",
           maxWidth: 640, marginBottom: 48,
         }}>
           {c.whatSubtitle}
@@ -183,16 +183,16 @@ function GeoWhat({ c, L }: { c: CityContent; L: Labels }) {
                 e.currentTarget.style.transform = "translateY(0)";
               }}>
               <h3 style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: 22, fontWeight: 500,
+                fontFamily: "var(--font-sans)", fontSize: 22, fontWeight: 500,
                 letterSpacing: "-0.02em", margin: 0, marginBottom: 12, color: "var(--text)",
               }}>{item.title}</h3>
               <p style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: 14, lineHeight: 1.55,
+                fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.55,
                 color: "var(--dim)", margin: 0, marginBottom: 18,
               }}>{item.desc}</p>
               <div style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
-                color: "var(--accent-soft)", fontFamily: "var(--font-geist-sans)",
+                color: "var(--accent-soft)", fontFamily: "var(--font-sans)",
                 fontSize: 13, fontWeight: 600,
               }}>
                 {L.see_page} <Arrow size={12} />
@@ -211,7 +211,7 @@ function GeoCase({ c, L }: { c: CityContent; L: Labels }) {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <MonoLabel>{L.case}</MonoLabel>
         <h2 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
+          fontFamily: "var(--font-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
           fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
           margin: 0, marginBottom: 56, color: "var(--text)", maxWidth: 800,
         }}>
@@ -232,7 +232,7 @@ function GeoCase({ c, L }: { c: CityContent; L: Labels }) {
               background: col.accent ? "var(--accent-tint)" : "var(--card)",
             }}>
               <div style={{
-                fontFamily: "var(--font-geist-mono)", fontSize: 11,
+                fontFamily: "var(--font-mono)", fontSize: 11,
                 color: col.accent ? "var(--accent-soft)" : "var(--dim)",
                 letterSpacing: "0.12em", textTransform: "uppercase",
                 marginBottom: 24,
@@ -243,7 +243,7 @@ function GeoCase({ c, L }: { c: CityContent; L: Labels }) {
               }}>
                 {col.items.map((it, i) => (
                   <li key={i} style={{
-                    fontFamily: "var(--font-geist-sans)", fontSize: 15,
+                    fontFamily: "var(--font-sans)", fontSize: 15,
                     color: col.accent ? "var(--text)" : "var(--dim)",
                     lineHeight: 1.5,
                     paddingLeft: 28, position: "relative",
@@ -283,11 +283,11 @@ function GeoCase({ c, L }: { c: CityContent; L: Labels }) {
           borderRadius: 16,
         }}>
           <div style={{
-            fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim)",
+            fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)",
             letterSpacing: "0.08em", textTransform: "uppercase",
           }}>{c.roiLabel}</div>
           <div style={{
-            fontFamily: "var(--font-geist-sans)", fontSize: 32, fontWeight: 500,
+            fontFamily: "var(--font-sans)", fontSize: 32, fontWeight: 500,
             letterSpacing: "-0.03em",
             background: "var(--accent-gradient)",
             WebkitBackgroundClip: "text", backgroundClip: "text",
@@ -297,7 +297,7 @@ function GeoCase({ c, L }: { c: CityContent; L: Labels }) {
 
         <p style={{
           marginTop: 20,
-          fontFamily: "var(--font-geist-sans)", fontSize: 12, lineHeight: 1.5,
+          fontFamily: "var(--font-sans)", fontSize: 12, lineHeight: 1.5,
           color: "var(--dim-2)", fontStyle: "italic",
           maxWidth: 720,
         }}>
@@ -314,7 +314,7 @@ function GeoFaq({ c, L }: { c: CityContent; L: Labels }) {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <MonoLabel>{L.faq}</MonoLabel>
         <h2 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
+          fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
           letterSpacing: "-0.04em", lineHeight: 1.0, margin: 0, marginBottom: 48, color: "var(--text)",
         }}>
           {c.faqH2}
@@ -331,14 +331,14 @@ function GeoCta({ c, L }: { c: CityContent; L: Labels }) {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ textAlign: "center", padding: "80px 32px" }}>
           <h2 style={{
-            fontFamily: "var(--font-geist-sans)", fontSize: "clamp(36px, 6vw, 72px)", fontWeight: 500,
+            fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 6vw, 72px)", fontWeight: 500,
             letterSpacing: "-0.05em", lineHeight: 1.0, margin: 0, marginBottom: 28, color: "var(--text)",
             maxWidth: 800, marginLeft: "auto", marginRight: "auto",
           }}>
             {c.ctaH2}
           </h2>
           <p style={{
-            fontFamily: "var(--font-geist-sans)", fontSize: 18, lineHeight: 1.5,
+            fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5,
             color: "var(--dim)", margin: "0 auto 40px", maxWidth: 600,
           }}>
             {c.ctaSubtitle}
@@ -348,7 +348,7 @@ function GeoCta({ c, L }: { c: CityContent; L: Labels }) {
           </PillPrimary>
           <p style={{
             marginTop: 24,
-            fontFamily: "var(--font-geist-mono)", fontSize: 12,
+            fontFamily: "var(--font-mono)", fontSize: 12,
             color: "var(--dim-2)", letterSpacing: "0.04em",
           }}>
             {L.reassurance}

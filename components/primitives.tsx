@@ -43,7 +43,7 @@ export const Eyebrow = ({ children }: { children: React.ReactNode }) => (
     color: "var(--accent-soft)",
     borderRadius: 999,
     fontSize: 11, fontWeight: 500,
-    fontFamily: "var(--font-geist-sans)",
+    fontFamily: "var(--font-sans)",
     border: "1px solid var(--accent-tint)",
     letterSpacing: "0.01em",
   }}>
@@ -70,7 +70,7 @@ export const PillPrimary = ({
     color: "#fff", borderRadius: 999,
     fontSize: large ? 14 : 13, fontWeight: 600,
     border: "none",
-    fontFamily: "var(--font-geist-sans)",
+    fontFamily: "var(--font-sans)",
     cursor: "pointer",
     width: fullWidth ? "100%" : "auto",
     boxShadow: "0 0 0 1px var(--accent), 0 12px 32px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.18)",
@@ -117,7 +117,7 @@ export const PillGhost = ({
     borderRadius: 999,
     fontSize: large ? 14 : 13, fontWeight: 600,
     border: "1px solid var(--border-strong)",
-    fontFamily: "var(--font-geist-sans)",
+    fontFamily: "var(--font-sans)",
     cursor: "pointer",
     letterSpacing: "-0.01em",
     textDecoration: "none",
@@ -131,7 +131,7 @@ export const PillGhost = ({
 
 export const MonoLabel = ({ children }: { children: React.ReactNode }) => (
   <div style={{
-    fontFamily: "var(--font-geist-mono)",
+    fontFamily: "var(--font-mono)",
     fontSize: 11, color: "var(--dim)",
     letterSpacing: "0.12em", textTransform: "uppercase",
     marginBottom: 16,

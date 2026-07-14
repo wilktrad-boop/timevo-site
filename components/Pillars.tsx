@@ -26,13 +26,13 @@ export default async function Pillars() {
     <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{
-          fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim)",
+          fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)",
           letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 16,
         }}>
           {t("label")}
         </div>
         <h2 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
+          fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
           letterSpacing: "-0.04em", lineHeight: 1.0, margin: 0, marginBottom: 16,
           color: "var(--text)", maxWidth: 900,
         }}>
@@ -40,7 +40,7 @@ export default async function Pillars() {
           <span style={{ color: "var(--dim)" }}>{t("h2_line2")}</span>
         </h2>
         <p style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: 16, color: "var(--dim)",
+          fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--dim)",
           maxWidth: 640, marginBottom: 48,
         }}>
           {t("subtitle")}
@@ -83,13 +83,13 @@ function PillarCard({ tag, count, title, items, cta, illustration, href }: {
           position: "absolute", top: 18, left: 18,
           fontSize: 11, padding: "4px 10px", borderRadius: 999,
           background: "rgba(0,0,0,0.4)", color: "var(--text)",
-          backdropFilter: "blur(6px)", fontFamily: "var(--font-geist-sans)",
+          backdropFilter: "blur(6px)", fontFamily: "var(--font-sans)",
         }}>{tag}</div>
       </div>
       <div style={{ padding: 28, flex: 1, display: "flex", flexDirection: "column" }}>
-        <div style={{ fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim)", marginBottom: 6 }}>{count}</div>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)", marginBottom: 6 }}>{count}</div>
         <h3 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: 26, fontWeight: 500,
+          fontFamily: "var(--font-sans)", fontSize: 26, fontWeight: 500,
           letterSpacing: "-0.02em", margin: 0, marginBottom: 18, color: "var(--text)",
         }}>{title}</h3>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 24 }}>
@@ -97,13 +97,13 @@ function PillarCard({ tag, count, title, items, cta, illustration, href }: {
             <span key={it} style={{
               padding: "5px 10px", borderRadius: 999,
               border: "1px solid var(--border-strong)",
-              fontFamily: "var(--font-geist-sans)", fontSize: 12, color: "var(--dim)",
+              fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--dim)",
             }}>{it}</span>
           ))}
         </div>
         <a href={href} style={{
           marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 8,
-          color: "var(--accent-soft)", fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
+          color: "var(--accent-soft)", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600,
           textDecoration: "none",
         }}>
           {cta} <Arrow size={12} />

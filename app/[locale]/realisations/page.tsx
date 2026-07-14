@@ -142,7 +142,7 @@ export default async function RealisationsPage({
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 12,
-              fontFamily: "var(--font-geist-mono)", fontSize: 11,
+              fontFamily: "var(--font-mono)", fontSize: 11,
               color: "var(--accent-soft)", letterSpacing: "0.12em", textTransform: "uppercase",
               marginBottom: 28,
               padding: "6px 12px",
@@ -155,7 +155,7 @@ export default async function RealisationsPage({
             </div>
 
             <h1 style={{
-              fontFamily: "var(--font-geist-sans)",
+              fontFamily: "var(--font-sans)",
               fontSize: "clamp(40px, 6.5vw, 92px)",
               fontWeight: 500,
               letterSpacing: "-0.05em",
@@ -169,7 +169,7 @@ export default async function RealisationsPage({
             </h1>
 
             <p style={{
-              fontFamily: "var(--font-geist-sans)", fontSize: 18, lineHeight: 1.5,
+              fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5,
               color: "var(--dim)", margin: 0, marginTop: 28,
               maxWidth: 720,
             }}>

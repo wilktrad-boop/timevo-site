@@ -35,7 +35,7 @@ export default function FaqAccordion({
                   width: "100%", padding: "24px 0", cursor: "pointer",
                   background: "transparent", border: "none",
                   display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24,
-                  fontFamily: "var(--font-geist-sans)", fontSize: 18, fontWeight: 500,
+                  fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 500,
                   letterSpacing: "-0.01em", color: "var(--text)", textAlign: "left",
                 }}>
                 <span style={{ flex: 1 }}>{q}</span>
@@ -53,7 +53,7 @@ export default function FaqAccordion({
             {isOpen && (
               <p id={`${idPrefix}-panel-${idx}`} role="region" aria-labelledby={`${idPrefix}-trigger-${idx}`}
                 style={{
-                  fontFamily: "var(--font-geist-sans)", fontSize: 15, color: "var(--dim)",
+                  fontFamily: "var(--font-sans)", fontSize: 15, color: "var(--dim)",
                   margin: "0 56px 24px 0", lineHeight: 1.6,
                 }}>{a}</p>
             )}

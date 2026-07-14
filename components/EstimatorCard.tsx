@@ -67,20 +67,20 @@ export default function EstimatorCard() {
 
         {/* Header */}
         <div style={{
-          fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim)",
+          fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)",
           letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 16,
         }}>
           {t("label")}
         </div>
         <h2 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: "clamp(32px, 4vw, 56px)", fontWeight: 500,
+          fontFamily: "var(--font-sans)", fontSize: "clamp(32px, 4vw, 56px)", fontWeight: 500,
           letterSpacing: "-0.04em", lineHeight: 1.05, margin: 0, marginBottom: 12, color: "var(--text)",
           maxWidth: 720,
         }}>
           {t("h2")}
         </h2>
         <p style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: 16, color: "var(--dim)",
+          fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--dim)",
           maxWidth: 560, marginBottom: 48,
         }}>
           {t("subtitle")}
@@ -120,7 +120,7 @@ export default function EstimatorCard() {
 
               {/* Counter */}
               <div style={{
-                fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--accent)",
+                fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--accent)",
                 letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 18,
               }}>
                 {t("counter", { n: step + 1 })}
@@ -128,7 +128,7 @@ export default function EstimatorCard() {
 
               {/* Question */}
               <div style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: "clamp(18px, 2.5vw, 24px)",
+                fontFamily: "var(--font-sans)", fontSize: "clamp(18px, 2.5vw, 24px)",
                 fontWeight: 500, letterSpacing: "-0.02em", lineHeight: 1.25,
                 color: "var(--text)", marginBottom: 28,
               }}>
@@ -150,7 +150,7 @@ export default function EstimatorCard() {
                         borderRadius: 12,
                         background: isSelected ? "var(--accent-tint)" : "transparent",
                         cursor: selected !== null ? "default" : "pointer",
-                        fontFamily: "var(--font-geist-sans)", fontSize: 15,
+                        fontFamily: "var(--font-sans)", fontSize: 15,
                         color: isSelected ? "var(--text)" : "var(--dim)",
                         textAlign: "left", display: "flex", justifyContent: "space-between",
                         alignItems: "center",
@@ -198,7 +198,7 @@ export default function EstimatorCard() {
               }} />
 
               <div style={{
-                fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--accent)",
+                fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--accent)",
                 letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 28,
               }}>
                 {t("result_label")}
@@ -220,7 +220,7 @@ export default function EstimatorCard() {
               </div>
 
               <p style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: 12, color: "var(--dim-2)",
+                fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--dim-2)",
                 margin: 0, lineHeight: 1.5, marginBottom: 20,
               }}>
                 {t("result_disclaimer")}
@@ -228,7 +228,7 @@ export default function EstimatorCard() {
 
               <button onClick={restart} style={{
                 background: "transparent", border: "none", cursor: "pointer",
-                fontFamily: "var(--font-geist-sans)", fontSize: 13,
+                fontFamily: "var(--font-sans)", fontSize: 13,
                 color: "var(--dim)", textDecoration: "underline",
                 padding: 0,
               }}>
@@ -250,7 +250,7 @@ function ResultStat({ value, label, accent }: { value: string; label: string; ac
       borderRadius: 16, padding: "20px 16px",
     }}>
       <div style={{
-        fontFamily: "var(--font-geist-sans)",
+        fontFamily: "var(--font-sans)",
         fontSize: "clamp(28px, 4vw, 40px)",
         fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1,
         color: accent ? "var(--accent)" : "var(--text)",
@@ -259,7 +259,7 @@ function ResultStat({ value, label, accent }: { value: string; label: string; ac
         {value}
       </div>
       <div style={{
-        fontFamily: "var(--font-geist-sans)", fontSize: 12,
+        fontFamily: "var(--font-sans)", fontSize: 12,
         color: "var(--dim)", lineHeight: 1.4,
       }}>
         {label}

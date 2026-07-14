@@ -18,7 +18,7 @@ export default async function LogoWall() {
     }}>
       <div style={{
         textAlign: "center", marginBottom: 36, padding: "0 28px",
-        fontFamily: "var(--font-geist-mono)", fontSize: 11,
+        fontFamily: "var(--font-mono)", fontSize: 11,
         color: "var(--dim)", letterSpacing: "0.12em", textTransform: "uppercase",
       }}>
         {t("label")}
@@ -33,7 +33,7 @@ export default async function LogoWall() {
             <div key={i} style={{
               display: "inline-flex", alignItems: "center", justifyContent: "center",
               height: 56, padding: "0 36px",
-              fontFamily: "var(--font-geist-sans)", fontSize: 18, fontWeight: 600,
+              fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 600,
               color: "var(--dim)", letterSpacing: "-0.02em", opacity: 0.7, whiteSpace: "nowrap",
             }}>
               {l}

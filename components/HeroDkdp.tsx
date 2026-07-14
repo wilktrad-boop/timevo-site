@@ -11,7 +11,7 @@ export default async function HeroDkdp() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 12,
-          fontFamily: "var(--font-geist-mono)", fontSize: 11,
+          fontFamily: "var(--font-mono)", fontSize: 11,
           color: "var(--dim)", letterSpacing: "0.12em", textTransform: "uppercase",
           marginBottom: 28,
         }}>
@@ -19,7 +19,7 @@ export default async function HeroDkdp() {
         </div>
 
         <h1 style={{
-          fontFamily: "var(--font-geist-sans)",
+          fontFamily: "var(--font-sans)",
           fontSize: "clamp(48px, 8vw, 116px)",
           fontWeight: 500,
           letterSpacing: "-0.05em",
@@ -38,7 +38,7 @@ export default async function HeroDkdp() {
           display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 64, alignItems: "end",
         }} className="hero-subrow">
           <p style={{
-            fontFamily: "var(--font-geist-sans)", fontSize: 18, lineHeight: 1.5,
+            fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5,
             color: "var(--dim)", margin: 0, maxWidth: 560,
           }}>
             {t("subtitle")}

@@ -21,7 +21,7 @@ export default function LocaleSwitcher() {
       border: "1px solid var(--border-strong)",
       borderRadius: 999,
       padding: "6px 14px",
-      fontFamily: "var(--font-geist-mono)",
+      fontFamily: "var(--font-mono)",
       fontSize: 11,
       fontWeight: 500,
       color: "var(--dim)",
