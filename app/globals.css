@@ -130,6 +130,10 @@ section[id],
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
+  .realisations-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
   .method-row {
     grid-template-columns: 64px 1fr !important;
     grid-template-rows: auto auto !important;
@@ -161,7 +165,8 @@ section[id],
 @media (max-width: 600px) {
 
   .pillars-row1,
-  .pillars-row2 {
+  .pillars-row2,
+  .realisations-grid {
     grid-template-columns: 1fr !important;
   }
 

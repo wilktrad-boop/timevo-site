@@ -3,6 +3,7 @@
     "solutions": "Solutions",
     "solutions_items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO", "Réseaux sociaux"],
     "methode": "Méthode",
+    "realisations": "Réalisations",
     "resultats": "Résultats",
     "equipe": "Équipe",
     "contact": "Contact",
@@ -225,6 +226,37 @@
     "eyebrow": "NOS SOLUTIONS",
     "h1": "Six expertises. Une seule équipe.",
     "subtitle": "Automatisation, agents IA, formation, sites web, SEO et réseaux sociaux. On couvre toute la chaîne — du process interne à la visibilité externe, de l'acquisition à la conversion."
+  },
+  "realisations": {
+    "meta_title": "Réalisations : les sites conçus et développés par Timevo",
+    "meta_description": "Les sites que nous avons construits : pisciniste, habitat et jardin, traduction juridique. Vitrines, devis en ligne, SEO.",
+    "eyebrow": "RÉALISATIONS",
+    "h1_line1": "Des sites qui travaillent.",
+    "h1_line2": "Pas des brochures en ligne.",
+    "subtitle": "Chaque site qu'on livre a un travail à faire : faire venir en magasin, remplir un formulaire, sortir un devis. Voici ce qu'on a construit.",
+    "section_label": "SITES CONÇUS ET DÉVELOPPÉS PAR TIMEVO",
+    "cta_site": "Voir le site",
+    "shot_alt": "Page d'accueil du site {name}",
+    "items": [
+      {
+        "meta": "Pisciniste — Publier (74)",
+        "title": "Mon Espace Piscine",
+        "description": "Magasin, prestations, chantiers photographiés et demande de devis. Le site fait venir en magasin et qualifie la demande avant même le premier appel.",
+        "chips": ["Site vitrine", "Devis en ligne", "SEO local"]
+      },
+      {
+        "meta": "Habitat & jardin — éditorial",
+        "title": "Agence Laverne",
+        "description": "Portail de conseil sur l'aménagement extérieur et la rénovation : quiz de qualification, guides de prix, blog.",
+        "chips": ["Éditorial", "Quiz de qualification", "SEO"]
+      },
+      {
+        "meta": "Traduction juridique",
+        "title": "Agence de Traduction Juridique",
+        "description": "Vitrine et générateur de devis : le visiteur choisit son document et ses langues, la demande arrive déjà qualifiée.",
+        "chips": ["Site vitrine", "Devis automatisé", "SEO"]
+      }
+    ]
   },
   "services": {
     "automatisation": {

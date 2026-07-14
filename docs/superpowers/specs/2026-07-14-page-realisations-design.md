@@ -77,7 +77,9 @@ L'index de `items` est aligné sur celui de `REALISATIONS` — même contrat imp
 - JSON-LD `BreadcrumbList` (Accueil → Réalisations) et `CollectionPage` dont `hasPart` liste les trois sites en `CreativeWork` avec leur URL
 - Corps : `<NavDkdp />`, section hero (eyebrow, h1, subtitle), `<ScrollFadeIn><Realisations /></ScrollFadeIn>`, `<ScrollFadeIn><ContactCard /></ScrollFadeIn>`, `<FooterDkdp />`, `<StickyMobileCta />`
 
-**Captures** — `scripts/capture-realisations.mjs`, Playwright (déjà dans les dépendances). Viewport 1280×800, `deviceScaleFactor` 0.62, JPEG qualité 74, sortie `public/realisations/<slug>.jpg` (~45 Ko pièce). Le script accepte les bannières cookies courantes avant de capturer. Rejouable quand un site change. Affichage via `next/image` avec `width={794} height={496}` et `sizes` adaptés à la grille.
+**Captures** — `scripts/capture-realisations.mjs`, Playwright (déjà dans les dépendances). Viewport 1280×800, `deviceScaleFactor` 0.62, JPEG qualité 74, sortie `public/realisations/<slug>.jpg` (~45 Ko pièce). Le script accepte les bannières cookies courantes avant de capturer. Rejouable quand un site change.
+
+Affichage via `<img>` simple (`width={794} height={496}`, `loading="lazy"`, `decoding="async"`) et non `next/image` : le codebase n'utilise aucune image bitmap ni `next/image` aujourd'hui, et le gain d'optimisation sur trois JPEG de ~45 Ko ne justifie pas d'introduire le composant — d'autant que l'AGENTS.md prévient que les API de cette version de Next diffèrent.
 
 **Navigation** — nouvelle entrée `realisations` dans le namespace `nav`, ajoutée à `otherLinks` de `NavDkdp` entre `methode` et `resultats`, href `/${locale}/realisations`. Elle apparaît automatiquement dans le menu mobile, qui itère sur la même liste.
 

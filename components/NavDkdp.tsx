@@ -17,6 +17,7 @@ export default function NavDkdp() {
 
   const otherLinks = [
     { key: "methode", href: `/${locale}#methode` },
+    { key: "realisations", href: `/${locale}/realisations` },
     { key: "resultats", href: `/${locale}#resultats` },
     { key: "equipe", href: `/${locale}#equipe` },
     { key: "contact", href: `/${locale}#contact` },
