@@ -3,6 +3,7 @@
     "solutions": "Solutions",
     "solutions_items": ["Automation", "AI Agents", "Training", "Website creation", "SEO", "Social media"],
     "methode": "Method",
+    "realisations": "Work",
     "resultats": "Results",
     "equipe": "Team",
     "contact": "Contact",
@@ -225,6 +226,37 @@
     "eyebrow": "OUR SOLUTIONS",
     "h1": "Six areas of expertise. One team.",
     "subtitle": "Automation, AI agents, training, websites, SEO and social media. We cover the whole chain — from internal process to external visibility, from acquisition to conversion."
+  },
+  "realisations": {
+    "meta_title": "Our work: websites designed and built by Timevo",
+    "meta_description": "The websites we have built: a pool specialist, a home and garden portal, a legal translation agency. Brochure sites, online quotes, SEO.",
+    "eyebrow": "OUR WORK",
+    "h1_line1": "Websites that do a job.",
+    "h1_line2": "Not online brochures.",
+    "subtitle": "Every site we ship has work to do: bring people into the shop, fill in a form, produce a quote. Here is what we have built.",
+    "section_label": "WEBSITES DESIGNED AND BUILT BY TIMEVO",
+    "cta_site": "Visit the site",
+    "shot_alt": "Homepage of {name}",
+    "items": [
+      {
+        "meta": "Pool specialist — Publier, France",
+        "title": "Mon Espace Piscine",
+        "description": "Shop, services, photographed projects and a quote request. The site brings people into the shop and qualifies the enquiry before the first call.",
+        "chips": ["Brochure site", "Online quotes", "Local SEO"]
+      },
+      {
+        "meta": "Home & garden — editorial",
+        "title": "Agence Laverne",
+        "description": "An advice portal on landscaping and renovation: qualification quiz, price guides, blog.",
+        "chips": ["Editorial", "Qualification quiz", "SEO"]
+      },
+      {
+        "meta": "Legal translation",
+        "title": "Agence de Traduction Juridique",
+        "description": "Brochure site and quote generator: the visitor picks a document and a language pair, the enquiry arrives already qualified.",
+        "chips": ["Brochure site", "Automated quotes", "SEO"]
+      }
+    ]
   },
   "services": {
     "automatisation": {

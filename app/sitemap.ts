@@ -66,6 +66,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
 
+    // Réalisations
+    {
+      url: `${BASE}/fr/realisations`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          fr: `${BASE}/fr/realisations`,
+          en: `${BASE}/en/realisations`,
+          "x-default": `${BASE}/fr/realisations`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/realisations`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          fr: `${BASE}/fr/realisations`,
+          en: `${BASE}/en/realisations`,
+          "x-default": `${BASE}/fr/realisations`,
+        },
+      },
+    },
+
     // Service pages (5 slugs × 2 locales)
     ...SERVICE_SLUGS.flatMap((slug) => [
       {
