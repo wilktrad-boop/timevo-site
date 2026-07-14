@@ -47,7 +47,7 @@ export default function StickyMobileCta() {
         padding: "14px 22px",
         background: "var(--accent-gradient)",
         color: "#fff", borderRadius: 999,
-        fontFamily: "var(--font-geist-sans)", fontSize: 15, fontWeight: 600,
+        fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 600,
         textDecoration: "none",
         boxShadow: "0 0 0 1px var(--accent), 0 12px 32px var(--accent-glow)",
         zIndex: 25,

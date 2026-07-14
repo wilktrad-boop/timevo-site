@@ -8,13 +8,13 @@ export default async function TeamGrid() {
     <section id="equipe" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{
-          fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim)",
+          fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)",
           letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 16,
         }}>
           {t("label")}
         </div>
         <h2 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
+          fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
           letterSpacing: "-0.04em", lineHeight: 1.0, margin: 0, marginBottom: 56, color: "var(--text)",
         }}>
           {t("h2")}
@@ -33,7 +33,7 @@ export default async function TeamGrid() {
                   aspectRatio: "1 / 1.1",
                   background: "linear-gradient(135deg, var(--accent-tint), var(--card-soft))",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  fontFamily: "var(--font-geist-sans)", fontSize: 64, fontWeight: 600,
+                  fontFamily: "var(--font-sans)", fontSize: 64, fontWeight: 600,
                   color: "var(--dim-2)",
                 }}>
                   {m.initials}
@@ -104,7 +104,7 @@ export default async function TeamGrid() {
                         border: "2.5px solid #0a0a0a",
                         marginLeft: i === 0 ? 0 : -14,
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        fontFamily: "var(--font-geist-sans)", fontSize: 16, fontWeight: 600,
+                        fontFamily: "var(--font-sans)", fontSize: 16, fontWeight: 600,
                         color: r.c,
                         position: "relative", zIndex: 4 - i,
                       }}>
@@ -116,7 +116,7 @@ export default async function TeamGrid() {
                   <div style={{ display: "flex", gap: 6, position: "relative" }}>
                     {["Design", "Web", "Copy"].map(label => (
                       <span key={label} style={{
-                        fontFamily: "var(--font-geist-mono)", fontSize: 10,
+                        fontFamily: "var(--font-mono)", fontSize: 10,
                         color: "var(--dim)", letterSpacing: "0.06em",
                         padding: "3px 9px", borderRadius: 999,
                         border: "1px solid var(--border-strong)",
@@ -129,9 +129,9 @@ export default async function TeamGrid() {
               )}
 
               <div style={{ padding: 20 }}>
-                <div style={{ fontFamily: "var(--font-geist-sans)", fontSize: 20, fontWeight: 500, color: "var(--text)" }}>{m.name}</div>
-                <div style={{ fontFamily: "var(--font-geist-sans)", fontSize: 12, color: "var(--accent-soft)", marginBottom: 10 }}>{m.role}</div>
-                <p style={{ fontFamily: "var(--font-geist-sans)", fontSize: 13, lineHeight: 1.5, color: "var(--dim)", margin: 0 }}>{m.bio}</p>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: 20, fontWeight: 500, color: "var(--text)" }}>{m.name}</div>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--accent-soft)", marginBottom: 10 }}>{m.role}</div>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.5, color: "var(--dim)", margin: 0 }}>{m.bio}</p>
               </div>
 
             </div>

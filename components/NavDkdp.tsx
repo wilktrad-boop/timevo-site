@@ -40,7 +40,7 @@ export default function NavDkdp() {
       borderBottom: "1px solid var(--border)",
     }}>
       <a href={`/${locale}`} aria-label="Timevo — accueil" style={{
-        fontFamily: "var(--font-geist-sans)", fontSize: 20, fontWeight: 600,
+        fontFamily: "var(--font-sans)", fontSize: 20, fontWeight: 600,
         letterSpacing: "-0.04em", color: "var(--text)",
         textDecoration: "none",
       }}>
@@ -51,7 +51,7 @@ export default function NavDkdp() {
         }}>.</span>
       </a>
 
-      <div style={{ display: "flex", gap: 28, fontFamily: "var(--font-geist-sans)", fontSize: 13, color: "var(--dim)" }}
+      <div style={{ display: "flex", gap: 28, fontFamily: "var(--font-sans)", fontSize: 13, color: "var(--dim)" }}
         className="nav-links">
         {/* Solutions with dropdown */}
         <div
@@ -152,7 +152,7 @@ export default function NavDkdp() {
             padding: "10px 18px",
             background: "var(--text)", color: "var(--bg)",
             borderRadius: 999,
-            fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
+            fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600,
             display: "inline-flex", alignItems: "center", gap: 8,
             textDecoration: "none", whiteSpace: "nowrap",
             transition: "opacity .15s",
@@ -207,7 +207,7 @@ export default function NavDkdp() {
       }}
     >
         <div style={{
-          fontFamily: "var(--font-geist-mono)", fontSize: 11,
+          fontFamily: "var(--font-mono)", fontSize: 11,
           color: "var(--dim-2)", letterSpacing: "0.12em",
           textTransform: "uppercase", margin: "12px 16px 8px",
         }}>
@@ -220,7 +220,7 @@ export default function NavDkdp() {
             onClick={() => setMobileOpen(false)}
             style={{
               padding: "14px 16px",
-              fontFamily: "var(--font-geist-sans)", fontSize: 18, fontWeight: 500,
+              fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 500,
               color: "var(--text)", textDecoration: "none",
               borderRadius: 10,
             }}
@@ -238,7 +238,7 @@ export default function NavDkdp() {
             onClick={() => setMobileOpen(false)}
             style={{
               padding: "14px 16px",
-              fontFamily: "var(--font-geist-sans)", fontSize: 18, fontWeight: 500,
+              fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 500,
               color: "var(--text)", textDecoration: "none",
               borderRadius: 10,
             }}
@@ -257,7 +257,7 @@ export default function NavDkdp() {
             padding: "16px 22px",
             background: "var(--accent-gradient)",
             color: "#fff", borderRadius: 999,
-            fontFamily: "var(--font-geist-sans)", fontSize: 15, fontWeight: 600,
+            fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 600,
             display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
             textDecoration: "none",
             boxShadow: "0 0 0 1px var(--accent), 0 12px 32px var(--accent-glow)",

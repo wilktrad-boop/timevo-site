@@ -21,7 +21,7 @@ export function LegalShell({
         <div style={{ maxWidth: 820, margin: "0 auto", padding: "72px 28px 96px" }}>
           <p
             style={{
-              fontFamily: "var(--font-geist-mono)",
+              fontFamily: "var(--font-mono)",
               fontSize: 12,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -33,7 +33,7 @@ export function LegalShell({
           </p>
           <h1
             style={{
-              fontFamily: "var(--font-geist-sans)",
+              fontFamily: "var(--font-sans)",
               fontSize: "clamp(30px, 5vw, 44px)",
               fontWeight: 600,
               letterSpacing: "-0.03em",
@@ -46,7 +46,7 @@ export function LegalShell({
           </h1>
           <p
             style={{
-              fontFamily: "var(--font-geist-mono)",
+              fontFamily: "var(--font-mono)",
               fontSize: 12,
               color: "var(--dim-2)",
               margin: 0,
@@ -76,7 +76,7 @@ export function LegalShell({
               marginTop: 56,
               paddingTop: 24,
               borderTop: "1px solid var(--border)",
-              fontFamily: "var(--font-geist-mono)",
+              fontFamily: "var(--font-mono)",
               fontSize: 12,
               color: "var(--dim-2)",
             }}
@@ -106,7 +106,7 @@ export function Article({
     <section style={{ marginTop: 48 }}>
       <h2
         style={{
-          fontFamily: "var(--font-geist-sans)",
+          fontFamily: "var(--font-sans)",
           fontSize: 20,
           fontWeight: 600,
           letterSpacing: "-0.02em",
@@ -117,7 +117,7 @@ export function Article({
         {n && (
           <span
             style={{
-              fontFamily: "var(--font-geist-mono)",
+              fontFamily: "var(--font-mono)",
               fontSize: 13,
               color: "var(--accent)",
               marginRight: 10,
@@ -137,7 +137,7 @@ export function P({ children }: { children: React.ReactNode }) {
   return (
     <p
       style={{
-        fontFamily: "var(--font-geist-sans)",
+        fontFamily: "var(--font-sans)",
         fontSize: 15,
         lineHeight: 1.75,
         color: "var(--dim)",
@@ -165,7 +165,7 @@ export function Ul({ children }: { children: React.ReactNode }) {
   return (
     <ul
       style={{
-        fontFamily: "var(--font-geist-sans)",
+        fontFamily: "var(--font-sans)",
         fontSize: 15,
         lineHeight: 1.7,
         color: "var(--dim)",

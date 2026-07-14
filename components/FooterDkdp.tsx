@@ -30,20 +30,20 @@ export default async function FooterDkdp() {
           className="footer-grid">
           <div>
             <div style={{
-              fontFamily: "var(--font-geist-sans)", fontSize: 22, fontWeight: 600,
+              fontFamily: "var(--font-sans)", fontSize: 22, fontWeight: 600,
               letterSpacing: "-0.04em", marginBottom: 12, color: "var(--text)",
             }}>
               Timevo<span style={{ color: "var(--accent)" }}>.</span>
             </div>
             <p style={{
-              fontFamily: "var(--font-geist-sans)", fontSize: 13, lineHeight: 1.5,
+              fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.5,
               color: "var(--dim)", margin: 0, maxWidth: 280,
               whiteSpace: "pre-line",
             }}>
               {t("tagline")}
             </p>
             <div style={{
-              marginTop: 20, fontFamily: "var(--font-geist-mono)", fontSize: 12,
+              marginTop: 20, fontFamily: "var(--font-mono)", fontSize: 12,
               color: "var(--dim)", lineHeight: 1.7,
             }}>
               {t("address")}<br />
@@ -56,13 +56,13 @@ export default async function FooterDkdp() {
           {cols.map(({ title, items }) => (
             <div key={title}>
               <div style={{
-                fontFamily: "var(--font-geist-sans)", fontSize: 13, fontWeight: 600,
+                fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600,
                 color: "var(--text)", marginBottom: 16,
               }}>{title}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {items.map((it, i) => (
                   <a key={it} href={getItemHref(title, i)} className="footer-link" style={{
-                    fontFamily: "var(--font-geist-sans)", fontSize: 13,
+                    fontFamily: "var(--font-sans)", fontSize: 13,
                   }}>
                     {it}
                   </a>
@@ -74,24 +74,24 @@ export default async function FooterDkdp() {
 
         <div style={{
           borderTop: "1px solid var(--border)", paddingTop: 24,
-          fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim-2)",
+          fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim-2)",
           display: "flex", justifyContent: "space-between", alignItems: "center",
           gap: 16, flexWrap: "wrap",
         }}>
           <span>{t("copyright")}</span>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             <a href={`/${locale}/mentions-legales`} className="footer-link" style={{
-              fontFamily: "var(--font-geist-mono)", fontSize: 11,
+              fontFamily: "var(--font-mono)", fontSize: 11,
             }}>
               {t("legal")}
             </a>
             <a href={`/${locale}/politique-de-confidentialite`} className="footer-link" style={{
-              fontFamily: "var(--font-geist-mono)", fontSize: 11,
+              fontFamily: "var(--font-mono)", fontSize: 11,
             }}>
               {t("privacy")}
             </a>
             <a href={`/${locale}/cgv`} className="footer-link" style={{
-              fontFamily: "var(--font-geist-mono)", fontSize: 11,
+              fontFamily: "var(--font-mono)", fontSize: 11,
             }}>
               CGV
             </a>

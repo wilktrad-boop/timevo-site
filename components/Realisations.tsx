@@ -12,7 +12,7 @@ export default async function Realisations() {
     <section style={{ padding: "24px 28px 96px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{
-          fontFamily: "var(--font-geist-mono)", fontSize: 11, color: "var(--dim-2)",
+          fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim-2)",
           letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 24,
         }}>
           {t("section_label")}
@@ -63,21 +63,21 @@ function RealisationCard({ meta, title, description, chips, url, image, alt, cta
 
       <div style={{ padding: 28, flex: 1, display: "flex", flexDirection: "column" }}>
         <div style={{
-          fontFamily: "var(--font-geist-mono)", fontSize: 11,
+          fontFamily: "var(--font-mono)", fontSize: 11,
           color: "var(--dim-2)", marginBottom: 8,
         }}>
           {meta}
         </div>
 
         <h3 style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: 22, fontWeight: 500,
+          fontFamily: "var(--font-sans)", fontSize: 22, fontWeight: 500,
           letterSpacing: "-0.02em", margin: 0, marginBottom: 12, color: "var(--text)",
         }}>
           {title}
         </h3>
 
         <p style={{
-          fontFamily: "var(--font-geist-sans)", fontSize: 14, lineHeight: 1.6,
+          fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.6,
           color: "var(--dim)", margin: 0, marginBottom: 20,
         }}>
           {description}
@@ -88,7 +88,7 @@ function RealisationCard({ meta, title, description, chips, url, image, alt, cta
             <span key={chip} style={{
               padding: "5px 10px", borderRadius: 999,
               border: "1px solid var(--border-strong)",
-              fontFamily: "var(--font-geist-sans)", fontSize: 12, color: "var(--dim)",
+              fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--dim)",
             }}>
               {chip}
             </span>
@@ -102,7 +102,7 @@ function RealisationCard({ meta, title, description, chips, url, image, alt, cta
           aria-label={`${cta} — ${title}`}
           style={{
             marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 8,
-            color: "var(--accent-soft)", fontFamily: "var(--font-geist-sans)",
+            color: "var(--accent-soft)", fontFamily: "var(--font-sans)",
             fontSize: 13, fontWeight: 600, textDecoration: "none",
           }}
         >
