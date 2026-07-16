@@ -1,8 +1,5 @@
 import { getTranslations } from "next-intl/server";
 
-/** Photos des fondateurs, dans l'ordre de `team.members`. */
-const PHOTOS = ["/team/max.jpg", "/team/willy.jpg"];
-
 export default async function TeamGrid() {
   const t = await getTranslations("team");
   const members = t.raw("members") as { name: string; role: string; initials: string; bio: string }[];
@@ -30,24 +27,16 @@ export default async function TeamGrid() {
               borderRadius: 20, overflow: "hidden",
             }}>
 
-              {/* Human cards — photo */}
-              {idx < 2 && PHOTOS[idx] && (
+              {/* Human cards — photo placeholder */}
+              {idx < 2 && (
                 <div style={{
                   aspectRatio: "1 / 1.1",
-                  borderBottom: "1px solid var(--border)",
-                  background: "var(--card-soft)",
-                  overflow: "hidden",
+                  background: "linear-gradient(135deg, var(--accent-tint), var(--card-soft))",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontFamily: "var(--font-sans)", fontSize: 64, fontWeight: 600,
+                  color: "var(--dim-2)",
                 }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element -- portrait statique, pas de gain à l'optimiser */}
-                  <img
-                    src={PHOTOS[idx]}
-                    alt={m.name}
-                    width={640}
-                    height={704}
-                    loading="lazy"
-                    decoding="async"
-                    style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
-                  />
+                  {m.initials}
                 </div>
               )}
 
