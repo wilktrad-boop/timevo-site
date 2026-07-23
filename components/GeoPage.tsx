@@ -167,21 +167,12 @@ function GeoWhat({ c, L }: { c: CityContent; L: Labels }) {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="pillars-row1">
           {c.whatItems.map(item => (
-            <a key={item.title} href={item.href} style={{
+            <a key={item.title} href={item.href} className="hover-card" style={{
               padding: 32,
               background: "var(--card)", border: "1px solid var(--border)",
               borderRadius: 20, textDecoration: "none",
-              transition: "border-color .15s, transform .15s",
               display: "block",
-            }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "var(--accent)";
-                e.currentTarget.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "var(--border)";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}>
+            }}>
               <h3 style={{
                 fontFamily: "var(--font-sans)", fontSize: 22, fontWeight: 500,
                 letterSpacing: "-0.02em", margin: 0, marginBottom: 12, color: "var(--text)",
