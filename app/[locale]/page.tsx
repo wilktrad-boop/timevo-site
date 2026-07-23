@@ -9,6 +9,7 @@ import MethodDkdp from "@/components/MethodDkdp";
 import TestimonialBlock from "@/components/TestimonialBlock";
 import TeamGrid from "@/components/TeamGrid";
 import EstimatorCard from "@/components/EstimatorCard";
+import DemoTeaser from "@/components/DemoTeaser";
 import FaqDkdp from "@/components/FaqDkdp";
 import ContactCard from "@/components/ContactCard";
 import FooterDkdp from "@/components/FooterDkdp";
@@ -58,6 +59,8 @@ export default async function Home({
         {/* <LogoWall /> */}
         <ScrollFadeIn><PainPoints /></ScrollFadeIn>
         <ScrollFadeIn><Pillars /></ScrollFadeIn>
+        {/* La preuve arrive juste après ce qu'on sait faire, avant l'estimateur. */}
+        <ScrollFadeIn><DemoTeaser /></ScrollFadeIn>
         {/* <ScrollFadeIn><StatsBlock /></ScrollFadeIn> */}
         <ScrollFadeIn><EstimatorCard /></ScrollFadeIn>
         <ScrollFadeIn><MethodDkdp /></ScrollFadeIn>

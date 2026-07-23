@@ -1,9 +1,17 @@
 {
   "nav": {
     "solutions": "Solutions",
-    "solutions_items": ["Automation", "AI Agents", "Training", "Website creation", "SEO", "Social media"],
+    "solutions_items": [
+      "Automation",
+      "AI Agents",
+      "Training",
+      "Website creation",
+      "SEO",
+      "Social media"
+    ],
     "methode": "Method",
     "realisations": "Work",
+    "demos": "Demos",
     "resultats": "Results",
     "equipe": "Team",
     "contact": "Contact",
@@ -55,42 +63,78 @@
         "tag": "Automation",
         "count": "6 workflows",
         "title": "Process automation",
-        "items": ["Auto quotes", "Follow-ups", "Reports", "CRM sync", "Onboarding", "Custom n8n"],
+        "items": [
+          "Auto quotes",
+          "Follow-ups",
+          "Reports",
+          "CRM sync",
+          "Onboarding",
+          "Custom n8n"
+        ],
         "cta": "Learn more"
       },
       {
         "tag": "AI Agents",
         "count": "4 solutions",
         "title": "AI Agents",
-        "items": ["Support chatbot", "Lead pre-qualification", "Phone assistant", "Email triage"],
+        "items": [
+          "Support chatbot",
+          "Lead pre-qualification",
+          "Phone assistant",
+          "Email triage"
+        ],
         "cta": "Learn more"
       },
       {
         "tag": "Training",
         "count": "5 modules",
         "title": "Team training",
-        "items": ["AI & prompting", "n8n automation", "Content creation", "LinkedIn for pros", "SEO essentials"],
+        "items": [
+          "AI & prompting",
+          "n8n automation",
+          "Content creation",
+          "LinkedIn for pros",
+          "SEO essentials"
+        ],
         "cta": "Learn more"
       },
       {
         "tag": "Websites",
         "count": "All types",
         "title": "Website creation",
-        "items": ["Showcase", "Landing page", "Multi-page", "E-commerce", "Redesign"],
+        "items": [
+          "Showcase",
+          "Landing page",
+          "Multi-page",
+          "E-commerce",
+          "Redesign"
+        ],
         "cta": "Learn more"
       },
       {
         "tag": "SEO",
         "count": "All types",
         "title": "Search engine optimisation",
-        "items": ["Local SEO", "Technical SEO", "Content SEO", "International SEO", "SEO audit"],
+        "items": [
+          "Local SEO",
+          "Technical SEO",
+          "Content SEO",
+          "International SEO",
+          "SEO audit"
+        ],
         "cta": "Learn more"
       },
       {
         "tag": "Social media",
         "count": "Multi-platform",
         "title": "Audience growth & content",
-        "items": ["Instagram growth", "LinkedIn content", "YouTube videos", "Editorial strategy", "Publishing & engagement"],
+        "items": [
+          "Instagram growth",
+          "LinkedIn content",
+          "YouTube videos",
+          "Editorial strategy",
+          "Publishing & engagement"
+        ],
         "cta": "Learn more"
       }
     ]
@@ -100,10 +144,26 @@
     "h2_line1": "French SMBs that stopped",
     "h2_line2": "wasting time.",
     "items": [
-      { "value": 12, "suffix": "+", "label": "SMBs supported in France" },
-      { "value": 1100, "suffix": "h", "label": "Recovered every month for our clients" },
-      { "value": 34, "suffix": "%", "label": "Average conversion rate increase" },
-      { "value": 3, "suffix": " wks", "label": "Average delivery time" }
+      {
+        "value": 12,
+        "suffix": "+",
+        "label": "SMBs supported in France"
+      },
+      {
+        "value": 1100,
+        "suffix": "h",
+        "label": "Recovered every month for our clients"
+      },
+      {
+        "value": 34,
+        "suffix": "%",
+        "label": "Average conversion rate increase"
+      },
+      {
+        "value": 3,
+        "suffix": " wks",
+        "label": "Average delivery time"
+      }
     ]
   },
   "method": {
@@ -111,11 +171,31 @@
     "h2": "Five steps, no surprises.",
     "subtitle": "5 clear steps, a proven process.",
     "steps": [
-      ["01", "First conversation", "30 free minutes to understand your situation. We'll tell you honestly whether and how we can help."],
-      ["02", "Audit", "Mapping your processes. We identify the tasks that cost the most time for the least expertise."],
-      ["03", "Report", "A concrete action plan with deliverables, timelines and prices. Everything fixed upfront, in writing."],
-      ["04", "Implementation", "We execute. Weekly check-ins, real-time progress access. You stay in control of the project."],
-      ["05", "Maintenance", "Delivery, tool training, and performance monitoring. We stay with you after launch."]
+      [
+        "01",
+        "First conversation",
+        "30 free minutes to understand your situation. We'll tell you honestly whether and how we can help."
+      ],
+      [
+        "02",
+        "Audit",
+        "Mapping your processes. We identify the tasks that cost the most time for the least expertise."
+      ],
+      [
+        "03",
+        "Report",
+        "A concrete action plan with deliverables, timelines and prices. Everything fixed upfront, in writing."
+      ],
+      [
+        "04",
+        "Implementation",
+        "We execute. Weekly check-ins, real-time progress access. You stay in control of the project."
+      ],
+      [
+        "05",
+        "Maintenance",
+        "Delivery, tool training, and performance monitoring. We stay with you after launch."
+      ]
     ]
   },
   "testimonials": {
@@ -146,8 +226,18 @@
     "label": "The team",
     "h2": "Two experts, one vision.",
     "members": [
-      { "name": "Max", "role": "Sales · Strategy", "initials": "M", "bio": "Ten years selling, chasing, quoting. He knows your weeks because he's had them." },
-      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "He builds systems that run without anyone watching. Ten years, several markets, no duct tape." }
+      {
+        "name": "Max",
+        "role": "Sales · Strategy",
+        "initials": "M",
+        "bio": "Ten years selling, chasing, quoting. He knows your weeks because he's had them."
+      },
+      {
+        "name": "Willy",
+        "role": "Tech · Content",
+        "initials": "W",
+        "bio": "He builds systems that run without anyone watching. Ten years, several markets, no duct tape."
+      }
     ]
   },
   "estimator": {
@@ -160,23 +250,43 @@
     "questions": [
       {
         "q": "How many people are in your team?",
-        "opts": ["1 to 5 people", "6 to 15 people", "16 to 50 people"]
+        "opts": [
+          "1 to 5 people",
+          "6 to 15 people",
+          "16 to 50 people"
+        ]
       },
       {
         "q": "How many inbound requests per month? (quotes, leads, proposals)",
-        "opts": ["Fewer than 20", "Between 20 and 80", "More than 80"]
+        "opts": [
+          "Fewer than 20",
+          "Between 20 and 80",
+          "More than 80"
+        ]
       },
       {
         "q": "How many hours a week on repetitive tasks?",
-        "opts": ["Less than 5h", "Between 5h and 15h", "More than 15h"]
+        "opts": [
+          "Less than 5h",
+          "Between 5h and 15h",
+          "More than 15h"
+        ]
       },
       {
         "q": "Do you have a tool to track clients and prospects?",
-        "opts": ["Yes, well used", "Yes, barely used", "No"]
+        "opts": [
+          "Yes, well used",
+          "Yes, barely used",
+          "No"
+        ]
       },
       {
         "q": "Average revenue per client? (one-shot or annual)",
-        "opts": ["Under €1,000", "€1,000 to €5,000", "Over €5,000"]
+        "opts": [
+          "Under €1,000",
+          "€1,000 to €5,000",
+          "Over €5,000"
+        ]
       }
     ],
     "result_label": "Your estimate",
@@ -190,12 +300,30 @@
     "label": "FAQ",
     "h2": "What we're often asked",
     "items": [
-      ["How long does it take to deliver an automation?", "2 to 3 weeks after the audit. We commit to the date in writing and we deliver."],
-      ["Which tools do you work with?", "CRM (HubSpot, Pipedrive, Salesforce), email, telephony, accounting. We plug into what you already have — no forced migration."],
-      ["What if we don't have a CRM?", "We set one up as part of the package if needed. Notion, Airtable or a classic CRM depending on your maturity."],
-      ["Do we keep control of the system?", "Yes. The code and workflows belong to you. No dependency. If we part ways, you keep everything."],
-      ["Do you charge by the hour?", "No. Fixed setup fee + maintenance subscription. Clear, predictable, no surprises."],
-      ["Where are you based?", "Thonon-les-Bains and Montpellier. We work remotely across France and with French-speaking neighbours."]
+      [
+        "How long does it take to deliver an automation?",
+        "2 to 3 weeks after the audit. We commit to the date in writing and we deliver."
+      ],
+      [
+        "Which tools do you work with?",
+        "CRM (HubSpot, Pipedrive, Salesforce), email, telephony, accounting. We plug into what you already have — no forced migration."
+      ],
+      [
+        "What if we don't have a CRM?",
+        "We set one up as part of the package if needed. Notion, Airtable or a classic CRM depending on your maturity."
+      ],
+      [
+        "Do we keep control of the system?",
+        "Yes. The code and workflows belong to you. No dependency. If we part ways, you keep everything."
+      ],
+      [
+        "Do you charge by the hour?",
+        "No. Fixed setup fee + maintenance subscription. Clear, predictable, no surprises."
+      ],
+      [
+        "Where are you based?",
+        "Thonon-les-Bains and Montpellier. We work remotely across France and with French-speaking neighbours."
+      ]
     ]
   },
   "contact": {
@@ -208,6 +336,15 @@
     "city": "Thonon-les-Bains · Montpellier",
     "response": "Response within 24h"
   },
+  "demo_teaser": {
+    "eyebrow": "DEMOS",
+    "h2": "See the result before you sign.",
+    "subtitle": "We can describe what automation changes, or show you the screen. Here is an extract from the dashboard we deliver to a pool builder: open quotes, the ones the follow-up sequence brought back, and what got signed.",
+    "sample": "Extract · pool builder",
+    "note": "Typical scenario, not an existing client. The data in this preview is fictional. The interface is the one we ship.",
+    "pick": "The three full demos",
+    "see": "View the demo"
+  },
   "footer": {
     "tagline": "Independent automation agency.\nn8n · AI Agents · Processes for SMBs.",
     "address": "Thonon-les-Bains · Montpellier · France",
@@ -216,8 +353,27 @@
     "privacy": "Privacy policy",
     "gdpr": "GDPR",
     "cols": [
-      { "title": "Solutions", "items": ["Automation", "AI Agents", "Training", "Website creation", "SEO", "Social media"] },
-      { "title": "Method", "items": ["First conversation", "Diagnosis", "Proposal", "Delivery", "Maintenance"] }
+      {
+        "title": "Solutions",
+        "items": [
+          "Automation",
+          "AI Agents",
+          "Training",
+          "Website creation",
+          "SEO",
+          "Social media"
+        ]
+      },
+      {
+        "title": "Method",
+        "items": [
+          "First conversation",
+          "Diagnosis",
+          "Proposal",
+          "Delivery",
+          "Maintenance"
+        ]
+      }
     ]
   },
   "solutions_index": {
@@ -242,19 +398,31 @@
         "meta": "Pool specialist — Publier, France",
         "title": "Mon Espace Piscine",
         "description": "Shop, services, photographed projects and a quote request. The site brings people into the shop and qualifies the enquiry before the first call.",
-        "chips": ["Brochure site", "Online quotes", "Local SEO"]
+        "chips": [
+          "Brochure site",
+          "Online quotes",
+          "Local SEO"
+        ]
       },
       {
         "meta": "Home & garden — editorial",
         "title": "Agence Laverne",
         "description": "An advice portal on landscaping and renovation: qualification quiz, price guides, blog.",
-        "chips": ["Editorial", "Qualification quiz", "SEO"]
+        "chips": [
+          "Editorial",
+          "Qualification quiz",
+          "SEO"
+        ]
       },
       {
         "meta": "Legal translation",
         "title": "Agence de Traduction Juridique",
         "description": "Brochure site and quote generator: the visitor picks a document and a language pair, the enquiry arrives already qualified.",
-        "chips": ["Brochure site", "Automated quotes", "SEO"]
+        "chips": [
+          "Brochure site",
+          "Automated quotes",
+          "SEO"
+        ]
       }
     ]
   },
@@ -271,15 +439,31 @@
       },
       "audience": {
         "label": "For whom",
-        "items": ["Home equipment", "Premium mobility", "Value services"]
+        "items": [
+          "Home equipment",
+          "Premium mobility",
+          "Value services"
+        ]
       },
       "problem": {
         "label": "The problem",
         "h2": "What's eating your weeks.",
         "items": [
-          { "n": "01", "title": "20 minutes per quote, 80 quotes a month", "desc": "Your reps spend their evenings writing quotes that could go out 4 minutes after the call ends." },
-          { "n": "02", "title": "Forgotten follow-ups, lost deals", "desc": "Without an automatic follow-up system, 30 to 50% of warm leads turn cold — just because no one had time to call back." },
-          { "n": "03", "title": "Three tools that don't talk to each other", "desc": "CRM, email, accounting, calendar. Every time info is rekeyed by hand, you lose hours and accumulate errors." }
+          {
+            "n": "01",
+            "title": "20 minutes per quote, 80 quotes a month",
+            "desc": "Your reps spend their evenings writing quotes that could go out 4 minutes after the call ends."
+          },
+          {
+            "n": "02",
+            "title": "Forgotten follow-ups, lost deals",
+            "desc": "Without an automatic follow-up system, 30 to 50% of warm leads turn cold — just because no one had time to call back."
+          },
+          {
+            "n": "03",
+            "title": "Three tools that don't talk to each other",
+            "desc": "CRM, email, accounting, calendar. Every time info is rekeyed by hand, you lose hours and accumulate errors."
+          }
         ]
       },
       "deliverables": {
@@ -287,12 +471,30 @@
         "h2": "Six workflows ready to plug in.",
         "subtitle": "Six concrete projects, identified during the audit, deployed in 2 to 3 weeks based on your priorities.",
         "items": [
-          { "title": "Automatic quotes", "desc": "The call ends, the summary is written, the quote is pre-filled, the email goes out. 20 min recovered per quote." },
-          { "title": "Sales follow-ups", "desc": "Email + SMS over 30 days, in your brand voice. Your rep is only notified when the prospect replies." },
-          { "title": "Weekly reports", "desc": "Pipeline, sales, leads to follow up, sales KPIs. In your inbox every Monday at 8am." },
-          { "title": "CRM sync", "desc": "Your tools finally talk to each other. Email, telephony, accounting, calendar — everything lands in the right place, automatically." },
-          { "title": "Client onboarding", "desc": "From signature: welcome email, access credentials, kick-off meeting and first documents go out automatically." },
-          { "title": "Custom n8n workflows", "desc": "Whatever else is repetitive in your business that isn't on the list above. We build it during the audit." }
+          {
+            "title": "Automatic quotes",
+            "desc": "The call ends, the summary is written, the quote is pre-filled, the email goes out. 20 min recovered per quote."
+          },
+          {
+            "title": "Sales follow-ups",
+            "desc": "Email + SMS over 30 days, in your brand voice. Your rep is only notified when the prospect replies."
+          },
+          {
+            "title": "Weekly reports",
+            "desc": "Pipeline, sales, leads to follow up, sales KPIs. In your inbox every Monday at 8am."
+          },
+          {
+            "title": "CRM sync",
+            "desc": "Your tools finally talk to each other. Email, telephony, accounting, calendar — everything lands in the right place, automatically."
+          },
+          {
+            "title": "Client onboarding",
+            "desc": "From signature: welcome email, access credentials, kick-off meeting and first documents go out automatically."
+          },
+          {
+            "title": "Custom n8n workflows",
+            "desc": "Whatever else is repetitive in your business that isn't on the list above. We build it during the audit."
+          }
         ]
       },
       "case": {
@@ -320,9 +522,21 @@
         "label": "How it works",
         "h2": "Audit, mapping, deployment.",
         "steps": [
-          ["01", "Audit", "30 minutes to map your processes. We pick the 2 or 3 highest-ROI workflows."],
-          ["02", "Mapping", "We model each workflow on paper before coding. You approve the execution plan, step by step."],
-          ["03", "Deployment", "We code, plug in, test on your real cases. Team training, documentation and maintenance so the system keeps evolving."]
+          [
+            "01",
+            "Audit",
+            "30 minutes to map your processes. We pick the 2 or 3 highest-ROI workflows."
+          ],
+          [
+            "02",
+            "Mapping",
+            "We model each workflow on paper before coding. You approve the execution plan, step by step."
+          ],
+          [
+            "03",
+            "Deployment",
+            "We code, plug in, test on your real cases. Team training, documentation and maintenance so the system keeps evolving."
+          ]
         ]
       },
       "pricing": {
@@ -355,10 +569,22 @@
         "label": "FAQ",
         "h2": "Before we talk.",
         "items": [
-          ["How long until delivery?", "2 to 3 weeks after the audit. We commit to the date in writing."],
-          ["Do we keep control of the system?", "Yes. The code and workflows belong to you. If we part ways, you keep everything, hosting included."],
-          ["What if we don't have a CRM?", "We set one up as part of the package if needed. Notion, Airtable or a classic CRM depending on your maturity."],
-          ["Do you replace our sales team?", "No. We free them from everything that isn't selling so they can spend their time selling."]
+          [
+            "How long until delivery?",
+            "2 to 3 weeks after the audit. We commit to the date in writing."
+          ],
+          [
+            "Do we keep control of the system?",
+            "Yes. The code and workflows belong to you. If we part ways, you keep everything, hosting included."
+          ],
+          [
+            "What if we don't have a CRM?",
+            "We set one up as part of the package if needed. Notion, Airtable or a classic CRM depending on your maturity."
+          ],
+          [
+            "Do you replace our sales team?",
+            "No. We free them from everything that isn't selling so they can spend their time selling."
+          ]
         ]
       },
       "cta": {
@@ -380,15 +606,31 @@
       },
       "audience": {
         "label": "For whom",
-        "items": ["Real estate & customer service", "High-volume support", "Recurring service businesses"]
+        "items": [
+          "Real estate & customer service",
+          "High-volume support",
+          "Recurring service businesses"
+        ]
       },
       "problem": {
         "label": "The problem",
         "h2": "What your teams repeat ten times a day.",
         "items": [
-          { "n": "01", "title": "70% of calls are the same questions", "desc": "Availability, pricing, deadlines, order tracking. Your teams spend their days answering the same 15 questions, over and over." },
-          { "n": "02", "title": "Your leads wait. Your competitors answer.", "desc": "After hours, evenings, weekends: a lead lands and no one is there. By the time you call back, they've already signed elsewhere." },
-          { "n": "03", "title": "Customer service is expensive and slow", "desc": "Hiring people to handle trivial questions is costly. And it doesn't scale. An AI agent handles 200 requests at once, without fatigue or error." }
+          {
+            "n": "01",
+            "title": "70% of calls are the same questions",
+            "desc": "Availability, pricing, deadlines, order tracking. Your teams spend their days answering the same 15 questions, over and over."
+          },
+          {
+            "n": "02",
+            "title": "Your leads wait. Your competitors answer.",
+            "desc": "After hours, evenings, weekends: a lead lands and no one is there. By the time you call back, they've already signed elsewhere."
+          },
+          {
+            "n": "03",
+            "title": "Customer service is expensive and slow",
+            "desc": "Hiring people to handle trivial questions is costly. And it doesn't scale. An AI agent handles 200 requests at once, without fatigue or error."
+          }
         ]
       },
       "deliverables": {
@@ -396,12 +638,30 @@
         "h2": "Five standard agents. Plus custom builds.",
         "subtitle": "Five agents ready to go, plus the option to build your specific case during the audit. All plugged into your tools and trained on your data.",
         "items": [
-          { "title": "Support chatbot", "desc": "On your site or WhatsApp. Answers repetitive questions, handles tracking requests, opens a ticket when it gets complex." },
-          { "title": "Lead pre-qualification", "desc": "A lead arrives? The agent qualifies in 60 seconds (budget, timing, need) and notifies the right rep with a clean summary." },
-          { "title": "AI phone assistant", "desc": "Takes calls, routes to the right person, takes messages, transcribes voicemails. Never miss a call again." },
-          { "title": "Automated email triage", "desc": "Urgent vs not, quote vs support, existing client vs prospect. The agent prioritises and assigns. Your teams only handle what matters." },
-          { "title": "Sales assistant agent", "desc": "Prepares meetings, gathers prospect context, drafts call summaries. Your reps walk into meetings already prepared." },
-          { "title": "Custom agent", "desc": "A specific case the 5 above don't cover? We build it during the audit, plugged into your tools." }
+          {
+            "title": "Support chatbot",
+            "desc": "On your site or WhatsApp. Answers repetitive questions, handles tracking requests, opens a ticket when it gets complex."
+          },
+          {
+            "title": "Lead pre-qualification",
+            "desc": "A lead arrives? The agent qualifies in 60 seconds (budget, timing, need) and notifies the right rep with a clean summary."
+          },
+          {
+            "title": "AI phone assistant",
+            "desc": "Takes calls, routes to the right person, takes messages, transcribes voicemails. Never miss a call again."
+          },
+          {
+            "title": "Automated email triage",
+            "desc": "Urgent vs not, quote vs support, existing client vs prospect. The agent prioritises and assigns. Your teams only handle what matters."
+          },
+          {
+            "title": "Sales assistant agent",
+            "desc": "Prepares meetings, gathers prospect context, drafts call summaries. Your reps walk into meetings already prepared."
+          },
+          {
+            "title": "Custom agent",
+            "desc": "A specific case the 5 above don't cover? We build it during the audit, plugged into your tools."
+          }
         ]
       },
       "case": {
@@ -429,19 +689,43 @@
         "label": "How it works",
         "h2": "Audit, training, go live.",
         "steps": [
-          ["01", "Audit", "We identify where an AI agent can lift load from your teams. Request volume, brand voice, existing tools."],
-          ["02", "Training", "We train the agent on your documents, FAQs, processes. Tested on real cases before deployment."],
-          ["03", "Go live", "Progressive rollout, conversation monitoring, continuous tuning. The agent learns alongside you."]
+          [
+            "01",
+            "Audit",
+            "We identify where an AI agent can lift load from your teams. Request volume, brand voice, existing tools."
+          ],
+          [
+            "02",
+            "Training",
+            "We train the agent on your documents, FAQs, processes. Tested on real cases before deployment."
+          ],
+          [
+            "03",
+            "Go live",
+            "Progressive rollout, conversation monitoring, continuous tuning. The agent learns alongside you."
+          ]
         ]
       },
       "faq": {
         "label": "FAQ",
         "h2": "Before we talk.",
         "items": [
-          ["Is the agent connected to our data?", "Yes. CRM, knowledge base, product catalogue, calendar. The agent replies with your information, not generic knowledge."],
-          ["How do you avoid hallucinations?", "The agent is scoped to your business perimeter, with guardrails and an automatic human handoff whenever there's doubt."],
-          ["What about data privacy?", "European hosting, encrypted data, option to use self-hosted models for sensitive use cases."],
-          ["What if the agent gets stuck?", "Automatic handoff to a human with the full conversation context. No lead ever falls into the void."]
+          [
+            "Is the agent connected to our data?",
+            "Yes. CRM, knowledge base, product catalogue, calendar. The agent replies with your information, not generic knowledge."
+          ],
+          [
+            "How do you avoid hallucinations?",
+            "The agent is scoped to your business perimeter, with guardrails and an automatic human handoff whenever there's doubt."
+          ],
+          [
+            "What about data privacy?",
+            "European hosting, encrypted data, option to use self-hosted models for sensitive use cases."
+          ],
+          [
+            "What if the agent gets stuck?",
+            "Automatic handoff to a human with the full conversation context. No lead ever falls into the void."
+          ]
         ]
       },
       "cta": {
@@ -463,15 +747,31 @@
       },
       "audience": {
         "label": "For whom",
-        "items": ["Sales teams", "Marketing & comms", "Founders & execs"]
+        "items": [
+          "Sales teams",
+          "Marketing & comms",
+          "Founders & execs"
+        ]
       },
       "problem": {
         "label": "The problem",
         "h2": "What an untrained team really costs.",
         "items": [
-          { "n": "01", "title": "Your teams use AI poorly, or not at all", "desc": "ChatGPT by feel, weak prompts, mediocre results. The potential is huge, the actual usage tiny." },
-          { "n": "02", "title": "Tools change every month", "desc": "Your last training is 18 months old. Meanwhile, GPT-5 shipped, Claude 4.7 shipped, n8n doubled its integrations. Your teams are stuck in 2024." },
-          { "n": "03", "title": "A YouTube video trains no one", "desc": "Learning alone, with no real case, no support, no practice: three days later, nobody uses it anymore." }
+          {
+            "n": "01",
+            "title": "Your teams use AI poorly, or not at all",
+            "desc": "ChatGPT by feel, weak prompts, mediocre results. The potential is huge, the actual usage tiny."
+          },
+          {
+            "n": "02",
+            "title": "Tools change every month",
+            "desc": "Your last training is 18 months old. Meanwhile, GPT-5 shipped, Claude 4.7 shipped, n8n doubled its integrations. Your teams are stuck in 2024."
+          },
+          {
+            "n": "03",
+            "title": "A YouTube video trains no one",
+            "desc": "Learning alone, with no real case, no support, no practice: three days later, nobody uses it anymore."
+          }
         ]
       },
       "deliverables": {
@@ -479,12 +779,30 @@
         "h2": "Five standard modules. Plus custom builds.",
         "subtitle": "Each module blends short theory with hands-on practice on your real cases. And the option of a fully custom programme for your team.",
         "items": [
-          { "title": "AI & prompting", "desc": "ChatGPT, Claude, Gemini. Effective prompts, role-based use cases, handling limits. 1 intensive day." },
-          { "title": "n8n automation", "desc": "Build your first workflows. Plug in CRM, email, Slack. Automate without coding. 2 practical days." },
-          { "title": "Content creation", "desc": "Write faster with AI, generate visuals and videos, structure a weekly production. 1-day workshop." },
-          { "title": "LinkedIn for pros", "desc": "Converting profile, engaging content, automated prospecting. Built for reps and founders. 1 day." },
-          { "title": "SEO essentials", "desc": "Understand Google, write for the web, basic audits, position tracking. For marketers and founders. 1 day." },
-          { "title": "Custom programme", "desc": "A specific need (sales, negotiation, industry tools)? We build the module from your real cases." }
+          {
+            "title": "AI & prompting",
+            "desc": "ChatGPT, Claude, Gemini. Effective prompts, role-based use cases, handling limits. 1 intensive day."
+          },
+          {
+            "title": "n8n automation",
+            "desc": "Build your first workflows. Plug in CRM, email, Slack. Automate without coding. 2 practical days."
+          },
+          {
+            "title": "Content creation",
+            "desc": "Write faster with AI, generate visuals and videos, structure a weekly production. 1-day workshop."
+          },
+          {
+            "title": "LinkedIn for pros",
+            "desc": "Converting profile, engaging content, automated prospecting. Built for reps and founders. 1 day."
+          },
+          {
+            "title": "SEO essentials",
+            "desc": "Understand Google, write for the web, basic audits, position tracking. For marketers and founders. 1 day."
+          },
+          {
+            "title": "Custom programme",
+            "desc": "A specific need (sales, negotiation, industry tools)? We build the module from your real cases."
+          }
         ]
       },
       "case": {
@@ -512,19 +830,43 @@
         "label": "How it works",
         "h2": "Diagnosis, programme, delivery.",
         "steps": [
-          ["01", "Diagnosis", "30 min to map current usage, identify priority modules, validate the format."],
-          ["02", "Programme", "Content built around your industry, your real cases, your team's existing tools. Sessions scheduled around your workload."],
-          ["03", "Delivery", "Interactive sessions, exercises on your real data. 30-day post-training support to embed the practice for good."]
+          [
+            "01",
+            "Diagnosis",
+            "30 min to map current usage, identify priority modules, validate the format."
+          ],
+          [
+            "02",
+            "Programme",
+            "Content built around your industry, your real cases, your team's existing tools. Sessions scheduled around your workload."
+          ],
+          [
+            "03",
+            "Delivery",
+            "Interactive sessions, exercises on your real data. 30-day post-training support to embed the practice for good."
+          ]
         ]
       },
       "faq": {
         "label": "FAQ",
         "h2": "Before we talk.",
         "items": [
-          ["Are you Qualiopi / CPF eligible?", "Not yet Qualiopi. Certification is in progress for 2026. For now, trainings are billed directly, not through French OPCO funding."],
-          ["On-site or inter-company?", "On-site only. Programmes calibrated to your industry, tools, cases. That's what makes the difference."],
-          ["How many days per module?", "1 to 2 days per module, depending on depth. Groups of 3 to 15 max to stay interactive."],
-          ["Remote or in-person?", "Both. In-person in Thonon, Montpellier, or at your office. Remote on Meet or Teams, with live exercises."]
+          [
+            "Are you Qualiopi / CPF eligible?",
+            "Not yet Qualiopi. Certification is in progress for 2026. For now, trainings are billed directly, not through French OPCO funding."
+          ],
+          [
+            "On-site or inter-company?",
+            "On-site only. Programmes calibrated to your industry, tools, cases. That's what makes the difference."
+          ],
+          [
+            "How many days per module?",
+            "1 to 2 days per module, depending on depth. Groups of 3 to 15 max to stay interactive."
+          ],
+          [
+            "Remote or in-person?",
+            "Both. In-person in Thonon, Montpellier, or at your office. Remote on Meet or Teams, with live exercises."
+          ]
         ]
       },
       "cta": {
@@ -546,15 +888,31 @@
       },
       "audience": {
         "label": "For whom",
-        "items": ["Home equipment & retail", "Service SMBs", "E-commerce"]
+        "items": [
+          "Home equipment & retail",
+          "Service SMBs",
+          "E-commerce"
+        ]
       },
       "problem": {
         "label": "The problem",
         "h2": "What your site really costs you.",
         "items": [
-          { "n": "01", "title": "An expensive site that doesn't convert", "desc": "You paid €8,000 for a site that looks like a brochure. Pretty, maybe. Inbound leads: zero." },
-          { "n": "02", "title": "You're trapped in a tool", "desc": "Wix, Shopify, an agency that charges for every change: impossible to leave without redoing everything. You're the one stuck." },
-          { "n": "03", "title": "A redesign that never ends", "desc": "Announced at 6 weeks, delivered at 8 months. Vague specs, endless approvals, content that never arrives." }
+          {
+            "n": "01",
+            "title": "An expensive site that doesn't convert",
+            "desc": "You paid €8,000 for a site that looks like a brochure. Pretty, maybe. Inbound leads: zero."
+          },
+          {
+            "n": "02",
+            "title": "You're trapped in a tool",
+            "desc": "Wix, Shopify, an agency that charges for every change: impossible to leave without redoing everything. You're the one stuck."
+          },
+          {
+            "n": "03",
+            "title": "A redesign that never ends",
+            "desc": "Announced at 6 weeks, delivered at 8 months. Vague specs, endless approvals, content that never arrives."
+          }
         ]
       },
       "deliverables": {
@@ -562,12 +920,30 @@
         "h2": "Every format. Zero dependency.",
         "subtitle": "Showcase, landing, multi-page, e-commerce. Clean code, hosting on your account, editable content. You leave whenever you want, you take everything with you.",
         "items": [
-          { "title": "Showcase site", "desc": "5 to 10 pages, custom design, performant. A pro presence that doubles as a business card and an acquisition channel." },
-          { "title": "Landing page", "desc": "One page focused on conversion, A/B-test ready, plugged into your CRM. Ideal for paid campaigns or a launch." },
-          { "title": "Multi-page site", "desc": "10+ pages, blog, client area, multiple forms. For businesses with several service lines." },
-          { "title": "E-commerce", "desc": "Product catalogue, cart, checkout, inventory. Modern stack (Shopify Hydrogen, Medusa, or Next.js + Stripe depending on need)." },
-          { "title": "Full redesign", "desc": "Audit of the existing site, redesign plan, migration without losing SEO. To move from a site that drags to a site that serves." },
-          { "title": "Migration off Wix", "desc": "We get you out of Wix, Squarespace or Shopify. You take back control of the code and the hosting." }
+          {
+            "title": "Showcase site",
+            "desc": "5 to 10 pages, custom design, performant. A pro presence that doubles as a business card and an acquisition channel."
+          },
+          {
+            "title": "Landing page",
+            "desc": "One page focused on conversion, A/B-test ready, plugged into your CRM. Ideal for paid campaigns or a launch."
+          },
+          {
+            "title": "Multi-page site",
+            "desc": "10+ pages, blog, client area, multiple forms. For businesses with several service lines."
+          },
+          {
+            "title": "E-commerce",
+            "desc": "Product catalogue, cart, checkout, inventory. Modern stack (Shopify Hydrogen, Medusa, or Next.js + Stripe depending on need)."
+          },
+          {
+            "title": "Full redesign",
+            "desc": "Audit of the existing site, redesign plan, migration without losing SEO. To move from a site that drags to a site that serves."
+          },
+          {
+            "title": "Migration off Wix",
+            "desc": "We get you out of Wix, Squarespace or Shopify. You take back control of the code and the hosting."
+          }
         ]
       },
       "case": {
@@ -595,19 +971,43 @@
         "label": "How it works",
         "h2": "Brief, build, launch.",
         "steps": [
-          ["01", "Brief", "30 min to understand your business, your audiences, your goals. We come back with a structure, design and timeline proposal."],
-          ["02", "Build", "Design first, then development. Mockups approved before code. Weekly demo to adjust along the way."],
-          ["03", "Launch", "Migration, SEO redirects, training so you can manage content yourself. Optional maintenance."]
+          [
+            "01",
+            "Brief",
+            "30 min to understand your business, your audiences, your goals. We come back with a structure, design and timeline proposal."
+          ],
+          [
+            "02",
+            "Build",
+            "Design first, then development. Mockups approved before code. Weekly demo to adjust along the way."
+          ],
+          [
+            "03",
+            "Launch",
+            "Migration, SEO redirects, training so you can manage content yourself. Optional maintenance."
+          ]
         ]
       },
       "faq": {
         "label": "FAQ",
         "h2": "Before we talk.",
         "items": [
-          ["How many pages?", "Showcase: 5 to 10. Multi-page: 10+. E-commerce: depends on catalogue. No rigid pricing grid, we shape it during the brief."],
-          ["Which CMS / stack?", "Next.js for performance and SEO, or headless WordPress if you prefer. No Wix, Squarespace, or other closed tools."],
-          ["What about hosting?", "On your account (Vercel, Cloudflare, OVH — your choice). You stay the owner. We can manage it for you as an option."],
-          ["Do you do the content?", "Copy: yes, SEO-optimised. Visuals: either we provide, or we use yours. We figure it out at the brief."]
+          [
+            "How many pages?",
+            "Showcase: 5 to 10. Multi-page: 10+. E-commerce: depends on catalogue. No rigid pricing grid, we shape it during the brief."
+          ],
+          [
+            "Which CMS / stack?",
+            "Next.js for performance and SEO, or headless WordPress if you prefer. No Wix, Squarespace, or other closed tools."
+          ],
+          [
+            "What about hosting?",
+            "On your account (Vercel, Cloudflare, OVH — your choice). You stay the owner. We can manage it for you as an option."
+          ],
+          [
+            "Do you do the content?",
+            "Copy: yes, SEO-optimised. Visuals: either we provide, or we use yours. We figure it out at the brief."
+          ]
         ]
       },
       "cta": {
@@ -629,15 +1029,31 @@
       },
       "audience": {
         "label": "For whom",
-        "items": ["Local SMBs", "E-commerce", "B2B services"]
+        "items": [
+          "Local SMBs",
+          "E-commerce",
+          "B2B services"
+        ]
       },
       "problem": {
         "label": "The problem",
         "h2": "Why you're invisible on Google.",
         "items": [
-          { "n": "01", "title": "Invisible on what actually pays", "desc": "Your clients type their queries. You appear nowhere. Your competitors? Page one, for 18 months already." },
-          { "n": "02", "title": "You're paying Google Ads to exist", "desc": "Without SEO, every click costs €2 to €8. With proper SEO, the same traffic goes free after a few months. The math is simple." },
-          { "n": "03", "title": "Your SEO agency reports from 2020", "desc": "Shady links, thin content, over-optimisation. AI changed everything. Today Google rewards useful content and performance, not old-school SEO." }
+          {
+            "n": "01",
+            "title": "Invisible on what actually pays",
+            "desc": "Your clients type their queries. You appear nowhere. Your competitors? Page one, for 18 months already."
+          },
+          {
+            "n": "02",
+            "title": "You're paying Google Ads to exist",
+            "desc": "Without SEO, every click costs €2 to €8. With proper SEO, the same traffic goes free after a few months. The math is simple."
+          },
+          {
+            "n": "03",
+            "title": "Your SEO agency reports from 2020",
+            "desc": "Shady links, thin content, over-optimisation. AI changed everything. Today Google rewards useful content and performance, not old-school SEO."
+          }
         ]
       },
       "deliverables": {
@@ -645,12 +1061,30 @@
         "h2": "Every brick of modern SEO.",
         "subtitle": "Six expertises, adapted to your market and your current maturity. We prioritise during the audit.",
         "items": [
-          { "title": "Local SEO", "desc": "Google Business Profile, citations, reviews, map rankings. For distributors, professional firms, businesses working on specific geographic zones." },
-          { "title": "Technical SEO", "desc": "Performance, indexability, structured data, Core Web Vitals. The foundation no content can compensate for if it's broken." },
-          { "title": "Content SEO", "desc": "Keyword research, editorial briefs, copywriting, optimisation of existing pages. Content that ranks and converts." },
-          { "title": "International SEO", "desc": "Hreflang, multi-market structure, SEO translation. To grow visibility across countries without duplicating or cannibalising." },
-          { "title": "SEO audit", "desc": "Technical, content, backlink and competitive diagnosis. Prioritised action plan, delivered in writing, valid even without us." },
-          { "title": "Targeted link building", "desc": "On request. No PBNs, no mass, just relevant editorial links that build your authority gradually." }
+          {
+            "title": "Local SEO",
+            "desc": "Google Business Profile, citations, reviews, map rankings. For distributors, professional firms, businesses working on specific geographic zones."
+          },
+          {
+            "title": "Technical SEO",
+            "desc": "Performance, indexability, structured data, Core Web Vitals. The foundation no content can compensate for if it's broken."
+          },
+          {
+            "title": "Content SEO",
+            "desc": "Keyword research, editorial briefs, copywriting, optimisation of existing pages. Content that ranks and converts."
+          },
+          {
+            "title": "International SEO",
+            "desc": "Hreflang, multi-market structure, SEO translation. To grow visibility across countries without duplicating or cannibalising."
+          },
+          {
+            "title": "SEO audit",
+            "desc": "Technical, content, backlink and competitive diagnosis. Prioritised action plan, delivered in writing, valid even without us."
+          },
+          {
+            "title": "Targeted link building",
+            "desc": "On request. No PBNs, no mass, just relevant editorial links that build your authority gradually."
+          }
         ]
       },
       "case": {
@@ -678,19 +1112,43 @@
         "label": "How it works",
         "h2": "Audit, roadmap, monthly execution.",
         "steps": [
-          ["01", "Audit", "Technical, content, backlinks, current rankings. Benchmark against direct competitors. Prioritised plan."],
-          ["02", "Roadmap", "6 to 12-month action plan. Quick wins (weeks 1-4) split from long-term work. You approve before we execute."],
-          ["03", "Monthly execution", "Cadenced delivery, 30-day reporting, adjustments based on what the data says. No black box, no fuzzy reports."]
+          [
+            "01",
+            "Audit",
+            "Technical, content, backlinks, current rankings. Benchmark against direct competitors. Prioritised plan."
+          ],
+          [
+            "02",
+            "Roadmap",
+            "6 to 12-month action plan. Quick wins (weeks 1-4) split from long-term work. You approve before we execute."
+          ],
+          [
+            "03",
+            "Monthly execution",
+            "Cadenced delivery, 30-day reporting, adjustments based on what the data says. No black box, no fuzzy reports."
+          ]
         ]
       },
       "faq": {
         "label": "FAQ",
         "h2": "Before we talk.",
         "items": [
-          ["How long until results?", "Technical quick wins: 2 to 4 weeks. Local SEO: 2 to 4 months. Content SEO on competitive queries: 6 to 12 months. We tell you at the audit."],
-          ["Is AI killing SEO?", "No, it accelerates it. We use AI for briefs, drafting, faster audits — but rankings still depend on useful content + technical health + authority."],
-          ["Do you do link building?", "Yes, but targeted. No PBNs, no mass shady links. Only editorial links on relevant sites, negotiated one by one."],
-          ["Local or national SEO?", "Both. But for a local SMB (professional firm, distributor), starting local is almost always the best ROI."]
+          [
+            "How long until results?",
+            "Technical quick wins: 2 to 4 weeks. Local SEO: 2 to 4 months. Content SEO on competitive queries: 6 to 12 months. We tell you at the audit."
+          ],
+          [
+            "Is AI killing SEO?",
+            "No, it accelerates it. We use AI for briefs, drafting, faster audits — but rankings still depend on useful content + technical health + authority."
+          ],
+          [
+            "Do you do link building?",
+            "Yes, but targeted. No PBNs, no mass shady links. Only editorial links on relevant sites, negotiated one by one."
+          ],
+          [
+            "Local or national SEO?",
+            "Both. But for a local SMB (professional firm, distributor), starting local is almost always the best ROI."
+          ]
         ]
       },
       "cta": {
@@ -712,15 +1170,31 @@
       },
       "audience": {
         "label": "For whom",
-        "items": ["Premium brands", "Founder experts", "Creators & venues"]
+        "items": [
+          "Premium brands",
+          "Founder experts",
+          "Creators & venues"
+        ]
       },
       "problem": {
         "label": "The problem",
         "h2": "What social really costs you.",
         "items": [
-          { "n": "01", "title": "Your account stalls despite your efforts", "desc": "You post irregularly, without strategy, and the algorithm forgets you. Month after month, reach plateaus and the audience doesn't grow." },
-          { "n": "02", "title": "Creating regular content eats your time", "desc": "Writing, shooting, editing, publishing: 6 to 10 hours a week you can't spend on your actual business." },
-          { "n": "03", "title": "You post on 3 platforms with no plan", "desc": "LinkedIn, Instagram, YouTube — each platform needs a different format. Without a plan, you scatter effort and get no measurable result." }
+          {
+            "n": "01",
+            "title": "Your account stalls despite your efforts",
+            "desc": "You post irregularly, without strategy, and the algorithm forgets you. Month after month, reach plateaus and the audience doesn't grow."
+          },
+          {
+            "n": "02",
+            "title": "Creating regular content eats your time",
+            "desc": "Writing, shooting, editing, publishing: 6 to 10 hours a week you can't spend on your actual business."
+          },
+          {
+            "n": "03",
+            "title": "You post on 3 platforms with no plan",
+            "desc": "LinkedIn, Instagram, YouTube — each platform needs a different format. Without a plan, you scatter effort and get no measurable result."
+          }
         ]
       },
       "deliverables": {
@@ -728,12 +1202,30 @@
         "h2": "The whole chain, from strategy to reporting.",
         "subtitle": "An approach built to grow your audience without diluting your brand. We start on the highest-impact channel, then expand.",
         "items": [
-          { "title": "Multi-platform strategy", "desc": "Audit of your current accounts, priority channel definition, editorial line and positioning. Everything is framed before we produce anything." },
-          { "title": "Instagram growth", "desc": "The core of the service. Targeted organic growth strategy, visual content (posts, reels, stories), qualified engagement. Monthly follower tracking." },
-          { "title": "LinkedIn content", "desc": "Pro posts and long-form articles, written in your voice. Built to generate authority and qualified leads." },
-          { "title": "YouTube videos & Shorts", "desc": "Scripts, editing, YouTube SEO. Long form for authority, Shorts for reach. Can be adapted for TikTok too." },
-          { "title": "Publishing & engagement", "desc": "Publishing calendar, automated posting, replies to comments and targeted DMs. You keep the final word, we handle execution." },
-          { "title": "Monthly reporting", "desc": "Growth, engagement, inbound leads, formats that work. A written monthly review to adjust strategy on what the data actually says." }
+          {
+            "title": "Multi-platform strategy",
+            "desc": "Audit of your current accounts, priority channel definition, editorial line and positioning. Everything is framed before we produce anything."
+          },
+          {
+            "title": "Instagram growth",
+            "desc": "The core of the service. Targeted organic growth strategy, visual content (posts, reels, stories), qualified engagement. Monthly follower tracking."
+          },
+          {
+            "title": "LinkedIn content",
+            "desc": "Pro posts and long-form articles, written in your voice. Built to generate authority and qualified leads."
+          },
+          {
+            "title": "YouTube videos & Shorts",
+            "desc": "Scripts, editing, YouTube SEO. Long form for authority, Shorts for reach. Can be adapted for TikTok too."
+          },
+          {
+            "title": "Publishing & engagement",
+            "desc": "Publishing calendar, automated posting, replies to comments and targeted DMs. You keep the final word, we handle execution."
+          },
+          {
+            "title": "Monthly reporting",
+            "desc": "Growth, engagement, inbound leads, formats that work. A written monthly review to adjust strategy on what the data actually says."
+          }
         ]
       },
       "case": {
@@ -761,19 +1253,43 @@
         "label": "How it works",
         "h2": "Audit, production, growth.",
         "steps": [
-          ["01", "Audit", "30 min to understand your brand, voice, audiences. Diagnosis of current accounts and identification of the highest-leverage channel."],
-          ["02", "Production", "Editorial strategy, first content calibrated to your voice, calendar approved with you. You keep the final word before publishing."],
-          ["03", "Growth", "Regular publishing, targeted engagement, monthly reporting. We adjust each month based on what actually works for you."]
+          [
+            "01",
+            "Audit",
+            "30 min to understand your brand, voice, audiences. Diagnosis of current accounts and identification of the highest-leverage channel."
+          ],
+          [
+            "02",
+            "Production",
+            "Editorial strategy, first content calibrated to your voice, calendar approved with you. You keep the final word before publishing."
+          ],
+          [
+            "03",
+            "Growth",
+            "Regular publishing, targeted engagement, monthly reporting. We adjust each month based on what actually works for you."
+          ]
         ]
       },
       "faq": {
         "label": "FAQ",
         "h2": "Before we talk.",
         "items": [
-          ["Who writes the content?", "Our editorial teams, calibrated on your voice during onboarding. Every post is reviewed and adapted to your tone before publishing."],
-          ["Do we keep control of what goes out?", "Yes. You approve every calendar upfront. No content goes out without your sign-off — it's your voice, it's your brand."],
-          ["How many followers do you guarantee?", "No fixed guarantee. Fixed growth promises on social usually hide fake followers. We aim for qualified growth, validated during the audit."],
-          ["How many posts per month?", "Varies by channel and need. Typically: 12-20 Instagram posts + daily stories, 8-16 LinkedIn posts, 2-4 long-form YouTube videos. To frame together."]
+          [
+            "Who writes the content?",
+            "Our editorial teams, calibrated on your voice during onboarding. Every post is reviewed and adapted to your tone before publishing."
+          ],
+          [
+            "Do we keep control of what goes out?",
+            "Yes. You approve every calendar upfront. No content goes out without your sign-off — it's your voice, it's your brand."
+          ],
+          [
+            "How many followers do you guarantee?",
+            "No fixed guarantee. Fixed growth promises on social usually hide fake followers. We aim for qualified growth, validated during the audit."
+          ],
+          [
+            "How many posts per month?",
+            "Varies by channel and need. Typically: 12-20 Instagram posts + daily stories, 8-16 LinkedIn posts, 2-4 long-form YouTube videos. To frame together."
+          ]
         ]
       },
       "cta": {

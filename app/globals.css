@@ -156,6 +156,9 @@ details[open] > .demo-summary::before {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
+  .demo-links-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @media (max-width: 600px) {
