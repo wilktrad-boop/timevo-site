@@ -152,6 +152,10 @@ details[open] > .demo-summary::before {
     flex-direction: column !important;
     gap: 18px !important;
   }
+  .demo-reading-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
 }
 
 @media (max-width: 600px) {

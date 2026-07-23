@@ -10,21 +10,30 @@ import type { DemoDashboard } from "@/lib/demoDashboards";
 
 // ── Primitives locales ───────────────────────────────────────────────
 
-function PanelTitle({ h2, subtitle }: { h2: string; subtitle: string }) {
+/**
+ * En-tête de panneau. Volontairement sec : un titre et une ligne de contexte
+ * comme en afficherait une vraie application. L'argumentaire Timevo est sous
+ * le cadre, dans la lecture commentée.
+ */
+function PanelTitle({ h2, meta }: { h2: string; meta: string }) {
   return (
-    <div style={{ marginBottom: 32 }}>
+    <div style={{
+      display: "flex", alignItems: "baseline", justifyContent: "space-between",
+      gap: 20, flexWrap: "wrap",
+      marginBottom: 28, paddingBottom: 16, borderBottom: "1px solid var(--border)",
+    }}>
       <h2 style={{
-        fontFamily: "var(--font-sans)", fontSize: "clamp(24px, 3vw, 34px)", fontWeight: 500,
-        letterSpacing: "-0.03em", lineHeight: 1.1, margin: 0, marginBottom: 12, color: "var(--text)",
+        fontFamily: "var(--font-sans)", fontSize: 19, fontWeight: 500,
+        letterSpacing: "-0.02em", margin: 0, color: "var(--text)",
       }}>
         {h2}
       </h2>
-      <p style={{
-        fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.55,
-        color: "var(--dim)", margin: 0, maxWidth: 680,
+      <span style={{
+        fontFamily: "var(--font-mono)", fontSize: 11,
+        color: "var(--dim-2)", letterSpacing: "0.06em",
       }}>
-        {subtitle}
-      </p>
+        {meta}
+      </span>
     </div>
   );
 }
@@ -110,7 +119,7 @@ const STEP_STYLE = {
 export function QuotesPanel({ d }: { d: DemoDashboard }) {
   return (
     <>
-      <PanelTitle h2={d.quotesH2} subtitle={d.quotesSubtitle} />
+      <PanelTitle h2={d.quotesH2} meta={d.quotesMeta} />
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", minWidth: 720, borderCollapse: "collapse" }}>
           <thead>
@@ -179,7 +188,7 @@ export function QuotesPanel({ d }: { d: DemoDashboard }) {
 export function CallsPanel({ d }: { d: DemoDashboard }) {
   return (
     <>
-      <PanelTitle h2={d.callsH2} subtitle={d.callsSubtitle} />
+      <PanelTitle h2={d.callsH2} meta={d.callsMeta} />
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
         {d.calls.map(call => (
           <div key={call.from + call.at} style={{
@@ -289,7 +298,7 @@ function ScoreBar({ score, label }: { score: number; label: string }) {
 export function LeadsPanel({ d }: { d: DemoDashboard }) {
   return (
     <>
-      <PanelTitle h2={d.leadsH2} subtitle={d.leadsSubtitle} />
+      <PanelTitle h2={d.leadsH2} meta={d.leadsMeta} />
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
         {d.leads.map(lead => (
           <div key={lead.name} style={{
@@ -376,7 +385,7 @@ export function LeadsPanel({ d }: { d: DemoDashboard }) {
 export function BillingPanel({ d }: { d: DemoDashboard }) {
   return (
     <>
-      <PanelTitle h2={d.billingH2} subtitle={d.billingSubtitle} />
+      <PanelTitle h2={d.billingH2} meta={d.billingMeta} />
 
       <div className="demo-kpi-grid" style={{
         display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, marginBottom: 32,

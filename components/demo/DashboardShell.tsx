@@ -6,38 +6,15 @@ import type { DemoDashboard } from "@/lib/demoDashboards";
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
 /**
- * Filigrane : une tuile SVG répétée en background-image.
- *
- * La première version empilait 60 <span> dans un calque tourné et étendu à
- * `inset: -20%`. Sur un conteneur de plusieurs milliers de pixels de haut, ça
- * produisait une couche composite géante que la nav en `backdrop-filter`
- * devait recalculer à chaque scroll : le rendu bloquait. Une tuile répétée
- * coûte une seule passe de peinture.
- */
-function watermarkTile(text: string): string {
-  // Les caractères non-ASCII passent en référence XML pour rester dans un
-  // data URI sûr (le É de « DÉMO »).
-  const safe = [...text].map(c => (c.charCodeAt(0) > 127 ? `&#${c.charCodeAt(0)};` : c)).join("");
-  const svg =
-    `<svg xmlns='http://www.w3.org/2000/svg' width='300' height='190'>` +
-    `<text x='150' y='100' text-anchor='middle' transform='rotate(-24 150 100)' ` +
-    `font-family='monospace' font-size='30' letter-spacing='8' ` +
-    `fill='#ededed' fill-opacity='0.05'>${safe}</text></svg>`;
-  // Le `#` doit être encodé en dernier : il sert à la fois pour la couleur et
-  // pour les entités XML, et un `#` brut couperait le data URI.
-  const encoded = svg
-    .replace(/</g, "%3C")
-    .replace(/>/g, "%3E")
-    .replace(/#/g, "%23");
-  return `url("data:image/svg+xml,${encoded}")`;
-}
-
-/**
  * Ossature d'une page de démo. Server Component.
  *
- * Porte les deux dispositifs qui signalent que les données sont fictives :
- * le filigrane répété en fond de la zone de données, et la mention explicite
- * sous le dashboard.
+ * Deux règles de composition :
+ * - Dans le cadre, uniquement ce qu'une vraie application afficherait :
+ *   libellés opérationnels, compteurs, filtres. Aucun argumentaire.
+ * - L'argumentaire Timevo vit sous le cadre, dans la lecture commentée.
+ *
+ * C'est aussi là que se trouvent les deux signaux « données fictives » :
+ * la barre de titre et la mention complète.
  */
 export default function DashboardShell({ d }: { d: DemoDashboard }) {
   return (
@@ -75,37 +52,33 @@ export default function DashboardShell({ d }: { d: DemoDashboard }) {
       {/* ── Le dashboard ────────────────────────────────────────── */}
       <section style={{ padding: "0 28px 96px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          {/* Le filigrane est un motif de fond : décoratif, non sélectionnable,
-              et invisible pour les lecteurs d'écran (la mention sous le cadre
-              porte l'information). */}
           <div style={{
             position: "relative", overflow: "hidden",
             border: "1px solid var(--border-strong)", borderRadius: 24,
             background: "var(--bg)",
-            backgroundImage: watermarkTile(d.watermark),
-            backgroundRepeat: "repeat",
           }}>
-            {/* Barre de titre façon application */}
+            {/* Barre de titre : c'est elle qui porte le signal « données
+                fictives » pendant la lecture. La mention complète sous le cadre
+                prend le relais une fois qu'on a scrollé. */}
             <div style={{
-              position: "relative", zIndex: 1,
-              display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap",
-              padding: "16px 24px", borderBottom: "1px solid var(--border)",
-              background: "var(--card)",
+              display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap",
+              padding: "15px 24px",
+              borderBottom: "1px solid var(--accent-tint)",
+              background: "var(--accent-tint)",
             }}>
-              <span aria-hidden="true" style={{ display: "inline-flex", gap: 6 }}>
-                {["#f87171", "#fbbf24", "#4ade80"].map(c => (
-                  <span key={c} style={{ width: 9, height: 9, borderRadius: 999, background: c, opacity: 0.55 }} />
-                ))}
-              </span>
+              <span aria-hidden="true" style={{
+                width: 7, height: 7, borderRadius: 999,
+                background: "var(--accent)", flex: "0 0 auto",
+              }} />
               <span style={{
-                fontFamily: "var(--font-mono)", fontSize: 11,
-                color: "var(--dim-2)", letterSpacing: "0.1em", textTransform: "uppercase",
+                fontFamily: "var(--font-mono)", fontSize: 11.5,
+                color: "var(--accent-soft)", letterSpacing: "0.14em", textTransform: "uppercase",
               }}>
                 {d.demoBadge}
               </span>
             </div>
 
-            <div style={{ position: "relative", zIndex: 1, padding: "32px 24px 40px" }}>
+            <div style={{ padding: "32px 24px 40px" }}>
               <KpiRow d={d} />
               <DemoTabs labels={d.tabs}>
                 <QuotesPanel d={d} />
@@ -123,6 +96,58 @@ export default function DashboardShell({ d }: { d: DemoDashboard }) {
           }}>
             {d.demoNote}
           </p>
+        </div>
+      </section>
+
+      {/* ── Lecture commentée ───────────────────────────────────
+          Tout l'argumentaire Timevo est ici, hors du cadre : dans le
+          dashboard, seule l'application parle. */}
+      <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <h2 style={{
+            fontFamily: "var(--font-sans)", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 500,
+            letterSpacing: "-0.04em", lineHeight: 1.05, margin: 0, marginBottom: 16,
+            color: "var(--text)", maxWidth: 800,
+          }}>
+            {d.readingH2}
+          </h2>
+          <p style={{
+            fontFamily: "var(--font-sans)", fontSize: 17, lineHeight: 1.5,
+            color: "var(--dim)", margin: 0, marginBottom: 56, maxWidth: 680,
+          }}>
+            {d.readingSubtitle}
+          </p>
+
+          <div className="demo-reading-grid" style={{
+            display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "48px 64px",
+          }}>
+            {d.readings.map((r, i) => (
+              <div key={r.tab}>
+                <div style={{
+                  display: "flex", alignItems: "center", gap: 12, marginBottom: 14,
+                }}>
+                  <span style={{
+                    fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim-2)",
+                    letterSpacing: "0.12em",
+                  }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span style={{
+                    fontFamily: "var(--font-sans)", fontSize: 17, fontWeight: 500,
+                    letterSpacing: "-0.02em", color: "var(--text)",
+                  }}>
+                    {r.tab}
+                  </span>
+                </div>
+                <p style={{
+                  fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.6,
+                  color: "var(--dim)", margin: 0, maxWidth: 520,
+                }}>
+                  {r.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

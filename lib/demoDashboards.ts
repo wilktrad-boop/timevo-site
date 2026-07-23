@@ -4,8 +4,9 @@ import type { Locale } from "./pageLabels";
  * Données des dashboards de démo, par secteur et par langue.
  *
  * TOUTES CES DONNÉES SONT FICTIVES. Aucun client réel, aucun chiffre réel.
- * La page les signale par un filigrane sur chaque panneau et par une mention
- * explicite en pied de page (cf. docs/superpowers/specs/2026-07-23-…).
+ * La page les signale par la barre de titre du cadre (`demoBadge`) et par la
+ * mention complète sous le dashboard (`demoNote`).
+ * Cf. docs/superpowers/specs/2026-07-23-dashboards-demo-design.md.
  *
  * Même pattern que SECTORS (lib/sectors.ts) et CITIES (lib/cities.ts).
  */
@@ -65,25 +66,24 @@ export type DemoDashboard = {
 
   demoBadge: string;
   demoNote: string;
-  watermark: string;
 
   tabs: string[];
 
   kpis: Kpi[];
 
   quotesH2: string;
-  quotesSubtitle: string;
+  quotesMeta: string;
   quotesCols: { client: string; amount: string; follow: string; outcome: string };
   quotes: Quote[];
 
   callsH2: string;
-  callsSubtitle: string;
+  callsMeta: string;
   urgentLabel: string;
   transcriptLabel: string;
   calls: Call[];
 
   leadsH2: string;
-  leadsSubtitle: string;
+  leadsMeta: string;
   scoreLabel: string;
   emailReadyLabel: string;
   sendLabel: string;
@@ -91,12 +91,17 @@ export type DemoDashboard = {
   leads: Lead[];
 
   billingH2: string;
-  billingSubtitle: string;
+  billingMeta: string;
   billingStats: { label: string; value: string }[];
   splitLabel: string;
   split: { label: string; value: number; color: string }[];
   invoicesCols: { ref: string; client: string; amount: string; status: string };
   invoices: Invoice[];
+
+  /** Lecture commentée, SOUS le cadre : c'est là que Timevo parle. */
+  readingH2: string;
+  readingSubtitle: string;
+  readings: { tab: string; text: string }[];
 
   ctaH2: string;
   ctaSubtitle: string;
@@ -113,23 +118,21 @@ const PISCINISTE_FR: DemoDashboard = {
   subtitle:
     "Voilà ce qu'un pisciniste de 12 personnes a sous les yeux le lundi matin, une fois les workflows en place. Devis, appels, demandes entrantes, facturation : tout au même endroit, mis à jour sans personne pour le faire.",
 
-  demoBadge: "Environnement de démonstration",
+  demoBadge: "Démonstration — données fictives",
   demoNote:
     "Scénario type, pas un client existant. Toutes les données de cette page sont fictives : noms, montants, transcriptions. L'interface, elle, est celle qu'on livre. Les chiffres réels sont établis pendant l'audit gratuit.",
-  watermark: "DÉMO",
 
   tabs: ["Devis", "Appels", "Demandes", "Facturation"],
 
   kpis: [
-    { value: "14", label: "Devis en cours", detail: "dont 6 en relance automatique" },
-    { value: "8 400 €", label: "CA récupéré ce mois", detail: "devis relancés puis signés" },
-    { value: "11", label: "Appels traités par l'IA", detail: "sur 26 reçus depuis lundi" },
-    { value: "23", label: "Demandes reçues", detail: "18 qualifiées, 5 écartées" },
+    { value: "14", label: "Devis en cours", detail: "6 en relance programmée" },
+    { value: "8 400 €", label: "Signé ce mois", detail: "2 devis" },
+    { value: "11", label: "Appels traités", detail: "26 reçus depuis lundi" },
+    { value: "23", label: "Demandes reçues", detail: "18 qualifiées · 5 écartées" },
   ],
 
-  quotesH2: "Suivi des devis.",
-  quotesSubtitle:
-    "Chaque devis part avec sa séquence de relance. Personne ne la déclenche à la main, et personne n'oublie de la couper quand le client répond.",
+  quotesH2: "Suivi des devis",
+  quotesMeta: "5 devis · 30 derniers jours",
   quotesCols: { client: "Client & projet", amount: "Montant HT", follow: "Relances", outcome: "Statut" },
   quotes: [
     {
@@ -189,9 +192,8 @@ const PISCINISTE_FR: DemoDashboard = {
     },
   ],
 
-  callsH2: "Agent IA téléphonique.",
-  callsSubtitle:
-    "En saison, l'agent prend les appels que personne n'a le temps de prendre. Il qualifie, il résume, et il ne dérange un humain que quand ça le mérite.",
+  callsH2: "Appels",
+  callsMeta: "3 appels · dernier : aujourd'hui 09:12",
   urgentLabel: "À rappeler",
   transcriptLabel: "Voir la transcription",
   calls: [
@@ -242,9 +244,8 @@ const PISCINISTE_FR: DemoDashboard = {
     },
   ],
 
-  leadsH2: "Demandes du formulaire.",
-  leadsSubtitle:
-    "Chaque demande est notée avant d'arriver chez vous. Celles qui tiennent la route arrivent avec une réponse déjà écrite ; les autres ne vous font pas perdre de temps.",
+  leadsH2: "Demandes du formulaire",
+  leadsMeta: "3 demandes · triées par score",
   scoreLabel: "Sérieux",
   emailReadyLabel: "Réponse prête à envoyer",
   sendLabel: "Envoyer l'email",
@@ -281,9 +282,8 @@ const PISCINISTE_FR: DemoDashboard = {
     },
   ],
 
-  billingH2: "Facturation & TVA.",
-  billingSubtitle:
-    "Les factures partent, les relances aussi, et la TVA se calcule au fil de l'eau. Le comptable reçoit l'export sans le demander.",
+  billingH2: "Facturation & TVA",
+  billingMeta: "Période en cours · 4 factures",
   billingStats: [
     { label: "CA encaissé ce mois", value: "94 200 €" },
     { label: "TVA collectée", value: "18 840 €" },
@@ -304,6 +304,28 @@ const PISCINISTE_FR: DemoDashboard = {
     { ref: "F-2026-0415", client: "Camping des Rives", amount: "12 600 €", status: "En attente de règlement", tone: "wait" },
   ],
 
+  readingH2: "Ce que l'automatisation fait dans cet écran.",
+  readingSubtitle:
+    "Le tableau ci-dessus n'affiche que des données. Voilà ce qui les produit, onglet par onglet.",
+  readings: [
+    {
+      tab: "Devis",
+      text: "Chaque devis part avec sa séquence de relance. Personne ne la déclenche à la main, et personne n'oublie de la couper quand le client répond. Les 8 400 € signés ce mois viennent de deux devis relancés à J+7 : sans la séquence, ils seraient restés sans réponse.",
+    },
+    {
+      tab: "Appels",
+      text: "En saison, l'agent prend les appels que personne n'a le temps de prendre. Il qualifie, il résume, et il ne dérange un humain que quand ça le mérite : ici 11 appels traités sur 26, dont un seul escaladé en SAV.",
+    },
+    {
+      tab: "Demandes",
+      text: "Chaque demande est notée avant d'arriver chez vous. Celles qui tiennent la route arrivent avec une réponse déjà écrite ; les autres ne vous font pas perdre de temps. Sur 23 demandes, 5 n'ont jamais atteint un commercial.",
+    },
+    {
+      tab: "Facturation",
+      text: "Les factures partent, les relances aussi, et la TVA se calcule au fil de l'eau. Le comptable reçoit l'export sans le demander — c'est ce qui explique la ligne à 0 € de retard au-delà de 30 jours.",
+    },
+  ],
+
   ctaH2: "Le vôtre ressemblerait à quoi ?",
   ctaSubtitle:
     "En 30 minutes on regarde votre volume d'appels, votre délai de devis et votre récurrence d'entretien. Vous repartez avec la liste des workflows qui paient avant la prochaine saison.",
@@ -320,23 +342,21 @@ const PISCINISTE_EN: DemoDashboard = {
   subtitle:
     "This is what a 12-person pool builder sees on Monday morning once the workflows are running. Quotes, calls, incoming enquiries, invoicing — all in one place, updated without anyone doing it.",
 
-  demoBadge: "Demonstration environment",
+  demoBadge: "Demonstration — fictional data",
   demoNote:
     "Typical scenario, not an existing client. Every figure on this page is fictional: names, amounts, transcripts. The interface is the one we ship. Real numbers come out of the free audit.",
-  watermark: "DEMO",
 
   tabs: ["Quotes", "Calls", "Enquiries", "Invoicing"],
 
   kpis: [
-    { value: "14", label: "Open quotes", detail: "6 in automatic follow-up" },
-    { value: "€8,400", label: "Revenue recovered", detail: "quotes chased, then signed" },
-    { value: "11", label: "Calls handled by AI", detail: "of 26 received since Monday" },
-    { value: "23", label: "Enquiries received", detail: "18 qualified, 5 discarded" },
+    { value: "14", label: "Open quotes", detail: "6 in scheduled follow-up" },
+    { value: "€8,400", label: "Signed this month", detail: "2 quotes" },
+    { value: "11", label: "Calls handled", detail: "26 received since Monday" },
+    { value: "23", label: "Enquiries received", detail: "18 qualified · 5 discarded" },
   ],
 
-  quotesH2: "Quote tracking.",
-  quotesSubtitle:
-    "Every quote ships with its follow-up sequence. Nobody triggers it by hand, and nobody forgets to stop it when the client replies.",
+  quotesH2: "Quote tracking",
+  quotesMeta: "5 quotes · last 30 days",
   quotesCols: { client: "Client & project", amount: "Amount excl. VAT", follow: "Follow-ups", outcome: "Status" },
   quotes: [
     {
@@ -396,9 +416,8 @@ const PISCINISTE_EN: DemoDashboard = {
     },
   ],
 
-  callsH2: "AI phone agent.",
-  callsSubtitle:
-    "In season, the agent takes the calls nobody has time to take. It qualifies, it summarises, and it only interrupts a human when that's warranted.",
+  callsH2: "Calls",
+  callsMeta: "3 calls · latest: today 09:12",
   urgentLabel: "Call back",
   transcriptLabel: "View transcript",
   calls: [
@@ -449,9 +468,8 @@ const PISCINISTE_EN: DemoDashboard = {
     },
   ],
 
-  leadsH2: "Form enquiries.",
-  leadsSubtitle:
-    "Every enquiry is scored before it reaches you. The solid ones arrive with a reply already written; the rest don't cost you time.",
+  leadsH2: "Form enquiries",
+  leadsMeta: "3 enquiries · sorted by score",
   scoreLabel: "Quality",
   emailReadyLabel: "Reply ready to send",
   sendLabel: "Send email",
@@ -488,9 +506,8 @@ const PISCINISTE_EN: DemoDashboard = {
     },
   ],
 
-  billingH2: "Invoicing & VAT.",
-  billingSubtitle:
-    "Invoices go out, so do the reminders, and VAT adds up as it goes. The accountant gets the export without asking.",
+  billingH2: "Invoicing & VAT",
+  billingMeta: "Current period · 4 invoices",
   billingStats: [
     { label: "Revenue collected", value: "€94,200" },
     { label: "VAT collected", value: "€18,840" },
@@ -509,6 +526,28 @@ const PISCINISTE_EN: DemoDashboard = {
     { ref: "F-2026-0417", client: "L. property co. · Annemasse", amount: "€14,400", status: "Transmitted", tone: "ok" },
     { ref: "F-2026-0416", client: "Mr & Mrs R. · Douvaine", amount: "€1,368", status: "Transmitted", tone: "ok" },
     { ref: "F-2026-0415", client: "Rives campsite", amount: "€12,600", status: "Awaiting payment", tone: "wait" },
+  ],
+
+  readingH2: "What the automation does in this screen.",
+  readingSubtitle:
+    "The dashboard above only shows data. Here is what produces it, tab by tab.",
+  readings: [
+    {
+      tab: "Quotes",
+      text: "Every quote ships with its follow-up sequence. Nobody triggers it by hand, and nobody forgets to stop it when the client replies. The €8,400 signed this month came from two quotes chased at D+7 — without the sequence they would have gone unanswered.",
+    },
+    {
+      tab: "Calls",
+      text: "In season, the agent takes the calls nobody has time to take. It qualifies, it summarises, and it only interrupts a human when that's warranted: 11 calls handled out of 26 here, with a single one escalated to a callout.",
+    },
+    {
+      tab: "Enquiries",
+      text: "Every enquiry is scored before it reaches you. The solid ones arrive with a reply already written; the rest don't cost you time. Of 23 enquiries, 5 never reached a salesperson.",
+    },
+    {
+      tab: "Invoicing",
+      text: "Invoices go out, so do the reminders, and VAT adds up as it goes. The accountant gets the export without asking — which is why the overdue line sits at €0 beyond 30 days.",
+    },
   ],
 
   ctaH2: "What would yours look like?",

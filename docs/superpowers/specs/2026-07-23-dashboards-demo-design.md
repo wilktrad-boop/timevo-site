@@ -33,23 +33,34 @@ Les données sont **entièrement fictives**. La page doit le dire sans ambiguït
 
 Deux dispositifs cumulés :
 
-1. **Filigrane « DÉMO »** répété en fond de chaque panneau de données. `var(--font-mono)`, opacité ~0.04, `aria-hidden`, non sélectionnable. Assez présent pour être vu, assez discret pour ne pas casser la DA minimaliste.
-2. **Mention explicite en pied de page**, alignée sur la formule déjà utilisée par les pages secteur : « Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit. »
+1. **Barre de titre du cadre** — « Démonstration — données fictives », en accent, avec pastille, juste au-dessus des données. C'est le premier élément lu avant d'entrer dans le dashboard.
+2. **Mention complète sous le cadre**, alignée sur la formule déjà utilisée par les pages secteur : « Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit. »
+
+*Révisé le 2026-07-23.* La première version utilisait un filigrane « DÉMO » répété en fond. Écarté par Willy après essai : trop de bruit dans une DA minimaliste. La barre de titre porte désormais seule le signal pendant la lecture.
 
 Ce que la page ne fait jamais : présenter ces données comme des résultats clients Timevo, ni nommer un client réel, ni afficher un témoignage.
 
 ## Structure d'une page
 
-Six sections, calquées sur la référence :
+### Règle de composition
 
-| Section | Contenu |
-|---|---|
-| Barre KPI | 4 métriques : devis en cours, CA récupéré, appels traités par l'IA, demandes reçues |
-| Suivi des devis | Tableau, timeline de relances J+3 / J+7, statut Signé / Perdu / En cours |
-| Agent IA vocal | Transcriptions d'appels dépliables, alertes horodatées, action associée |
-| Demandes qualifiées | Score de sérieux 0–100, email prérédigé, motif de disqualification |
-| Facturation & TVA | CA encaissé, TVA collectée, répartition B2C/B2B en donut, tableau de factures |
-| CTA | Audit gratuit, vers le Calendly existant |
+**Dans le cadre, seulement ce qu'une vraie application afficherait.** Libellés opérationnels, compteurs, lignes de contexte (« 5 devis · 30 derniers jours »). Aucun argumentaire, aucune formule de vente. Un dirigeant doit pouvoir croire qu'il regarde un écran de production.
+
+**L'argumentaire Timevo vit sous le cadre**, dans une lecture commentée onglet par onglet. C'est là qu'on explique que les 8 400 € signés viennent de deux relances à J+7.
+
+*Ajouté le 2026-07-23, après revue de Willy.* La première version mettait des libellés de vente dans les KPI (« CA récupéré ce mois », « Appels traités par l'IA ») et des sous-titres promotionnels en tête de chaque panneau. Rien de tout ça n'existe dans un dashboard réel : ça cassait l'illusion et affaiblissait la démonstration.
+
+### Sections
+
+| Section | Emplacement | Contenu |
+|---|---|---|
+| Barre KPI | dans le cadre | 4 compteurs : devis en cours, signé ce mois, appels traités, demandes reçues |
+| Suivi des devis | dans le cadre | Tableau, timeline de relances J+3 / J+7, statut Signé / Perdu / En attente |
+| Appels | dans le cadre | Transcriptions dépliables, alertes horodatées, action associée |
+| Demandes du formulaire | dans le cadre | Score 0–100, email prérédigé, motif de disqualification |
+| Facturation & TVA | dans le cadre | CA encaissé, TVA, répartition en donut, tableau de factures |
+| Lecture commentée | **sous le cadre** | 4 entrées, une par onglet : ce que l'automatisation produit dans l'écran |
+| CTA | sous le cadre | Audit gratuit, vers le Calendly existant |
 
 L'ossature est commune aux trois secteurs. Seules changent les données, le vocabulaire métier et la saisonnalité.
 
