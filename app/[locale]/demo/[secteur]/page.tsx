@@ -52,13 +52,11 @@ export async function generateMetadata({
       locale: locale === "fr" ? "fr_FR" : "en_GB",
       alternateLocale: locale === "fr" ? "en_GB" : "fr_FR",
       type: "website",
-      images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: d.metaTitle }],
     },
     twitter: {
       card: "summary_large_image",
       title: d.metaTitle,
       description: d.metaDescription,
-      images: [`${BASE}/og-image.png`],
     },
   };
 }
