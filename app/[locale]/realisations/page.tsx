@@ -9,6 +9,9 @@ import Realisations from "@/components/Realisations";
 import ContactCard from "@/components/ContactCard";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 import StickyMobileCta from "@/components/StickyMobileCta";
+import Breadcrumb from "@/components/Breadcrumb";
+import RelatedLinks from "@/components/RelatedLinks";
+import { serviceLinks, sectorLinks, cityLinks, LINK_LABELS } from "@/lib/links";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -84,6 +87,7 @@ export default async function RealisationsPage({
   const t = await getTranslations({ locale, namespace: "realisations" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
   const items = t.raw("items") as Item[];
+  const L = LINK_LABELS[locale];
   const homeUrl = `https://www.timevo.io/${locale}`;
   const pageUrl = `https://www.timevo.io/${locale}/realisations`;
 
@@ -138,6 +142,13 @@ export default async function RealisationsPage({
       />
       <NavDkdp />
       <main>
+        <Breadcrumb
+          label={locale === "fr" ? "Fil d'Ariane" : "Breadcrumb"}
+          items={[
+            { href: `/${locale}`, label: L.home },
+            { label: L.realisationsLabel },
+          ]}
+        />
         <section style={{ padding: "72px 28px 32px" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <div style={{
@@ -179,6 +190,15 @@ export default async function RealisationsPage({
         </section>
 
         <ScrollFadeIn><Realisations /></ScrollFadeIn>
+        <RelatedLinks
+          eyebrow={L.eyebrow}
+          h2={L.h2}
+          groups={[
+            { title: L.services, items: serviceLinks(locale) },
+            { title: L.sectors, items: sectorLinks(locale) },
+            { title: L.cities, items: cityLinks(locale) },
+          ]}
+        />
         <ScrollFadeIn><ContactCard /></ScrollFadeIn>
       </main>
       <FooterDkdp />

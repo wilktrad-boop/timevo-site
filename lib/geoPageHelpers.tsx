@@ -3,8 +3,18 @@ import NavDkdp from "@/components/NavDkdp";
 import FooterDkdp from "@/components/FooterDkdp";
 import GeoPage from "@/components/GeoPage";
 import StickyMobileCta from "@/components/StickyMobileCta";
+import Breadcrumb from "@/components/Breadcrumb";
+import RelatedLinks from "@/components/RelatedLinks";
 import { CITIES } from "@/lib/cities";
 import type { Locale } from "@/lib/pageLabels";
+import {
+  serviceLinks,
+  sectorLinks,
+  cityLinks,
+  cityLink,
+  realisationsLink,
+  LINK_LABELS,
+} from "@/lib/links";
 
 const BASE = "https://www.timevo.io";
 
@@ -75,12 +85,14 @@ export function GeoPageContent({ citySlug, locale }: { citySlug: string; locale:
         : ["Process automation", "AI agents", "Website creation", "SEO"],
   };
 
+  const L = LINK_LABELS[locale];
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${BASE}/${locale}` },
-      { "@type": "ListItem", position: 2, name: c.h1, item: url },
+      { "@type": "ListItem", position: 1, name: L.home, item: `${BASE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: c.city, item: url },
     ],
   };
 
@@ -101,7 +113,33 @@ export function GeoPageContent({ citySlug, locale }: { citySlug: string; locale:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <NavDkdp />
       <main>
+        <Breadcrumb
+          label={locale === "fr" ? "Fil d'Ariane" : "Breadcrumb"}
+          items={[
+            { href: `/${locale}`, label: L.home },
+            { label: cityLink(citySlug, locale).label },
+          ]}
+        />
         <GeoPage c={c} locale={locale} />
+        <RelatedLinks
+          eyebrow={L.eyebrow}
+          h2={L.h2}
+          groups={[
+            { title: L.sectors, items: sectorLinks(locale) },
+            // Les 4 services principaux sont déjà en cartes plus haut : ici on
+            // complète avec formation et réseaux sociaux, absents de ce bloc.
+            {
+              title: L.otherServices,
+              items: [
+                ...serviceLinks(locale).filter(s =>
+                  s.href.endsWith("/formation") || s.href.endsWith("/reseaux-sociaux")
+                ),
+                realisationsLink(locale),
+              ],
+            },
+            { title: L.cities, items: cityLinks(locale, citySlug) },
+          ]}
+        />
       </main>
       <FooterDkdp />
       <StickyMobileCta />

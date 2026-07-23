@@ -1,6 +1,12 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import {
+  SERVICE_SLUGS,
+  sectorLinks,
+  cityLinks,
+  LINK_LABELS,
+  type Locale,
+} from "@/lib/links";
 
-const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 const SOLUTIONS_TITLES = new Set(["Solutions"]);
 
 // For non-Solutions columns, fall back to a single anchor on the home
@@ -9,10 +15,13 @@ const COL_ANCHORS: Record<string, string> = {
   "Method": "#methode",
 };
 
+type Col = { title: string; items: { label: string; href: string }[] };
+
 export default async function FooterDkdp() {
   const t = await getTranslations("footer");
-  const locale = await getLocale();
-  const cols = t.raw("cols") as { title: string; items: string[] }[];
+  const locale = (await getLocale()) as Locale;
+  const msgCols = t.raw("cols") as { title: string; items: string[] }[];
+  const L = LINK_LABELS[locale];
 
   function getItemHref(colTitle: string, itemIdx: number): string {
     if (SOLUTIONS_TITLES.has(colTitle)) {
@@ -23,10 +32,27 @@ export default async function FooterDkdp() {
     return `/${locale}${anchor}`;
   }
 
+  // Colonne « Par secteur » insérée après Solutions : c'est le seul lien entrant
+  // sitewide vers les pages secteur, qui seraient orphelines sans lui.
+  const sectorsCol: Col = {
+    title: L.sectors,
+    items: sectorLinks(locale).map(({ label, href }) => ({ label, href })),
+  };
+
+  const cols: Col[] = msgCols.map(({ title, items }) => ({
+    title,
+    items: items.map((label, i) => ({ label, href: getItemHref(title, i) })),
+  }));
+
+  const solutionsIdx = cols.findIndex(c => SOLUTIONS_TITLES.has(c.title));
+  cols.splice(solutionsIdx >= 0 ? solutionsIdx + 1 : cols.length, 0, sectorsCol);
+
+  const cities = cityLinks(locale);
+
   return (
     <footer style={{ padding: "64px 28px 32px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 48, marginBottom: 48 }}
+        <div style={{ display: "grid", gridTemplateColumns: `1.4fr repeat(${cols.length}, 1fr)`, gap: 48, marginBottom: 48 }}
           className="footer-grid">
           <div>
             <div style={{
@@ -46,7 +72,16 @@ export default async function FooterDkdp() {
               marginTop: 20, fontFamily: "var(--font-mono)", fontSize: 12,
               color: "var(--dim)", lineHeight: 1.7,
             }}>
-              {t("address")}<br />
+              {/* Les villes sont cliquables : second lien entrant vers les pages geo. */}
+              {cities.map((c, i) => (
+                <span key={c.href}>
+                  {i > 0 && " · "}
+                  <a href={c.href} className="footer-link" style={{ fontFamily: "var(--font-mono)", fontSize: 12 }}>
+                    {c.label}
+                  </a>
+                </span>
+              ))}
+              {" · France"}<br />
               <a href="mailto:hello@timevo.io" style={{ color: "var(--dim)", textDecoration: "none" }}>
                 hello@timevo.io
               </a>
@@ -60,11 +95,11 @@ export default async function FooterDkdp() {
                 color: "var(--text)", marginBottom: 16,
               }}>{title}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {items.map((it, i) => (
-                  <a key={it} href={getItemHref(title, i)} className="footer-link" style={{
+                {items.map(({ label, href }) => (
+                  <a key={label} href={href} className="footer-link" style={{
                     fontFamily: "var(--font-sans)", fontSize: 13,
                   }}>
-                    {it}
+                    {label}
                   </a>
                 ))}
               </div>
