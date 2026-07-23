@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { SECTOR_SLUGS } from "@/lib/sectors";
 import { CITY_SLUGS } from "@/lib/cities";
+import { DEMO_SLUGS } from "@/lib/demoDashboards";
 
 const BASE = "https://www.timevo.io";
 
@@ -149,6 +150,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
             fr: `${BASE}/fr/automatisation-pour/${secteur}`,
             en: `${BASE}/en/automatisation-pour/${secteur}`,
             "x-default": `${BASE}/fr/automatisation-pour/${secteur}`,
+          },
+        },
+      },
+    ]),
+
+    // Demo dashboards (FR + EN). Priorité sous celle de la page secteur :
+    // c'est la page secteur qui doit ranker, la démo la soutient.
+    ...DEMO_SLUGS.flatMap(secteur => [
+      {
+        url: `${BASE}/fr/demo/${secteur}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+        alternates: {
+          languages: {
+            fr: `${BASE}/fr/demo/${secteur}`,
+            en: `${BASE}/en/demo/${secteur}`,
+            "x-default": `${BASE}/fr/demo/${secteur}`,
+          },
+        },
+      },
+      {
+        url: `${BASE}/en/demo/${secteur}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
+        alternates: {
+          languages: {
+            fr: `${BASE}/fr/demo/${secteur}`,
+            en: `${BASE}/en/demo/${secteur}`,
+            "x-default": `${BASE}/fr/demo/${secteur}`,
           },
         },
       },
