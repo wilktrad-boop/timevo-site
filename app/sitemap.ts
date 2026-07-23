@@ -7,14 +7,33 @@ const BASE = "https://www.timevo.io";
 
 const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 
+/**
+ * Dates de dernière modification du CONTENU, par groupe de pages.
+ *
+ * Elles étaient calculées avec `new Date()`, donc réévaluées à chaque build :
+ * les 34 URLs portaient la même date et elle changeait à chaque déploiement,
+ * y compris pour un changement de CSS. Google finit par ignorer un lastmod
+ * aussi bruyant, et le signal ne sert plus à rien.
+ *
+ * À mettre à jour à la main quand on touche au contenu d'un groupe — pas
+ * quand on touche au code.
+ */
+const UPDATED = {
+  home: "2026-07-23",         // ajout de la section démos
+  services: "2026-05-13",     // création des 6 pages service + index
+  realisations: "2026-07-14", // création de la page
+  sectors: "2026-05-29",      // création des 3 pages secteur
+  cities: "2026-05-29",       // création des 2 pages ville
+  demos: "2026-07-23",        // création des 3 démos
+} as const;
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
 
   return [
     // Home pages
     {
       url: `${BASE}/fr`,
-      lastModified: now,
+      lastModified: UPDATED.home,
       changeFrequency: "monthly",
       priority: 1,
       alternates: {
@@ -27,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/en`,
-      lastModified: now,
+      lastModified: UPDATED.home,
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
@@ -42,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Solutions index
     {
       url: `${BASE}/fr/solutions`,
-      lastModified: now,
+      lastModified: UPDATED.services,
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
@@ -55,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/en/solutions`,
-      lastModified: now,
+      lastModified: UPDATED.services,
       changeFrequency: "monthly",
       priority: 0.8,
       alternates: {
@@ -70,7 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Réalisations
     {
       url: `${BASE}/fr/realisations`,
-      lastModified: now,
+      lastModified: UPDATED.realisations,
       changeFrequency: "monthly",
       priority: 0.8,
       alternates: {
@@ -83,7 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/en/realisations`,
-      lastModified: now,
+      lastModified: UPDATED.realisations,
       changeFrequency: "monthly",
       priority: 0.7,
       alternates: {
@@ -99,7 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...SERVICE_SLUGS.flatMap((slug) => [
       {
         url: `${BASE}/fr/solutions/${slug}`,
-        lastModified: now,
+        lastModified: UPDATED.services,
         changeFrequency: "monthly" as const,
         priority: 0.85,
         alternates: {
@@ -112,7 +131,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: `${BASE}/en/solutions/${slug}`,
-        lastModified: now,
+        lastModified: UPDATED.services,
         changeFrequency: "monthly" as const,
         priority: 0.75,
         alternates: {
@@ -129,7 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...SECTOR_SLUGS.flatMap(secteur => [
       {
         url: `${BASE}/fr/automatisation-pour/${secteur}`,
-        lastModified: now,
+        lastModified: UPDATED.sectors,
         changeFrequency: "monthly" as const,
         priority: 0.8,
         alternates: {
@@ -142,7 +161,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: `${BASE}/en/automatisation-pour/${secteur}`,
-        lastModified: now,
+        lastModified: UPDATED.sectors,
         changeFrequency: "monthly" as const,
         priority: 0.7,
         alternates: {
@@ -160,7 +179,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...DEMO_SLUGS.flatMap(secteur => [
       {
         url: `${BASE}/fr/demo/${secteur}`,
-        lastModified: now,
+        lastModified: UPDATED.demos,
         changeFrequency: "monthly" as const,
         priority: 0.6,
         alternates: {
@@ -173,7 +192,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: `${BASE}/en/demo/${secteur}`,
-        lastModified: now,
+        lastModified: UPDATED.demos,
         changeFrequency: "monthly" as const,
         priority: 0.5,
         alternates: {
@@ -190,7 +209,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...CITY_SLUGS.flatMap(city => [
       {
         url: `${BASE}/fr/agence-automatisation-${city}`,
-        lastModified: now,
+        lastModified: UPDATED.cities,
         changeFrequency: "monthly" as const,
         priority: 0.8,
         alternates: {
@@ -203,7 +222,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: `${BASE}/en/agence-automatisation-${city}`,
-        lastModified: now,
+        lastModified: UPDATED.cities,
         changeFrequency: "monthly" as const,
         priority: 0.7,
         alternates: {
