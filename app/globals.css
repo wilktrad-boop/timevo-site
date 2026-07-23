@@ -76,6 +76,34 @@ section[id],
 }
 .footer-link:hover { color: var(--text); }
 
+/* Cartes de la section « ce qu'on fait » : même raison, hover en CSS */
+.hover-card {
+  transition: border-color .15s, transform .15s;
+}
+.hover-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Maillage interne : bloc RelatedLinks + fil d'Ariane */
+.related-link {
+  transition: border-color .15s;
+}
+.related-link:hover {
+  border-color: var(--accent);
+}
+.related-link:hover .related-arrow {
+  opacity: 1;
+}
+
+.crumb-link {
+  color: var(--dim-2);
+  transition: color .15s;
+}
+.crumb-link:hover {
+  color: var(--text);
+}
+
 /* ── Responsive ─────────────────────────────────────────── */
 
 /* Nav */
@@ -159,6 +187,12 @@ section[id],
     gap: 32px !important;
     row-gap: 40px !important;
   }
+
+  .related-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+    row-gap: 40px !important;
+  }
 }
 
 /* Mobile ≤ 600px */
@@ -175,6 +209,10 @@ section[id],
   }
 
   .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .related-grid {
     grid-template-columns: 1fr !important;
   }
 

@@ -6,8 +6,17 @@ import NavDkdp from "@/components/NavDkdp";
 import FooterDkdp from "@/components/FooterDkdp";
 import SectorPage from "@/components/SectorPage";
 import StickyMobileCta from "@/components/StickyMobileCta";
+import Breadcrumb from "@/components/Breadcrumb";
+import RelatedLinks from "@/components/RelatedLinks";
 import { SECTORS, SECTOR_SLUGS } from "@/lib/sectors";
 import type { Locale } from "@/lib/pageLabels";
+import {
+  serviceLinks,
+  sectorLinks,
+  cityLinks,
+  sectorLink,
+  LINK_LABELS,
+} from "@/lib/links";
 
 const BASE = "https://www.timevo.io";
 
@@ -83,6 +92,7 @@ export default async function SectorPageRoute({
   setRequestLocale(locale);
 
   const url = `${BASE}/${locale}/automatisation-pour/${secteur}`;
+  const L = LINK_LABELS[locale];
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -107,8 +117,9 @@ export default async function SectorPageRoute({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${BASE}/${locale}` },
-      { "@type": "ListItem", position: 2, name: s.h1, item: url },
+      { "@type": "ListItem", position: 1, name: L.home, item: `${BASE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: L.solutions, item: `${BASE}/${locale}/solutions` },
+      { "@type": "ListItem", position: 3, name: sectorLink(secteur, locale).label, item: url },
     ],
   };
 
@@ -129,7 +140,24 @@ export default async function SectorPageRoute({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <NavDkdp />
       <main>
+        <Breadcrumb
+          label={locale === "fr" ? "Fil d'Ariane" : "Breadcrumb"}
+          items={[
+            { href: `/${locale}`, label: L.home },
+            { href: `/${locale}/solutions`, label: L.solutions },
+            { label: sectorLink(secteur, locale).label },
+          ]}
+        />
         <SectorPage s={s} locale={locale} />
+        <RelatedLinks
+          eyebrow={L.eyebrow}
+          h2={L.h2}
+          groups={[
+            { title: L.services, items: serviceLinks(locale) },
+            { title: L.otherSectors, items: sectorLinks(locale, secteur) },
+            { title: L.cities, items: cityLinks(locale) },
+          ]}
+        />
       </main>
       <FooterDkdp />
       <StickyMobileCta />

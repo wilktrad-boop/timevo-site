@@ -6,8 +6,16 @@ import NavDkdp from "@/components/NavDkdp";
 import FooterDkdp from "@/components/FooterDkdp";
 import ServiceTemplate from "@/components/ServiceTemplate";
 import StickyMobileCta from "@/components/StickyMobileCta";
+import Breadcrumb from "@/components/Breadcrumb";
+import RelatedLinks from "@/components/RelatedLinks";
+import {
+  SERVICE_SLUGS,
+  serviceLinks,
+  sectorLinks,
+  cityLinks,
+  LINK_LABELS,
+} from "@/lib/links";
 
-const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 type ServiceSlug = (typeof SERVICE_SLUGS)[number];
 type Locale = (typeof routing.locales)[number];
 
@@ -97,6 +105,7 @@ export default async function ServicePage({
   const solutionsUrl = `https://www.timevo.io/${locale}/solutions`;
   const breadcrumbLabel = (tNav.raw("solutions_items") as string[])[SERVICE_SLUGS.indexOf(slug)];
   const faqItems = tService.raw("faq.items") as [string, string][];
+  const L = LINK_LABELS[locale];
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -171,7 +180,24 @@ export default async function ServicePage({
       />
       <NavDkdp />
       <main>
+        <Breadcrumb
+          label={locale === "fr" ? "Fil d'Ariane" : "Breadcrumb"}
+          items={[
+            { href: `/${locale}`, label: L.home },
+            { href: `/${locale}/solutions`, label: L.solutions },
+            { label: breadcrumbLabel },
+          ]}
+        />
         <ServiceTemplate slug={slug} />
+        <RelatedLinks
+          eyebrow={L.eyebrow}
+          h2={L.h2}
+          groups={[
+            { title: L.otherServices, items: serviceLinks(locale, slug) },
+            { title: L.sectors, items: sectorLinks(locale) },
+            { title: L.cities, items: cityLinks(locale) },
+          ]}
+        />
       </main>
       <FooterDkdp />
       <StickyMobileCta />
