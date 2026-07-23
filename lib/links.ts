@@ -166,10 +166,15 @@ export const LINK_LABELS: Record<Locale, {
 
 // ── Démos ────────────────────────────────────────────────────────────
 
-// Les secteurs qui ont un dashboard de démo. Volontairement une liste en dur :
-// importer DEMO_DASHBOARDS ici tirerait tout le contenu des démos dans le
-// bundle de chaque page qui utilise le registre de liens.
-const DEMO_SECTORS = ["pisciniste"];
+/**
+ * Secteurs qui ont un dashboard de démo.
+ *
+ * Liste en dur volontairement : importer DEMO_DASHBOARDS ici tirerait tout le
+ * contenu des démos dans le bundle de chaque page qui utilise le registre de
+ * liens. `lib/demoDashboards.ts` vérifie au chargement que les deux listes
+ * concordent, donc un oubli casse le build au lieu de passer inaperçu.
+ */
+export const DEMO_SECTORS = ["pisciniste", "cuisiniste", "panneaux-solaires"];
 
 const DEMO_LABELS: Record<Locale, { label: string; desc: string }> = {
   fr: { label: "Démo du tableau de bord", desc: "Ce que vous avez sous les yeux le lundi matin." },
