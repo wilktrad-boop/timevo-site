@@ -1,9 +1,17 @@
 {
   "nav": {
     "solutions": "Solutions",
-    "solutions_items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO", "Réseaux sociaux"],
+    "solutions_items": [
+      "Automatisation",
+      "Agents IA",
+      "Formation",
+      "Création de sites",
+      "SEO",
+      "Réseaux sociaux"
+    ],
     "methode": "Méthode",
     "realisations": "Réalisations",
+    "demos": "Démos",
     "resultats": "Résultats",
     "equipe": "Équipe",
     "contact": "Contact",
@@ -55,42 +63,78 @@
         "tag": "Automatisation",
         "count": "6 workflows",
         "title": "Automatisation des process",
-        "items": ["Devis auto", "Relances", "Rapports", "Synchros CRM", "Onboarding", "n8n sur mesure"],
+        "items": [
+          "Devis auto",
+          "Relances",
+          "Rapports",
+          "Synchros CRM",
+          "Onboarding",
+          "n8n sur mesure"
+        ],
         "cta": "En savoir plus"
       },
       {
         "tag": "Agents IA",
         "count": "4 solutions",
         "title": "Agents IA",
-        "items": ["Chatbot SAV", "Pré-qualification leads", "Standard téléphonique", "Email triage"],
+        "items": [
+          "Chatbot SAV",
+          "Pré-qualification leads",
+          "Standard téléphonique",
+          "Email triage"
+        ],
         "cta": "En savoir plus"
       },
       {
         "tag": "Formation",
         "count": "5 modules",
         "title": "Formation des équipes",
-        "items": ["IA & prompting", "Automatisation n8n", "Création de contenu", "LinkedIn pro", "SEO essentiels"],
+        "items": [
+          "IA & prompting",
+          "Automatisation n8n",
+          "Création de contenu",
+          "LinkedIn pro",
+          "SEO essentiels"
+        ],
         "cta": "En savoir plus"
       },
       {
         "tag": "Sites web",
         "count": "Tous types",
         "title": "Création de sites web",
-        "items": ["Vitrine", "Landing page", "Multi-pages", "E-commerce", "Refonte"],
+        "items": [
+          "Vitrine",
+          "Landing page",
+          "Multi-pages",
+          "E-commerce",
+          "Refonte"
+        ],
         "cta": "En savoir plus"
       },
       {
         "tag": "SEO",
         "count": "Tous types",
         "title": "Référencement naturel",
-        "items": ["SEO local", "SEO technique", "SEO contenu", "SEO international", "Audit SEO"],
+        "items": [
+          "SEO local",
+          "SEO technique",
+          "SEO contenu",
+          "SEO international",
+          "Audit SEO"
+        ],
         "cta": "En savoir plus"
       },
       {
         "tag": "Réseaux sociaux",
         "count": "Multi-plateformes",
         "title": "Croissance & contenu social",
-        "items": ["Croissance Instagram", "Contenu LinkedIn", "Vidéos YouTube", "Stratégie éditoriale", "Publication & engagement"],
+        "items": [
+          "Croissance Instagram",
+          "Contenu LinkedIn",
+          "Vidéos YouTube",
+          "Stratégie éditoriale",
+          "Publication & engagement"
+        ],
         "cta": "En savoir plus"
       }
     ]
@@ -100,10 +144,26 @@
     "h2_line1": "Des PME françaises qui ont arrêté",
     "h2_line2": "de perdre du temps.",
     "items": [
-      { "value": 12, "suffix": "+", "label": "PME accompagnées en France" },
-      { "value": 1100, "suffix": "h", "label": "Récupérées chaque mois pour nos clients" },
-      { "value": 34, "suffix": "%", "label": "Taux de conversion moyen en hausse" },
-      { "value": 3, "suffix": " sem.", "label": "Délai moyen de livraison" }
+      {
+        "value": 12,
+        "suffix": "+",
+        "label": "PME accompagnées en France"
+      },
+      {
+        "value": 1100,
+        "suffix": "h",
+        "label": "Récupérées chaque mois pour nos clients"
+      },
+      {
+        "value": 34,
+        "suffix": "%",
+        "label": "Taux de conversion moyen en hausse"
+      },
+      {
+        "value": 3,
+        "suffix": " sem.",
+        "label": "Délai moyen de livraison"
+      }
     ]
   },
   "method": {
@@ -111,11 +171,31 @@
     "h2": "Cinq étapes, zéro surprise.",
     "subtitle": "5 étapes claires, un processus éprouvé.",
     "steps": [
-      ["01", "Premier échange", "30 minutes gratuites pour comprendre votre situation. On vous dit honnêtement si on peut vous aider et comment."],
-      ["02", "Audit", "Cartographie de vos process. On identifie les tâches qui coûtent le plus de temps pour le moins d'expertise."],
-      ["03", "Rapport", "Un plan d'action concret avec les livrables, les délais et les prix. Tout est fixé à l'avance, par écrit."],
-      ["04", "Implémentation", "On exécute. Points hebdomadaires, accès en temps réel à l'avancement. Vous restez maître du projet."],
-      ["05", "Maintenance", "Livraison, formation à l'outil, et suivi des performances. On reste là même après."]
+      [
+        "01",
+        "Premier échange",
+        "30 minutes gratuites pour comprendre votre situation. On vous dit honnêtement si on peut vous aider et comment."
+      ],
+      [
+        "02",
+        "Audit",
+        "Cartographie de vos process. On identifie les tâches qui coûtent le plus de temps pour le moins d'expertise."
+      ],
+      [
+        "03",
+        "Rapport",
+        "Un plan d'action concret avec les livrables, les délais et les prix. Tout est fixé à l'avance, par écrit."
+      ],
+      [
+        "04",
+        "Implémentation",
+        "On exécute. Points hebdomadaires, accès en temps réel à l'avancement. Vous restez maître du projet."
+      ],
+      [
+        "05",
+        "Maintenance",
+        "Livraison, formation à l'outil, et suivi des performances. On reste là même après."
+      ]
     ]
   },
   "testimonials": {
@@ -146,8 +226,18 @@
     "label": "L'équipe",
     "h2": "Deux experts, une même vision.",
     "members": [
-      { "name": "Max", "role": "Sales · Stratégie", "initials": "M", "bio": "Dix ans à vendre, relancer, chiffrer. Il connaît vos semaines parce qu'il les a faites." },
-      { "name": "Willy", "role": "Tech · Content", "initials": "W", "bio": "Il construit des systèmes qui tournent sans qu'on les surveille. Dix ans, plusieurs marchés, aucun bricolage." }
+      {
+        "name": "Max",
+        "role": "Sales · Stratégie",
+        "initials": "M",
+        "bio": "Dix ans à vendre, relancer, chiffrer. Il connaît vos semaines parce qu'il les a faites."
+      },
+      {
+        "name": "Willy",
+        "role": "Tech · Content",
+        "initials": "W",
+        "bio": "Il construit des systèmes qui tournent sans qu'on les surveille. Dix ans, plusieurs marchés, aucun bricolage."
+      }
     ]
   },
   "estimator": {
@@ -160,23 +250,43 @@
     "questions": [
       {
         "q": "Combien de personnes dans votre équipe ?",
-        "opts": ["1 à 5 personnes", "6 à 15 personnes", "16 à 50 personnes"]
+        "opts": [
+          "1 à 5 personnes",
+          "6 à 15 personnes",
+          "16 à 50 personnes"
+        ]
       },
       {
         "q": "Combien de demandes entrantes par mois ? (devis, leads, propositions)",
-        "opts": ["Moins de 20", "Entre 20 et 80", "Plus de 80"]
+        "opts": [
+          "Moins de 20",
+          "Entre 20 et 80",
+          "Plus de 80"
+        ]
       },
       {
         "q": "Combien d'heures par semaine sur des tâches répétitives ?",
-        "opts": ["Moins de 5h", "Entre 5h et 15h", "Plus de 15h"]
+        "opts": [
+          "Moins de 5h",
+          "Entre 5h et 15h",
+          "Plus de 15h"
+        ]
       },
       {
         "q": "Avez-vous un outil pour suivre clients et prospects ?",
-        "opts": ["Oui, bien utilisé", "Oui, peu ou pas utilisé", "Non"]
+        "opts": [
+          "Oui, bien utilisé",
+          "Oui, peu ou pas utilisé",
+          "Non"
+        ]
       },
       {
         "q": "Quel revenu moyen par client ? (one-shot ou annuel)",
-        "opts": ["Moins de 1 000€", "Entre 1 000€ et 5 000€", "Plus de 5 000€"]
+        "opts": [
+          "Moins de 1 000€",
+          "Entre 1 000€ et 5 000€",
+          "Plus de 5 000€"
+        ]
       }
     ],
     "result_label": "Votre estimation",
@@ -190,12 +300,30 @@
     "label": "Questions fréquentes",
     "h2": "Ce qu'on nous demande souvent",
     "items": [
-      ["Combien de temps pour livrer une automation ?", "2 à 3 semaines après l'audit. On commit sur la date à l'écrit, et on tient."],
-      ["Vous travaillez avec quels outils ?", "CRM (HubSpot, Pipedrive, Salesforce), email, téléphonie, comptabilité. On branche sur ce que vous avez déjà — pas de migration imposée."],
-      ["Et si on n'a pas de CRM ?", "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."],
-      ["On garde la main sur le système ?", "Oui. Le code et les workflows vous appartiennent. Aucune dépendance. Si on se sépare, vous gardez tout."],
-      ["Vous facturez à l'heure ?", "Non. Forfait setup + abonnement maintenance. Lisible, prévisible, sans surprise."],
-      ["Vous êtes où, exactement ?", "Thonon-les-Bains et Montpellier. On travaille en distanciel partout en France et chez les francophones limitrophes."]
+      [
+        "Combien de temps pour livrer une automation ?",
+        "2 à 3 semaines après l'audit. On commit sur la date à l'écrit, et on tient."
+      ],
+      [
+        "Vous travaillez avec quels outils ?",
+        "CRM (HubSpot, Pipedrive, Salesforce), email, téléphonie, comptabilité. On branche sur ce que vous avez déjà — pas de migration imposée."
+      ],
+      [
+        "Et si on n'a pas de CRM ?",
+        "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."
+      ],
+      [
+        "On garde la main sur le système ?",
+        "Oui. Le code et les workflows vous appartiennent. Aucune dépendance. Si on se sépare, vous gardez tout."
+      ],
+      [
+        "Vous facturez à l'heure ?",
+        "Non. Forfait setup + abonnement maintenance. Lisible, prévisible, sans surprise."
+      ],
+      [
+        "Vous êtes où, exactement ?",
+        "Thonon-les-Bains et Montpellier. On travaille en distanciel partout en France et chez les francophones limitrophes."
+      ]
     ]
   },
   "contact": {
@@ -208,6 +336,15 @@
     "city": "Thonon-les-Bains · Montpellier",
     "response": "Réponse sous 24h"
   },
+  "demo_teaser": {
+    "eyebrow": "DÉMONSTRATIONS",
+    "h2": "Voyez le résultat avant de signer.",
+    "subtitle": "On peut vous décrire ce que l'automatisation change, ou vous montrer l'écran. Voilà un extrait du tableau de bord livré à un pisciniste : les devis en cours, ceux que la séquence de relance a rattrapés, et ce qui a été signé.",
+    "sample": "Extrait · pisciniste",
+    "note": "Scénario type, pas un client existant. Les données de cet aperçu sont fictives. L'interface, elle, est celle qu'on livre.",
+    "pick": "Les trois démos complètes",
+    "see": "Voir la démo"
+  },
   "footer": {
     "tagline": "Agence d'automatisation indépendante.\nn8n · Agents IA · Process pour PME.",
     "address": "Thonon-les-Bains · Montpellier · France",
@@ -216,8 +353,27 @@
     "privacy": "Politique de confidentialité",
     "gdpr": "RGPD",
     "cols": [
-      { "title": "Solutions", "items": ["Automatisation", "Agents IA", "Formation", "Création de sites", "SEO", "Réseaux sociaux"] },
-      { "title": "Méthode", "items": ["Premier échange", "Diagnostic", "Proposition", "Réalisation", "Maintenance"] }
+      {
+        "title": "Solutions",
+        "items": [
+          "Automatisation",
+          "Agents IA",
+          "Formation",
+          "Création de sites",
+          "SEO",
+          "Réseaux sociaux"
+        ]
+      },
+      {
+        "title": "Méthode",
+        "items": [
+          "Premier échange",
+          "Diagnostic",
+          "Proposition",
+          "Réalisation",
+          "Maintenance"
+        ]
+      }
     ]
   },
   "solutions_index": {
@@ -242,19 +398,31 @@
         "meta": "Pisciniste — Publier (74)",
         "title": "Mon Espace Piscine",
         "description": "Magasin, prestations, chantiers photographiés et demande de devis. Le site fait venir en magasin et qualifie la demande avant même le premier appel.",
-        "chips": ["Site vitrine", "Devis en ligne", "SEO local"]
+        "chips": [
+          "Site vitrine",
+          "Devis en ligne",
+          "SEO local"
+        ]
       },
       {
         "meta": "Habitat & jardin — éditorial",
         "title": "Agence Laverne",
         "description": "Portail de conseil sur l'aménagement extérieur et la rénovation : quiz de qualification, guides de prix, blog.",
-        "chips": ["Éditorial", "Quiz de qualification", "SEO"]
+        "chips": [
+          "Éditorial",
+          "Quiz de qualification",
+          "SEO"
+        ]
       },
       {
         "meta": "Traduction juridique",
         "title": "Agence de Traduction Juridique",
         "description": "Vitrine et générateur de devis : le visiteur choisit son document et ses langues, la demande arrive déjà qualifiée.",
-        "chips": ["Site vitrine", "Devis automatisé", "SEO"]
+        "chips": [
+          "Site vitrine",
+          "Devis automatisé",
+          "SEO"
+        ]
       }
     ]
   },
@@ -271,15 +439,31 @@
       },
       "audience": {
         "label": "Pour qui",
-        "items": ["Habitat & équipement", "Mobilité premium", "Services à valeur"]
+        "items": [
+          "Habitat & équipement",
+          "Mobilité premium",
+          "Services à valeur"
+        ]
       },
       "problem": {
         "label": "Le problème",
         "h2": "Ce qui ronge vos semaines.",
         "items": [
-          { "n": "01", "title": "20 minutes par devis, 80 devis par mois", "desc": "Vos commerciaux passent leurs soirées sur la rédaction de devis qui pourraient partir dans les 4 minutes qui suivent l'appel." },
-          { "n": "02", "title": "Des relances oubliées, des deals perdus", "desc": "Sans un système qui relance automatiquement, 30 à 50% des leads chauds finissent froids — juste parce que personne n'a eu le temps de rappeler." },
-          { "n": "03", "title": "Trois outils qui ne se parlent pas", "desc": "CRM, email, comptabilité, planning. Quand chaque info se recopie à la main, vous perdez des heures et vous accumulez les erreurs." }
+          {
+            "n": "01",
+            "title": "20 minutes par devis, 80 devis par mois",
+            "desc": "Vos commerciaux passent leurs soirées sur la rédaction de devis qui pourraient partir dans les 4 minutes qui suivent l'appel."
+          },
+          {
+            "n": "02",
+            "title": "Des relances oubliées, des deals perdus",
+            "desc": "Sans un système qui relance automatiquement, 30 à 50% des leads chauds finissent froids — juste parce que personne n'a eu le temps de rappeler."
+          },
+          {
+            "n": "03",
+            "title": "Trois outils qui ne se parlent pas",
+            "desc": "CRM, email, comptabilité, planning. Quand chaque info se recopie à la main, vous perdez des heures et vous accumulez les erreurs."
+          }
         ]
       },
       "deliverables": {
@@ -287,12 +471,30 @@
         "h2": "Six workflows prêts à brancher.",
         "subtitle": "Six chantiers concrets, identifiés pendant l'audit, déployés en 2 à 3 semaines selon vos priorités.",
         "items": [
-          { "title": "Devis automatiques", "desc": "L'appel se termine, le résumé est rédigé, le devis prérempli, l'email envoyé. 20 min récupérées par devis." },
-          { "title": "Relances commerciales", "desc": "Email + SMS, sur 30 jours, dans le ton de la marque. Le commercial n'est notifié que quand le prospect répond." },
-          { "title": "Rapports hebdomadaires", "desc": "Pipeline, ventes, leads à relancer, KPIs commerciaux. Dans votre boîte mail tous les lundis à 8h." },
-          { "title": "Synchros CRM", "desc": "Vos outils se parlent enfin. Email, téléphonie, comptabilité, planning — tout remonte au bon endroit, automatiquement." },
-          { "title": "Onboarding clients", "desc": "Dès la signature, l'email de bienvenue, les accès, le RDV de kick-off et les premiers documents partent tout seuls." },
-          { "title": "Workflows n8n sur mesure", "desc": "Tout ce qui est répétitif chez vous et qu'on ne couvre pas dans la liste ci-dessus. On le construit dans l'audit." }
+          {
+            "title": "Devis automatiques",
+            "desc": "L'appel se termine, le résumé est rédigé, le devis prérempli, l'email envoyé. 20 min récupérées par devis."
+          },
+          {
+            "title": "Relances commerciales",
+            "desc": "Email + SMS, sur 30 jours, dans le ton de la marque. Le commercial n'est notifié que quand le prospect répond."
+          },
+          {
+            "title": "Rapports hebdomadaires",
+            "desc": "Pipeline, ventes, leads à relancer, KPIs commerciaux. Dans votre boîte mail tous les lundis à 8h."
+          },
+          {
+            "title": "Synchros CRM",
+            "desc": "Vos outils se parlent enfin. Email, téléphonie, comptabilité, planning — tout remonte au bon endroit, automatiquement."
+          },
+          {
+            "title": "Onboarding clients",
+            "desc": "Dès la signature, l'email de bienvenue, les accès, le RDV de kick-off et les premiers documents partent tout seuls."
+          },
+          {
+            "title": "Workflows n8n sur mesure",
+            "desc": "Tout ce qui est répétitif chez vous et qu'on ne couvre pas dans la liste ci-dessus. On le construit dans l'audit."
+          }
         ]
       },
       "case": {
@@ -320,9 +522,21 @@
         "label": "Comment ça se passe",
         "h2": "Audit, cartographie, déploiement.",
         "steps": [
-          ["01", "Audit", "30 minutes pour cartographier vos process. On identifie les 2 ou 3 workflows à plus fort impact ROI."],
-          ["02", "Cartographie", "On modélise chaque workflow sur le papier avant de coder. Vous validez le plan d'exécution, étape par étape."],
-          ["03", "Déploiement", "On code, on branche, on teste sur vos vrais cas. Formation de l'équipe, documentation, et maintenance pour faire évoluer le système."]
+          [
+            "01",
+            "Audit",
+            "30 minutes pour cartographier vos process. On identifie les 2 ou 3 workflows à plus fort impact ROI."
+          ],
+          [
+            "02",
+            "Cartographie",
+            "On modélise chaque workflow sur le papier avant de coder. Vous validez le plan d'exécution, étape par étape."
+          ],
+          [
+            "03",
+            "Déploiement",
+            "On code, on branche, on teste sur vos vrais cas. Formation de l'équipe, documentation, et maintenance pour faire évoluer le système."
+          ]
         ]
       },
       "pricing": {
@@ -355,10 +569,22 @@
         "label": "Questions fréquentes",
         "h2": "Avant d'en parler.",
         "items": [
-          ["Combien de temps pour livrer ?", "2 à 3 semaines après l'audit. On commit sur la date à l'écrit."],
-          ["On garde le contrôle du système ?", "Oui. Le code et les workflows vous appartiennent. Si on se sépare, vous gardez tout, hébergement compris."],
-          ["Et si on n'a pas de CRM ?", "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."],
-          ["Vous remplacez nos commerciaux ?", "Non. On les libère de tout ce qui n'est pas commercial pour qu'ils passent leur temps à vendre."]
+          [
+            "Combien de temps pour livrer ?",
+            "2 à 3 semaines après l'audit. On commit sur la date à l'écrit."
+          ],
+          [
+            "On garde le contrôle du système ?",
+            "Oui. Le code et les workflows vous appartiennent. Si on se sépare, vous gardez tout, hébergement compris."
+          ],
+          [
+            "Et si on n'a pas de CRM ?",
+            "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."
+          ],
+          [
+            "Vous remplacez nos commerciaux ?",
+            "Non. On les libère de tout ce qui n'est pas commercial pour qu'ils passent leur temps à vendre."
+          ]
         ]
       },
       "cta": {
@@ -380,15 +606,31 @@
       },
       "audience": {
         "label": "Pour qui",
-        "items": ["Immobilier & service client", "SAV à fort volume", "Activités à forte récurrence"]
+        "items": [
+          "Immobilier & service client",
+          "SAV à fort volume",
+          "Activités à forte récurrence"
+        ]
       },
       "problem": {
         "label": "Le problème",
         "h2": "Ce que vos équipes répètent dix fois par jour.",
         "items": [
-          { "n": "01", "title": "70% des appels sont les mêmes questions", "desc": "Disponibilités, prix, délais, suivi de commande. Vos équipes passent leurs journées à répondre aux mêmes 15 questions, encore et encore." },
-          { "n": "02", "title": "Vos leads attendent. Vos concurrents répondent.", "desc": "Hors heures de bureau, le soir, le week-end : un lead qui arrive et personne pour répondre. Le temps que vous rappeliez, il a déjà signé ailleurs." },
-          { "n": "03", "title": "Votre service client coûte cher, et il est lent", "desc": "Embaucher pour traiter des questions triviales, c'est cher. Et ça ne scale pas. Un agent IA traite 200 demandes simultanément, sans fatigue ni erreur." }
+          {
+            "n": "01",
+            "title": "70% des appels sont les mêmes questions",
+            "desc": "Disponibilités, prix, délais, suivi de commande. Vos équipes passent leurs journées à répondre aux mêmes 15 questions, encore et encore."
+          },
+          {
+            "n": "02",
+            "title": "Vos leads attendent. Vos concurrents répondent.",
+            "desc": "Hors heures de bureau, le soir, le week-end : un lead qui arrive et personne pour répondre. Le temps que vous rappeliez, il a déjà signé ailleurs."
+          },
+          {
+            "n": "03",
+            "title": "Votre service client coûte cher, et il est lent",
+            "desc": "Embaucher pour traiter des questions triviales, c'est cher. Et ça ne scale pas. Un agent IA traite 200 demandes simultanément, sans fatigue ni erreur."
+          }
         ]
       },
       "deliverables": {
@@ -396,12 +638,30 @@
         "h2": "Cinq agents standards. Plus du sur mesure.",
         "subtitle": "Cinq agents prêts à l'emploi, plus la possibilité de construire votre cas spécifique pendant l'audit. Tous branchés sur vos outils et formés sur vos données.",
         "items": [
-          { "title": "Chatbot SAV", "desc": "Sur votre site ou WhatsApp. Répond aux questions répétitives, traite les demandes de suivi, ouvre un ticket quand c'est complexe." },
-          { "title": "Pré-qualification leads", "desc": "Un lead arrive ? L'agent qualifie en 60 secondes (budget, timing, besoin) et notifie le bon commercial avec un résumé propre." },
-          { "title": "Standard téléphonique IA", "desc": "Prend les appels, route vers la bonne personne, prend les messages, transcrit les vocaux. Plus jamais d'appel manqué." },
-          { "title": "Triage email automatique", "desc": "Urgent vs non-urgent, devis vs SAV, ancien client vs prospect. L'agent priorise et attribue. Vos équipes ne traitent que ce qui compte." },
-          { "title": "Agent commercial assistant", "desc": "Prépare les RDV, récupère le contexte du prospect, rédige les comptes-rendus. Vos commerciaux arrivent en réunion préparés." },
-          { "title": "Agent sur mesure", "desc": "Un cas spécifique que les 5 précédents ne couvrent pas ? On le construit pendant l'audit, branché sur vos outils." }
+          {
+            "title": "Chatbot SAV",
+            "desc": "Sur votre site ou WhatsApp. Répond aux questions répétitives, traite les demandes de suivi, ouvre un ticket quand c'est complexe."
+          },
+          {
+            "title": "Pré-qualification leads",
+            "desc": "Un lead arrive ? L'agent qualifie en 60 secondes (budget, timing, besoin) et notifie le bon commercial avec un résumé propre."
+          },
+          {
+            "title": "Standard téléphonique IA",
+            "desc": "Prend les appels, route vers la bonne personne, prend les messages, transcrit les vocaux. Plus jamais d'appel manqué."
+          },
+          {
+            "title": "Triage email automatique",
+            "desc": "Urgent vs non-urgent, devis vs SAV, ancien client vs prospect. L'agent priorise et attribue. Vos équipes ne traitent que ce qui compte."
+          },
+          {
+            "title": "Agent commercial assistant",
+            "desc": "Prépare les RDV, récupère le contexte du prospect, rédige les comptes-rendus. Vos commerciaux arrivent en réunion préparés."
+          },
+          {
+            "title": "Agent sur mesure",
+            "desc": "Un cas spécifique que les 5 précédents ne couvrent pas ? On le construit pendant l'audit, branché sur vos outils."
+          }
         ]
       },
       "case": {
@@ -429,19 +689,43 @@
         "label": "Comment ça se passe",
         "h2": "Audit, entraînement, mise en service.",
         "steps": [
-          ["01", "Audit", "On identifie où un agent IA peut décharger vos équipes. Volume de demandes, ton de marque, outils en place."],
-          ["02", "Entraînement", "On forme l'agent sur vos documents, vos FAQ, vos process. Test sur des cas réels avant déploiement."],
-          ["03", "Mise en service", "Bascule progressive, monitoring des conversations, ajustements continus. L'agent apprend avec vous."]
+          [
+            "01",
+            "Audit",
+            "On identifie où un agent IA peut décharger vos équipes. Volume de demandes, ton de marque, outils en place."
+          ],
+          [
+            "02",
+            "Entraînement",
+            "On forme l'agent sur vos documents, vos FAQ, vos process. Test sur des cas réels avant déploiement."
+          ],
+          [
+            "03",
+            "Mise en service",
+            "Bascule progressive, monitoring des conversations, ajustements continus. L'agent apprend avec vous."
+          ]
         ]
       },
       "faq": {
         "label": "Questions fréquentes",
         "h2": "Avant d'en parler.",
         "items": [
-          ["L'agent est connecté à nos données ?", "Oui. CRM, base de connaissances, catalogue produits, planning. L'agent répond avec votre information, pas une connaissance générique."],
-          ["Comment on évite les hallucinations ?", "L'agent est bridé sur votre périmètre métier, avec des garde-fous et un handoff humain dès qu'il y a doute."],
-          ["Et la confidentialité des données ?", "Hébergement européen, données chiffrées, possibilité d'utiliser des modèles auto-hébergés pour les cas sensibles."],
-          ["Si l'agent bloque, que se passe-t-il ?", "Handoff automatique vers un humain avec tout le contexte de la conversation. Aucun lead ne tombe dans le vide."]
+          [
+            "L'agent est connecté à nos données ?",
+            "Oui. CRM, base de connaissances, catalogue produits, planning. L'agent répond avec votre information, pas une connaissance générique."
+          ],
+          [
+            "Comment on évite les hallucinations ?",
+            "L'agent est bridé sur votre périmètre métier, avec des garde-fous et un handoff humain dès qu'il y a doute."
+          ],
+          [
+            "Et la confidentialité des données ?",
+            "Hébergement européen, données chiffrées, possibilité d'utiliser des modèles auto-hébergés pour les cas sensibles."
+          ],
+          [
+            "Si l'agent bloque, que se passe-t-il ?",
+            "Handoff automatique vers un humain avec tout le contexte de la conversation. Aucun lead ne tombe dans le vide."
+          ]
         ]
       },
       "cta": {
@@ -463,15 +747,31 @@
       },
       "audience": {
         "label": "Pour qui",
-        "items": ["Équipes commerciales", "Marketing & communication", "Dirigeants & cadres"]
+        "items": [
+          "Équipes commerciales",
+          "Marketing & communication",
+          "Dirigeants & cadres"
+        ]
       },
       "problem": {
         "label": "Le problème",
         "h2": "Ce que coûte une équipe pas formée.",
         "items": [
-          { "n": "01", "title": "Vos équipes utilisent l'IA mal, ou pas du tout", "desc": "ChatGPT au feeling, prompts pauvres, résultats médiocres. Le potentiel est énorme, l'usage ridicule." },
-          { "n": "02", "title": "Les outils changent tous les mois", "desc": "Votre dernière formation date de 18 mois. Entre temps, GPT-5, Claude 4.7, n8n a doublé ses intégrations. Vos équipes restent en 2024." },
-          { "n": "03", "title": "Une vidéo YouTube ne forme personne", "desc": "Apprendre seul, sans cas concret, sans accompagnement, sans pratique : trois jours plus tard, plus personne ne l'utilise." }
+          {
+            "n": "01",
+            "title": "Vos équipes utilisent l'IA mal, ou pas du tout",
+            "desc": "ChatGPT au feeling, prompts pauvres, résultats médiocres. Le potentiel est énorme, l'usage ridicule."
+          },
+          {
+            "n": "02",
+            "title": "Les outils changent tous les mois",
+            "desc": "Votre dernière formation date de 18 mois. Entre temps, GPT-5, Claude 4.7, n8n a doublé ses intégrations. Vos équipes restent en 2024."
+          },
+          {
+            "n": "03",
+            "title": "Une vidéo YouTube ne forme personne",
+            "desc": "Apprendre seul, sans cas concret, sans accompagnement, sans pratique : trois jours plus tard, plus personne ne l'utilise."
+          }
         ]
       },
       "deliverables": {
@@ -479,12 +779,30 @@
         "h2": "Cinq modules standards. Plus du sur mesure.",
         "subtitle": "Chaque module mêle théorie courte et mise en pratique sur vos vrais cas. Et la possibilité d'un programme totalement sur mesure pour votre équipe.",
         "items": [
-          { "title": "IA & prompting", "desc": "ChatGPT, Claude, Gemini. Prompts efficaces, cas d'usage par métier, gestion des limites. 1 jour intensif." },
-          { "title": "Automatisation n8n", "desc": "Construire ses premiers workflows. Brancher CRM, email, Slack. Automatiser sans coder. 2 jours pratiques." },
-          { "title": "Création de contenu", "desc": "Rédiger plus vite avec l'IA, générer visuels et vidéos, structurer une production hebdo. 1 jour atelier." },
-          { "title": "LinkedIn pro", "desc": "Profil qui convertit, contenu qui engage, prospection automatisée. Pensé pour commerciaux et dirigeants. 1 jour." },
-          { "title": "SEO essentiels", "desc": "Comprendre Google, écrire pour le web, audit de base, suivi des positions. Pour marketeurs et dirigeants. 1 jour." },
-          { "title": "Programme sur mesure", "desc": "Un besoin spécifique (vente, négociation, outils métier) ? On construit le module à partir de vos cas concrets." }
+          {
+            "title": "IA & prompting",
+            "desc": "ChatGPT, Claude, Gemini. Prompts efficaces, cas d'usage par métier, gestion des limites. 1 jour intensif."
+          },
+          {
+            "title": "Automatisation n8n",
+            "desc": "Construire ses premiers workflows. Brancher CRM, email, Slack. Automatiser sans coder. 2 jours pratiques."
+          },
+          {
+            "title": "Création de contenu",
+            "desc": "Rédiger plus vite avec l'IA, générer visuels et vidéos, structurer une production hebdo. 1 jour atelier."
+          },
+          {
+            "title": "LinkedIn pro",
+            "desc": "Profil qui convertit, contenu qui engage, prospection automatisée. Pensé pour commerciaux et dirigeants. 1 jour."
+          },
+          {
+            "title": "SEO essentiels",
+            "desc": "Comprendre Google, écrire pour le web, audit de base, suivi des positions. Pour marketeurs et dirigeants. 1 jour."
+          },
+          {
+            "title": "Programme sur mesure",
+            "desc": "Un besoin spécifique (vente, négociation, outils métier) ? On construit le module à partir de vos cas concrets."
+          }
         ]
       },
       "case": {
@@ -512,19 +830,43 @@
         "label": "Comment ça se passe",
         "h2": "Diagnostic, programme, animation.",
         "steps": [
-          ["01", "Diagnostic", "30 min pour cartographier les usages actuels, identifier les modules à prioriser, valider le format."],
-          ["02", "Programme", "Construction du contenu adapté à votre métier, intégration de vos vrais cas, planification des sessions."],
-          ["03", "Animation", "Sessions interactives, exercices sur vos données. Support 30 jours après la formation pour ancrer durablement les pratiques."]
+          [
+            "01",
+            "Diagnostic",
+            "30 min pour cartographier les usages actuels, identifier les modules à prioriser, valider le format."
+          ],
+          [
+            "02",
+            "Programme",
+            "Construction du contenu adapté à votre métier, intégration de vos vrais cas, planification des sessions."
+          ],
+          [
+            "03",
+            "Animation",
+            "Sessions interactives, exercices sur vos données. Support 30 jours après la formation pour ancrer durablement les pratiques."
+          ]
         ]
       },
       "faq": {
         "label": "Questions fréquentes",
         "h2": "Avant d'en parler.",
         "items": [
-          ["Vous êtes Qualiopi / éligible CPF ?", "Pas encore Qualiopi. La certification est en cours pour 2026. Pour l'instant, formations facturables en direct, pas via OPCO."],
-          ["Intra ou inter-entreprises ?", "Intra uniquement. Programme calé sur votre métier, vos outils, vos cas. C'est ce qui fait la différence."],
-          ["Combien de jours par module ?", "1 à 2 jours par module, selon profondeur souhaitée. Groupes de 3 à 15 personnes maximum pour rester interactif."],
-          ["En distanciel ou en présentiel ?", "Les deux. Présentiel à Thonon ou Montpellier, ou chez vous. Distanciel sur Meet ou Teams, avec exercices live."]
+          [
+            "Vous êtes Qualiopi / éligible CPF ?",
+            "Pas encore Qualiopi. La certification est en cours pour 2026. Pour l'instant, formations facturables en direct, pas via OPCO."
+          ],
+          [
+            "Intra ou inter-entreprises ?",
+            "Intra uniquement. Programme calé sur votre métier, vos outils, vos cas. C'est ce qui fait la différence."
+          ],
+          [
+            "Combien de jours par module ?",
+            "1 à 2 jours par module, selon profondeur souhaitée. Groupes de 3 à 15 personnes maximum pour rester interactif."
+          ],
+          [
+            "En distanciel ou en présentiel ?",
+            "Les deux. Présentiel à Thonon ou Montpellier, ou chez vous. Distanciel sur Meet ou Teams, avec exercices live."
+          ]
         ]
       },
       "cta": {
@@ -546,15 +888,31 @@
       },
       "audience": {
         "label": "Pour qui",
-        "items": ["Habitat & équipement", "PME services", "E-commerce"]
+        "items": [
+          "Habitat & équipement",
+          "PME services",
+          "E-commerce"
+        ]
       },
       "problem": {
         "label": "Le problème",
         "h2": "Ce que votre site vous coûte vraiment.",
         "items": [
-          { "n": "01", "title": "Un site cher qui ne convertit pas", "desc": "Vous avez payé 8 000 € pour un site qui ressemble à un brochure. Joli, peut-être. Demandes de devis : zéro." },
-          { "n": "02", "title": "Vous êtes prisonnier d'un outil", "desc": "Wix, Shopify, agence qui vous facture chaque modification : impossible de partir sans tout refaire. Vous êtes coincé chez eux." },
-          { "n": "03", "title": "Refonte qui n'en finit plus", "desc": "Annoncée en 6 semaines, livrée en 8 mois. Cahier des charges flou, validations interminables, contenu qui n'arrive jamais." }
+          {
+            "n": "01",
+            "title": "Un site cher qui ne convertit pas",
+            "desc": "Vous avez payé 8 000 € pour un site qui ressemble à un brochure. Joli, peut-être. Demandes de devis : zéro."
+          },
+          {
+            "n": "02",
+            "title": "Vous êtes prisonnier d'un outil",
+            "desc": "Wix, Shopify, agence qui vous facture chaque modification : impossible de partir sans tout refaire. Vous êtes coincé chez eux."
+          },
+          {
+            "n": "03",
+            "title": "Refonte qui n'en finit plus",
+            "desc": "Annoncée en 6 semaines, livrée en 8 mois. Cahier des charges flou, validations interminables, contenu qui n'arrive jamais."
+          }
         ]
       },
       "deliverables": {
@@ -562,12 +920,30 @@
         "h2": "Tous les formats. Aucune dépendance.",
         "subtitle": "Vitrine, landing, multi-pages, e-commerce. Code propre, hébergement chez vous, contenu modifiable. Vous partez quand vous voulez, vous emportez tout.",
         "items": [
-          { "title": "Site vitrine", "desc": "5 à 10 pages, design custom, performant. Pour une présence pro qui sert de carte de visite et de canal d'acquisition." },
-          { "title": "Landing page", "desc": "Une page focus conversion, A/B test ready, intégrée à votre CRM. Idéale pour les campagnes payantes ou un lancement." },
-          { "title": "Site multi-pages", "desc": "10+ pages, blog, espace clients, formulaires multiples. Pour les activités à plusieurs lignes de service." },
-          { "title": "E-commerce", "desc": "Catalogue produits, panier, paiement, gestion stock. Stack moderne (Shopify Hydrogen, Medusa, ou Next.js + Stripe selon besoin)." },
-          { "title": "Refonte complète", "desc": "Audit de l'existant, plan de refonte, migration sans perte de SEO. Pour passer d'un site qui plombe à un site qui sert." },
-          { "title": "Migration / sortie de Wix", "desc": "On vous sort de Wix, Squarespace ou Shopify. Vous récupérez le contrôle du code et de l'hébergement." }
+          {
+            "title": "Site vitrine",
+            "desc": "5 à 10 pages, design custom, performant. Pour une présence pro qui sert de carte de visite et de canal d'acquisition."
+          },
+          {
+            "title": "Landing page",
+            "desc": "Une page focus conversion, A/B test ready, intégrée à votre CRM. Idéale pour les campagnes payantes ou un lancement."
+          },
+          {
+            "title": "Site multi-pages",
+            "desc": "10+ pages, blog, espace clients, formulaires multiples. Pour les activités à plusieurs lignes de service."
+          },
+          {
+            "title": "E-commerce",
+            "desc": "Catalogue produits, panier, paiement, gestion stock. Stack moderne (Shopify Hydrogen, Medusa, ou Next.js + Stripe selon besoin)."
+          },
+          {
+            "title": "Refonte complète",
+            "desc": "Audit de l'existant, plan de refonte, migration sans perte de SEO. Pour passer d'un site qui plombe à un site qui sert."
+          },
+          {
+            "title": "Migration / sortie de Wix",
+            "desc": "On vous sort de Wix, Squarespace ou Shopify. Vous récupérez le contrôle du code et de l'hébergement."
+          }
         ]
       },
       "case": {
@@ -595,19 +971,43 @@
         "label": "Comment ça se passe",
         "h2": "Brief, build, mise en ligne.",
         "steps": [
-          ["01", "Brief", "30 min pour comprendre votre activité, vos cibles, vos objectifs. On revient avec une proposition de structure, design et délai."],
-          ["02", "Build", "Design puis développement. Maquettes validées avant le code. Démo intermédiaire chaque semaine pour ajuster en cours de route."],
-          ["03", "Mise en ligne", "Migration, redirection SEO, formation pour que vous puissiez gérer le contenu en autonomie. Maintenance optionnelle."]
+          [
+            "01",
+            "Brief",
+            "30 min pour comprendre votre activité, vos cibles, vos objectifs. On revient avec une proposition de structure, design et délai."
+          ],
+          [
+            "02",
+            "Build",
+            "Design puis développement. Maquettes validées avant le code. Démo intermédiaire chaque semaine pour ajuster en cours de route."
+          ],
+          [
+            "03",
+            "Mise en ligne",
+            "Migration, redirection SEO, formation pour que vous puissiez gérer le contenu en autonomie. Maintenance optionnelle."
+          ]
         ]
       },
       "faq": {
         "label": "Questions fréquentes",
         "h2": "Avant d'en parler.",
         "items": [
-          ["Combien de pages ?", "Site vitrine : 5 à 10. Multi-pages : 10+. E-commerce : selon catalogue. Pas de barème rigide, on cale ensemble pendant le brief."],
-          ["Quel CMS / stack ?", "Next.js pour la performance et le SEO, ou WordPress headless si vous préférez. Pas de Wix, Squarespace, ou autre solution fermée."],
-          ["Et l'hébergement ?", "Sur votre compte (Vercel, Cloudflare, OVH au choix). Vous restez propriétaire. On peut s'en occuper si vous voulez, en option."],
-          ["Vous faites le contenu ?", "Pour la copy oui (vos textes optimisés SEO). Pour les visuels, soit on vous fournit, soit on utilise les vôtres. À voir au brief."]
+          [
+            "Combien de pages ?",
+            "Site vitrine : 5 à 10. Multi-pages : 10+. E-commerce : selon catalogue. Pas de barème rigide, on cale ensemble pendant le brief."
+          ],
+          [
+            "Quel CMS / stack ?",
+            "Next.js pour la performance et le SEO, ou WordPress headless si vous préférez. Pas de Wix, Squarespace, ou autre solution fermée."
+          ],
+          [
+            "Et l'hébergement ?",
+            "Sur votre compte (Vercel, Cloudflare, OVH au choix). Vous restez propriétaire. On peut s'en occuper si vous voulez, en option."
+          ],
+          [
+            "Vous faites le contenu ?",
+            "Pour la copy oui (vos textes optimisés SEO). Pour les visuels, soit on vous fournit, soit on utilise les vôtres. À voir au brief."
+          ]
         ]
       },
       "cta": {
@@ -629,15 +1029,31 @@
       },
       "audience": {
         "label": "Pour qui",
-        "items": ["PME locales", "E-commerce", "B2B services"]
+        "items": [
+          "PME locales",
+          "E-commerce",
+          "B2B services"
+        ]
       },
       "problem": {
         "label": "Le problème",
         "h2": "Pourquoi vous êtes invisible sur Google.",
         "items": [
-          { "n": "01", "title": "Vous êtes invisible sur ce qui rapporte", "desc": "Vos clients tapent leurs requêtes. Vous n'apparaissez nulle part. Vos concurrents, eux, sont là, page 1, depuis 18 mois." },
-          { "n": "02", "title": "Vous payez Google Ads pour exister", "desc": "Sans SEO, chaque clic coûte 2 à 8 €. Avec un bon SEO, le même trafic devient gratuit après quelques mois. Le calcul est simple." },
-          { "n": "03", "title": "Votre agence SEO sortait des rapports en 2020", "desc": "Liens douteux, contenu mince, sur-optimisation. L'IA a tout changé. Aujourd'hui Google récompense le contenu utile et la performance, pas le SEO de papa." }
+          {
+            "n": "01",
+            "title": "Vous êtes invisible sur ce qui rapporte",
+            "desc": "Vos clients tapent leurs requêtes. Vous n'apparaissez nulle part. Vos concurrents, eux, sont là, page 1, depuis 18 mois."
+          },
+          {
+            "n": "02",
+            "title": "Vous payez Google Ads pour exister",
+            "desc": "Sans SEO, chaque clic coûte 2 à 8 €. Avec un bon SEO, le même trafic devient gratuit après quelques mois. Le calcul est simple."
+          },
+          {
+            "n": "03",
+            "title": "Votre agence SEO sortait des rapports en 2020",
+            "desc": "Liens douteux, contenu mince, sur-optimisation. L'IA a tout changé. Aujourd'hui Google récompense le contenu utile et la performance, pas le SEO de papa."
+          }
         ]
       },
       "deliverables": {
@@ -645,12 +1061,30 @@
         "h2": "Toutes les briques du SEO moderne.",
         "subtitle": "Six expertises, déclinables selon votre marché et votre maturité actuelle. On priorise pendant l'audit.",
         "items": [
-          { "title": "SEO local", "desc": "Google Business Profile, citations, avis, ranking carte. Pour distributeurs, cabinets, professions libérales sur des zones géographiques précises." },
-          { "title": "SEO technique", "desc": "Performance, indexation, données structurées, Core Web Vitals. La base qu'aucun contenu ne compense si elle est cassée." },
-          { "title": "SEO contenu", "desc": "Recherche de mots-clés, briefs éditoriaux, rédaction, optimisation de l'existant. Du contenu qui ranke et qui convertit." },
-          { "title": "SEO international", "desc": "Hreflang, structure multi-marchés, traduction SEO. Pour étendre votre visibilité sur plusieurs pays sans dupliquer ni se cannibaliser." },
-          { "title": "Audit SEO", "desc": "Diagnostic technique, contenu, backlinks, concurrence. Plan d'action priorisé, livré par écrit, valable même sans nous." },
-          { "title": "Netlinking ciblé", "desc": "À la carte. Pas de PBN, pas de masse, juste des liens éditoriaux pertinents qui renforcent votre autorité progressivement." }
+          {
+            "title": "SEO local",
+            "desc": "Google Business Profile, citations, avis, ranking carte. Pour distributeurs, cabinets, professions libérales sur des zones géographiques précises."
+          },
+          {
+            "title": "SEO technique",
+            "desc": "Performance, indexation, données structurées, Core Web Vitals. La base qu'aucun contenu ne compense si elle est cassée."
+          },
+          {
+            "title": "SEO contenu",
+            "desc": "Recherche de mots-clés, briefs éditoriaux, rédaction, optimisation de l'existant. Du contenu qui ranke et qui convertit."
+          },
+          {
+            "title": "SEO international",
+            "desc": "Hreflang, structure multi-marchés, traduction SEO. Pour étendre votre visibilité sur plusieurs pays sans dupliquer ni se cannibaliser."
+          },
+          {
+            "title": "Audit SEO",
+            "desc": "Diagnostic technique, contenu, backlinks, concurrence. Plan d'action priorisé, livré par écrit, valable même sans nous."
+          },
+          {
+            "title": "Netlinking ciblé",
+            "desc": "À la carte. Pas de PBN, pas de masse, juste des liens éditoriaux pertinents qui renforcent votre autorité progressivement."
+          }
         ]
       },
       "case": {
@@ -678,19 +1112,43 @@
         "label": "Comment ça se passe",
         "h2": "Audit, roadmap, exécution mensuelle.",
         "steps": [
-          ["01", "Audit", "Diagnostic technique, contenu, backlinks, positions actuelles. Comparaison avec vos concurrents directs. Plan priorisé."],
-          ["02", "Roadmap", "Plan d'action sur 6 à 12 mois. On sépare les quick wins (semaine 1-4) et le travail de fond. Vous validez avant qu'on exécute."],
-          ["03", "Exécution mensuelle", "Mise en œuvre cadencée, reporting tous les 30 jours, ajustements selon ce que dit la data. Pas de boîte noire, pas de rapport flou."]
+          [
+            "01",
+            "Audit",
+            "Diagnostic technique, contenu, backlinks, positions actuelles. Comparaison avec vos concurrents directs. Plan priorisé."
+          ],
+          [
+            "02",
+            "Roadmap",
+            "Plan d'action sur 6 à 12 mois. On sépare les quick wins (semaine 1-4) et le travail de fond. Vous validez avant qu'on exécute."
+          ],
+          [
+            "03",
+            "Exécution mensuelle",
+            "Mise en œuvre cadencée, reporting tous les 30 jours, ajustements selon ce que dit la data. Pas de boîte noire, pas de rapport flou."
+          ]
         ]
       },
       "faq": {
         "label": "Questions fréquentes",
         "h2": "Avant d'en parler.",
         "items": [
-          ["Combien de temps pour voir des résultats ?", "Quick wins techniques : 2 à 4 semaines. SEO local : 2 à 4 mois. SEO de contenu sur des requêtes compétitives : 6 à 12 mois. On vous le dit dès l'audit."],
-          ["L'IA tue-t-elle le SEO ?", "Non, elle l'accélère. On utilise l'IA pour produire des briefs, rédiger, auditer plus vite — mais le ranking, lui, dépend toujours de contenu utile + technique + autorité."],
-          ["Vous faites du netlinking ?", "Oui, mais ciblé. Pas de PBN, pas de masse de liens douteux. Que des liens éditoriaux sur des sites pertinents, négociés un par un."],
-          ["SEO local ou national ?", "Les deux. Mais pour une PME locale (cabinet, distributeur), commencer par le local est presque toujours le meilleur ROI."]
+          [
+            "Combien de temps pour voir des résultats ?",
+            "Quick wins techniques : 2 à 4 semaines. SEO local : 2 à 4 mois. SEO de contenu sur des requêtes compétitives : 6 à 12 mois. On vous le dit dès l'audit."
+          ],
+          [
+            "L'IA tue-t-elle le SEO ?",
+            "Non, elle l'accélère. On utilise l'IA pour produire des briefs, rédiger, auditer plus vite — mais le ranking, lui, dépend toujours de contenu utile + technique + autorité."
+          ],
+          [
+            "Vous faites du netlinking ?",
+            "Oui, mais ciblé. Pas de PBN, pas de masse de liens douteux. Que des liens éditoriaux sur des sites pertinents, négociés un par un."
+          ],
+          [
+            "SEO local ou national ?",
+            "Les deux. Mais pour une PME locale (cabinet, distributeur), commencer par le local est presque toujours le meilleur ROI."
+          ]
         ]
       },
       "cta": {
@@ -712,15 +1170,31 @@
       },
       "audience": {
         "label": "Pour qui",
-        "items": ["Marques premium", "Dirigeants experts", "Créateurs & lieux"]
+        "items": [
+          "Marques premium",
+          "Dirigeants experts",
+          "Créateurs & lieux"
+        ]
       },
       "problem": {
         "label": "Le problème",
         "h2": "Ce que les réseaux vous coûtent vraiment.",
         "items": [
-          { "n": "01", "title": "Votre compte stagne malgré vos efforts", "desc": "Vous publiez sans régularité, sans stratégie, et l'algorithme vous oublie. Mois après mois, les vues plafonnent et l'audience ne grossit pas." },
-          { "n": "02", "title": "Créer du contenu régulier prend tout votre temps", "desc": "Entre l'écriture, le tournage, le montage et la publication, c'est 6 à 10 heures par semaine que vous ne pouvez pas mettre sur votre métier." },
-          { "n": "03", "title": "Vous postez sur 3 réseaux sans stratégie", "desc": "LinkedIn, Instagram, YouTube : chaque plateforme demande un format différent. Sans plan, vous éparpillez vos efforts sans résultat mesurable." }
+          {
+            "n": "01",
+            "title": "Votre compte stagne malgré vos efforts",
+            "desc": "Vous publiez sans régularité, sans stratégie, et l'algorithme vous oublie. Mois après mois, les vues plafonnent et l'audience ne grossit pas."
+          },
+          {
+            "n": "02",
+            "title": "Créer du contenu régulier prend tout votre temps",
+            "desc": "Entre l'écriture, le tournage, le montage et la publication, c'est 6 à 10 heures par semaine que vous ne pouvez pas mettre sur votre métier."
+          },
+          {
+            "n": "03",
+            "title": "Vous postez sur 3 réseaux sans stratégie",
+            "desc": "LinkedIn, Instagram, YouTube : chaque plateforme demande un format différent. Sans plan, vous éparpillez vos efforts sans résultat mesurable."
+          }
         ]
       },
       "deliverables": {
@@ -728,12 +1202,30 @@
         "h2": "Toute la chaîne, de la stratégie au reporting.",
         "subtitle": "Une approche pensée pour grossir votre audience sans diluer votre marque. On commence par le canal à plus fort impact, puis on étend.",
         "items": [
-          { "title": "Stratégie multi-plateforme", "desc": "Audit de vos comptes actuels, définition du canal prioritaire, ligne éditoriale et positionnement. Tout est cadré avant qu'on produise." },
-          { "title": "Croissance Instagram", "desc": "Le cœur du service. Stratégie de croissance organique ciblée, création de contenu visuel (posts, reels, stories), engagement qualifié. Suivi mensuel des followers." },
-          { "title": "Contenu LinkedIn", "desc": "Posts pro et articles longs format, écrits dans votre voix. Pensés pour générer de l'autorité et des leads qualifiés." },
-          { "title": "Vidéos YouTube & Shorts", "desc": "Scripts, montage, optimisation SEO YouTube. Format long pour l'autorité, Shorts pour la visibilité. On peut aussi adapter pour TikTok." },
-          { "title": "Publication & engagement", "desc": "Calendrier de publication, mise en ligne automatique, réponses aux commentaires et DM ciblés. Vous gardez la validation finale, on s'occupe de l'exécution." },
-          { "title": "Reporting mensuel", "desc": "Croissance, engagement, leads entrants, formats qui fonctionnent. Un point écrit chaque mois pour ajuster la stratégie sur ce que dit la data." }
+          {
+            "title": "Stratégie multi-plateforme",
+            "desc": "Audit de vos comptes actuels, définition du canal prioritaire, ligne éditoriale et positionnement. Tout est cadré avant qu'on produise."
+          },
+          {
+            "title": "Croissance Instagram",
+            "desc": "Le cœur du service. Stratégie de croissance organique ciblée, création de contenu visuel (posts, reels, stories), engagement qualifié. Suivi mensuel des followers."
+          },
+          {
+            "title": "Contenu LinkedIn",
+            "desc": "Posts pro et articles longs format, écrits dans votre voix. Pensés pour générer de l'autorité et des leads qualifiés."
+          },
+          {
+            "title": "Vidéos YouTube & Shorts",
+            "desc": "Scripts, montage, optimisation SEO YouTube. Format long pour l'autorité, Shorts pour la visibilité. On peut aussi adapter pour TikTok."
+          },
+          {
+            "title": "Publication & engagement",
+            "desc": "Calendrier de publication, mise en ligne automatique, réponses aux commentaires et DM ciblés. Vous gardez la validation finale, on s'occupe de l'exécution."
+          },
+          {
+            "title": "Reporting mensuel",
+            "desc": "Croissance, engagement, leads entrants, formats qui fonctionnent. Un point écrit chaque mois pour ajuster la stratégie sur ce que dit la data."
+          }
         ]
       },
       "case": {
@@ -761,19 +1253,43 @@
         "label": "Comment ça se passe",
         "h2": "Audit, production, croissance.",
         "steps": [
-          ["01", "Audit", "30 min pour comprendre votre marque, votre voix, vos cibles. Diagnostic des comptes actuels et identification du canal à plus fort potentiel."],
-          ["02", "Production", "Stratégie éditoriale, premiers contenus calibrés sur votre voix, calendrier validé avec vous. Vous gardez le dernier mot avant publication."],
-          ["03", "Croissance", "Publication régulière, engagement ciblé, reporting mensuel. On ajuste chaque mois selon ce qui fonctionne réellement chez vous."]
+          [
+            "01",
+            "Audit",
+            "30 min pour comprendre votre marque, votre voix, vos cibles. Diagnostic des comptes actuels et identification du canal à plus fort potentiel."
+          ],
+          [
+            "02",
+            "Production",
+            "Stratégie éditoriale, premiers contenus calibrés sur votre voix, calendrier validé avec vous. Vous gardez le dernier mot avant publication."
+          ],
+          [
+            "03",
+            "Croissance",
+            "Publication régulière, engagement ciblé, reporting mensuel. On ajuste chaque mois selon ce qui fonctionne réellement chez vous."
+          ]
         ]
       },
       "faq": {
         "label": "Questions fréquentes",
         "h2": "Avant d'en parler.",
         "items": [
-          ["Qui écrit le contenu ?", "Nos équipes éditoriales, calibrées sur votre voix lors de l'onboarding. Chaque post est relu et adapté à votre ton avant publication."],
-          ["On garde la main sur ce qui sort ?", "Oui. Vous validez chaque calendrier en amont. Aucun contenu ne part sans votre accord — c'est votre voix, c'est votre marque."],
-          ["Combien de followers garantis ?", "Pas de garantie chiffrée. Les promesses de croissance fixes sur les réseaux cachent souvent des fake followers. On vise la croissance qualifiée, validable lors de l'audit."],
-          ["Combien de posts par mois ?", "Variable selon le canal et votre besoin. Typiquement : 12 à 20 posts Instagram + stories quotidiennes, 8 à 16 posts LinkedIn, 2 à 4 vidéos YouTube longues. À caler ensemble."]
+          [
+            "Qui écrit le contenu ?",
+            "Nos équipes éditoriales, calibrées sur votre voix lors de l'onboarding. Chaque post est relu et adapté à votre ton avant publication."
+          ],
+          [
+            "On garde la main sur ce qui sort ?",
+            "Oui. Vous validez chaque calendrier en amont. Aucun contenu ne part sans votre accord — c'est votre voix, c'est votre marque."
+          ],
+          [
+            "Combien de followers garantis ?",
+            "Pas de garantie chiffrée. Les promesses de croissance fixes sur les réseaux cachent souvent des fake followers. On vise la croissance qualifiée, validable lors de l'audit."
+          ],
+          [
+            "Combien de posts par mois ?",
+            "Variable selon le canal et votre besoin. Typiquement : 12 à 20 posts Instagram + stories quotidiennes, 8 à 16 posts LinkedIn, 2 à 4 vidéos YouTube longues. À caler ensemble."
+          ]
         ]
       },
       "cta": {

@@ -15,19 +15,22 @@ import type { DemoDashboard } from "@/lib/demoDashboards";
  * comme en afficherait une vraie application. L'argumentaire Timevo est sous
  * le cadre, dans la lecture commentée.
  */
-function PanelTitle({ h2, meta }: { h2: string; meta: string }) {
+function PanelTitle({ h2, meta, compact }: { h2: string; meta: string; compact?: boolean }) {
+  // Sur la home, le panneau est imbriqué dans une section qui porte déjà son
+  // h2 : on descend d'un cran pour ne pas casser la hiérarchie de titres.
+  const Heading = compact ? "h3" : "h2";
   return (
     <div style={{
       display: "flex", alignItems: "baseline", justifyContent: "space-between",
       gap: 20, flexWrap: "wrap",
       marginBottom: 28, paddingBottom: 16, borderBottom: "1px solid var(--border)",
     }}>
-      <h2 style={{
+      <Heading style={{
         fontFamily: "var(--font-sans)", fontSize: 19, fontWeight: 500,
         letterSpacing: "-0.02em", margin: 0, color: "var(--text)",
       }}>
         {h2}
-      </h2>
+      </Heading>
       <span style={{
         fontFamily: "var(--font-mono)", fontSize: 11,
         color: "var(--dim-2)", letterSpacing: "0.06em",
@@ -116,10 +119,15 @@ const STEP_STYLE = {
   pending: { bg: "transparent", border: "var(--border-strong)", color: "var(--dim-2)" },
 } as const;
 
-export function QuotesPanel({ d }: { d: DemoDashboard }) {
+/**
+ * `compact` sert l'aperçu de la home : titre en h3 et trois lignes au lieu de
+ * cinq, pour donner à voir sans reproduire la page entière.
+ */
+export function QuotesPanel({ d, compact }: { d: DemoDashboard; compact?: boolean }) {
+  const rows = compact ? d.quotes.slice(0, 3) : d.quotes;
   return (
     <>
-      <PanelTitle h2={d.quotesH2} meta={d.quotesMeta} />
+      <PanelTitle h2={d.quotesH2} meta={d.quotesMeta} compact={compact} />
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", minWidth: 720, borderCollapse: "collapse" }}>
           <thead>
@@ -131,7 +139,7 @@ export function QuotesPanel({ d }: { d: DemoDashboard }) {
             </tr>
           </thead>
           <tbody>
-            {d.quotes.map(q => (
+            {rows.map(q => (
               <tr key={q.client} className="demo-row">
                 <td style={{ padding: "18px 16px", borderTop: "1px solid var(--border)" }}>
                   <div style={{
