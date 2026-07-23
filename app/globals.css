@@ -104,6 +104,62 @@ section[id],
   color: var(--text);
 }
 
+/* ── Dashboards de démo ─────────────────────────────────── */
+
+.demo-row {
+  transition: background .15s;
+}
+.demo-row:hover {
+  background: var(--card);
+}
+
+/* Le marqueur par défaut est retiré côté style inline ; on remet un chevron. */
+.demo-summary::-webkit-details-marker { display: none; }
+.demo-summary::before {
+  content: "+ ";
+}
+details[open] > .demo-summary::before {
+  content: "− ";
+}
+.demo-summary:hover {
+  color: var(--accent-soft);
+}
+
+/* Boutons de la démo : décoratifs, ils n'agissent pas. */
+.demo-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--dim);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+}
+.demo-btn-primary {
+  border-color: transparent;
+  background: var(--accent-gradient);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .demo-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .demo-lead-head {
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .demo-kpi-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* ── Responsive ─────────────────────────────────────────── */
 
 /* Nav */

@@ -4,20 +4,13 @@ import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import NavDkdp from "@/components/NavDkdp";
 import FooterDkdp from "@/components/FooterDkdp";
-import SectorPage from "@/components/SectorPage";
 import StickyMobileCta from "@/components/StickyMobileCta";
 import Breadcrumb from "@/components/Breadcrumb";
 import RelatedLinks from "@/components/RelatedLinks";
-import { SECTORS, SECTOR_SLUGS } from "@/lib/sectors";
+import DashboardShell from "@/components/demo/DashboardShell";
+import { DEMO_DASHBOARDS, DEMO_SLUGS } from "@/lib/demoDashboards";
 import type { Locale } from "@/lib/pageLabels";
-import {
-  serviceLinks,
-  sectorLinks,
-  cityLinks,
-  sectorLink,
-  demoLink,
-  LINK_LABELS,
-} from "@/lib/links";
+import { serviceLinks, sectorLinks, cityLinks, sectorLink, LINK_LABELS } from "@/lib/links";
 
 const BASE = "https://www.timevo.io";
 
@@ -27,7 +20,7 @@ function isValidLocale(value: string): value is Locale {
 
 export function generateStaticParams() {
   return routing.locales.flatMap(locale =>
-    SECTOR_SLUGS.map(secteur => ({ locale, secteur }))
+    DEMO_SLUGS.map(secteur => ({ locale, secteur }))
   );
 }
 
@@ -37,82 +30,69 @@ export async function generateMetadata({
   params: Promise<{ locale: string; secteur: string }>;
 }): Promise<Metadata> {
   const { locale, secteur } = await params;
-  if (!isValidLocale(locale) || !SECTORS[secteur]) return {};
-  const s = SECTORS[secteur][locale];
+  if (!isValidLocale(locale) || !DEMO_DASHBOARDS[secteur]) return {};
+  const d = DEMO_DASHBOARDS[secteur][locale];
 
-  const pageUrlFr = `${BASE}/fr/automatisation-pour/${secteur}`;
-  const pageUrlEn = `${BASE}/en/automatisation-pour/${secteur}`;
-  const url = locale === "fr" ? pageUrlFr : pageUrlEn;
+  const urlFr = `${BASE}/fr/demo/${secteur}`;
+  const urlEn = `${BASE}/en/demo/${secteur}`;
+  const url = locale === "fr" ? urlFr : urlEn;
 
   return {
-    title: s.metaTitle,
-    description: s.metaDescription,
+    title: d.metaTitle,
+    description: d.metaDescription,
     alternates: {
       canonical: url,
-      languages: {
-        fr: pageUrlFr,
-        en: pageUrlEn,
-        "x-default": pageUrlFr,
-      },
+      languages: { fr: urlFr, en: urlEn, "x-default": urlFr },
     },
     openGraph: {
-      title: s.metaTitle,
-      description: s.metaDescription,
+      title: d.metaTitle,
+      description: d.metaDescription,
       url,
       siteName: "Timevo",
       locale: locale === "fr" ? "fr_FR" : "en_GB",
       alternateLocale: locale === "fr" ? "en_GB" : "fr_FR",
       type: "website",
-      images: [
-        {
-          url: `${BASE}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: s.metaTitle,
-        },
-      ],
+      images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: d.metaTitle }],
     },
     twitter: {
       card: "summary_large_image",
-      title: s.metaTitle,
-      description: s.metaDescription,
+      title: d.metaTitle,
+      description: d.metaDescription,
       images: [`${BASE}/og-image.png`],
     },
   };
 }
 
-export default async function SectorPageRoute({
+export default async function DemoPage({
   params,
 }: {
   params: Promise<{ locale: string; secteur: string }>;
 }) {
   const { locale, secteur } = await params;
-  if (!isValidLocale(locale) || !SECTORS[secteur]) notFound();
-  const s = SECTORS[secteur][locale];
+  if (!isValidLocale(locale) || !DEMO_DASHBOARDS[secteur]) notFound();
 
   setRequestLocale(locale);
 
-  const url = `${BASE}/${locale}/automatisation-pour/${secteur}`;
+  const d = DEMO_DASHBOARDS[secteur][locale];
   const L = LINK_LABELS[locale];
-  const demo = demoLink(secteur, locale);
+  const url = `${BASE}/${locale}/demo/${secteur}`;
+  const sector = sectorLink(secteur, locale);
 
-  const serviceJsonLd = {
+  const appJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: s.metaTitle,
-    description: s.metaDescription,
+    "@type": "SoftwareApplication",
+    name: d.metaTitle,
+    description: d.metaDescription,
     url,
-    serviceType: locale === "fr" ? "Automatisation de processus" : "Process automation",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
     provider: {
       "@type": "ProfessionalService",
       name: "Timevo",
       url: BASE,
     },
-    areaServed: ["FR", "BE", "CH"],
-    audience: {
-      "@type": "BusinessAudience",
-      audienceType: s.h1,
-    },
+    // La page est une démonstration : on ne revendique ni prix ni avis.
+    isAccessibleForFree: true,
   };
 
   const breadcrumbJsonLd = {
@@ -121,25 +101,15 @@ export default async function SectorPageRoute({
     itemListElement: [
       { "@type": "ListItem", position: 1, name: L.home, item: `${BASE}/${locale}` },
       { "@type": "ListItem", position: 2, name: L.solutions, item: `${BASE}/${locale}/solutions` },
-      { "@type": "ListItem", position: 3, name: sectorLink(secteur, locale).label, item: url },
+      { "@type": "ListItem", position: 3, name: sector.label, item: `${BASE}${sector.href}` },
+      { "@type": "ListItem", position: 4, name: d.eyebrow, item: url },
     ],
-  };
-
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: s.faqs.map(([q, a]) => ({
-      "@type": "Question",
-      name: q,
-      acceptedAnswer: { "@type": "Answer", text: a },
-    })),
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <NavDkdp />
       <main>
         <Breadcrumb
@@ -147,23 +117,18 @@ export default async function SectorPageRoute({
           items={[
             { href: `/${locale}`, label: L.home },
             { href: `/${locale}/solutions`, label: L.solutions },
-            { label: sectorLink(secteur, locale).label },
+            { href: sector.href, label: sector.label },
+            { label: locale === "fr" ? "Démo" : "Demo" },
           ]}
         />
-        <SectorPage
-          s={s}
-          locale={locale}
-          demo={demo && { href: demo.href, label: L.demoCta }}
-        />
+        <DashboardShell d={d} />
         <RelatedLinks
           eyebrow={L.eyebrow}
           h2={L.h2}
           groups={[
             { title: L.services, items: serviceLinks(locale) },
-            { title: L.otherSectors, items: sectorLinks(locale, secteur) },
+            { title: L.sectors, items: sectorLinks(locale) },
             { title: L.cities, items: cityLinks(locale) },
-            // Groupe omis par RelatedLinks tant que le secteur n'a pas de démo.
-            { title: L.demo, items: demo ? [demo] : [] },
           ]}
         />
       </main>

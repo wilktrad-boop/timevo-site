@@ -122,6 +122,8 @@ export const LINK_LABELS: Record<Locale, {
   sectors: string;
   otherSectors: string;
   cities: string;
+  demo: string;
+  demoCta: string;
   realisations: string;
   realisationsLabel: string;
   realisationsDesc: string;
@@ -136,6 +138,8 @@ export const LINK_LABELS: Record<Locale, {
     sectors: "Par secteur",
     otherSectors: "Autres secteurs",
     cities: "Où on intervient",
+    demo: "Voir en vrai",
+    demoCta: "Voir le tableau de bord",
     realisations: "Voir aussi",
     realisationsLabel: "Réalisations",
     realisationsDesc: "Les projets qu'on a livrés.",
@@ -150,6 +154,8 @@ export const LINK_LABELS: Record<Locale, {
     sectors: "By industry",
     otherSectors: "Other industries",
     cities: "Where we work",
+    demo: "See it live",
+    demoCta: "View the dashboard",
     realisations: "See also",
     realisationsLabel: "Case studies",
     realisationsDesc: "The projects we delivered.",
@@ -157,6 +163,31 @@ export const LINK_LABELS: Record<Locale, {
     solutions: "Solutions",
   },
 };
+
+// ── Démos ────────────────────────────────────────────────────────────
+
+// Les secteurs qui ont un dashboard de démo. Volontairement une liste en dur :
+// importer DEMO_DASHBOARDS ici tirerait tout le contenu des démos dans le
+// bundle de chaque page qui utilise le registre de liens.
+const DEMO_SECTORS = ["pisciniste"];
+
+const DEMO_LABELS: Record<Locale, { label: string; desc: string }> = {
+  fr: { label: "Démo du tableau de bord", desc: "Ce que vous avez sous les yeux le lundi matin." },
+  en: { label: "Dashboard demo", desc: "What you see on Monday morning." },
+};
+
+/** `null` si le secteur n'a pas encore de démo. */
+export function demoLink(sectorSlug: string, locale: Locale): LinkItem | null {
+  if (!DEMO_SECTORS.includes(sectorSlug)) return null;
+  return {
+    href: `/${locale}/demo/${sectorSlug}`,
+    ...DEMO_LABELS[locale],
+  };
+}
+
+export function demoLinks(locale: Locale): LinkItem[] {
+  return DEMO_SECTORS.map(s => demoLink(s, locale)).filter((l): l is LinkItem => l !== null);
+}
 
 export function realisationsLink(locale: Locale): LinkItem {
   const L = LINK_LABELS[locale];

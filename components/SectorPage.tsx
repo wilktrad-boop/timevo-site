@@ -6,11 +6,20 @@ import { SECTOR_LABELS, type Locale } from "@/lib/pageLabels";
 
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
-export default function SectorPage({ s, locale }: { s: SectorContent; locale: Locale }) {
+export default function SectorPage({
+  s,
+  locale,
+  demo,
+}: {
+  s: SectorContent;
+  locale: Locale;
+  /** Lien vers le dashboard de démo du secteur, si celui-ci en a un. */
+  demo?: { href: string; label: string } | null;
+}) {
   const L = SECTOR_LABELS[locale];
   return (
     <>
-      <SectorHero s={s} L={L} />
+      <SectorHero s={s} L={L} demo={demo} />
       <ScrollFadeIn><SectorProblem s={s} L={L} /></ScrollFadeIn>
       <ScrollFadeIn><SectorWorkflows s={s} L={L} /></ScrollFadeIn>
       <ScrollFadeIn><SectorCase s={s} L={L} /></ScrollFadeIn>
@@ -22,7 +31,15 @@ export default function SectorPage({ s, locale }: { s: SectorContent; locale: Lo
 
 type Labels = typeof SECTOR_LABELS[Locale];
 
-function SectorHero({ s, L }: { s: SectorContent; L: Labels }) {
+function SectorHero({
+  s,
+  L,
+  demo,
+}: {
+  s: SectorContent;
+  L: Labels;
+  demo?: { href: string; label: string } | null;
+}) {
   return (
     <section id="hero" style={{ padding: "72px 28px 80px", position: "relative", overflow: "hidden" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -67,8 +84,8 @@ function SectorHero({ s, L }: { s: SectorContent; L: Labels }) {
             <PillPrimary href={CONTACT_HREF} large>
               {L.cta_primary} <Arrow color="#fff" size={14} />
             </PillPrimary>
-            <PillGhost href="#workflows" large>
-              {L.cta_secondary}
+            <PillGhost href={demo ? demo.href : "#workflows"} large>
+              {demo ? demo.label : L.cta_secondary}
             </PillGhost>
           </div>
         </div>
