@@ -66,6 +66,31 @@ export function serviceLinks(locale: Locale, exclude?: string): LinkItem[] {
   return SERVICE_SLUGS.filter(s => s !== exclude).map(s => serviceLink(s, locale));
 }
 
+// ── Facturation électronique ─────────────────────────────────────────
+// Page produit à part (échéance légale, prix affiché), hors des 6 slugs de
+// services. Un seul endroit pour son URL et ses libellés courts, réutilisés
+// par le menu, le footer et les blocs de maillage.
+
+export const FACTURATION_SLUG = "facturation-electronique";
+
+const FACTURATION_LABELS: Record<Locale, { label: string; desc: string }> = {
+  fr: {
+    label: "Facturation électronique",
+    desc: "Mise en conformité 2026 et automatisation des factures. 890 € HT.",
+  },
+  en: {
+    label: "E-invoicing",
+    desc: "2026 compliance and invoice automation. €890 excl. VAT.",
+  },
+};
+
+export function facturationLink(locale: Locale): LinkItem {
+  return {
+    href: `/${locale}/${FACTURATION_SLUG}`,
+    ...FACTURATION_LABELS[locale],
+  };
+}
+
 // ── Secteurs ─────────────────────────────────────────────────────────
 
 // Libellés courts : le h1 des pages secteur est trop long pour une liste de liens.

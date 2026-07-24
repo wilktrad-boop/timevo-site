@@ -256,6 +256,26 @@ details[open] > .demo-summary::before {
     gap: 32px !important;
     row-gap: 40px !important;
   }
+
+  /* Page facturation électronique */
+  .fe-hero-grid,
+  .fe-auto-grid,
+  .fe-risk-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .fe-steps {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Encadré facturation sur la home : CTA sous le texte */
+  .fe-banner {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .fe-banner-cta {
+    justify-content: center !important;
+  }
 }
 
 /* Mobile ≤ 600px */
@@ -263,7 +283,8 @@ details[open] > .demo-summary::before {
 
   .pillars-row1,
   .pillars-row2,
-  .realisations-grid {
+  .realisations-grid,
+  .fe-steps {
     grid-template-columns: 1fr !important;
   }
 
