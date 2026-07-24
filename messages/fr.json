@@ -1300,6 +1300,221 @@
       }
     }
   },
+  "facturation": {
+    "meta_title": "Facturation électronique 2026 : mise en conformité",
+    "meta_description": "Au 1er septembre 2026, toute entreprise assujettie à la TVA doit pouvoir recevoir une facture électronique. Timevo choisit votre plateforme agréée, la connecte à vos outils et automatise vos flux.",
+    "breadcrumb": "Facturation électronique",
+    "hero": {
+      "eyebrow": "Réforme de la facturation électronique",
+      "h1_line1": "Le 1er septembre 2026, vous devez pouvoir recevoir",
+      "h1_accent": "une facture électronique.",
+      "sub": "Toutes les entreprises assujetties à la TVA sont concernées, franchise en base comprise. Timevo choisit votre plateforme agréée, la connecte à vos outils et automatise vos flux de facturation. Vous n'avez rien à paramétrer.",
+      "cta_primary": "Réserver le diagnostic",
+      "cta_secondary": "Suis-je concerné ?"
+    },
+    "countdown": {
+      "label": "Avant l'obligation de réception",
+      "days": "jours",
+      "hours": "heures",
+      "minutes": "min",
+      "seconds": "sec",
+      "foot": "Le calendrier a déjà été repoussé deux fois. Cette échéance-ci est maintenue : la phase pilote nationale tourne en conditions réelles depuis février 2026.",
+      "passed": "L'obligation de réception est entrée en vigueur."
+    },
+    "concerne": {
+      "eyebrow": "Qui est concerné",
+      "h2": "Assujetti à la TVA ? Vous êtes concerné.",
+      "intro": "La réforme s'applique à toute entreprise assujettie à la TVA établie en France — y compris si vous êtes en franchise en base et que vous ne facturez pas la TVA. Seule la date d'émission change selon votre taille.",
+      "th": [
+        "Structure",
+        "Recevoir des factures",
+        "Émettre des factures"
+      ],
+      "rows": [
+        {
+          "name": "Grande entreprise (plus de 5 000 salariés)",
+          "reception": "1er sept. 2026",
+          "emission": "1er sept. 2026",
+          "late": false
+        },
+        {
+          "name": "ETI (250 à 4 999 salariés)",
+          "reception": "1er sept. 2026",
+          "emission": "1er sept. 2026",
+          "late": false
+        },
+        {
+          "name": "PME (moins de 250 salariés)",
+          "reception": "1er sept. 2026",
+          "emission": "1er sept. 2027",
+          "late": true
+        },
+        {
+          "name": "TPE (moins de 50 salariés)",
+          "reception": "1er sept. 2026",
+          "emission": "1er sept. 2027",
+          "late": true
+        },
+        {
+          "name": "Micro-entreprise, indépendant",
+          "reception": "1er sept. 2026",
+          "emission": "1er sept. 2027",
+          "late": true
+        }
+      ],
+      "note_strong": "Vous ne vendez qu'à des particuliers ?",
+      "note": "Vous échappez à la facturation électronique entre entreprises, mais pas à l'e-reporting : la transmission de vos données de vente à l'administration, elle aussi via une plateforme agréée."
+    },
+    "risques": {
+      "eyebrow": "Ce que coûte l'attentisme",
+      "h2": "La réforme ne disparaîtra pas parce que vous la remettez à plus tard.",
+      "items": [
+        {
+          "tag": "Sanction",
+          "title": "50 € par facture, jusqu'à 15 000 € par an",
+          "desc": "Le montant est passé de 15 à 50 € avec la loi de finances pour 2026. Chaque facture émise hors du format requis est comptée, et le plafond s'apprécie par année civile."
+        },
+        {
+          "tag": "Sanction",
+          "title": "500 €, puis 1 000 € tous les trois mois",
+          "desc": "C'est l'amende pour ne pas avoir désigné de plateforme agréée en réception, après une mise en demeure restée sans réponse. Elle s'applique dès 2026, quelle que soit votre taille."
+        },
+        {
+          "tag": "Blocage",
+          "title": "Vos factures fournisseurs n'arrivent plus",
+          "desc": "Grandes entreprises et ETI émettent au format électronique dès septembre 2026. Sans plateforme active, vous ne recevez plus rien de leur part : votre comptabilité se grippe."
+        },
+        {
+          "tag": "Charge",
+          "title": "Plus de 150 plateformes, et un choix à faire",
+          "desc": "La DGFiP en a immatriculé plus de 150, la plupart à titre provisoire en attendant l'audit d'interopérabilité. Comparer les formats, les tarifs et la solidité de chacune prend un temps que vous n'avez pas."
+        }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Comment on procède",
+      "h2": "Cinq étapes, pilotées de bout en bout.",
+      "intro": "Vous ne configurez rien seul. On s'occupe de la technique, vous gardez la main sur les décisions.",
+      "steps": [
+        {
+          "title": "Diagnostic",
+          "desc": "Trente minutes pour établir votre statut, vos échéances réelles et l'état de vos outils."
+        },
+        {
+          "title": "Choix de la plateforme",
+          "desc": "Sélection et activation de votre plateforme agréée, calibrée sur votre volume de factures."
+        },
+        {
+          "title": "Connexion à vos outils",
+          "desc": "Facturation, comptabilité, CRM : on relie l'existant sans vous faire changer d'habitudes."
+        },
+        {
+          "title": "Automatisation des flux",
+          "desc": "Émission, réception et e-reporting automatisés, pour vos clients pros comme particuliers."
+        },
+        {
+          "title": "Suivi",
+          "desc": "On surveille les publications de la DGFiP et on ajuste votre configuration quand le cadre bouge."
+        }
+      ]
+    },
+    "automation": {
+      "eyebrow": "Au-delà de la conformité",
+      "h2": "Tant qu'on y est, autant ne plus jamais saisir une facture à la main.",
+      "sub": "La mise en conformité oblige à toucher à toute la chaîne de facturation. C'est le moment de récupérer le temps qu'elle vous prend.",
+      "cta": "Voir l'offre",
+      "items": [
+        "Facture émise dès la fin d'une prestation ou d'une vente, sans ressaisie.",
+        "Relances de paiement envoyées seules, selon un calendrier que vous fixez une fois.",
+        "Factures aux particuliers générées et archivées pour l'e-reporting.",
+        "Tableau de bord unique : qui vous doit quoi, et depuis combien de temps.",
+        "Archivage à valeur probante, consultable en cas de contrôle."
+      ]
+    },
+    "offre": {
+      "eyebrow": "L'offre",
+      "h2": "Un prix unique, une conformité complète.",
+      "name": "Pack Conformité Facturation Électronique",
+      "price": "890 €",
+      "price_sup": "HT",
+      "price_note": "Paiement unique, sans engagement ni abonnement",
+      "items": [
+        "Diagnostic complet de votre situation et de vos échéances",
+        "Sélection et activation de votre plateforme agréée",
+        "Connexion à vos outils de facturation existants",
+        "Automatisation de l'émission et de la réception",
+        "Mise en place de l'e-reporting pour vos ventes aux particuliers",
+        "Une heure de formation à votre nouvel outil",
+        "Quatre-vingt-dix jours de suivi et d'ajustements"
+      ],
+      "cta": "Réserver le diagnostic",
+      "guarantee": "Le diagnostic est gratuit et sans engagement. S'il en ressort que vous n'avez besoin de rien, on vous le dit.",
+      "note": "Le coût de la plateforme agréée elle-même reste à votre charge et dépend de votre volume de factures. On vous le chiffre au diagnostic."
+    },
+    "pourquoi": {
+      "eyebrow": "Pourquoi passer par nous",
+      "h2": "Un accompagnement, pas un logiciel de plus à comprendre seul.",
+      "items": [
+        {
+          "title": "Un seul interlocuteur",
+          "desc": "Pas de ticket anonyme. La personne qui fait le diagnostic est celle qui installe et celle qui assure le suivi."
+        },
+        {
+          "title": "Anticiper évite la file d'attente",
+          "desc": "Plus la date approche, plus les plateformes et les intégrateurs seront saturés. Traiter le sujet maintenant coûte moins cher qu'en août 2026."
+        },
+        {
+          "title": "La conformité, puis le temps gagné",
+          "desc": "Notre métier de base, c'est l'automatisation. La conformité est un point de départ, pas la fin du chantier."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "h2": "Ce qu'on nous demande le plus",
+      "items": [
+        [
+          "Je suis en franchise en base de TVA, suis-je vraiment concerné ?",
+          "Oui. La franchise en base signifie que vous êtes assujetti mais non redevable : vous restez dans le champ de la réforme. Réception dès le 1er septembre 2026, émission et e-reporting au 1er septembre 2027."
+        ],
+        [
+          "Mon obligation d'émission n'arrive qu'en 2027, pourquoi agir maintenant ?",
+          "Parce que l'obligation de réception, elle, s'applique à tout le monde dès septembre 2026. Vos fournisseurs grandes entreprises et ETI émettront au format électronique à cette date : sans plateforme désignée, vous ne recevez plus leurs factures, et vous vous exposez à l'amende de 500 €."
+        ],
+        [
+          "Je ne facture que des particuliers, ça me concerne ?",
+          "Vous n'êtes pas soumis à la facturation électronique entre entreprises, mais vous l'êtes à l'e-reporting : la transmission de vos données de vente à l'administration, via une plateforme agréée. Il vous en faut donc une."
+        ],
+        [
+          "Un PDF envoyé par email, ça ne suffit pas ?",
+          "Non. Une facture électronique au sens de la réforme est un fichier structuré — Factur-X, UBL ou CII — transmis par une plateforme agréée. Un PDF classique, même signé, n'est pas conforme."
+        ],
+        [
+          "Qu'est-ce que couvrent les quatre-vingt-dix jours de suivi ?",
+          "Toute correction de configuration, toute question sur le fonctionnement de votre plateforme, et tout ajustement rendu nécessaire par une évolution du cadre réglementaire pendant les trois mois qui suivent la mise en place."
+        ]
+      ]
+    },
+    "final": {
+      "h2": "Le 1er septembre 2026 arrive, préparé ou non.",
+      "sub": "Trente minutes de diagnostic suffisent à savoir où vous en êtes et ce qu'il reste à faire.",
+      "cta": "Réserver le diagnostic"
+    },
+    "sources": {
+      "label": "Sources",
+      "text": "Calendrier et sanctions établis d'après economie.gouv.fr, entreprendre.service-public.gouv.fr et la liste des plateformes agréées publiée par la DGFiP. Informations vérifiées le 23 juillet 2026 et susceptibles d'évoluer selon les publications officielles."
+    },
+    "nav_label": "Facturation électronique",
+    "related_eyebrow": "Aller plus loin",
+    "related_h2": "Ce qu'on fait aussi.",
+    "home_banner": {
+      "eyebrow": "Échéance légale · 1er septembre 2026",
+      "title": "Pack Facturation Électronique",
+      "price": "890 € HT",
+      "desc": "Toute entreprise assujettie à la TVA doit pouvoir recevoir une facture électronique dès septembre 2026. On choisit votre plateforme agréée, on la branche à vos outils, on automatise vos factures.",
+      "cta": "Découvrir le pack"
+    }
+  },
   "metadata": {
     "title": "Timevo — Automatisation pour PME | Devis, Relances, Rapports",
     "description": "Timevo automatise les tâches répétitives qui coûtent du temps à vos équipes : devis, relances, rapports, support client. Setup en 2–3 semaines. Résultats mesurables dès le premier mois.",

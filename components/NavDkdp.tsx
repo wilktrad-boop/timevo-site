@@ -10,6 +10,7 @@ const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", 
 
 export default function NavDkdp() {
   const t = useTranslations("nav");
+  const tf = useTranslations("facturation");
   const locale = useLocale();
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -128,6 +129,35 @@ export default function NavDkdp() {
                     {label}
                   </a>
                 ))}
+
+                {/* Facturation électronique : offre produit à part, mise en avant */}
+                <div style={{ height: 1, background: "var(--border)", margin: "8px 6px" }} />
+                <a
+                  href={`/${locale}/facturation-electronique`}
+                  role="menuitem"
+                  style={{
+                    display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12,
+                    padding: "10px 14px",
+                    color: "var(--text)",
+                    fontSize: 13, fontWeight: 500,
+                    borderRadius: 8,
+                    textDecoration: "none",
+                    transition: "background .12s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "var(--accent-tint)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+                >
+                  {tf("nav_label")}
+                  <span style={{
+                    fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 500,
+                    color: "var(--accent-soft)",
+                    background: "var(--accent-tint)",
+                    padding: "2px 7px", borderRadius: 999,
+                    whiteSpace: "nowrap",
+                  }}>
+                    890 €
+                  </span>
+                </a>
               </div>
             </div>
           )}
@@ -229,6 +259,28 @@ export default function NavDkdp() {
             {label}
           </a>
         ))}
+
+        <a
+          href={`/${locale}/facturation-electronique`}
+          onClick={() => setMobileOpen(false)}
+          style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12,
+            padding: "14px 16px",
+            fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 500,
+            color: "var(--text)", textDecoration: "none",
+            borderRadius: 10,
+          }}
+        >
+          {tf("nav_label")}
+          <span style={{
+            fontFamily: "var(--font-mono)", fontSize: 12, fontWeight: 500,
+            color: "var(--accent-soft)",
+            background: "var(--accent-tint)",
+            padding: "3px 9px", borderRadius: 999,
+          }}>
+            890 €
+          </span>
+        </a>
 
         <div style={{ height: 1, background: "var(--border)", margin: "16px 16px" }} />
 

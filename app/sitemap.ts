@@ -25,6 +25,7 @@ const UPDATED = {
   sectors: "2026-05-29",      // création des 3 pages secteur
   cities: "2026-05-29",       // création des 2 pages ville
   demos: "2026-07-23",        // création des 3 démos
+  facturation: "2026-07-23",  // création de la page facturation électronique
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -110,6 +111,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
           fr: `${BASE}/fr/realisations`,
           en: `${BASE}/en/realisations`,
           "x-default": `${BASE}/fr/realisations`,
+        },
+      },
+    },
+
+    // Facturation électronique
+    {
+      url: `${BASE}/fr/facturation-electronique`,
+      lastModified: UPDATED.facturation,
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          fr: `${BASE}/fr/facturation-electronique`,
+          en: `${BASE}/en/facturation-electronique`,
+          "x-default": `${BASE}/fr/facturation-electronique`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/facturation-electronique`,
+      lastModified: UPDATED.facturation,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          fr: `${BASE}/fr/facturation-electronique`,
+          en: `${BASE}/en/facturation-electronique`,
+          "x-default": `${BASE}/fr/facturation-electronique`,
         },
       },
     },

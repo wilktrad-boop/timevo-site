@@ -13,6 +13,7 @@ import {
   serviceLinks,
   sectorLinks,
   cityLinks,
+  facturationLink,
   LINK_LABELS,
 } from "@/lib/links";
 
@@ -184,7 +185,9 @@ export default async function ServicePage({
           eyebrow={L.eyebrow}
           h2={L.h2}
           groups={[
-            { title: L.otherServices, items: serviceLinks(locale, slug) },
+            // La facturation électronique complète les autres solutions :
+            // lien entrant thématique depuis chaque page service.
+            { title: L.otherServices, items: [...serviceLinks(locale, slug), facturationLink(locale)] },
             { title: L.sectors, items: sectorLinks(locale) },
             { title: L.cities, items: cityLinks(locale) },
           ]}

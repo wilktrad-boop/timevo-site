@@ -1300,6 +1300,221 @@
       }
     }
   },
+  "facturation": {
+    "meta_title": "French e-invoicing 2026: compliance package",
+    "meta_description": "From 1 September 2026, every VAT-registered business in France must be able to receive electronic invoices. Timevo picks your approved platform, connects it to your tools and automates your invoicing flows.",
+    "breadcrumb": "E-invoicing",
+    "hero": {
+      "eyebrow": "French e-invoicing reform",
+      "h1_line1": "From 1 September 2026, you must be able to receive",
+      "h1_accent": "an electronic invoice.",
+      "sub": "Every VAT-registered business in France is covered, including those under the small-business exemption. Timevo picks your approved platform, connects it to your tools and automates your invoicing flows. Nothing for you to configure.",
+      "cta_primary": "Book the assessment",
+      "cta_secondary": "Does this apply to me?"
+    },
+    "countdown": {
+      "label": "Until the receiving obligation",
+      "days": "days",
+      "hours": "hours",
+      "minutes": "min",
+      "seconds": "sec",
+      "foot": "The timetable has already slipped twice. This deadline is holding: the national pilot has been running in live conditions since February 2026.",
+      "passed": "The receiving obligation is now in force."
+    },
+    "concerne": {
+      "eyebrow": "Who is covered",
+      "h2": "VAT-registered in France? You are covered.",
+      "intro": "The reform applies to every VAT-registered business established in France — including if you fall under the small-business exemption and charge no VAT. Only the issuing date changes with your size.",
+      "th": [
+        "Business size",
+        "Receiving invoices",
+        "Issuing invoices"
+      ],
+      "rows": [
+        {
+          "name": "Large company (over 5,000 staff)",
+          "reception": "1 Sept 2026",
+          "emission": "1 Sept 2026",
+          "late": false
+        },
+        {
+          "name": "Mid-cap (250 to 4,999 staff)",
+          "reception": "1 Sept 2026",
+          "emission": "1 Sept 2026",
+          "late": false
+        },
+        {
+          "name": "SME (under 250 staff)",
+          "reception": "1 Sept 2026",
+          "emission": "1 Sept 2027",
+          "late": true
+        },
+        {
+          "name": "Small business (under 50 staff)",
+          "reception": "1 Sept 2026",
+          "emission": "1 Sept 2027",
+          "late": true
+        },
+        {
+          "name": "Micro-business, sole trader",
+          "reception": "1 Sept 2026",
+          "emission": "1 Sept 2027",
+          "late": true
+        }
+      ],
+      "note_strong": "Selling to consumers only?",
+      "note": "Business-to-business e-invoicing does not apply to you, but e-reporting does: your sales data still has to reach the tax authority through an approved platform."
+    },
+    "risques": {
+      "eyebrow": "The cost of waiting",
+      "h2": "The reform will not go away because you postponed it.",
+      "items": [
+        {
+          "tag": "Penalty",
+          "title": "€50 per invoice, up to €15,000 a year",
+          "desc": "The amount rose from €15 to €50 under the 2026 finance act. Every invoice issued outside the required format counts, and the cap runs per calendar year."
+        },
+        {
+          "tag": "Penalty",
+          "title": "€500, then €1,000 every three months",
+          "desc": "That is the fine for failing to designate an approved platform for receiving, once a formal notice has gone unanswered. It applies from 2026, whatever your size."
+        },
+        {
+          "tag": "Disruption",
+          "title": "Supplier invoices stop reaching you",
+          "desc": "Large companies and mid-caps issue electronically from September 2026. With no active platform, nothing from them reaches you, and your bookkeeping seizes up."
+        },
+        {
+          "tag": "Overhead",
+          "title": "Over 150 platforms, and a decision to make",
+          "desc": "The tax authority has registered more than 150, most of them provisionally pending an interoperability audit. Comparing formats, pricing and staying power takes time you do not have."
+        }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "How we work",
+      "h2": "Five steps, run end to end.",
+      "intro": "You configure nothing on your own. We handle the technical side, you keep the decisions.",
+      "steps": [
+        {
+          "title": "Assessment",
+          "desc": "Thirty minutes to establish your status, your real deadlines and the state of your tools."
+        },
+        {
+          "title": "Platform selection",
+          "desc": "Choosing and activating your approved platform, sized to your invoice volume."
+        },
+        {
+          "title": "Connecting your tools",
+          "desc": "Invoicing, accounting, CRM: we wire up what you already run, no change of habits."
+        },
+        {
+          "title": "Automating the flows",
+          "desc": "Issuing, receiving and e-reporting automated, for business and consumer customers alike."
+        },
+        {
+          "title": "Follow-up",
+          "desc": "We track the tax authority's publications and adjust your setup when the rules move."
+        }
+      ]
+    },
+    "automation": {
+      "eyebrow": "Beyond compliance",
+      "h2": "While we are in there, you may as well stop keying invoices by hand.",
+      "sub": "Getting compliant means touching the whole invoicing chain. That is the moment to win back the time it costs you.",
+      "cta": "See the package",
+      "items": [
+        "Invoice issued the moment a job or a sale ends, with no re-keying.",
+        "Payment chasers that send themselves, on a schedule you set once.",
+        "Consumer invoices generated and archived for e-reporting.",
+        "One dashboard: who owes you what, and for how long.",
+        "Audit-proof archiving, available if you are inspected."
+      ]
+    },
+    "offre": {
+      "eyebrow": "The package",
+      "h2": "One price, full compliance.",
+      "name": "E-invoicing Compliance Package",
+      "price": "€890",
+      "price_sup": "excl. VAT",
+      "price_note": "One-off payment, no retainer, no subscription",
+      "items": [
+        "Full assessment of your situation and deadlines",
+        "Selecting and activating your approved platform",
+        "Connecting your existing invoicing tools",
+        "Automating both issuing and receiving",
+        "Setting up e-reporting for your consumer sales",
+        "One hour of training on your new tool",
+        "Ninety days of follow-up and adjustments"
+      ],
+      "cta": "Book the assessment",
+      "guarantee": "The assessment is free and commits you to nothing. If it turns out you need nothing, we will say so.",
+      "note": "The approved platform's own fee is on you and depends on your invoice volume. We price it during the assessment."
+    },
+    "pourquoi": {
+      "eyebrow": "Why go through us",
+      "h2": "Support, not one more piece of software to work out alone.",
+      "items": [
+        {
+          "title": "One person, throughout",
+          "desc": "No anonymous ticket queue. Whoever runs the assessment installs the setup and handles the follow-up."
+        },
+        {
+          "title": "Early beats the queue",
+          "desc": "The closer the date, the more saturated platforms and integrators become. Dealing with it now costs less than in August 2026."
+        },
+        {
+          "title": "Compliance first, time saved next",
+          "desc": "Automation is our core trade. Compliance is where the work starts, not where it ends."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Frequently asked",
+      "h2": "What we get asked most",
+      "items": [
+        [
+          "I am under the small-business VAT exemption. Am I really covered?",
+          "Yes. The exemption means you are VAT-registered but not liable, so you stay within the scope of the reform. Receiving from 1 September 2026, issuing and e-reporting from 1 September 2027."
+        ],
+        [
+          "My issuing obligation only starts in 2027. Why act now?",
+          "Because the receiving obligation applies to everyone from September 2026. Your large and mid-cap suppliers will be issuing electronically by then: with no designated platform, their invoices never reach you and you are exposed to the €500 fine."
+        ],
+        [
+          "I only invoice consumers. Does this concern me?",
+          "Business-to-business e-invoicing does not apply to you, but e-reporting does: your sales data must reach the tax authority through an approved platform. So you still need one."
+        ],
+        [
+          "Is a PDF sent by email not enough?",
+          "No. Under the reform an electronic invoice is a structured file — Factur-X, UBL or CII — transmitted through an approved platform. A regular PDF, even signed, does not comply."
+        ],
+        [
+          "What do the ninety days of follow-up cover?",
+          "Any configuration fix, any question about how your platform behaves, and any adjustment made necessary by a change in the rules during the three months after go-live."
+        ]
+      ]
+    },
+    "final": {
+      "h2": "1 September 2026 arrives either way.",
+      "sub": "Thirty minutes is enough to know where you stand and what is left to do.",
+      "cta": "Book the assessment"
+    },
+    "sources": {
+      "label": "Sources",
+      "text": "Timetable and penalties based on economie.gouv.fr, entreprendre.service-public.gouv.fr and the list of approved platforms published by the French tax authority. Checked on 23 July 2026 and subject to change with official publications."
+    },
+    "nav_label": "E-invoicing",
+    "related_eyebrow": "Go further",
+    "related_h2": "What we also do.",
+    "home_banner": {
+      "eyebrow": "Legal deadline · 1 September 2026",
+      "title": "E-invoicing Compliance Package",
+      "price": "€890 excl. VAT",
+      "desc": "Every VAT-registered business must be able to receive an electronic invoice from September 2026. We pick your approved platform, wire it to your tools and automate your invoicing.",
+      "cta": "See the package"
+    }
+  },
   "metadata": {
     "title": "Timevo — Business Automation Agency | Quotes, Follow-ups, Reports",
     "description": "Timevo automates the repetitive tasks costing your teams time: quotes, follow-ups, reports, customer support. Setup in 2–3 weeks. Measurable results from month one.",

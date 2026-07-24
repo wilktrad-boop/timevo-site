@@ -3,6 +3,7 @@ import {
   SERVICE_SLUGS,
   sectorLinks,
   cityLinks,
+  facturationLink,
   LINK_LABELS,
   type Locale,
 } from "@/lib/links";
@@ -45,6 +46,15 @@ export default async function FooterDkdp() {
   }));
 
   const solutionsIdx = cols.findIndex(c => SOLUTIONS_TITLES.has(c.title));
+
+  // La facturation électronique est une offre à part (pas un des 6 slugs de
+  // service) : on l'ajoute explicitement en bas de la colonne Solutions, avec
+  // son href propre, pour ne pas fausser le mapping index → slug.
+  if (solutionsIdx >= 0) {
+    const f = facturationLink(locale);
+    cols[solutionsIdx].items.push({ label: f.label, href: f.href });
+  }
+
   cols.splice(solutionsIdx >= 0 ? solutionsIdx + 1 : cols.length, 0, sectorsCol);
 
   const cities = cityLinks(locale);
