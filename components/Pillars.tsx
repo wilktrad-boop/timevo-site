@@ -82,7 +82,8 @@ function PillarCard({ tag, count, title, items, cta, illustration, href }: {
         <div style={{
           position: "absolute", top: 18, left: 18,
           fontSize: 11, padding: "4px 10px", borderRadius: 999,
-          background: "rgba(0,0,0,0.4)", color: "var(--text)",
+          background: "rgba(255,255,255,0.75)", color: "var(--text)",
+          border: "1px solid var(--border)",
           backdropFilter: "blur(6px)", fontFamily: "var(--font-sans)",
         }}>{tag}</div>
       </div>

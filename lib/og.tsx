@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { join } from "node:path";
 import { readFile } from "node:fs/promises";
+import { theme } from "@/lib/theme";
 
 /**
  * Rendu partagé des images Open Graph.
@@ -55,18 +56,18 @@ export async function ogImage({
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          backgroundColor: "#0a0a0a",
+          backgroundColor: theme.bg,
           // Halo d'accent en haut à droite, discret, dans l'esprit du site.
           backgroundImage:
-            "radial-gradient(circle at 88% 8%, rgba(124,77,255,0.30) 0%, rgba(124,77,255,0) 46%)",
+            "radial-gradient(circle at 88% 8%, rgba(109,40,217,0.12) 0%, rgba(109,40,217,0) 46%)",
           fontFamily: "Inter",
-          color: "#ededed",
+          color: theme.text,
         }}
       >
         {/* Signature */}
         <div style={{ display: "flex", alignItems: "center", fontSize: 30, letterSpacing: "-1.2px" }}>
           <span>Timevo</span>
-          <span style={{ color: "#7c4dff" }}>.</span>
+          <span style={{ color: theme.accentSoft }}>.</span>
         </div>
 
         {/* Corps */}
@@ -77,7 +78,7 @@ export async function ogImage({
               fontSize: 21,
               letterSpacing: "3.4px",
               textTransform: "uppercase",
-              color: "#a98aff",
+              color: theme.accentSoft,
               marginBottom: 26,
             }}
           >
@@ -104,7 +105,7 @@ export async function ogImage({
             alignItems: "center",
             justifyContent: "space-between",
             fontSize: 20,
-            color: "#8a8a8a",
+            color: theme.dim,
           }}
         >
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -115,12 +116,12 @@ export async function ogImage({
                 height: 4,
                 borderRadius: 999,
                 marginRight: 18,
-                backgroundImage: "linear-gradient(90deg, #4ec3ff 0%, #7c4dff 100%)",
+                backgroundImage: `linear-gradient(90deg, ${theme.gradientFrom} 0%, ${theme.gradientTo} 100%)`,
               }}
             />
             <span>timevo.io</span>
           </div>
-          {footnote ? <span style={{ color: "#7a7a7a" }}>{footnote}</span> : null}
+          {footnote ? <span style={{ color: theme.dim2 }}>{footnote}</span> : null}
         </div>
       </div>
     ),

@@ -1,5 +1,6 @@
 import Donut from "./Donut";
 import type { DemoDashboard } from "@/lib/demoDashboards";
+import { theme, status } from "@/lib/theme";
 
 /**
  * Les quatre panneaux du dashboard de démo, plus la barre de KPI.
@@ -54,16 +55,18 @@ function Th({ children, align = "left" }: { children: React.ReactNode; align?: "
   );
 }
 
+// Valeurs en hex et non en var(--…) : StatusPill concatène un suffixe alpha
+// (`${color}33`), ce qu'une variable CSS ne supporte pas.
 const TONE_COLOR: Record<string, string> = {
-  win: "#4ade80",
-  loss: "#f87171",
-  pending: "var(--accent)",
-  ok: "#4ade80",
-  wait: "#fbbf24",
+  win: status.ok,
+  loss: status.danger,
+  pending: theme.accent,
+  ok: status.ok,
+  wait: status.warn,
 };
 
 function StatusPill({ label, tone }: { label: string; tone: string }) {
-  const color = TONE_COLOR[tone] ?? "var(--dim)";
+  const color = TONE_COLOR[tone] ?? theme.dim;
   return (
     <span style={{
       display: "inline-flex", alignItems: "center", gap: 7,
@@ -201,7 +204,7 @@ export function CallsPanel({ d }: { d: DemoDashboard }) {
         {d.calls.map(call => (
           <div key={call.from + call.at} style={{
             background: "var(--card)",
-            border: `1px solid ${call.urgent ? "#f8717144" : "var(--border)"}`,
+            border: `1px solid ${call.urgent ? status.dangerTint : "var(--border)"}`,
             borderRadius: 16, padding: "22px 24px",
           }}>
             <div style={{
@@ -277,7 +280,7 @@ export function CallsPanel({ d }: { d: DemoDashboard }) {
 // ── 3. Demandes ──────────────────────────────────────────────────────
 
 function ScoreBar({ score, label }: { score: number; label: string }) {
-  const color = score >= 70 ? "#4ade80" : score >= 40 ? "#fbbf24" : "#f87171";
+  const color = score >= 70 ? status.ok : score >= 40 ? status.warn : status.danger;
   return (
     <div style={{ minWidth: 148 }}>
       <div style={{
