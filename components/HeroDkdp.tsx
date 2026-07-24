@@ -2,6 +2,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Arrow, PillPrimary, PillGhost } from "./primitives";
 import HeroActivityCard, { type ActivityRow } from "./HeroActivityCard";
 import { DEMO_DASHBOARDS } from "@/lib/demoDashboards";
+import { kpis } from "@/lib/demo/compute";
 import { type Locale } from "@/lib/links";
 
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
@@ -23,8 +24,12 @@ export default async function HeroDkdp() {
   const tDemo = await getTranslations("demo_teaser");
   const locale = (await getLocale()) as Locale;
 
-  const d = DEMO_DASHBOARDS.pisciniste[locale];
+  const sector = DEMO_DASHBOARDS.pisciniste;
+  const copy = sector[locale];
   const rows = t.raw("card.rows") as ActivityRow[];
+  // Les deux premiers compteurs de la démo pisciniste, calculés sur 30 jours —
+  // la même période que la page de démo elle-même.
+  const cardKpis = kpis(sector.data, copy, 30, locale).slice(0, 2);
 
   return (
     <section style={{ padding: "72px 28px 80px", position: "relative" }}>
@@ -76,9 +81,9 @@ export default async function HeroDkdp() {
         </div>
 
         <HeroActivityCard
-          badge={d.demoBadge}
+          badge={copy.demoBadge}
           source={tDemo("sample")}
-          kpis={d.kpis.slice(0, 2).map(k => ({ value: k.value, label: k.label }))}
+          kpis={cardKpis.map(k => ({ value: k.value, label: k.label }))}
           rows={rows}
         />
       </div>

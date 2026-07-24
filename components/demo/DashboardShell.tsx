@@ -1,100 +1,79 @@
 import { Arrow, PillPrimary } from "../primitives";
-import DemoTabs from "./DemoTabs";
-import { KpiRow, QuotesPanel, CallsPanel, LeadsPanel, BillingPanel } from "./panels";
-import type { DemoDashboard } from "@/lib/demoDashboards";
+import DemoApp from "./DemoApp";
+import type { DemoCopy, Locale, SectorData } from "@/lib/demo/types";
 
 const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 
 /**
- * Ossature d'une page de démo. Server Component.
+ * Ossature d'une page de démo.
  *
- * Deux règles de composition :
- * - Dans le cadre, uniquement ce qu'une vraie application afficherait :
- *   libellés opérationnels, compteurs, filtres. Aucun argumentaire.
- * - L'argumentaire Timevo vit sous le cadre, dans la lecture commentée.
+ * La page s'ouvre sur l'application, pleine largeur — pas sur un argumentaire
+ * avec une capture au milieu. Le bloc marketing (sous-titre, lecture commentée,
+ * CTA) passe SOUS le dashboard.
  *
- * C'est aussi là que se trouvent les deux signaux « données fictives » :
- * la barre de titre et la mention complète.
+ * Un `<h1>` compact reste au-dessus du cadre : une page qui s'ouvre sur une
+ * application sans titre perd son orientation pour quelqu'un qui arrive d'une
+ * recherche, et c'est un signal que ces pages sont censées porter.
+ *
+ * Deux règles de composition, inchangées :
+ * - dans le cadre, uniquement ce qu'une vraie application afficherait ;
+ * - l'argumentaire Timevo vit sous le cadre, dans la lecture commentée.
  */
-export default function DashboardShell({ d }: { d: DemoDashboard }) {
+export default function DashboardShell({
+  data,
+  copy,
+  locale,
+}: {
+  data: SectorData;
+  copy: DemoCopy;
+  locale: Locale;
+}) {
   return (
     <>
-      {/* ── Hero ────────────────────────────────────────────────── */}
-      <section style={{ padding: "56px 28px 48px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      {/* ── Titre compact + application ─────────────────────────── */}
+      <section style={{ padding: "28px 28px 64px" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{
-            display: "inline-flex", alignItems: "center", gap: 12,
-            fontFamily: "var(--font-mono)", fontSize: 11,
+            display: "inline-flex", alignItems: "center", gap: 10,
+            fontFamily: "var(--font-mono)", fontSize: 10.5,
             color: "var(--accent-soft)", letterSpacing: "0.12em", textTransform: "uppercase",
-            marginBottom: 28, padding: "6px 12px",
+            marginBottom: 14, padding: "5px 11px",
             background: "var(--accent-tint)", border: "1px solid var(--accent-tint)", borderRadius: 999,
           }}>
-            <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--accent)" }} />
-            <span>{d.eyebrow}</span>
+            <span aria-hidden="true" style={{
+              width: 6, height: 6, borderRadius: 999, background: "var(--accent)",
+            }} />
+            <span>{copy.eyebrow}</span>
           </div>
 
           <h1 style={{
-            fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 5.5vw, 76px)", fontWeight: 500,
-            letterSpacing: "-0.05em", lineHeight: 1.0, margin: 0, maxWidth: 1000, color: "var(--text)",
+            fontFamily: "var(--font-sans)", fontSize: "clamp(26px, 3.2vw, 40px)", fontWeight: 500,
+            letterSpacing: "-0.035em", lineHeight: 1.1, margin: "0 0 24px", color: "var(--text)",
           }}>
-            {d.h1}
+            {copy.h1}
           </h1>
 
+          <DemoApp data={data} copy={copy} locale={locale} />
+
+          {/* Mention explicite, sous le cadre, lue comme une note d'auteur. */}
           <p style={{
-            fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5,
-            color: "var(--dim)", margin: 0, marginTop: 26, maxWidth: 760,
+            marginTop: 18, maxWidth: 860,
+            fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.6, color: "var(--dim-2)",
           }}>
-            {d.subtitle}
+            {copy.demoNote}
           </p>
         </div>
       </section>
 
-      {/* ── Le dashboard ────────────────────────────────────────── */}
-      <section style={{ padding: "0 28px 96px" }}>
+      {/* ── Le contexte, sous l'application ─────────────────────── */}
+      <section style={{ padding: "80px 28px", borderTop: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{
-            position: "relative", overflow: "hidden",
-            border: "1px solid var(--border-strong)", borderRadius: 24,
-            background: "var(--bg)",
-          }}>
-            {/* Barre de titre : c'est elle qui porte le signal « données
-                fictives » pendant la lecture. La mention complète sous le cadre
-                prend le relais une fois qu'on a scrollé. */}
-            <div style={{
-              display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap",
-              padding: "15px 24px",
-              borderBottom: "1px solid var(--accent-tint)",
-              background: "var(--accent-tint)",
-            }}>
-              <span aria-hidden="true" style={{
-                width: 7, height: 7, borderRadius: 999,
-                background: "var(--accent)", flex: "0 0 auto",
-              }} />
-              <span style={{
-                fontFamily: "var(--font-mono)", fontSize: 11.5,
-                color: "var(--accent-soft)", letterSpacing: "0.14em", textTransform: "uppercase",
-              }}>
-                {d.demoBadge}
-              </span>
-            </div>
-
-            <div style={{ padding: "32px 24px 40px" }}>
-              <KpiRow d={d} />
-              <DemoTabs labels={d.tabs}>
-                <QuotesPanel d={d} />
-                <CallsPanel d={d} />
-                <LeadsPanel d={d} />
-                <BillingPanel d={d} />
-              </DemoTabs>
-            </div>
-          </div>
-
-          {/* Mention explicite, sous le cadre pour être lue comme une note d'auteur. */}
           <p style={{
-            marginTop: 20, maxWidth: 820,
-            fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.6, color: "var(--dim-2)",
+            fontFamily: "var(--font-sans)", fontSize: "clamp(19px, 2.2vw, 26px)",
+            lineHeight: 1.45, color: "var(--text)", margin: 0, maxWidth: 880,
+            letterSpacing: "-0.015em",
           }}>
-            {d.demoNote}
+            {copy.subtitle}
           </p>
         </div>
       </section>
@@ -102,30 +81,28 @@ export default function DashboardShell({ d }: { d: DemoDashboard }) {
       {/* ── Lecture commentée ───────────────────────────────────
           Tout l'argumentaire Timevo est ici, hors du cadre : dans le
           dashboard, seule l'application parle. */}
-      <section style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
+      <section style={{ padding: "80px 28px", borderTop: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <h2 style={{
             fontFamily: "var(--font-sans)", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 500,
             letterSpacing: "-0.04em", lineHeight: 1.05, margin: 0, marginBottom: 16,
             color: "var(--text)", maxWidth: 800,
           }}>
-            {d.readingH2}
+            {copy.readingH2}
           </h2>
           <p style={{
             fontFamily: "var(--font-sans)", fontSize: 17, lineHeight: 1.5,
             color: "var(--dim)", margin: 0, marginBottom: 56, maxWidth: 680,
           }}>
-            {d.readingSubtitle}
+            {copy.readingSubtitle}
           </p>
 
           <div className="demo-reading-grid" style={{
             display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "48px 64px",
           }}>
-            {d.readings.map((r, i) => (
+            {copy.readings.map((r, i) => (
               <div key={r.tab}>
-                <div style={{
-                  display: "flex", alignItems: "center", gap: 12, marginBottom: 14,
-                }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
                   <span style={{
                     fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim-2)",
                     letterSpacing: "0.12em",
@@ -160,22 +137,22 @@ export default function DashboardShell({ d }: { d: DemoDashboard }) {
               letterSpacing: "-0.05em", lineHeight: 1.0, margin: 0, marginBottom: 28, color: "var(--text)",
               maxWidth: 800, marginLeft: "auto", marginRight: "auto",
             }}>
-              {d.ctaH2}
+              {copy.ctaH2}
             </h2>
             <p style={{
               fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5,
               color: "var(--dim)", margin: "0 auto 40px", maxWidth: 620,
             }}>
-              {d.ctaSubtitle}
+              {copy.ctaSubtitle}
             </p>
             <PillPrimary href={CONTACT_HREF} large>
-              {d.ctaButton} <Arrow color="#fff" />
+              {copy.ctaButton} <Arrow color="#fff" />
             </PillPrimary>
             <p style={{
               marginTop: 24, fontFamily: "var(--font-mono)", fontSize: 12,
               color: "var(--dim-2)", letterSpacing: "0.04em",
             }}>
-              {d.ctaReassurance}
+              {copy.ctaReassurance}
             </p>
           </div>
         </div>

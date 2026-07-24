@@ -119,6 +119,32 @@ section[id],
   background: var(--card);
 }
 
+/* Cadre applicatif : barre latérale à gauche, contenu à droite.
+   Sous 900px la barre passe en rangée d'onglets horizontale scrollable, et le
+   panneau de détail occupe toute la largeur. */
+@media (max-width: 900px) {
+  .demo-app {
+    grid-template-columns: 1fr !important;
+  }
+  .demo-side {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    padding: 10px !important;
+    overflow-x: auto;
+  }
+  .demo-side ul {
+    grid-auto-flow: column !important;
+    grid-auto-columns: max-content;
+    gap: 6px !important;
+  }
+  .demo-charts-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .demo-drawer {
+    width: 100% !important;
+  }
+}
+
 /* Le marqueur par défaut est retiré côté style inline ; on remet un chevron. */
 .demo-summary::-webkit-details-marker { display: none; }
 .demo-summary::before {
