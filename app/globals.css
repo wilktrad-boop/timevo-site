@@ -1,20 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0a0a0a;
-  --card: #141414;
-  --card-soft: #1a1a1a;
-  --border: #262626;
-  --border-strong: #333333;
-  --text: #ededed;
-  --dim: #8a8a8a;
-  --dim-2: #7a7a7a; /* AA on --bg for small text (≈4.6:1); was #6a6a6a (≈3.7:1, fails AA) */
+  --bg: #ffffff;
+  --card: #f7f8fa;
+  --card-soft: #f0f2f5;
+  --border: #e4e7ec;
+  --border-strong: #d0d5dd;
+  --text: #101014;
+  --dim: #5a5f6b; /* AAA on --bg (≈6.4:1) */
+  --dim-2: #71757f; /* AA on --bg for small text (≈4.8:1) */
 
-  --accent: #5fa8ff;
-  --accent-soft: #a98aff;
-  --accent-glow: rgba(124, 77, 255, 0.22);
-  --accent-tint: rgba(124, 77, 255, 0.10);
-  --accent-gradient: linear-gradient(135deg, #4ec3ff 0%, #7c4dff 100%);
+  --accent: #4338ca;
+  --accent-strong: #3730a3; /* hover state for accent elements */
+  --accent-soft: #6d28d9;
+  --accent-glow: rgba(67, 56, 202, 0.10);
+  --accent-tint: rgba(67, 56, 202, 0.06);
+  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #6d28d9 100%);
+
+  /* En thème sombre les surfaces se séparaient par les bordures ; en clair
+     une carte #f7f8fa sur fond blanc a besoin d'une ombre pour se détacher. */
+  --shadow: 0 1px 2px rgba(16, 16, 20, 0.04), 0 4px 12px rgba(16, 16, 20, 0.05);
+  --shadow-lg: 0 8px 24px rgba(16, 16, 20, 0.08), 0 2px 6px rgba(16, 16, 20, 0.04);
 }
 
 html {
@@ -33,7 +39,7 @@ section[id],
   scroll-margin-top: 80px;
 }
 
-/* Keyboard focus: visible ring on every interactive element (dark theme) */
+/* Keyboard focus: visible ring on every interactive element */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -111,6 +117,32 @@ section[id],
 }
 .demo-row:hover {
   background: var(--card);
+}
+
+/* Cadre applicatif : barre latérale à gauche, contenu à droite.
+   Sous 900px la barre passe en rangée d'onglets horizontale scrollable, et le
+   panneau de détail occupe toute la largeur. */
+@media (max-width: 900px) {
+  .demo-app {
+    grid-template-columns: 1fr !important;
+  }
+  .demo-side {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    padding: 10px !important;
+    overflow-x: auto;
+  }
+  .demo-side ul {
+    grid-auto-flow: column !important;
+    grid-auto-columns: max-content;
+    gap: 6px !important;
+  }
+  .demo-charts-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .demo-drawer {
+    width: 100% !important;
+  }
 }
 
 /* Le marqueur par défaut est retiré côté style inline ; on remet un chevron. */
@@ -196,6 +228,11 @@ details[open] > .demo-summary::before {
   .hero-subrow {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
+  }
+  /* Hero de la home : la carte d'activité passe sous la copy */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
   }
   .hero-ctas {
     justify-content: flex-start !important;

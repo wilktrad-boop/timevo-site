@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -84,6 +84,16 @@ export async function generateMetadata({
     },
   };
 }
+
+/**
+ * Le site n'a qu'un thème, clair. On le déclare pour que les contrôles natifs
+ * (champs de formulaire, scrollbars) et la barre du navigateur mobile suivent,
+ * au lieu de partir sur le réglage système de l'utilisateur.
+ */
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: "#ffffff",
+};
 
 export default async function LocaleLayout({
   children,

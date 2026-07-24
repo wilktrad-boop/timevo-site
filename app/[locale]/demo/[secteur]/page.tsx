@@ -119,7 +119,7 @@ export default async function DemoPage({
             { label: locale === "fr" ? "Démo" : "Demo" },
           ]}
         />
-        <DashboardShell d={d} />
+        <DashboardShell data={DEMO_DASHBOARDS[secteur].data} copy={d} locale={locale} />
         <RelatedLinks
           eyebrow={L.eyebrow}
           h2={L.h2}

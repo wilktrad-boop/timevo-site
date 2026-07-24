@@ -1,5 +1,19 @@
 import { getTranslations } from "next-intl/server";
 
+/**
+ * Les deux dernières vignettes représentent des interfaces : elles restent en
+ * sombre alors que le reste du site est clair. Elles ne peuvent donc pas
+ * consommer les tokens globaux (--dim, --border-strong… sont désormais clairs)
+ * et gardent leur propre palette, héritée de l'ancien thème.
+ */
+const darkTile = {
+  ring: "#0a0a0a",
+  surface: "#1a1a1a",
+  border: "#333333",
+  dim: "#8a8a8a",
+  accent: "#5fa8ff",
+} as const;
+
 export default async function TeamGrid() {
   const t = await getTranslations("team");
   const members = t.raw("members") as { name: string; role: string; initials: string; bio: string }[];
@@ -56,7 +70,7 @@ export default async function TeamGrid() {
                   }} />
                   <div style={{
                     fontSize: 52, lineHeight: 1,
-                    color: "#5fa8ff",
+                    color: darkTile.accent,
                     textShadow: "0 0 24px rgba(95,168,255,0.8)",
                     position: "relative",
                   }}>◉</div>
@@ -68,7 +82,7 @@ export default async function TeamGrid() {
                     {[1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,1,0,1,0].map((on, i) => (
                       <div key={i} style={{
                         width: 6, height: 6, borderRadius: 999,
-                        background: on ? "#5fa8ff" : "var(--border-strong)",
+                        background: on ? darkTile.accent : darkTile.border,
                         opacity: on ? 0.3 + (i % 5) * 0.12 : 0.2,
                       }} />
                     ))}
@@ -100,8 +114,8 @@ export default async function TeamGrid() {
                     ].map((r, i) => (
                       <div key={r.l} style={{
                         width: 48, height: 48, borderRadius: 999,
-                        background: "var(--card-soft)",
-                        border: "2.5px solid #0a0a0a",
+                        background: darkTile.surface,
+                        border: `2.5px solid ${darkTile.ring}`,
                         marginLeft: i === 0 ? 0 : -14,
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontFamily: "var(--font-sans)", fontSize: 16, fontWeight: 600,
@@ -117,9 +131,9 @@ export default async function TeamGrid() {
                     {["Design", "Web", "Copy"].map(label => (
                       <span key={label} style={{
                         fontFamily: "var(--font-mono)", fontSize: 10,
-                        color: "var(--dim)", letterSpacing: "0.06em",
+                        color: darkTile.dim, letterSpacing: "0.06em",
                         padding: "3px 9px", borderRadius: 999,
-                        border: "1px solid var(--border-strong)",
+                        border: `1px solid ${darkTile.border}`,
                       }}>
                         {label}
                       </span>

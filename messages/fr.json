@@ -24,7 +24,31 @@
     "h1_line3": "On vous les rend.",
     "subtitle": "Le temps de vos équipes est votre ressource la plus précieuse. On arrête de le gaspiller.",
     "cta_primary": "Réservez un appel",
-    "cta_secondary": "↓ Découvrir"
+    "cta_secondary": "↓ Découvrir",
+    "card": {
+      "rows": [
+        {
+          "label": "Devis envoyé · Famille M. — Publier",
+          "detail": "32 400 € · généré après l'appel",
+          "badge": "Automatisé"
+        },
+        {
+          "label": "Relance J+7 · M. B. — Thonon-les-Bains",
+          "detail": "11 800 € · deuxième relance",
+          "badge": "Envoyée"
+        },
+        {
+          "label": "Appel qualifié · abri télescopique",
+          "detail": "Transmis, fiche client créée",
+          "badge": "Traité"
+        },
+        {
+          "label": "Rapport hebdomadaire",
+          "detail": "Pipeline + ventes · lundi 8h",
+          "badge": "Envoyé"
+        }
+      ]
+    }
   },
   "logowall": {
     "label": "Ils nous font confiance"

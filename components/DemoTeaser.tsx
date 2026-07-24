@@ -1,7 +1,8 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Arrow } from "./primitives";
-import { KpiRow, QuotesPanel } from "./demo/panels";
 import { DEMO_DASHBOARDS } from "@/lib/demoDashboards";
+import { dayLabel, kpis, money, withinRange } from "@/lib/demo/compute";
+import type { DemoCopy, SectorData } from "@/lib/demo/types";
 import { demoLinks, sectorLink, type Locale } from "@/lib/links";
 
 /**
@@ -84,8 +85,7 @@ export default async function DemoTeaser() {
           </div>
 
           <div style={{ padding: "32px 24px 36px" }}>
-            <KpiRow d={d} />
-            <QuotesPanel d={d} compact />
+            <StaticExtract data={DEMO_DASHBOARDS.pisciniste.data} copy={d} locale={locale} />
           </div>
         </div>
 
@@ -143,5 +143,105 @@ export default async function DemoTeaser() {
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * Extrait statique du dashboard pisciniste : quatre compteurs et trois devis.
+ *
+ * Volontairement sans interactivité — pas de filtres, pas de panneau de détail,
+ * aucun JavaScript. La page de démo complète porte tout ça ; ici l'aperçu doit
+ * seulement montrer à quoi ressemble l'écran. Les compteurs sont calculés à
+ * partir des mêmes enregistrements que la démo, sur la même période de 30 jours.
+ */
+function StaticExtract({
+  data,
+  copy,
+  locale,
+}: {
+  data: SectorData;
+  copy: DemoCopy;
+  locale: "fr" | "en";
+}) {
+  const tiles = kpis(data, copy, 30, locale);
+  const rows = withinRange(data.quotes, 30).slice(0, 3);
+
+  const cell: React.CSSProperties = {
+    padding: "13px 0", fontFamily: "var(--font-sans)", fontSize: 13.5,
+    color: "var(--text)", textAlign: "left", verticalAlign: "top",
+  };
+
+  return (
+    <div>
+      <div className="demo-kpi-grid" style={{
+        display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 12, marginBottom: 32,
+      }}>
+        {tiles.map(k => (
+          <div key={k.key} style={{
+            background: "var(--card)", border: "1px solid var(--border)",
+            borderRadius: 14, padding: "18px 18px 16px",
+          }}>
+            <div style={{
+              fontFamily: "var(--font-sans)", fontSize: 28, fontWeight: 500,
+              letterSpacing: "-0.03em", color: "var(--text)", fontVariantNumeric: "tabular-nums",
+            }}>
+              {k.value}
+            </div>
+            <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, color: "var(--text)", marginTop: 4 }}>
+              {k.label}
+            </div>
+            <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--dim)", marginTop: 2 }}>
+              {k.detail}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 520 }}>
+          <caption style={{
+            captionSide: "top", textAlign: "left", paddingBottom: 12,
+            fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 500, color: "var(--text)",
+          }}>
+            {copy.quotesH2}
+          </caption>
+          <thead>
+            <tr>
+              {[copy.quotesCols.client, copy.quotesCols.amount, copy.quotesCols.age, copy.quotesCols.outcome].map(h => (
+                <th key={h} scope="col" style={{
+                  padding: "0 0 10px", fontFamily: "var(--font-mono)", fontSize: 10.5,
+                  letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--dim-2)",
+                  textAlign: "left", whiteSpace: "nowrap",
+                }}>
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(q => {
+              const txt = q[locale];
+              return (
+                <tr key={q.id} style={{ borderTop: "1px solid var(--border)" }}>
+                  <td style={cell}>
+                    <div style={{ fontWeight: 500 }}>{txt.client}</div>
+                    <div style={{ color: "var(--dim)", fontSize: 12.5, marginTop: 2 }}>{txt.project}</div>
+                  </td>
+                  <td style={{ ...cell, fontFamily: "var(--font-mono)", whiteSpace: "nowrap" }}>
+                    {money(q.amount, locale)}
+                  </td>
+                  <td style={{ ...cell, color: "var(--dim)", fontSize: 12.5, whiteSpace: "nowrap" }}>
+                    {dayLabel(q.day, locale)}
+                  </td>
+                  <td style={{ ...cell, color: "var(--dim)", fontSize: 12.5, whiteSpace: "nowrap" }}>
+                    {copy.outcomes[q.outcome]}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
