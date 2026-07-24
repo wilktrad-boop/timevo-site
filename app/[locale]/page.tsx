@@ -58,10 +58,10 @@ export default async function Home({
       <main>
         <HeroDkdp />
         {/* <LogoWall /> */}
+        {/* Offre à échéance légale, remontée sous le hero : lien contextuel entrant vers /facturation-electronique. */}
+        <ScrollFadeIn><FacturationBanner /></ScrollFadeIn>
         <ScrollFadeIn><PainPoints /></ScrollFadeIn>
         <ScrollFadeIn><Pillars /></ScrollFadeIn>
-        {/* Offre à échéance légale : lien contextuel entrant vers /facturation-electronique. */}
-        <ScrollFadeIn><FacturationBanner /></ScrollFadeIn>
         {/* La preuve arrive juste après ce qu'on sait faire, avant l'estimateur. */}
         <ScrollFadeIn><DemoTeaser /></ScrollFadeIn>
         {/* <ScrollFadeIn><StatsBlock /></ScrollFadeIn> */}
