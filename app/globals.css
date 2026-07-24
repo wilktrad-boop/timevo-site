@@ -203,6 +203,11 @@ details[open] > .demo-summary::before {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
   }
+  /* Hero de la home : la carte d'activité passe sous la copy */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
   .hero-ctas {
     justify-content: flex-start !important;
   }

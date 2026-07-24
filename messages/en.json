@@ -24,7 +24,31 @@
     "h1_line3": "We give them back.",
     "subtitle": "Your team's time is your most valuable asset. We make sure none of it goes to waste.",
     "cta_primary": "Book a call",
-    "cta_secondary": "↓ Discover"
+    "cta_secondary": "↓ Discover",
+    "card": {
+      "rows": [
+        {
+          "label": "Quote sent · M. family — Publier",
+          "detail": "€32,400 · drafted after the call",
+          "badge": "Automated"
+        },
+        {
+          "label": "Follow-up D+7 · M. B. — Thonon-les-Bains",
+          "detail": "€11,800 · second reminder",
+          "badge": "Sent"
+        },
+        {
+          "label": "Call qualified · telescopic enclosure",
+          "detail": "Passed on, client record created",
+          "badge": "Handled"
+        },
+        {
+          "label": "Weekly report",
+          "detail": "Pipeline + sales · Monday 8am",
+          "badge": "Sent"
+        }
+      ]
+    }
   },
   "logowall": {
     "label": "Trusted by"
