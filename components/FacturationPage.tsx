@@ -391,18 +391,8 @@ function FeOffre({ t }: { t: T }) {
             }}>
               {t("offre.name")}
             </div>
-            <div style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "clamp(40px, 7vw, 60px)", fontWeight: 500,
-              letterSpacing: "-0.04em", color: "var(--text)", lineHeight: 1,
-            }}>
-              {t("offre.price")}
-              <sup style={{ fontSize: "0.32em", fontWeight: 400, color: "var(--dim)", marginLeft: 6, top: "-1.1em" }}>
-                {t("offre.price_sup")}
-              </sup>
-            </div>
-            <p style={{ ...BODY, fontSize: 13, color: "var(--dim-2)", margin: "12px 0 30px" }}>
-              {t("offre.price_note")}
+            <p style={{ ...BODY, fontSize: 15, color: "var(--dim)", margin: "0 0 30px" }}>
+              {t("offre.intro")}
             </p>
 
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 30px", textAlign: "left" }}>

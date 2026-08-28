@@ -304,15 +304,6 @@ details[open] > .demo-summary::before {
   .fe-steps {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-
-  /* Encadré facturation sur la home : CTA sous le texte */
-  .fe-banner {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
-  .fe-banner-cta {
-    justify-content: center !important;
-  }
 }
 
 /* Mobile ≤ 600px */

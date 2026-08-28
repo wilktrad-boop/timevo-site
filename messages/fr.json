@@ -1457,11 +1457,9 @@
     },
     "offre": {
       "eyebrow": "L'offre",
-      "h2": "Un prix unique, une conformité complète.",
+      "h2": "Une conformité complète, prise en charge de bout en bout.",
       "name": "Pack Conformité Facturation Électronique",
-      "price": "890 €",
-      "price_sup": "HT",
-      "price_note": "Paiement unique, sans engagement ni abonnement",
+      "intro": "Un forfait unique, sans engagement ni abonnement. Le montant est fixé au diagnostic, selon votre situation.",
       "items": [
         "Diagnostic complet de votre situation et de vos échéances",
         "Sélection et activation de votre plateforme agréée",
@@ -1528,16 +1526,8 @@
       "label": "Sources",
       "text": "Calendrier et sanctions établis d'après economie.gouv.fr, entreprendre.service-public.gouv.fr et la liste des plateformes agréées publiée par la DGFiP. Informations vérifiées le 23 juillet 2026 et susceptibles d'évoluer selon les publications officielles."
     },
-    "nav_label": "Facturation électronique",
     "related_eyebrow": "Aller plus loin",
-    "related_h2": "Ce qu'on fait aussi.",
-    "home_banner": {
-      "eyebrow": "Échéance légale · 1er septembre 2026",
-      "title": "Pack Facturation Électronique",
-      "price": "890 € HT",
-      "desc": "Toute entreprise assujettie à la TVA doit pouvoir recevoir une facture électronique dès septembre 2026. On choisit votre plateforme agréée, on la branche à vos outils, on automatise vos factures.",
-      "cta": "Découvrir le pack"
-    }
+    "related_h2": "Ce qu'on fait aussi."
   },
   "metadata": {
     "title": "Timevo — Automatisation pour PME | Devis, Relances, Rapports",

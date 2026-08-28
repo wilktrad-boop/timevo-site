@@ -90,16 +90,6 @@ export default async function Page({
       url: BASE,
     },
     areaServed: "FR",
-    offers: {
-      "@type": "Offer",
-      name: t("offre.name"),
-      price: "890",
-      priceCurrency: "EUR",
-      // Le prix affiché est HT : on le déclare explicitement pour éviter
-      // que Google le présente comme un TTC.
-      valueAddedTaxIncluded: false,
-      url: pageUrl,
-    },
   };
 
   const breadcrumbJsonLd = {

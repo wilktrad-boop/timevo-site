@@ -1457,11 +1457,9 @@
     },
     "offre": {
       "eyebrow": "The package",
-      "h2": "One price, full compliance.",
+      "h2": "Full compliance, handled end to end.",
       "name": "E-invoicing Compliance Package",
-      "price": "€890",
-      "price_sup": "excl. VAT",
-      "price_note": "One-off payment, no retainer, no subscription",
+      "intro": "A one-off fee, no retainer, no subscription. The amount is set during the assessment, based on your situation.",
       "items": [
         "Full assessment of your situation and deadlines",
         "Selecting and activating your approved platform",
@@ -1528,16 +1526,8 @@
       "label": "Sources",
       "text": "Timetable and penalties based on economie.gouv.fr, entreprendre.service-public.gouv.fr and the list of approved platforms published by the French tax authority. Checked on 23 July 2026 and subject to change with official publications."
     },
-    "nav_label": "E-invoicing",
     "related_eyebrow": "Go further",
-    "related_h2": "What we also do.",
-    "home_banner": {
-      "eyebrow": "Legal deadline · 1 September 2026",
-      "title": "E-invoicing Compliance Package",
-      "price": "€890 excl. VAT",
-      "desc": "Every VAT-registered business must be able to receive an electronic invoice from September 2026. We pick your approved platform, wire it to your tools and automate your invoicing.",
-      "cta": "See the package"
-    }
+    "related_h2": "What we also do."
   },
   "metadata": {
     "title": "Timevo — Business Automation Agency | Quotes, Follow-ups, Reports",

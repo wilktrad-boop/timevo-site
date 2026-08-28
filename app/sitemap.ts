@@ -25,7 +25,7 @@ const UPDATED = {
   sectors: "2026-05-29",      // création des 3 pages secteur
   cities: "2026-05-29",       // création des 2 pages ville
   demos: "2026-07-23",        // création des 3 démos
-  facturation: "2026-07-23",  // création de la page facturation électronique
+  facturation: "2026-08-28",  // retrait du prix affiché sur la page facturation électronique
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
