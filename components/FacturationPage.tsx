@@ -3,8 +3,7 @@ import ScrollFadeIn from "@/components/ScrollFadeIn";
 import FaqAccordion from "@/components/FaqAccordion";
 import DeadlineCountdown from "@/components/DeadlineCountdown";
 import { Eyebrow, MonoLabel, PillPrimary, PillGhost, Check, Arrow } from "@/components/primitives";
-
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+import { CONTACT_HREF } from "@/lib/contact";
 
 type T = Awaited<ReturnType<typeof getTranslations>>;
 

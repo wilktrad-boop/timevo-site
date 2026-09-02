@@ -11,8 +11,7 @@ const SOLUTIONS_TITLES = new Set(["Solutions"]);
 
 // For non-Solutions columns, fall back to a single anchor on the home
 const COL_ANCHORS: Record<string, string> = {
-  "Méthode": "#methode",
-  "Method": "#methode",
+  "Process": "#process",
 };
 
 type Col = { title: string; items: { label: string; href: string }[] };

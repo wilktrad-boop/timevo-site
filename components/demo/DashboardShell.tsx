@@ -1,8 +1,7 @@
 import { Arrow, PillPrimary } from "../primitives";
 import DemoApp from "./DemoApp";
 import type { DemoCopy, Locale, SectorData } from "@/lib/demo/types";
-
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+import { CONTACT_HREF } from "@/lib/contact";
 
 /**
  * Ossature d'une page de démo.

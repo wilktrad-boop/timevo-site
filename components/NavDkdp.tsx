@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Arrow } from "./primitives";
 import LocaleSwitcher from "./LocaleSwitcher";
+import { CONTACT_HREF } from "@/lib/contact";
 
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
 const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", "seo", "reseaux-sociaux"] as const;
 
 export default function NavDkdp() {
@@ -15,12 +15,14 @@ export default function NavDkdp() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const solutionsItems = t.raw("solutions_items") as string[];
 
+  // Les ancres suivent le montage de la home ; « Réalisations » et « Démos »
+  // pointent vers leurs pages, qui restent en ligne hors de la home.
   const otherLinks = [
-    { key: "methode", href: `/${locale}#methode` },
+    { key: "process", href: `/${locale}#process` },
+    { key: "cas_usage", href: `/${locale}#cas-usage` },
+    { key: "pourquoi", href: `/${locale}#pourquoi-nous` },
     { key: "realisations", href: `/${locale}/realisations` },
-    { key: "demos", href: `/${locale}#demos` },
-    { key: "resultats", href: `/${locale}#resultats` },
-    { key: "equipe", href: `/${locale}#equipe` },
+    { key: "demos", href: `/${locale}/demo/pisciniste` },
     { key: "contact", href: `/${locale}#contact` },
   ] as const;
 

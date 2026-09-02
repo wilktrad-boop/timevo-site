@@ -3,8 +3,7 @@ import ScrollFadeIn from "./ScrollFadeIn";
 import FaqAccordion from "./FaqAccordion";
 import type { SectorContent } from "@/lib/sectors";
 import { SECTOR_LABELS, type Locale } from "@/lib/pageLabels";
-
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+import { CONTACT_HREF } from "@/lib/contact";
 
 export default function SectorPage({
   s,

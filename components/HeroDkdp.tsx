@@ -4,8 +4,7 @@ import HeroActivityCard, { type ActivityRow } from "./HeroActivityCard";
 import { DEMO_DASHBOARDS } from "@/lib/demoDashboards";
 import { kpis } from "@/lib/demo/compute";
 import { type Locale } from "@/lib/links";
-
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+import { CONTACT_HREF } from "@/lib/contact";
 
 /**
  * Hero en deux colonnes : la déclaration typographique à gauche, une preuve
@@ -16,8 +15,11 @@ const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
  * chiffres de la démo changent, le hero suit. Seul le fil d'activité, qui
  * n'existe nulle part ailleurs, vit dans `hero.card`.
  *
- * Le H1 descend de clamp(48px, 8vw, 116px) à clamp(38px, 5.2vw, 72px) : il
- * n'occupe plus la pleine largeur mais une colonne d'environ 640 px.
+ * Le H1 n'occupe pas la pleine largeur mais une colonne d'environ 700 px, et
+ * la v5 du copy le pose sur deux lignes contre trois auparavant. Sa seconde
+ * ligne, « On la fait vivre avec vous. », est la plus longue des deux : c'est
+ * elle qui fixe la borne haute du clamp. Au-delà de 56 px elle se casse en
+ * trois lignes et la césure imposée par le copy ne veut plus rien dire.
  */
 export default async function HeroDkdp() {
   const t = await getTranslations("hero");
@@ -35,7 +37,7 @@ export default async function HeroDkdp() {
     <section style={{ padding: "72px 28px 80px", position: "relative" }}>
       <div style={{
         maxWidth: 1200, margin: "0 auto",
-        display: "grid", gridTemplateColumns: "minmax(0, 1.25fr) minmax(0, 1fr)",
+        display: "grid", gridTemplateColumns: "minmax(0, 1.35fr) minmax(0, 1fr)",
         gap: 56, alignItems: "start",
       }} className="hero-grid">
 
@@ -51,7 +53,7 @@ export default async function HeroDkdp() {
 
           <h1 style={{
             fontFamily: "var(--font-sans)",
-            fontSize: "clamp(38px, 5.2vw, 72px)",
+            fontSize: "clamp(32px, 4.3vw, 56px)",
             fontWeight: 500,
             letterSpacing: "-0.045em",
             lineHeight: 0.98,
@@ -59,8 +61,7 @@ export default async function HeroDkdp() {
             color: "var(--text)",
           }}>
             {t("h1_line1")}<br />
-            {t("h1_line2")}<br />
-            {t("h1_line3")}
+            {t("h1_line2")}
           </h1>
 
           <p style={{

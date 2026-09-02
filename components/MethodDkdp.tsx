@@ -1,11 +1,12 @@
 import { getTranslations } from "next-intl/server";
+import { Punchline } from "./SectionParts";
 
 export default async function MethodDkdp() {
   const t = await getTranslations("method");
   const steps = t.raw("steps") as string[][];
 
   return (
-    <section id="methode" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
+    <section id="process" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{
           fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)",
@@ -19,9 +20,11 @@ export default async function MethodDkdp() {
         }}>
           {t("h2")}
         </h2>
-        <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--dim)", maxWidth: 640, marginBottom: 56 }}>
-          {t("subtitle")}
-        </p>
+        {t("subtitle") ? (
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--dim)", maxWidth: 640, marginBottom: 56 }}>
+            {t("subtitle")}
+          </p>
+        ) : <div style={{ height: 40 }} />}
         <div>
           {steps.map(([n, title, desc]) => (
             <div key={n} style={{
@@ -39,6 +42,7 @@ export default async function MethodDkdp() {
           ))}
           <div style={{ borderTop: "1px solid var(--border)" }} />
         </div>
+        <Punchline>{t("punch")}</Punchline>
       </div>
     </section>
   );

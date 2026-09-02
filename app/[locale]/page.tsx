@@ -1,21 +1,22 @@
 import { setRequestLocale } from "next-intl/server";
 import NavDkdp from "@/components/NavDkdp";
 import HeroDkdp from "@/components/HeroDkdp";
-import LogoWall from "@/components/LogoWall";
-import PainPoints from "@/components/PainPoints";
-import Pillars from "@/components/Pillars";
-import StatsBlock from "@/components/StatsBlock";
+import StatsBand from "@/components/StatsBand";
+import BulletSection from "@/components/BulletSection";
+import SolutionCards from "@/components/SolutionCards";
+import CardSection from "@/components/CardSection";
 import MethodDkdp from "@/components/MethodDkdp";
-import TestimonialBlock from "@/components/TestimonialBlock";
-import TeamGrid from "@/components/TeamGrid";
-import EstimatorCard from "@/components/EstimatorCard";
-import DemoTeaser from "@/components/DemoTeaser";
 import FaqDkdp from "@/components/FaqDkdp";
 import ContactCard from "@/components/ContactCard";
 import FooterDkdp from "@/components/FooterDkdp";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 import StickyMobileCta from "@/components/StickyMobileCta";
 
+/**
+ * Fiche d'établissement plutôt que service national : le copy v5 ancre
+ * l'agence à Thonon-les-Bains et la FAQ répond « Vous êtes où ? ». La
+ * déclaration doit dire la même chose que la page.
+ */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -25,12 +26,20 @@ const jsonLd = {
   email: "hello@timevo.io",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "France",
+    addressLocality: "Thonon-les-Bains",
+    addressRegion: "Haute-Savoie",
+    postalCode: "74200",
     addressCountry: "FR",
   },
-  areaServed: ["FR", "BE", "CH"],
+  areaServed: [
+    { "@type": "City", name: "Thonon-les-Bains" },
+    { "@type": "City", name: "Évian-les-Bains" },
+    { "@type": "City", name: "Annemasse" },
+    { "@type": "City", name: "Genève" },
+    { "@type": "Country", name: "France" },
+  ],
   description:
-    "Agence d'automatisation pour PME. Devis, relances, rapports et support automatisés avec n8n et agents IA.",
+    "Agence IA à Thonon-les-Bains. Automatisations sur mesure, agents IA et contenu pour les PME, construits puis maintenus dans la durée.",
   serviceType: [
     "Automatisation de processus",
     "Agents IA",
@@ -56,16 +65,14 @@ export default async function Home({
       <NavDkdp />
       <main>
         <HeroDkdp />
-        {/* <LogoWall /> */}
-        <ScrollFadeIn><PainPoints /></ScrollFadeIn>
-        <ScrollFadeIn><Pillars /></ScrollFadeIn>
-        {/* La preuve arrive juste après ce qu'on sait faire, avant l'estimateur. */}
-        <ScrollFadeIn><DemoTeaser /></ScrollFadeIn>
-        {/* <ScrollFadeIn><StatsBlock /></ScrollFadeIn> */}
-        <ScrollFadeIn><EstimatorCard /></ScrollFadeIn>
+        <StatsBand />
+        <ScrollFadeIn><BulletSection ns="pain" id="probleme" /></ScrollFadeIn>
+        <ScrollFadeIn><SolutionCards /></ScrollFadeIn>
+        <ScrollFadeIn><BulletSection ns="pourqui" id="pour-qui" dimSecondLine /></ScrollFadeIn>
         <ScrollFadeIn><MethodDkdp /></ScrollFadeIn>
-        {/* <ScrollFadeIn><TestimonialBlock /></ScrollFadeIn> */}
-        <ScrollFadeIn><TeamGrid /></ScrollFadeIn>
+        <ScrollFadeIn><BulletSection ns="results" id="resultats" /></ScrollFadeIn>
+        <ScrollFadeIn><CardSection ns="usecases" id="cas-usage" /></ScrollFadeIn>
+        <ScrollFadeIn><CardSection ns="why" id="pourquoi-nous" dimSecondLine /></ScrollFadeIn>
         <ScrollFadeIn><FaqDkdp /></ScrollFadeIn>
         <ScrollFadeIn><ContactCard /></ScrollFadeIn>
       </main>

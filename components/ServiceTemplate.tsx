@@ -5,8 +5,7 @@ import {
   IllustrationAutomatisation, IllustrationAgentsIA, IllustrationFormation,
   IllustrationSitesWeb, IllustrationSEO, IllustrationReseauxSociaux,
 } from "./PillarIllustrations";
-
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+import { CONTACT_HREF } from "@/lib/contact";
 
 const HERO_ILLUSTRATIONS: Record<string, React.ReactNode> = {
   "automatisation": <IllustrationAutomatisation />,

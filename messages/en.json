@@ -9,22 +9,21 @@
       "SEO",
       "Social media"
     ],
-    "methode": "Method",
-    "realisations": "Work",
+    "process": "Process",
+    "cas_usage": "Use cases",
+    "pourquoi": "Why us",
+    "realisations": "Case studies",
     "demos": "Demos",
-    "resultats": "Results",
-    "equipe": "Team",
     "contact": "Contact",
-    "cta": "Book a call"
+    "cta": "Free diagnostic"
   },
   "hero": {
-    "eyebrow": "AUTOMATION AGENCY · FRANCE",
-    "h1_line1": "20 hours lost",
-    "h1_line2": "every week.",
-    "h1_line3": "We give them back.",
-    "subtitle": "Your team's time is your most valuable asset. We make sure none of it goes to waste.",
-    "cta_primary": "Book a call",
-    "cta_secondary": "↓ Discover",
+    "eyebrow": "AI AGENCY · THONON-LES-BAINS, FRANCE",
+    "h1_line1": "We build your AI.",
+    "h1_line2": "We keep it running with you.",
+    "subtitle": "Automations, AI agents, content: we take on everything AI-related in your company. And we stay afterwards, to keep it moving with your business.",
+    "cta_primary": "Book a free diagnostic",
+    "cta_secondary": "See what we put in place",
     "card": {
       "rows": [
         {
@@ -50,32 +49,279 @@
       ]
     }
   },
-  "logowall": {
-    "label": "Trusted by"
+  "band": {
+    "items": [
+      {
+        "big": "0",
+        "cap": "follow-ups forgotten. No more deals lost to oversight."
+      },
+      {
+        "big": "24/7",
+        "cap": "your clients get an answer, nights and weekends included."
+      },
+      {
+        "big": "D+21",
+        "cap": "your first system live in production."
+      }
+    ]
   },
   "pain": {
     "label": "The problem",
-    "h2": "Sound familiar?",
-    "subtitle": "Three symptoms. One diagnosis.",
+    "h2_line1": "You know AI belongs in your company.",
+    "h2_line2": "Nobody has the time to deal with it.",
+    "subtitle": "",
+    "bullets": [
+      "ChatGPT experiments that left nothing behind",
+      "Generic tools that know nothing about your trade",
+      "Software that refuses to talk to other software",
+      "Processes that exist only in one person's head",
+      "Growth held back by work done by hand"
+    ],
+    "punch": "Your problem isn't tools. It's the absence of systems cut to your shape."
+  },
+  "solution": {
+    "label": "The solution",
+    "h2_line1": "Your AI perimeter, taken care of.",
+    "h2_line2": "",
     "items": [
       {
-        "n": "01",
-        "title": "Your team loses 20h/week on repetitive tasks",
-        "desc": "Quotes, follow-ups, reports, data entry. Hours wasted every week on things technology handles in 5 minutes."
+        "title": "Custom automations",
+        "desc": "Quotes, follow-ups, reports, syncing. Your tools finally start talking to each other."
       },
       {
-        "n": "02",
-        "title": "Your leads are waiting. Your competitors aren't.",
-        "desc": "A lead that waits 4 hours is a lead your competitor already answered. Your response rates are hitting a ceiling."
+        "title": "AI agents",
+        "desc": "Customer support, lead qualification, phone reception, email triage."
       },
       {
-        "n": "03",
-        "title": "Your competitors are automating and you aren't yet",
-        "desc": "While your team does things manually, others have already plugged in the right tools. The gap is widening."
+        "title": "AI applied to your acquisition",
+        "desc": "Content, social presence, outreach. The work you never get around to."
       }
     ],
-    "closing": "We solve all three.",
-    "closing_dim": ""
+    "punch": "We build intelligent systems with you, for you."
+  },
+  "pourqui": {
+    "label": "Who it's for",
+    "h2_line1": "No, AI is not reserved for companies",
+    "h2_line2": "with an IT department.",
+    "subtitle": "It is made for the ones that want to move forward.",
+    "bullets": [
+      {
+        "lead": "Overstretched owners",
+        "rest": "who want to steer instead of being swallowed"
+      },
+      {
+        "lead": "Companies of 6 to 50",
+        "rest": "that want to modernise without changing everything"
+      },
+      {
+        "lead": "Sales teams",
+        "rest": "losing deals on response time alone"
+      },
+      {
+        "lead": "Already-equipped businesses",
+        "rest": "whose software refuses to communicate"
+      },
+      {
+        "lead": "Growing organisations",
+        "rest": "that want to scale without reorganising"
+      },
+      {
+        "lead": "Service agencies",
+        "rest": "looking to lift their output per head"
+      }
+    ],
+    "punch": "AI replaces no one on your team. It frees everyone."
+  },
+  "method": {
+    "label": "The process",
+    "h2": "How we work",
+    "subtitle": "",
+    "steps": [
+      [
+        "01",
+        "Diagnostic",
+        "We walk through your business and spot what can be handed over. We tell you honestly whether we can help, and where to start."
+      ],
+      [
+        "02",
+        "Audit",
+        "A live demo of what your bespoke solution could look like. You correct it, you add your own specifics."
+      ],
+      [
+        "03",
+        "Build",
+        "We build. Weekly check-in, visible progress, and the calls stay yours."
+      ],
+      [
+        "04",
+        "Rollout",
+        "Go-live, hands-on training for your team, switchover with no downtime."
+      ],
+      [
+        "05",
+        "Continuous tuning",
+        "Monitoring, fixes, new use cases and a quarterly review of your numbers."
+      ]
+    ],
+    "punch": "You watch your solution take shape at the audit. By go-live day, it is already yours."
+  },
+  "results": {
+    "label": "Results",
+    "h2_line1": "What Timevo brings to your company.",
+    "h2_line2": "",
+    "subtitle": "",
+    "bullets": [
+      "Systems that run every day without anyone restarting them",
+      "Your prices, your wording, your rules: an AI that works the way you work",
+      "Information entered once, available everywhere it is needed",
+      "Procedures written down, executed, and handed to your next hire",
+      "Growth no longer capped by what your team can type"
+    ],
+    "punch": "A company that keeps up with the times, because it finally has some."
+  },
+  "usecases": {
+    "label": "Use cases",
+    "h2_line1": "Concrete examples, live within the first month.",
+    "h2_line2": "",
+    "items": [
+      {
+        "title": "AI content studio",
+        "desc": "Your posts written and scheduled from what your business actually does."
+      },
+      {
+        "title": "Automated follow-ups",
+        "desc": "No quote forgotten. The sequence runs on its own until someone answers."
+      },
+      {
+        "title": "AI email agent",
+        "desc": "Handles the bulk of client email automatically."
+      },
+      {
+        "title": "Customer support",
+        "desc": "Answers the routine questions, escalates what deserves a human."
+      },
+      {
+        "title": "Lead qualification",
+        "desc": "Sorts, scores and passes on what is worth a call."
+      },
+      {
+        "title": "Weekly report",
+        "desc": "Pipeline and sales in your inbox, every Monday at 8."
+      }
+    ],
+    "punch": "We start with one. The one costing you the most today."
+  },
+  "why": {
+    "label": "Why us",
+    "h2_line1": "Why Timevo rather than a freelancer",
+    "h2_line2": "or a large agency?",
+    "items": [
+      {
+        "title": "Maxime and Willy",
+        "desc": "The people who listen to you are the ones who build, and they are the same people six months later."
+      },
+      {
+        "title": "Bespoke, never generic",
+        "desc": "Your prices, your tone, your rules, your exceptions. A generic tool knows neither your processes nor your edge cases — which is why ChatGPT experiments rarely survive week two."
+      },
+      {
+        "title": "We stay after delivery",
+        "desc": "A freelancer ships and disappears. A large agency hands you to a junior. We keep the system running with you."
+      },
+      {
+        "title": "Partner, not contractor",
+        "desc": "We look at your numbers and propose the next lever. Not just maintenance — development."
+      },
+      {
+        "title": "What we build is yours",
+        "desc": "Your systems live on your side. If you ever leave, you leave with them."
+      },
+      {
+        "title": "People first",
+        "desc": "Listening, responsiveness, care and follow-through."
+      }
+    ],
+    "punch": "AI can be copied. A team that stays cannot."
+  },
+  "faq": {
+    "label": "Frequently asked",
+    "h2": "What people ask before signing.",
+    "items": [
+      [
+        "How long before it runs?",
+        "You see a demo of your own solution at the audit. The first system goes live within two to three weeks. We commit to the date in writing, before we start."
+      ],
+      [
+        "Development is a fixed fee. What is the subscription for?",
+        "Building your system is billed once, as a fixed fee agreed up front. The subscription covers what comes after: monitoring, fixes, updates and new work. Your software updates itself, AI models get replaced, your business changes — a system nobody watches eventually stops, often without anyone noticing straight away."
+      ],
+      [
+        "What if a workflow breaks on a Sunday?",
+        "An automation that fails does not announce it: it simply stops sending your follow-ups. That is why we monitor. You hear about it before your clients do, and the fix is part of the subscription."
+      ],
+      [
+        "Where does my data go?",
+        "Your systems run on your own infrastructure. Your data trains no public model, and you can see at any time which tool has access to what."
+      ],
+      [
+        "If we stop, do I lose everything?",
+        "No. What we build belongs to you and stays with you. You leave with your systems, with nothing to rebuild. That is the difference with software rented by the month."
+      ],
+      [
+        "Which tools do you work with?",
+        "Yours. We plug into your mailbox, your calendar, your CRM and your industry software. If you have no CRM, we work without one — and we will tell you plainly when you need one."
+      ],
+      [
+        "Where are you based?",
+        "Thonon-les-Bains, on Lake Geneva. We travel across the Chablais, Évian, Annemasse and the Geneva basin, and work remotely everywhere else."
+      ]
+    ]
+  },
+  "contact": {
+    "label": "Get started",
+    "h2": "Your first system can be running before the month is out.",
+    "subtitle": "One conversation to walk through your business, find what can be handed over first, and leave with the priority to tackle.",
+    "cta": "Book my diagnostic",
+    "reassurance": "Free • No commitment • Answer within 24h",
+    "agenda_intro": "Or book your slot directly.",
+    "agenda_load": "Show the calendar",
+    "agenda_note": "The calendar is served by Calendly, which sets its own cookies. It only loads once you click.",
+    "email": "hello@timevo.io",
+    "city": "Thonon-les-Bains, France"
+  },
+  "footer": {
+    "tagline": "Independent AI agency.\nAutomations · AI agents · Content.",
+    "address": "Thonon-les-Bains · Haute-Savoie · France",
+    "copyright": "© 2026 Timevo · AI agency, Thonon-les-Bains",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "gdpr": "GDPR",
+    "cols": [
+      {
+        "title": "Solutions",
+        "items": [
+          "Automation",
+          "AI Agents",
+          "Training",
+          "Website creation",
+          "SEO",
+          "Social media"
+        ]
+      },
+      {
+        "title": "Process",
+        "items": [
+          "Diagnostic",
+          "Audit",
+          "Build",
+          "Rollout",
+          "Continuous tuning"
+        ]
+      }
+    ]
+  },
+  "logowall": {
+    "label": "Trusted by"
   },
   "pillars": {
     "label": "Our expertise",
@@ -190,38 +436,6 @@
       }
     ]
   },
-  "method": {
-    "label": "Our method",
-    "h2": "Five steps, no surprises.",
-    "subtitle": "5 clear steps, a proven process.",
-    "steps": [
-      [
-        "01",
-        "First conversation",
-        "30 free minutes to understand your situation. We'll tell you honestly whether and how we can help."
-      ],
-      [
-        "02",
-        "Audit",
-        "Mapping your processes. We identify the tasks that cost the most time for the least expertise."
-      ],
-      [
-        "03",
-        "Report",
-        "A concrete action plan with deliverables, timelines and prices. Everything fixed upfront, in writing."
-      ],
-      [
-        "04",
-        "Implementation",
-        "We execute. Weekly check-ins, real-time progress access. You stay in control of the project."
-      ],
-      [
-        "05",
-        "Maintenance",
-        "Delivery, tool training, and performance monitoring. We stay with you after launch."
-      ]
-    ]
-  },
   "testimonials": {
     "label": "Testimonials",
     "h2": "What our clients say",
@@ -320,46 +534,6 @@
     "result_disclaimer": "Estimate based on averages observed with our clients. Exact figures validated during the free audit.",
     "result_cta": "Book the free audit"
   },
-  "faq": {
-    "label": "FAQ",
-    "h2": "What we're often asked",
-    "items": [
-      [
-        "How long does it take to deliver an automation?",
-        "2 to 3 weeks after the audit. We commit to the date in writing and we deliver."
-      ],
-      [
-        "Which tools do you work with?",
-        "CRM (HubSpot, Pipedrive, Salesforce), email, telephony, accounting. We plug into what you already have — no forced migration."
-      ],
-      [
-        "What if we don't have a CRM?",
-        "We set one up as part of the package if needed. Notion, Airtable or a classic CRM depending on your maturity."
-      ],
-      [
-        "Do we keep control of the system?",
-        "Yes. The code and workflows belong to you. No dependency. If we part ways, you keep everything."
-      ],
-      [
-        "Do you charge by the hour?",
-        "No. Fixed setup fee + maintenance subscription. Clear, predictable, no surprises."
-      ],
-      [
-        "Where are you based?",
-        "Thonon-les-Bains and Montpellier. We work remotely across France and with French-speaking neighbours."
-      ]
-    ]
-  },
-  "contact": {
-    "label": "Timevo",
-    "h2": "Let's talk about your week.",
-    "subtitle": "30 minutes, it's free. We'll tell you honestly where your time goes — and what we can recover.",
-    "cta": "Book your free call",
-    "phone": "+33 1 XX XX XX XX",
-    "email": "hello@timevo.io",
-    "city": "Thonon-les-Bains · Montpellier",
-    "response": "Response within 24h"
-  },
   "demo_teaser": {
     "eyebrow": "DEMOS",
     "h2": "See the result before you sign.",
@@ -368,37 +542,6 @@
     "note": "Typical scenario, not an existing client. The data in this preview is fictional. The interface is the one we ship.",
     "pick": "The three full demos",
     "see": "View the demo"
-  },
-  "footer": {
-    "tagline": "Independent automation agency.\nn8n · AI Agents · Processes for SMBs.",
-    "address": "Thonon-les-Bains · Montpellier · France",
-    "copyright": "© 2026 Timevo · Automation agency, France",
-    "legal": "Legal notice",
-    "privacy": "Privacy policy",
-    "gdpr": "GDPR",
-    "cols": [
-      {
-        "title": "Solutions",
-        "items": [
-          "Automation",
-          "AI Agents",
-          "Training",
-          "Website creation",
-          "SEO",
-          "Social media"
-        ]
-      },
-      {
-        "title": "Method",
-        "items": [
-          "First conversation",
-          "Diagnosis",
-          "Proposal",
-          "Delivery",
-          "Maintenance"
-        ]
-      }
-    ]
   },
   "solutions_index": {
     "meta_title": "Our solutions: automation, AI, training, websites, SEO, social media",
@@ -889,7 +1032,7 @@
           ],
           [
             "Remote or in-person?",
-            "Both. In-person in Thonon, Montpellier, or at your office. Remote on Meet or Teams, with live exercises."
+            "Both. In-person in Thonon-les-Bains or at your office. Remote on Meet or Teams, with live exercises."
           ]
         ]
       },
@@ -1530,11 +1673,11 @@
     "related_h2": "What we also do."
   },
   "metadata": {
-    "title": "Timevo — Business Automation Agency | Quotes, Follow-ups, Reports",
-    "description": "Timevo automates the repetitive tasks costing your teams time: quotes, follow-ups, reports, customer support. Setup in 2–3 weeks. Measurable results from month one.",
-    "keywords": "business automation agency, process automation SMB, n8n automation, automatic quotes, automated follow-ups, France automation agency, time saving business, AI agents SMB",
-    "og_title": "Timevo — 20 hours lost every week. We give them back.",
-    "og_description": "Automation agency for high-ticket SMBs. Quotes, follow-ups, reports and support automated. Setup in 2–3 weeks.",
-    "og_image_alt": "Timevo — Business automation agency for SMBs"
+    "title": "Timevo — AI agency in Thonon-les-Bains | Automations and AI agents",
+    "description": "We build your AI and keep it running with you. Custom automations, AI agents and content for small and mid-sized companies. First system live within three weeks.",
+    "keywords": "AI agency France, AI agency Thonon-les-Bains, business automation, AI agents, n8n, AI agency Geneva basin, SME automation",
+    "og_title": "Timevo — We build your AI. We keep it running with you.",
+    "og_description": "AI agency in Thonon-les-Bains. Automations, AI agents and content for small and mid-sized companies. First system live within three weeks.",
+    "og_image_alt": "Timevo — AI agency in Thonon-les-Bains"
   }
 }

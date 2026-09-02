@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Arrow, PillPrimary } from "./primitives";
-
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+import CalendlyInline from "./CalendlyInline";
+import { CONTACT_HREF } from "@/lib/contact";
 
 export default async function ContactCard() {
   const t = await getTranslations("contact");
@@ -17,8 +17,9 @@ export default async function ContactCard() {
             {t("label")}
           </div>
           <h2 style={{
-            fontFamily: "var(--font-sans)", fontSize: "clamp(40px, 7vw, 88px)", fontWeight: 500,
-            letterSpacing: "-0.05em", lineHeight: 0.95, margin: 0, marginBottom: 28, color: "var(--text)",
+            fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 5.6vw, 72px)", fontWeight: 500,
+            letterSpacing: "-0.05em", lineHeight: 1.0, margin: "0 auto 28px", maxWidth: 900,
+            color: "var(--text)",
           }}>
             {t("h2")}
           </h2>
@@ -28,20 +29,32 @@ export default async function ContactCard() {
           }}>
             {t("subtitle")}
           </p>
-          <div style={{ marginBottom: 40 }}>
+          <div style={{ marginBottom: 20 }}>
             <PillPrimary href={CONTACT_HREF} large>
               {t("cta")} <Arrow color="#fff" />
             </PillPrimary>
           </div>
+          <p style={{
+            fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--dim)",
+            letterSpacing: "0.04em", margin: 0,
+          }}>
+            {t("reassurance")}
+          </p>
+
+          <CalendlyInline
+            intro={t("agenda_intro")}
+            load={t("agenda_load")}
+            note={t("agenda_note")}
+          />
+
           <div style={{
             display: "flex", justifyContent: "center", gap: 28, flexWrap: "wrap",
-            fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--dim)", letterSpacing: "0.04em",
+            fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--dim)",
+            letterSpacing: "0.04em", marginTop: 48,
           }}>
             <a href={`mailto:${t("email")}`} style={{ color: "var(--dim)", textDecoration: "none" }}>{t("email")}</a>
             <span>·</span>
             <span>{t("city")}</span>
-            <span>·</span>
-            <span>{t("response")}</span>
           </div>
         </div>
       </div>

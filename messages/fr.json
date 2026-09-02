@@ -9,22 +9,21 @@
       "SEO",
       "Réseaux sociaux"
     ],
-    "methode": "Méthode",
+    "process": "Process",
+    "cas_usage": "Cas d'usage",
+    "pourquoi": "Pourquoi nous",
     "realisations": "Réalisations",
     "demos": "Démos",
-    "resultats": "Résultats",
-    "equipe": "Équipe",
     "contact": "Contact",
-    "cta": "Réservez un appel"
+    "cta": "Diagnostic gratuit"
   },
   "hero": {
-    "eyebrow": "AGENCE D'AUTOMATISATION · FRANCE",
-    "h1_line1": "20 heures perdues",
-    "h1_line2": "chaque semaine.",
-    "h1_line3": "On vous les rend.",
-    "subtitle": "Le temps de vos équipes est votre ressource la plus précieuse. On arrête de le gaspiller.",
-    "cta_primary": "Réservez un appel",
-    "cta_secondary": "↓ Découvrir",
+    "eyebrow": "AGENCE IA · THONON-LES-BAINS",
+    "h1_line1": "On construit votre IA.",
+    "h1_line2": "On la fait vivre avec vous.",
+    "subtitle": "Automatisations, agents IA, contenu : on prend en charge tout ce qui touche à l'IA dans votre entreprise. Et on reste après, pour la faire évoluer avec votre activité.",
+    "cta_primary": "Demander un diagnostic gratuit",
+    "cta_secondary": "Voir ce qu'on met en place",
     "card": {
       "rows": [
         {
@@ -50,32 +49,279 @@
       ]
     }
   },
-  "logowall": {
-    "label": "Ils nous font confiance"
+  "band": {
+    "items": [
+      {
+        "big": "0",
+        "cap": "relance oubliée. Plus jamais une affaire perdue par négligence."
+      },
+      {
+        "big": "24/7",
+        "cap": "vos clients obtiennent une réponse, la nuit et le week-end compris."
+      },
+      {
+        "big": "J+21",
+        "cap": "votre premier système en production."
+      }
+    ]
   },
   "pain": {
     "label": "Le problème",
-    "h2": "Ça vous ressemble ?",
-    "subtitle": "Trois symptômes. Un seul diagnostic.",
+    "h2_line1": "Vous savez que l'IA doit entrer dans votre entreprise.",
+    "h2_line2": "Personne n'a le temps de s'en occuper.",
+    "subtitle": "",
+    "bullets": [
+      "Des essais ChatGPT qui n'ont rien laissé derrière eux",
+      "Des outils génériques qui ne connaissent rien à votre métier",
+      "Des logiciels qui ne se parlent pas",
+      "Des process qui n'existent que dans la tête d'un tiers",
+      "Une croissance freinée par du travail à la main"
+    ],
+    "punch": "Vous n'avez pas un problème d'outils : vous avez un problème de systèmes taillés pour vous."
+  },
+  "solution": {
+    "label": "La solution",
+    "h2_line1": "Votre périmètre IA, pris en charge.",
+    "h2_line2": "",
     "items": [
       {
-        "n": "01",
-        "title": "Votre équipe perd 20h/semaine sur des tâches répétitives",
-        "desc": "Devis, relances, rapports, saisies. Des heures qui partent en fumée chaque semaine sur des choses que la techno fait en 5 minutes."
+        "title": "Automatisations sur mesure",
+        "desc": "Devis, relances, rapports, synchronisations. Vos outils finissent par se parler."
       },
       {
-        "n": "02",
-        "title": "Vos leads attendent. Vos concurrents, non.",
-        "desc": "Un lead qui attend 4h, c'est un lead qui s'est fait répondre par un concurrent. Vos taux de réponse plafonnent."
+        "title": "Agents IA",
+        "desc": "SAV, qualification des leads, standard téléphonique, tri des emails."
       },
       {
-        "n": "03",
-        "title": "Vos concurrents automatisent et vous pas encore",
-        "desc": "Pendant que vos équipes font les choses manuellement, d'autres ont déjà branché les bons outils. L'écart se creuse."
+        "title": "IA appliquée à votre acquisition",
+        "desc": "Contenu, présence sociale, prospection. Ce que vous n'avez jamais le temps de faire."
       }
     ],
-    "closing": "On résout les trois.",
-    "closing_dim": ""
+    "punch": "Nous construisons des systèmes intelligents avec vous, pour vous."
+  },
+  "pourqui": {
+    "label": "Pour qui ?",
+    "h2_line1": "Non, l'IA n'est pas réservée aux entreprises",
+    "h2_line2": "qui ont un service informatique.",
+    "subtitle": "Elle est faite pour celles qui veulent avancer et s'améliorer.",
+    "bullets": [
+      {
+        "lead": "Les dirigeants débordés",
+        "rest": "qui veulent piloter plutôt qu'être absorbés"
+      },
+      {
+        "lead": "Les PME de 6 à 50",
+        "rest": "qui veulent moderniser leurs process sans tout changer"
+      },
+      {
+        "lead": "Les équipes commerciales",
+        "rest": "qui perdent des affaires sur le délai de réponse"
+      },
+      {
+        "lead": "Les entreprises déjà outillées",
+        "rest": "dont les logiciels ne communiquent pas"
+      },
+      {
+        "lead": "Les structures en croissance",
+        "rest": "qui veulent scaler sans tout réorganiser"
+      },
+      {
+        "lead": "Les agences de services",
+        "rest": "qui souhaitent booster leur productivité"
+      }
+    ],
+    "punch": "L'IA ne remplace personne chez vous. Elle libère tout le monde."
+  },
+  "method": {
+    "label": "Le process",
+    "h2": "Comment on avance ?",
+    "subtitle": "",
+    "steps": [
+      [
+        "01",
+        "Diagnostic",
+        "On déroule votre activité et on repère ce qui se délègue. On vous dit honnêtement si on peut aider, et par quoi commencer."
+      ],
+      [
+        "02",
+        "Audit",
+        "Démo live de ce à quoi votre solution sur mesure pourrait ressembler. Vous corrigez, vous ajoutez vos spécificités."
+      ],
+      [
+        "03",
+        "Production",
+        "On construit. Point hebdomadaire, avancement visible, vous gardez la main sur les arbitrages."
+      ],
+      [
+        "04",
+        "Déploiement",
+        "Mise en service, prise en main par vos équipes, bascule sans interruption d'activité."
+      ],
+      [
+        "05",
+        "Optimisation continue",
+        "Surveillance, corrections, nouveaux cas d'usage et point trimestriel sur vos chiffres."
+      ]
+    ],
+    "punch": "Vous voyez naître votre solution dès l'audit. Le jour de la mise en service, elle est déjà la vôtre."
+  },
+  "results": {
+    "label": "Résultats",
+    "h2_line1": "Ce que Timevo apporte à votre entreprise.",
+    "h2_line2": "",
+    "subtitle": "",
+    "bullets": [
+      "Des systèmes qui tournent tous les jours, sans qu'on les relance",
+      "Vos tarifs, vos formulations, vos règles : une IA qui travaille comme vous travaillez",
+      "Une information saisie une fois, disponible partout où elle sert",
+      "Des procédures écrites, exécutées, transmissibles à la prochaine recrue",
+      "Une croissance libérée par le potentiel de l'IA"
+    ],
+    "punch": "Une entreprise qui avance avec son temps, parce qu'elle a récupéré le sien."
+  },
+  "usecases": {
+    "label": "Cas d'usage",
+    "h2_line1": "Des exemples concrets, activables dès le premier mois.",
+    "h2_line2": "",
+    "items": [
+      {
+        "title": "Studio de contenu IA",
+        "desc": "Vos publications produites et programmées à partir de votre activité réelle."
+      },
+      {
+        "title": "Relances automatiques",
+        "desc": "Plus aucun devis oublié. La séquence tourne seule jusqu'à la réponse."
+      },
+      {
+        "title": "Agent IA email",
+        "desc": "Traite la majorité des emails clients automatiquement."
+      },
+      {
+        "title": "SAV",
+        "desc": "Répond aux questions courantes, escalade ce qui mérite un humain."
+      },
+      {
+        "title": "Qualification des leads",
+        "desc": "Trie, note et transmet ce qui vaut un appel."
+      },
+      {
+        "title": "Rapport hebdomadaire",
+        "desc": "Pipeline et ventes dans votre boîte, chaque lundi 8h."
+      }
+    ],
+    "punch": "On commence par un seul. Celui qui vous coûte le plus cher aujourd'hui."
+  },
+  "why": {
+    "label": "Pourquoi nous ?",
+    "h2_line1": "Pourquoi Timevo plutôt qu'un freelance",
+    "h2_line2": "ou une grosse agence ?",
+    "items": [
+      {
+        "title": "Maxime et Willy",
+        "desc": "Ceux qui vous écoutent sont ceux qui construisent, et ce sont les mêmes dans six mois."
+      },
+      {
+        "title": "Du sur-mesure, jamais du générique",
+        "desc": "Vos tarifs, votre ton, vos règles, vos exceptions. Un outil générique ne connaît ni vos process ni vos cas particuliers — c'est pour ça que les essais ChatGPT ne survivent pas à la deuxième semaine."
+      },
+      {
+        "title": "On reste après la livraison",
+        "desc": "Un freelance livre et disparaît. Une grande agence vous confie à un junior. Nous, on fait tourner le système avec vous."
+      },
+      {
+        "title": "Partenaire, pas exécutant",
+        "desc": "On regarde vos chiffres et on propose le levier suivant. Pas seulement de la maintenance, du développement."
+      },
+      {
+        "title": "Ce qu'on construit vous appartient",
+        "desc": "Vos systèmes sont chez vous. Si vous partez un jour, vous partez avec."
+      },
+      {
+        "title": "L'humain avant tout",
+        "desc": "Écoute, réactivité, qualité et fluidité pour un suivi optimal."
+      }
+    ],
+    "punch": "L'IA se copie. Une équipe qui reste, non."
+  },
+  "faq": {
+    "label": "Questions fréquentes",
+    "h2": "Ce qu'on nous demande avant de signer.",
+    "items": [
+      [
+        "Combien de temps avant que ça tourne ?",
+        "Vous voyez une démo de votre solution dès l'audit. Le premier système part en production sous deux à trois semaines. On s'engage sur la date par écrit, avant de commencer."
+      ],
+      [
+        "Le développement est un forfait. À quoi sert l'abonnement ensuite ?",
+        "Le développement de votre système est facturé une fois, au forfait, sur un montant fixé à l'avance. L'abonnement couvre ce qui vient après : la surveillance, les corrections, les mises à jour et les évolutions. Vos logiciels se mettent à jour, les modèles d'IA sont remplacés, votre activité change — un système que personne ne suit finit par s'arrêter, souvent sans que ça se remarque tout de suite."
+      ],
+      [
+        "Et si un workflow casse un dimanche ?",
+        "Une automatisation qui tombe ne prévient pas : elle cesse simplement d'envoyer vos relances. C'est pour ça qu'on surveille. Vous êtes prévenu avant vos clients, et la correction est comprise dans le suivi."
+      ],
+      [
+        "Mes données partent où ?",
+        "Vos systèmes tournent sur votre propre infrastructure. Vos données ne servent à entraîner aucun modèle public, et vous savez à tout moment quel outil accède à quoi."
+      ],
+      [
+        "Si on arrête, je perds tout ?",
+        "Non. Ce qu'on construit vous appartient et reste chez vous. Vous partez avec vos systèmes, sans reconstruire quoi que ce soit. C'est la différence avec un logiciel loué au mois."
+      ],
+      [
+        "Vous travaillez avec quels outils ?",
+        "Les vôtres. On se branche sur votre messagerie, votre agenda, votre CRM et vos logiciels métier. Si vous n'avez pas de CRM, on fait sans — et on vous dit franchement quand il en faudrait un."
+      ],
+      [
+        "Vous êtes où ?",
+        "À Thonon-les-Bains. On se déplace dans le Chablais, sur Évian, Annemasse et le bassin genevois, et on travaille à distance partout ailleurs en France."
+      ]
+    ]
+  },
+  "contact": {
+    "label": "Commencer",
+    "h2": "Votre premier système peut tourner avant la fin du mois.",
+    "subtitle": "Un échange pour dérouler votre activité, repérer ce qui se délègue en premier, et repartir avec la priorité à traiter.",
+    "cta": "Demander mon diagnostic",
+    "reassurance": "Gratuit • Sans engagement • Réponse sous 24h",
+    "agenda_intro": "Ou réservez directement votre créneau.",
+    "agenda_load": "Afficher l'agenda",
+    "agenda_note": "L'agenda est fourni par Calendly, qui dépose ses propres cookies. Il ne se charge qu'après votre clic.",
+    "email": "hello@timevo.io",
+    "city": "Thonon-les-Bains"
+  },
+  "footer": {
+    "tagline": "Agence IA indépendante.\nAutomatisations · Agents IA · Contenu.",
+    "address": "Thonon-les-Bains · Haute-Savoie · France",
+    "copyright": "© 2026 Timevo · Agence IA, Thonon-les-Bains",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "gdpr": "RGPD",
+    "cols": [
+      {
+        "title": "Solutions",
+        "items": [
+          "Automatisation",
+          "Agents IA",
+          "Formation",
+          "Création de sites",
+          "SEO",
+          "Réseaux sociaux"
+        ]
+      },
+      {
+        "title": "Process",
+        "items": [
+          "Diagnostic",
+          "Audit",
+          "Production",
+          "Déploiement",
+          "Optimisation continue"
+        ]
+      }
+    ]
+  },
+  "logowall": {
+    "label": "Ils nous font confiance"
   },
   "pillars": {
     "label": "Nos expertises",
@@ -190,38 +436,6 @@
       }
     ]
   },
-  "method": {
-    "label": "Notre méthode",
-    "h2": "Cinq étapes, zéro surprise.",
-    "subtitle": "5 étapes claires, un processus éprouvé.",
-    "steps": [
-      [
-        "01",
-        "Premier échange",
-        "30 minutes gratuites pour comprendre votre situation. On vous dit honnêtement si on peut vous aider et comment."
-      ],
-      [
-        "02",
-        "Audit",
-        "Cartographie de vos process. On identifie les tâches qui coûtent le plus de temps pour le moins d'expertise."
-      ],
-      [
-        "03",
-        "Rapport",
-        "Un plan d'action concret avec les livrables, les délais et les prix. Tout est fixé à l'avance, par écrit."
-      ],
-      [
-        "04",
-        "Implémentation",
-        "On exécute. Points hebdomadaires, accès en temps réel à l'avancement. Vous restez maître du projet."
-      ],
-      [
-        "05",
-        "Maintenance",
-        "Livraison, formation à l'outil, et suivi des performances. On reste là même après."
-      ]
-    ]
-  },
   "testimonials": {
     "label": "Témoignages",
     "h2": "Ce que disent nos clients",
@@ -320,46 +534,6 @@
     "result_disclaimer": "Estimation basée sur les moyennes observées chez nos clients. Le chiffre réel est validé lors de l'audit gratuit.",
     "result_cta": "Réserver l'audit gratuit"
   },
-  "faq": {
-    "label": "Questions fréquentes",
-    "h2": "Ce qu'on nous demande souvent",
-    "items": [
-      [
-        "Combien de temps pour livrer une automation ?",
-        "2 à 3 semaines après l'audit. On commit sur la date à l'écrit, et on tient."
-      ],
-      [
-        "Vous travaillez avec quels outils ?",
-        "CRM (HubSpot, Pipedrive, Salesforce), email, téléphonie, comptabilité. On branche sur ce que vous avez déjà — pas de migration imposée."
-      ],
-      [
-        "Et si on n'a pas de CRM ?",
-        "On en met un en place dans le pack si besoin. Notion, Airtable ou un CRM classique selon votre maturité."
-      ],
-      [
-        "On garde la main sur le système ?",
-        "Oui. Le code et les workflows vous appartiennent. Aucune dépendance. Si on se sépare, vous gardez tout."
-      ],
-      [
-        "Vous facturez à l'heure ?",
-        "Non. Forfait setup + abonnement maintenance. Lisible, prévisible, sans surprise."
-      ],
-      [
-        "Vous êtes où, exactement ?",
-        "Thonon-les-Bains et Montpellier. On travaille en distanciel partout en France et chez les francophones limitrophes."
-      ]
-    ]
-  },
-  "contact": {
-    "label": "Timevo",
-    "h2": "Parlons de votre semaine.",
-    "subtitle": "30 minutes, c'est gratuit. On vous dit honnêtement où votre temps part — et ce qu'on peut récupérer.",
-    "cta": "Réservez votre appel gratuit",
-    "phone": "+33 1 XX XX XX XX",
-    "email": "hello@timevo.io",
-    "city": "Thonon-les-Bains · Montpellier",
-    "response": "Réponse sous 24h"
-  },
   "demo_teaser": {
     "eyebrow": "DÉMONSTRATIONS",
     "h2": "Voyez le résultat avant de signer.",
@@ -368,37 +542,6 @@
     "note": "Scénario type, pas un client existant. Les données de cet aperçu sont fictives. L'interface, elle, est celle qu'on livre.",
     "pick": "Les trois démos complètes",
     "see": "Voir la démo"
-  },
-  "footer": {
-    "tagline": "Agence d'automatisation indépendante.\nn8n · Agents IA · Process pour PME.",
-    "address": "Thonon-les-Bains · Montpellier · France",
-    "copyright": "© 2026 Timevo · Agence d'automatisation, France",
-    "legal": "Mentions légales",
-    "privacy": "Politique de confidentialité",
-    "gdpr": "RGPD",
-    "cols": [
-      {
-        "title": "Solutions",
-        "items": [
-          "Automatisation",
-          "Agents IA",
-          "Formation",
-          "Création de sites",
-          "SEO",
-          "Réseaux sociaux"
-        ]
-      },
-      {
-        "title": "Méthode",
-        "items": [
-          "Premier échange",
-          "Diagnostic",
-          "Proposition",
-          "Réalisation",
-          "Maintenance"
-        ]
-      }
-    ]
   },
   "solutions_index": {
     "meta_title": "Solutions : automatisation, IA, formation, sites web, SEO, réseaux sociaux",
@@ -889,7 +1032,7 @@
           ],
           [
             "En distanciel ou en présentiel ?",
-            "Les deux. Présentiel à Thonon ou Montpellier, ou chez vous. Distanciel sur Meet ou Teams, avec exercices live."
+            "Les deux. Présentiel à Thonon-les-Bains ou chez vous. Distanciel sur Meet ou Teams, avec exercices live."
           ]
         ]
       },
@@ -1530,11 +1673,11 @@
     "related_h2": "Ce qu'on fait aussi."
   },
   "metadata": {
-    "title": "Timevo — Automatisation pour PME | Devis, Relances, Rapports",
-    "description": "Timevo automatise les tâches répétitives qui coûtent du temps à vos équipes : devis, relances, rapports, support client. Setup en 2–3 semaines. Résultats mesurables dès le premier mois.",
-    "keywords": "automatisation PME, automatisation processus, n8n, devis automatique, relances automatiques, agence automatisation France, gain de temps entreprise, agents IA PME",
-    "og_title": "Timevo — 20 heures perdues chaque semaine. On vous les rend.",
-    "og_description": "Agence d'automatisation pour PME haut ticket. Devis, relances, rapports et support automatisés. Setup en 2–3 semaines.",
-    "og_image_alt": "Timevo — Agence d'automatisation pour PME"
+    "title": "Timevo — Agence IA à Thonon-les-Bains | Automatisations et agents IA",
+    "description": "On construit votre IA et on la fait vivre avec vous. Automatisations sur mesure, agents IA et contenu pour les PME. Premier système en production sous trois semaines.",
+    "keywords": "agence IA Thonon-les-Bains, agence intelligence artificielle Haute-Savoie, automatisation PME, agents IA, n8n, agence IA Chablais, agence IA Annemasse, agence IA Évian",
+    "og_title": "Timevo — On construit votre IA. On la fait vivre avec vous.",
+    "og_description": "Agence IA à Thonon-les-Bains. Automatisations, agents IA et contenu pour les PME. Premier système en production sous trois semaines.",
+    "og_image_alt": "Timevo — Agence IA à Thonon-les-Bains"
   }
 }

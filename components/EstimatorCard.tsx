@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Arrow, PillPrimary } from "./primitives";
-
-const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+import { CONTACT_HREF } from "@/lib/contact";
 
 // Logical values behind each option index
 const TEAM_SIZE  = [3, 10, 30];      // people

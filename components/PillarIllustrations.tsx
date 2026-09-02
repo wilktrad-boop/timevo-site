@@ -261,3 +261,40 @@ export function IllustrationSEO() {
     </svg>
   );
 }
+
+/**
+ * Cadre d'en-tête d'une carte illustrée : dégradé, halos d'accent, et le
+ * SVG posé par-dessus. Partagé par les six piliers de /solutions et par les
+ * trois cartes « La solution » de la home, qui n'ont pas de pastille.
+ */
+export function IllustrationFrame({
+  children, tag, height = 200,
+}: {
+  children: React.ReactNode;
+  tag?: string;
+  height?: number;
+}) {
+  return (
+    <div style={{
+      height,
+      background: "linear-gradient(135deg, var(--accent-tint), var(--card-soft))",
+      borderBottom: "1px solid var(--border)",
+      position: "relative", overflow: "hidden",
+    }}>
+      <div style={{
+        position: "absolute", inset: 0,
+        backgroundImage: "radial-gradient(circle at 20% 30%, var(--accent-glow) 0, transparent 50%), radial-gradient(circle at 80% 70%, var(--accent-tint) 0, transparent 60%)",
+      }} />
+      {children}
+      {tag ? (
+        <div style={{
+          position: "absolute", top: 18, left: 18,
+          fontSize: 11, padding: "4px 10px", borderRadius: 999,
+          background: "rgba(0,0,0,0.45)", color: "var(--text)",
+          border: "1px solid var(--border)",
+          backdropFilter: "blur(6px)", fontFamily: "var(--font-sans)",
+        }}>{tag}</div>
+      ) : null}
+    </div>
+  );
+}

@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Arrow } from "./primitives";
-
-const CALENDLY = "https://calendly.com/hello-timevo/30min";
+import { CONTACT_HREF } from "@/lib/contact";
 
 export default function StickyMobileCta() {
   const t = useTranslations("nav");
@@ -33,7 +32,7 @@ export default function StickyMobileCta() {
 
   return (
     <a
-      href={CALENDLY}
+      href={CONTACT_HREF}
       target="_blank"
       rel="noopener noreferrer"
       className="sticky-cta-mobile"
