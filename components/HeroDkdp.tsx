@@ -1,92 +1,73 @@
-import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Arrow, PillPrimary, PillGhost } from "./primitives";
-import HeroActivityCard, { type ActivityRow } from "./HeroActivityCard";
-import { DEMO_DASHBOARDS } from "@/lib/demoDashboards";
-import { kpis } from "@/lib/demo/compute";
-import { type Locale } from "@/lib/links";
 import { CONTACT_HREF } from "@/lib/contact";
 
 /**
- * Hero en deux colonnes : la déclaration typographique à gauche, une preuve
- * visuelle à droite.
+ * Hero centré, sur une seule colonne.
  *
- * Le badge, la source et les compteurs de la carte viennent des données du
- * dashboard pisciniste plutôt que d'une copie dans les messages : si les
- * chiffres de la démo changent, le hero suit. Seul le fil d'activité, qui
- * n'existe nulle part ailleurs, vit dans `hero.card`.
+ * La carte d'activité qui occupait la colonne de droite est retirée : elle
+ * montrait des données de démonstration, pas une preuve. Son fil d'activité
+ * reste dans `hero.card` côté messages, en attendant de savoir ce qui prendra
+ * sa place.
  *
- * Le H1 n'occupe pas la pleine largeur mais une colonne d'environ 700 px, et
- * la v5 du copy le pose sur deux lignes contre trois auparavant. Sa seconde
- * ligne, « On la fait vivre avec vous. », est la plus longue des deux : c'est
- * elle qui fixe la borne haute du clamp. Au-delà de 56 px elle se casse en
- * trois lignes et la césure imposée par le copy ne veut plus rien dire.
+ * Le H1 dispose maintenant de la pleine largeur, ce qui laisse remonter le
+ * corps. Sa borne haute reste dictée par la seconde ligne, « On la fait vivre
+ * avec vous. », la plus longue des deux : au-delà elle se casse et la césure
+ * imposée par le copy ne veut plus rien dire.
+ *
+ * Les boutons ne portent pas la classe `hero-ctas` : elle les repasse à gauche
+ * sous 900 px, ce qui a du sens pour les hero alignés à gauche des pages ville
+ * et secteur, pas ici.
  */
 export default async function HeroDkdp() {
   const t = await getTranslations("hero");
-  const tDemo = await getTranslations("demo_teaser");
-  const locale = (await getLocale()) as Locale;
-
-  const sector = DEMO_DASHBOARDS.pisciniste;
-  const copy = sector[locale];
-  const rows = t.raw("card.rows") as ActivityRow[];
-  // Les deux premiers compteurs de la démo pisciniste, calculés sur 30 jours —
-  // la même période que la page de démo elle-même.
-  const cardKpis = kpis(sector.data, copy, 30, locale).slice(0, 2);
 
   return (
-    <section style={{ padding: "72px 28px 80px", position: "relative" }}>
+    <section style={{ padding: "104px 28px 88px", position: "relative" }}>
       <div style={{
-        maxWidth: 1200, margin: "0 auto",
-        display: "grid", gridTemplateColumns: "minmax(0, 1.35fr) minmax(0, 1fr)",
-        gap: 56, alignItems: "start",
-      }} className="hero-grid">
-
-        <div>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 12,
-            fontFamily: "var(--font-mono)", fontSize: 11,
-            color: "var(--dim)", letterSpacing: "0.12em", textTransform: "uppercase",
-            marginBottom: 24,
-          }}>
-            <span>{t("eyebrow")}</span>
-          </div>
-
-          <h1 style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "clamp(32px, 4.3vw, 56px)",
-            fontWeight: 500,
-            letterSpacing: "-0.045em",
-            lineHeight: 0.98,
-            margin: 0,
-            color: "var(--text)",
-          }}>
-            {t("h1_line1")}<br />
-            {t("h1_line2")}
-          </h1>
-
-          <p style={{
-            fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5,
-            color: "var(--dim)", margin: 0, marginTop: 28, maxWidth: 520,
-          }}>
-            {t("subtitle")}
-          </p>
-
-          <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }} className="hero-ctas">
-            <PillPrimary href={CONTACT_HREF} large>
-              {t("cta_primary")} <Arrow color="#fff" size={14} />
-            </PillPrimary>
-            <PillGhost href="#solutions" large>
-              {t("cta_secondary")}
-            </PillGhost>
-          </div>
+        maxWidth: 1000, margin: "0 auto",
+        display: "flex", flexDirection: "column", alignItems: "center",
+        textAlign: "center",
+      }}>
+        <div style={{
+          fontFamily: "var(--font-mono)", fontSize: 11,
+          color: "var(--dim)", letterSpacing: "0.12em", textTransform: "uppercase",
+          marginBottom: 26,
+        }}>
+          {t("eyebrow")}
         </div>
 
-        <HeroActivityCard
-          badge={copy.demoBadge}
-          source={tDemo("sample")}
-          kpis={cardKpis.map(k => ({ value: k.value, label: k.label }))}
-          rows={rows}
-        />
+        <h1 style={{
+          fontFamily: "var(--font-sans)",
+          fontSize: "clamp(32px, 5.8vw, 72px)",
+          fontWeight: 500,
+          letterSpacing: "-0.045em",
+          lineHeight: 1.0,
+          margin: 0,
+          color: "var(--text)",
+        }}>
+          {t("h1_line1")}<br />
+          {t("h1_line2")}
+        </h1>
+
+        <p style={{
+          fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.55,
+          color: "var(--dim)", margin: 0, marginTop: 28, maxWidth: 640,
+        }}>
+          {t("subtitle")}
+        </p>
+
+        <div style={{
+          display: "flex", gap: 12, marginTop: 36,
+          flexWrap: "wrap", justifyContent: "center",
+        }}>
+          <PillPrimary href={CONTACT_HREF} large>
+            {t("cta_primary")} <Arrow color="#fff" size={14} />
+          </PillPrimary>
+          <PillGhost href="#solutions" large>
+            {t("cta_secondary")}
+          </PillGhost>
+        </div>
       </div>
     </section>
   );
