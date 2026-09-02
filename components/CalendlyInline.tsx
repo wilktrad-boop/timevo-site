@@ -102,8 +102,11 @@ export default function CalendlyInline({
   return (
     <div
       ref={host}
+      className="calendly-inline-widget"
       style={{
-        marginTop: 48, minHeight: 700,
+        // Hauteur explicite, pas un min-height : le widget dimensionne son
+        // iframe en pourcentage du conteneur et retombe sinon à 150 px.
+        marginTop: 48, height: 760, minWidth: 320,
         border: "1px solid var(--border)", borderRadius: 20,
         overflow: "hidden", background: "#ffffff",
       }}
