@@ -18,9 +18,10 @@
     "cta": "Diagnostic gratuit"
   },
   "hero": {
-    "eyebrow": "AGENCE IA · THONON-LES-BAINS",
+    "eyebrow": "Agence IA · Thonon-les-Bains",
     "h1_line1": "On construit votre IA.",
-    "h1_line2": "On la fait vivre avec vous.",
+    "h1_line2": "On la fait vivre",
+    "h1_accent": "avec vous.",
     "subtitle": "Automatisations, agents IA, contenu : on prend en charge tout ce qui touche à l'IA dans votre entreprise. Et on reste après, pour la faire évoluer avec votre activité.",
     "cta_primary": "Demander un diagnostic gratuit",
     "cta_secondary": "Voir ce qu'on met en place",
@@ -77,7 +78,10 @@
       "Des process qui n'existent que dans la tête d'un tiers",
       "Une croissance freinée par du travail à la main"
     ],
-    "punch": "Vous n'avez pas un problème d'outils : vous avez un problème de systèmes taillés pour vous."
+    "punch": {
+      "lead": "Vous n'avez pas un problème d'outils :",
+      "accent": "vous avez un problème de systèmes taillés pour vous."
+    }
   },
   "solution": {
     "label": "La solution",
@@ -97,7 +101,10 @@
         "desc": "Contenu, présence sociale, prospection. Ce que vous n'avez jamais le temps de faire."
       }
     ],
-    "punch": "Nous construisons des systèmes intelligents avec vous, pour vous."
+    "punch": {
+      "lead": "Nous construisons des systèmes intelligents",
+      "accent": "avec vous, pour vous."
+    }
   },
   "pourqui": {
     "label": "Pour qui ?",
@@ -130,7 +137,10 @@
         "rest": "qui souhaitent booster leur productivité"
       }
     ],
-    "punch": "L'IA ne remplace personne chez vous. Elle libère tout le monde."
+    "punch": {
+      "lead": "L'IA ne remplace personne chez vous.",
+      "accent": "Elle libère tout le monde."
+    }
   },
   "method": {
     "label": "Le process",
@@ -163,7 +173,10 @@
         "Surveillance, corrections, nouveaux cas d'usage et point trimestriel sur vos chiffres."
       ]
     ],
-    "punch": "Vous voyez naître votre solution dès l'audit. Le jour de la mise en service, elle est déjà la vôtre."
+    "punch": {
+      "lead": "Vous voyez naître votre solution dès l'audit.",
+      "accent": "Le jour de la mise en service, elle est déjà la vôtre."
+    }
   },
   "results": {
     "label": "Résultats",
@@ -177,7 +190,10 @@
       "Des procédures écrites, exécutées, transmissibles à la prochaine recrue",
       "Une croissance libérée par le potentiel de l'IA"
     ],
-    "punch": "Une entreprise qui avance avec son temps, parce qu'elle a récupéré le sien."
+    "punch": {
+      "lead": "Une entreprise qui avance avec son temps,",
+      "accent": "parce qu'elle a récupéré le sien."
+    }
   },
   "usecases": {
     "label": "Cas d'usage",
@@ -209,7 +225,10 @@
         "desc": "Pipeline et ventes dans votre boîte, chaque lundi 8h."
       }
     ],
-    "punch": "On commence par un seul. Celui qui vous coûte le plus cher aujourd'hui."
+    "punch": {
+      "lead": "On commence par un seul.",
+      "accent": "Celui qui vous coûte le plus cher aujourd'hui."
+    }
   },
   "why": {
     "label": "Pourquoi nous ?",
@@ -241,7 +260,10 @@
         "desc": "Écoute, réactivité, qualité et fluidité pour un suivi optimal."
       }
     ],
-    "punch": "L'IA se copie. Une équipe qui reste, non."
+    "punch": {
+      "lead": "L'IA se copie.",
+      "accent": "Une équipe qui reste, non."
+    }
   },
   "faq": {
     "label": "Questions fréquentes",

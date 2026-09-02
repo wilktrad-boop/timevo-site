@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Arrow, PillPrimary, PillGhost } from "./primitives";
+import { Arrow, Eyebrow, PillPrimary, PillGhost } from "./primitives";
 import { CONTACT_HREF } from "@/lib/contact";
 
 /**
@@ -10,10 +10,12 @@ import { CONTACT_HREF } from "@/lib/contact";
  * reste dans `hero.card` côté messages, en attendant de savoir ce qui prendra
  * sa place.
  *
- * Le H1 dispose maintenant de la pleine largeur, ce qui laisse remonter le
- * corps. Sa borne haute reste dictée par la seconde ligne, « On la fait vivre
- * avec vous. », la plus longue des deux : au-delà elle se casse et la césure
- * imposée par le copy ne veut plus rien dire.
+ * Le H1 dispose de la pleine largeur, ce qui laisse remonter le corps. Sa
+ * borne haute reste dictée par la seconde ligne, la plus longue des deux :
+ * au-delà elle se casse et la césure imposée par le copy ne veut plus rien
+ * dire. Sa fin passe en dégradé d'accent — c'est là que se trouve le
+ * différenciateur, et une page entièrement en noir et blanc n'a nulle part
+ * où poser l'œil.
  *
  * Les boutons ne portent pas la classe `hero-ctas` : elle les repasse à gauche
  * sous 900 px, ce qui a du sens pour les hero alignés à gauche des pages ville
@@ -29,25 +31,26 @@ export default async function HeroDkdp() {
         display: "flex", flexDirection: "column", alignItems: "center",
         textAlign: "center",
       }}>
-        <div style={{
-          fontFamily: "var(--font-mono)", fontSize: 11,
-          color: "var(--dim)", letterSpacing: "0.12em", textTransform: "uppercase",
-          marginBottom: 26,
-        }}>
-          {t("eyebrow")}
-        </div>
+        <Eyebrow>{t("eyebrow")}</Eyebrow>
 
         <h1 style={{
           fontFamily: "var(--font-sans)",
-          fontSize: "clamp(32px, 5.8vw, 72px)",
-          fontWeight: 500,
-          letterSpacing: "-0.045em",
-          lineHeight: 1.0,
-          margin: 0,
+          fontSize: "clamp(32px, 5.6vw, 70px)",
+          fontWeight: 700,
+          letterSpacing: "-0.04em",
+          lineHeight: 1.04,
+          margin: "28px 0 0",
           color: "var(--text)",
         }}>
           {t("h1_line1")}<br />
-          {t("h1_line2")}
+          {t("h1_line2")}{" "}
+          <span style={{
+            background: "var(--accent-gradient)",
+            WebkitBackgroundClip: "text", backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}>
+            {t("h1_accent")}
+          </span>
         </h1>
 
         <p style={{

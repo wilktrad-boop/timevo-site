@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0a0a0a;
-  --card: #141414;
-  --card-soft: #1a1a1a;
-  --border: #262626;
-  --border-strong: #333333;
-  --text: #ededed;
-  --dim: #8a8a8a; /* AA on --bg (≈5.6:1) */
-  --dim-2: #7a7a7a; /* AA on --bg for small text (≈4.6:1) */
+  /* Fond violet très sombre plutôt que noir : le noir pur écrase les cartes,
+     qui ne se distinguaient plus que par leur bordure. La teinte suit celle
+     du dégradé d'accent, pour que le fond et l'accent viennent de la même
+     famille au lieu de se croiser. */
+  --bg: #100c18;
+  --card: #191424;
+  --card-soft: #201a2e;
+  --border: #2c2440;
+  --border-strong: #3c3355;
+  --text: #efecf5;
+  --dim: #9990ac; /* AA sur --bg (≈6,3:1) */
+  --dim-2: #8c82a0; /* AA sur --bg pour le petit texte (≈5,3:1) */
 
   --accent: #5fa8ff;
   --accent-strong: #8ec4ff; /* hover state for accent elements */
@@ -59,6 +63,13 @@ section[id],
 .ticker-track      { animation: timevo-ticker 40s linear infinite; }
 .ticker-track-slow { animation: timevo-ticker 60s linear infinite; }
 
+/* Point de la pastille d'intitulé : une pulsation lente, jamais un clignotement. */
+@keyframes eyebrow-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .45; transform: scale(.82); }
+}
+.eyebrow-dot { animation: eyebrow-pulse 2.6s ease-in-out infinite; }
+
 .fade-up {
   opacity: 0;
   transform: translateY(16px);
@@ -73,6 +84,7 @@ section[id],
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .ticker-track, .ticker-track-slow { animation: none; }
+  .eyebrow-dot { animation: none; }
 }
 
 /* Footer links: hover handled in CSS so the footer can stay a Server Component */

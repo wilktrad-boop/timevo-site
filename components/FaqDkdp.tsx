@@ -1,5 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import FaqAccordion from "./FaqAccordion";
+import { SECTION, SectionHead } from "./SectionParts";
+import { IconQuestion } from "./SectionIcons";
 
 export default async function FaqDkdp() {
   const t = await getTranslations("faq");
@@ -16,24 +18,13 @@ export default async function FaqDkdp() {
   };
 
   return (
-    <section id="faq" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
+    <section id="faq" style={SECTION}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{
-          fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)",
-          letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 16,
-        }}>
-          {t("label")}
-        </div>
-        <h2 style={{
-          fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 500,
-          letterSpacing: "-0.04em", lineHeight: 1.0, margin: 0, marginBottom: 48, color: "var(--text)",
-        }}>
-          {t("h2")}
-        </h2>
+      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+        <SectionHead label={t("label")} icon={<IconQuestion />} lines={[t("h2")]} />
         <FaqAccordion items={items} idPrefix="faq" />
       </div>
     </section>

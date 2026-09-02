@@ -10,14 +10,14 @@
  * inversement.
  */
 export const theme = {
-  bg: "#0a0a0a",
-  card: "#141414",
-  cardSoft: "#1a1a1a",
-  border: "#262626",
-  borderStrong: "#333333",
-  text: "#ededed",
-  dim: "#8a8a8a",
-  dim2: "#7a7a7a",
+  bg: "#100c18",
+  card: "#191424",
+  cardSoft: "#201a2e",
+  border: "#2c2440",
+  borderStrong: "#3c3355",
+  text: "#efecf5",
+  dim: "#9990ac",
+  dim2: "#8c82a0",
 
   accent: "#5fa8ff",
   accentStrong: "#8ec4ff",

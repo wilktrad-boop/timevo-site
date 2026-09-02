@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
-import { Arrow, PillPrimary } from "./primitives";
+import { Arrow, Eyebrow, PillPrimary } from "./primitives";
 import CalendlyInline from "./CalendlyInline";
+import { IconArrow } from "./SectionIcons";
 import { CONTACT_HREF } from "@/lib/contact";
 
 export default async function ContactCard() {
@@ -10,15 +11,10 @@ export default async function ContactCard() {
     <section id="contact" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ textAlign: "center", padding: "80px 32px" }}>
-          <div style={{
-            fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim)",
-            letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 24,
-          }}>
-            {t("label")}
-          </div>
+          <Eyebrow icon={<IconArrow />}>{t("label")}</Eyebrow>
           <h2 style={{
-            fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 5.6vw, 72px)", fontWeight: 500,
-            letterSpacing: "-0.05em", lineHeight: 1.0, margin: "0 auto 28px", maxWidth: 900,
+            fontFamily: "var(--font-sans)", fontSize: "clamp(32px, 4.8vw, 62px)", fontWeight: 700,
+            letterSpacing: "-0.04em", lineHeight: 1.06, margin: "26px auto 28px", maxWidth: 900,
             color: "var(--text)",
           }}>
             {t("h2")}

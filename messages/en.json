@@ -18,9 +18,10 @@
     "cta": "Free diagnostic"
   },
   "hero": {
-    "eyebrow": "AI AGENCY · THONON-LES-BAINS, FRANCE",
+    "eyebrow": "AI agency · Thonon-les-Bains, France",
     "h1_line1": "We build your AI.",
-    "h1_line2": "We keep it running with you.",
+    "h1_line2": "We keep it running",
+    "h1_accent": "with you.",
     "subtitle": "Automations, AI agents, content: we take on everything AI-related in your company. And we stay afterwards, to keep it moving with your business.",
     "cta_primary": "Book a free diagnostic",
     "cta_secondary": "See what we put in place",
@@ -77,7 +78,10 @@
       "Processes that exist only in one person's head",
       "Growth held back by work done by hand"
     ],
-    "punch": "Your problem isn't tools. It's the absence of systems cut to your shape."
+    "punch": {
+      "lead": "Your problem isn't tools.",
+      "accent": "It's the absence of systems cut to your shape."
+    }
   },
   "solution": {
     "label": "The solution",
@@ -97,7 +101,10 @@
         "desc": "Content, social presence, outreach. The work you never get around to."
       }
     ],
-    "punch": "We build intelligent systems with you, for you."
+    "punch": {
+      "lead": "We build intelligent systems",
+      "accent": "with you, for you."
+    }
   },
   "pourqui": {
     "label": "Who it's for",
@@ -130,7 +137,10 @@
         "rest": "looking to lift their output per head"
       }
     ],
-    "punch": "AI replaces no one on your team. It frees everyone."
+    "punch": {
+      "lead": "AI replaces no one on your team.",
+      "accent": "It frees everyone."
+    }
   },
   "method": {
     "label": "The process",
@@ -163,7 +173,10 @@
         "Monitoring, fixes, new use cases and a quarterly review of your numbers."
       ]
     ],
-    "punch": "You watch your solution take shape at the audit. By go-live day, it is already yours."
+    "punch": {
+      "lead": "You watch your solution take shape at the audit.",
+      "accent": "By go-live day, it is already yours."
+    }
   },
   "results": {
     "label": "Results",
@@ -177,7 +190,10 @@
       "Procedures written down, executed, and handed to your next hire",
       "Growth no longer capped by what your team can type"
     ],
-    "punch": "A company that keeps up with the times, because it finally has some."
+    "punch": {
+      "lead": "A company that keeps up with the times,",
+      "accent": "because it finally has some."
+    }
   },
   "usecases": {
     "label": "Use cases",
@@ -209,7 +225,10 @@
         "desc": "Pipeline and sales in your inbox, every Monday at 8."
       }
     ],
-    "punch": "We start with one. The one costing you the most today."
+    "punch": {
+      "lead": "We start with one.",
+      "accent": "The one costing you the most today."
+    }
   },
   "why": {
     "label": "Why us",
@@ -241,7 +260,10 @@
         "desc": "Listening, responsiveness, care and follow-through."
       }
     ],
-    "punch": "AI can be copied. A team that stays cannot."
+    "punch": {
+      "lead": "AI can be copied.",
+      "accent": "A team that stays cannot."
+    }
   },
   "faq": {
     "label": "Frequently asked",

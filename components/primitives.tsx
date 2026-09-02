@@ -35,21 +35,39 @@ export const Sparkle = ({ size = 10, color }: { size?: number; color: string }) 
 
 // ── Eyebrow ───────────────────────────────────────────────────────────
 
-export const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <div style={{
-    display: "inline-flex", alignItems: "center", gap: 8,
-    padding: "6px 12px",
-    background: "var(--accent-tint)",
-    color: "var(--accent-soft)",
+/**
+ * Pastille d'intitulé de section, posée au-dessus du titre.
+ *
+ * Elle remplace le label mono en capitales espacées : à côté d'un titre en
+ * 700, un label technique tenait le second rôle sans le dire. La pastille
+ * l'assume — fond de carte, bordure, casse normale, et un point d'accent qui
+ * pulse pour rappeler que la page est vivante.
+ */
+export const Eyebrow = ({ children, icon }: {
+  children: React.ReactNode;
+  /** Icône du bloc. Sans elle, la pastille retombe sur le point qui pulse. */
+  icon?: React.ReactNode;
+}) => (
+  <span style={{
+    display: "inline-flex", alignItems: "center", gap: 9,
+    padding: "7px 15px",
+    background: "var(--card)",
+    color: "var(--dim)",
     borderRadius: 999,
-    fontSize: 11, fontWeight: 500,
+    border: "1px solid var(--border)",
+    fontSize: 13, fontWeight: 500,
     fontFamily: "var(--font-sans)",
-    border: "1px solid var(--accent-tint)",
-    letterSpacing: "0.01em",
+    letterSpacing: "-0.005em",
+    whiteSpace: "nowrap",
   }}>
-    <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--accent)", flexShrink: 0 }} />
+    {icon ?? (
+      <span className="eyebrow-dot" style={{
+        width: 7, height: 7, borderRadius: 999,
+        background: "var(--accent)", flexShrink: 0,
+      }} />
+    )}
     {children}
-  </div>
+  </span>
 );
 
 // ── Buttons ───────────────────────────────────────────────────────────

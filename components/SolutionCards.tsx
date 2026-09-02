@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { SECTION, SECTION_INNER, SectionHead, Punchline } from "./SectionParts";
+import { SECTION, SECTION_INNER, SectionHead, Punchline, type Punch } from "./SectionParts";
+import { IconNetwork } from "./SectionIcons";
 import {
   IllustrationAutomatisation, IllustrationAgentsIA, IllustrationReseauxSociaux,
   IllustrationFrame,
@@ -23,17 +24,18 @@ const illustrations = [
 export default async function SolutionCards() {
   const t = await getTranslations("solution");
   const items = t.raw("items") as { title: string; desc: string }[];
+  const punch = t.raw("punch") as Punch;
 
   return (
     <section id="solutions" style={SECTION}>
       <div style={SECTION_INNER}>
-        <SectionHead label={t("label")} lines={[t("h2_line1"), t("h2_line2")]} />
+        <SectionHead label={t("label")} icon={<IconNetwork />} lines={[t("h2_line1"), t("h2_line2")]} />
 
         <div
           className="card-grid"
           style={{
             display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            gap: 16, marginTop: 48,
+            gap: 16,
           }}
         >
           {items.map(({ title, desc }, i) => (
@@ -45,7 +47,7 @@ export default async function SolutionCards() {
               <IllustrationFrame height={168}>{illustrations[i]}</IllustrationFrame>
               <div style={{ padding: 28, display: "flex", flexDirection: "column", gap: 12 }}>
                 <h3 style={{
-                  fontFamily: "var(--font-sans)", fontSize: 23, fontWeight: 500,
+                  fontFamily: "var(--font-sans)", fontSize: 22, fontWeight: 600,
                   letterSpacing: "-0.02em", lineHeight: 1.2, margin: 0, color: "var(--text)",
                 }}>
                   {title}
@@ -61,7 +63,7 @@ export default async function SolutionCards() {
           ))}
         </div>
 
-        <Punchline>{t("punch")}</Punchline>
+        <Punchline lead={punch.lead} accent={punch.accent} />
       </div>
     </section>
   );

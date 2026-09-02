@@ -23,17 +23,23 @@ export default async function StatsBand() {
           style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 32 }}
         >
           {items.map(({ big, cap }) => (
-            <div key={big} style={{ padding: "26px 0", borderTop: "1px solid var(--border-strong)" }}>
+            <div key={big} style={{
+              padding: "26px 8px", borderTop: "1px solid var(--border-strong)",
+              display: "flex", flexDirection: "column", alignItems: "center",
+              textAlign: "center",
+            }}>
               <div style={{
-                fontFamily: "var(--font-sans)", fontSize: "clamp(40px, 5vw, 72px)",
-                fontWeight: 500, letterSpacing: "-0.05em", lineHeight: 0.95,
-                color: "var(--accent)",
+                fontFamily: "var(--font-sans)", fontSize: "clamp(38px, 4.6vw, 66px)",
+                fontWeight: 700, letterSpacing: "-0.05em", lineHeight: 0.95,
+                background: "var(--accent-gradient)",
+                WebkitBackgroundClip: "text", backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}>
                 {big}
               </div>
               <p style={{
                 fontFamily: "var(--font-sans)", fontSize: 14.5, lineHeight: 1.5,
-                color: "var(--dim)", margin: 0, marginTop: 14, maxWidth: 320,
+                color: "var(--dim)", margin: 0, marginTop: 14, maxWidth: 300,
               }}>
                 {cap}
               </p>

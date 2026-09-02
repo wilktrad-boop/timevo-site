@@ -9,7 +9,7 @@ import "../globals.css";
 const sans = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 // Geist Mono reste : Inter n'a pas de compagne monospace, et le mono ne sert
 // que pour les eyebrows et les libellés techniques.
@@ -92,7 +92,7 @@ export async function generateMetadata({
  */
 export const viewport: Viewport = {
   colorScheme: "dark",
-  themeColor: "#0a0a0a",
+  themeColor: "#100c18",
 };
 
 export default async function LocaleLayout({

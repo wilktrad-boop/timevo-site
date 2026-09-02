@@ -10,6 +10,9 @@ import FaqDkdp from "@/components/FaqDkdp";
 import ContactCard from "@/components/ContactCard";
 import FooterDkdp from "@/components/FooterDkdp";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import {
+  IconAlert, IconTarget, IconTrend, IconGrid, IconSpark,
+} from "@/components/SectionIcons";
 import StickyMobileCta from "@/components/StickyMobileCta";
 
 /**
@@ -66,13 +69,13 @@ export default async function Home({
       <main>
         <HeroDkdp />
         <StatsBand />
-        <ScrollFadeIn><BulletSection ns="pain" id="probleme" /></ScrollFadeIn>
+        <ScrollFadeIn><BulletSection ns="pain" id="probleme" icon={<IconAlert />} /></ScrollFadeIn>
         <ScrollFadeIn><SolutionCards /></ScrollFadeIn>
-        <ScrollFadeIn><BulletSection ns="pourqui" id="pour-qui" dimSecondLine /></ScrollFadeIn>
+        <ScrollFadeIn><BulletSection ns="pourqui" id="pour-qui" icon={<IconTarget />} /></ScrollFadeIn>
         <ScrollFadeIn><MethodDkdp /></ScrollFadeIn>
-        <ScrollFadeIn><BulletSection ns="results" id="resultats" /></ScrollFadeIn>
-        <ScrollFadeIn><CardSection ns="usecases" id="cas-usage" /></ScrollFadeIn>
-        <ScrollFadeIn><CardSection ns="why" id="pourquoi-nous" dimSecondLine /></ScrollFadeIn>
+        <ScrollFadeIn><BulletSection ns="results" id="resultats" icon={<IconTrend />} /></ScrollFadeIn>
+        <ScrollFadeIn><CardSection ns="usecases" id="cas-usage" icon={<IconGrid />} /></ScrollFadeIn>
+        <ScrollFadeIn><CardSection ns="why" id="pourquoi-nous" icon={<IconSpark />} /></ScrollFadeIn>
         <ScrollFadeIn><FaqDkdp /></ScrollFadeIn>
         <ScrollFadeIn><ContactCard /></ScrollFadeIn>
       </main>

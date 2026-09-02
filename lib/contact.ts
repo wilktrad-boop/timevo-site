@@ -20,8 +20,8 @@ export function contactEmbedSrc(hostname: string): string {
     embed_domain: hostname,
     embed_type: "Inline",
     hide_gdpr_banner: "1",
-    background_color: "0a0a0a",
-    text_color: "ededed",
+    background_color: "100c18",
+    text_color: "efecf5",
     primary_color: "5fa8ff",
   });
   return `${CONTACT_HREF}?${params.toString()}`;
