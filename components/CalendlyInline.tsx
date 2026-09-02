@@ -21,13 +21,24 @@ const WIDGET_SRC = "https://assets.calendly.com/assets/external/widget.js";
  * tiers avant consentement. Le clic vaut consentement, et c'est aussi ce qui
  * évite de payer une ressource tierce dans le temps de chargement de la home.
  *
- * L'intégration passe par le script officiel plutôt que par une iframe posée à
- * la main. Une iframe seule se charge — Calendly répond — mais reste blanche :
- * le widget attend le dialogue `postMessage` que seul `widget.js` établit.
- * C'est lui aussi qui redimensionne le cadre au fil des étapes de réservation.
+ * Trois choses ont dû être apprises à l'usage, chacune donnant un cadre blanc
+ * et vide quand elle manquait :
+ *
+ *   - le script officiel est nécessaire. Une iframe posée à la main se charge
+ *     bien, mais reste vide : le widget attend le dialogue `postMessage` que
+ *     seul `widget.js` établit ;
+ *   - le conteneur a besoin d'une hauteur explicite, pas d'un `min-height` :
+ *     le widget dimensionne son iframe en pourcentage et retombe sinon à
+ *     150 px ;
+ *   - `widget.js` initialise lui-même, à son chargement, tout élément portant
+ *     la classe `calendly-inline-widget` et un `data-url`. Appeler en plus
+ *     `initInlineWidget` sur le même élément fait échouer les deux. On laisse
+ *     donc faire l'auto-initialisation, et on n'appelle la méthode que si le
+ *     script était déjà en mémoire — auquel cas son événement `load` ne se
+ *     reproduira pas.
  *
  * L'URL a besoin du domaine de la page hôte, sans quoi Calendly sert une page
- * vide ; elle est donc construite au moment de l'affichage.
+ * vide ; elle est donc construite à l'affichage.
  */
 export default function CalendlyInline({
   intro, load, note,
@@ -42,30 +53,18 @@ export default function CalendlyInline({
   useEffect(() => {
     if (!shown || !host.current) return;
 
-    const mount = () => {
-      if (host.current && window.Calendly) {
-        window.Calendly.initInlineWidget({
-          url: contactEmbedSrc(window.location.hostname),
-          parentElement: host.current,
-        });
-      }
-    };
-
     if (window.Calendly) {
-      mount();
+      window.Calendly.initInlineWidget({
+        url: contactEmbedSrc(window.location.hostname),
+        parentElement: host.current,
+      });
       return;
     }
 
-    // Le script peut déjà être en vol si le composant est remonté.
-    const existing = document.querySelector<HTMLScriptElement>(`script[src="${WIDGET_SRC}"]`);
-    const script = existing ?? document.createElement("script");
-    script.addEventListener("load", mount);
-    if (!existing) {
-      script.src = WIDGET_SRC;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    return () => script.removeEventListener("load", mount);
+    const script = document.createElement("script");
+    script.src = WIDGET_SRC;
+    script.async = true;
+    document.body.appendChild(script);
   }, [shown]);
 
   if (!shown) {
@@ -103,10 +102,9 @@ export default function CalendlyInline({
     <div
       ref={host}
       className="calendly-inline-widget"
+      data-url={contactEmbedSrc(typeof window === "undefined" ? "www.timevo.io" : window.location.hostname)}
       style={{
-        // Hauteur explicite, pas un min-height : le widget dimensionne son
-        // iframe en pourcentage du conteneur et retombe sinon à 150 px.
-        marginTop: 48, height: 760, minWidth: 320,
+        marginTop: 48, height: 780, minWidth: 320,
         border: "1px solid var(--border)", borderRadius: 20,
         overflow: "hidden", background: "#ffffff",
       }}
