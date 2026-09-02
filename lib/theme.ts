@@ -10,33 +10,33 @@
  * inversement.
  */
 export const theme = {
-  bg: "#ffffff",
-  card: "#f7f8fa",
-  cardSoft: "#f0f2f5",
-  border: "#e4e7ec",
-  borderStrong: "#d0d5dd",
-  text: "#101014",
-  dim: "#5a5f6b",
-  dim2: "#71757f",
+  bg: "#0a0a0a",
+  card: "#141414",
+  cardSoft: "#1a1a1a",
+  border: "#262626",
+  borderStrong: "#333333",
+  text: "#ededed",
+  dim: "#8a8a8a",
+  dim2: "#7a7a7a",
 
-  accent: "#4338ca",
-  accentStrong: "#3730a3",
-  accentSoft: "#6d28d9",
-  accentGlow: "rgba(67,56,202,0.10)",
-  accentTint: "rgba(67,56,202,0.06)",
-  gradientFrom: "#2563eb",
-  gradientTo: "#6d28d9",
+  accent: "#5fa8ff",
+  accentStrong: "#8ec4ff",
+  accentSoft: "#a98aff",
+  accentGlow: "rgba(124,77,255,0.22)",
+  accentTint: "rgba(124,77,255,0.10)",
+  gradientFrom: "#4ec3ff",
+  gradientTo: "#7c4dff",
 } as const;
 
 /**
  * Couleurs de statut des tableaux de bord de démo.
  *
- * Les valeurs Tailwind 400 (`#4ade80`, `#fbbf24`, `#f87171`) sont calibrées pour
- * du fond sombre et tombent sous 3:1 sur blanc. On descend d'un cran (600/700).
+ * Calibrées pour du fond sombre : les tons Tailwind 400 tiennent au-dessus de
+ * 4,5:1 sur `--bg`, là où les 600/700 du thème clair y tombaient sous 3:1.
  */
 export const status = {
-  ok: "#15803d",
-  warn: "#b45309",
-  danger: "#b91c1c",
-  dangerTint: "#b91c1c22",
+  ok: "#4ade80",
+  warn: "#fbbf24",
+  danger: "#f87171",
+  dangerTint: "#f8717122",
 } as const;

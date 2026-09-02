@@ -20,7 +20,9 @@ import { theme } from "@/lib/theme";
  * courbe — une aire suggérerait une continuité qui n'existe pas.
  */
 
-export const SERIES = [theme.accent, "#eb6834", "#1baf7a"] as const;
+/* Les deux séries secondaires sont remontées d'un cran par rapport au thème
+   clair : sur #0a0a0a, un orange 600 et un vert 600 s'éteignent. */
+export const SERIES = [theme.accent, "#fb8b5a", "#34d399"] as const;
 export const SERIES_OTHER = "#9aa0ac";
 
 const W = 640;

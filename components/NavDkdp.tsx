@@ -35,7 +35,7 @@ export default function NavDkdp() {
       position: "sticky", top: 0, zIndex: 30,
       padding: "20px 28px",
       display: "flex", justifyContent: "space-between", alignItems: "center",
-      background: "rgba(255,255,255,0.92)",
+      background: "rgba(10,10,10,0.92)",
       backdropFilter: "blur(12px)",
       WebkitBackdropFilter: "blur(12px)",
       borderBottom: "1px solid var(--border)",

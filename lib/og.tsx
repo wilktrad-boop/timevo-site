@@ -59,7 +59,7 @@ export async function ogImage({
           backgroundColor: theme.bg,
           // Halo d'accent en haut à droite, discret, dans l'esprit du site.
           backgroundImage:
-            "radial-gradient(circle at 88% 8%, rgba(109,40,217,0.12) 0%, rgba(109,40,217,0) 46%)",
+            "radial-gradient(circle at 88% 8%, rgba(124,77,255,0.30) 0%, rgba(124,77,255,0) 46%)",
           fontFamily: "Inter",
           color: theme.text,
         }}

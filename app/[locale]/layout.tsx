@@ -86,13 +86,13 @@ export async function generateMetadata({
 }
 
 /**
- * Le site n'a qu'un thème, clair. On le déclare pour que les contrôles natifs
+ * Le site n'a qu'un thème, sombre. On le déclare pour que les contrôles natifs
  * (champs de formulaire, scrollbars) et la barre du navigateur mobile suivent,
  * au lieu de partir sur le réglage système de l'utilisateur.
  */
 export const viewport: Viewport = {
-  colorScheme: "light",
-  themeColor: "#ffffff",
+  colorScheme: "dark",
+  themeColor: "#0a0a0a",
 };
 
 export default async function LocaleLayout({

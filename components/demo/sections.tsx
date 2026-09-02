@@ -3,6 +3,7 @@
 import {
   BarSeries, Donut, GroupedBarSeries, Histogram, SERIES,
 } from "./charts";
+import { status } from "@/lib/theme";
 import {
   billingTotals, count, dayLabel, dueLabel, duration, invoiceState, kpis,
   labelFor, money, revenueMix, scoreSpread, signedOverTime, sortRows,
@@ -47,7 +48,7 @@ const num: React.CSSProperties = { fontFamily: "var(--font-mono)", fontVariantNu
 
 export function Tone({ label, tone }: { label: string; tone: "win" | "loss" | "pending" | "late" }) {
   const color =
-    tone === "win" ? "#15803d" : tone === "loss" ? "#b91c1c" : tone === "late" ? "#b45309" : "var(--accent)";
+    tone === "win" ? status.ok : tone === "loss" ? status.danger : tone === "late" ? status.warn : "var(--accent)";
   return (
     <span style={{
       display: "inline-flex", alignItems: "center", gap: 7,
@@ -438,7 +439,7 @@ export function Leads({
 }
 
 function ScoreBar({ score, accepted }: { score: number; accepted: boolean }) {
-  const color = accepted ? SERIES[0] : "#b91c1c";
+  const color = accepted ? SERIES[0] : status.danger;
   return (
     <div style={{ minWidth: 120 }}>
       <div style={{ ...num, fontSize: 13, color: "var(--text)", marginBottom: 6 }}>{score}</div>
@@ -523,7 +524,7 @@ export function Billing({
                     <td style={{ ...cell, ...num, fontSize: 12.5, whiteSpace: "nowrap" }}>{t.ref}</td>
                     <td style={cell}>{t.client}</td>
                     <td style={{ ...cell, ...num, whiteSpace: "nowrap" }}>{money(inv.amount, locale)}</td>
-                    <td style={{ ...cell, color: st === "late" ? "#b45309" : "var(--dim)", fontSize: 12.5, whiteSpace: "nowrap" }}>
+                    <td style={{ ...cell, color: st === "late" ? status.warn : "var(--dim)", fontSize: 12.5, whiteSpace: "nowrap" }}>
                       {dueLabel(inv.dueIn, locale)}
                     </td>
                     <td style={cell}>

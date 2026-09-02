@@ -1,17 +1,16 @@
 import { getTranslations } from "next-intl/server";
 
 /**
- * Les deux dernières vignettes représentent des interfaces : elles restent en
- * sombre alors que le reste du site est clair. Elles ne peuvent donc pas
- * consommer les tokens globaux (--dim, --border-strong… sont désormais clairs)
- * et gardent leur propre palette, héritée de l'ancien thème.
+ * Les deux dernières vignettes représentent des interfaces. Le site étant
+ * redevenu sombre, elles reprennent les tokens globaux : la palette locale
+ * qui leur avait été donnée pour survivre au thème clair n'a plus lieu d'être.
  */
-const darkTile = {
-  ring: "#0a0a0a",
-  surface: "#1a1a1a",
-  border: "#333333",
-  dim: "#8a8a8a",
-  accent: "#5fa8ff",
+const tile = {
+  ring: "var(--bg)",
+  surface: "var(--card-soft)",
+  border: "var(--border-strong)",
+  dim: "var(--dim)",
+  accent: "var(--accent)",
 } as const;
 
 export default async function TeamGrid() {
@@ -70,7 +69,7 @@ export default async function TeamGrid() {
                   }} />
                   <div style={{
                     fontSize: 52, lineHeight: 1,
-                    color: darkTile.accent,
+                    color: tile.accent,
                     textShadow: "0 0 24px rgba(95,168,255,0.8)",
                     position: "relative",
                   }}>◉</div>
@@ -82,7 +81,7 @@ export default async function TeamGrid() {
                     {[1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,1,0,1,0].map((on, i) => (
                       <div key={i} style={{
                         width: 6, height: 6, borderRadius: 999,
-                        background: on ? darkTile.accent : darkTile.border,
+                        background: on ? tile.accent : tile.border,
                         opacity: on ? 0.3 + (i % 5) * 0.12 : 0.2,
                       }} />
                     ))}
@@ -114,8 +113,8 @@ export default async function TeamGrid() {
                     ].map((r, i) => (
                       <div key={r.l} style={{
                         width: 48, height: 48, borderRadius: 999,
-                        background: darkTile.surface,
-                        border: `2.5px solid ${darkTile.ring}`,
+                        background: tile.surface,
+                        border: `2.5px solid ${tile.ring}`,
                         marginLeft: i === 0 ? 0 : -14,
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontFamily: "var(--font-sans)", fontSize: 16, fontWeight: 600,
@@ -131,9 +130,9 @@ export default async function TeamGrid() {
                     {["Design", "Web", "Copy"].map(label => (
                       <span key={label} style={{
                         fontFamily: "var(--font-mono)", fontSize: 10,
-                        color: darkTile.dim, letterSpacing: "0.06em",
+                        color: tile.dim, letterSpacing: "0.06em",
                         padding: "3px 9px", borderRadius: 999,
-                        border: `1px solid ${darkTile.border}`,
+                        border: `1px solid ${tile.border}`,
                       }}>
                         {label}
                       </span>
