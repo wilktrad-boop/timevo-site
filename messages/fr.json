@@ -54,7 +54,7 @@
     "items": [
       {
         "big": "0",
-        "cap": "relance oubliée. Plus jamais une affaire perdue par négligence."
+        "cap": "relance oubliée. Plus jamais une affaire perdue par oubli."
       },
       {
         "big": "24/7",
@@ -75,12 +75,12 @@
       "Des essais ChatGPT qui n'ont rien laissé derrière eux",
       "Des outils génériques qui ne connaissent rien à votre métier",
       "Des logiciels qui ne se parlent pas",
-      "Des process qui n'existent que dans la tête d'un tiers",
+      "Des process qui n'existent que dans la tête d'une seule personne",
       "Une croissance freinée par du travail à la main"
     ],
     "punch": {
       "lead": "Vous n'avez pas un problème d'outils :",
-      "accent": "vous avez un problème de systèmes taillés pour vous."
+      "accent": "il vous manque des systèmes taillés pour vous."
     }
   },
   "solution": {
