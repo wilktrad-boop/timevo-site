@@ -3,7 +3,7 @@
  * composants ; l'agenda intégré du bloc « Commencer » en ajoutait une
  * onzième, dérivée de la première. Elle vit ici.
  */
-export const CONTACT_HREF = "https://calendly.com/hello-timevo/30min";
+export const CONTACT_HREF = "https://calendly.com/hello-timevo/diagnostic-offert";
 
 /**
  * URL d'intégration de l'agenda, aux couleurs du site.
