@@ -37,23 +37,23 @@ export default async function CardSection({
           style={{
             display: "grid",
             gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-            gap: 16,
+            gap: 12,
           }}
         >
           {items.map(({ title, desc }) => (
             <div key={title} style={{
               background: "var(--card)", border: "1px solid var(--border)",
-              borderRadius: 20, padding: 26,
-              display: "flex", flexDirection: "column", gap: 10,
+              borderRadius: 16, padding: 24,
+              display: "flex", flexDirection: "column", gap: 8,
             }}>
               <h3 style={{
-                fontFamily: "var(--font-sans)", fontSize: 19, fontWeight: 600,
-                letterSpacing: "-0.02em", lineHeight: 1.25, margin: 0, color: "var(--text)",
+                fontFamily: "var(--font-sans)", fontSize: 17, fontWeight: 500,
+                lineHeight: 1.3, margin: 0, color: "var(--text)",
               }}>
                 {title}
               </h3>
               <p style={{
-                fontFamily: "var(--font-sans)", fontSize: 14.5, lineHeight: 1.55,
+                fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: "20px",
                 color: "var(--dim)", margin: 0,
               }}>
                 {desc}

@@ -7,25 +7,26 @@
  *   - Satori, qui génère les images Open Graph hors du DOM.
  *
  * Toute modification ici doit être répercutée dans `app/globals.css`, et
- * inversement.
+ * inversement. Les filets sont des aplats équivalents aux alphas du CSS.
  */
 export const theme = {
-  bg: "#100c18",
-  card: "#191424",
-  cardSoft: "#201a2e",
-  border: "#2c2440",
-  borderStrong: "#3c3355",
-  text: "#efecf5",
-  dim: "#9990ac",
-  dim2: "#8c82a0",
+  bg: "#0c0e14",
+  card: "#12151d",
+  cardSoft: "#1a1e28",
+  border: "#1e212a",
+  borderStrong: "#2b2f3a",
+  text: "#eef0f5",
+  dim: "#a3a9b8",
+  dim2: "#7a8296",
 
   accent: "#5fa8ff",
   accentStrong: "#8ec4ff",
-  accentSoft: "#a98aff",
-  accentGlow: "rgba(124,77,255,0.22)",
-  accentTint: "rgba(124,77,255,0.10)",
-  gradientFrom: "#4ec3ff",
-  gradientTo: "#7c4dff",
+  accentInk: "#0c0e14",
+  accentSoft: "#5fa8ff",
+  accentGlow: "rgba(0,0,0,0)",
+  accentTint: "rgba(95,168,255,0.10)",
+  gradientFrom: "#5fa8ff",
+  gradientTo: "#5fa8ff",
 } as const;
 
 /**

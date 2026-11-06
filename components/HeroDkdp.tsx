@@ -1,33 +1,26 @@
 import { getTranslations } from "next-intl/server";
 import { Arrow, Eyebrow, PillPrimary, PillGhost } from "./primitives";
+import HeroActivityCard, { type ActivityRow } from "./HeroActivityCard";
 import { CONTACT_HREF } from "@/lib/contact";
 
 /**
- * Hero centré, sur une seule colonne.
+ * Hero en deux temps : le texte, court et centré, puis la carte d'activité
+ * qui occupe toute la largeur utile en dessous.
  *
- * La carte d'activité qui occupait la colonne de droite est retirée : elle
- * montrait des données de démonstration, pas une preuve. Son fil d'activité
- * reste dans `hero.card` côté messages, en attendant de savoir ce qui prendra
- * sa place.
- *
- * Le H1 dispose de la pleine largeur, ce qui laisse remonter le corps. Sa
- * borne haute reste dictée par la seconde ligne, la plus longue des deux :
- * au-delà elle se casse et la césure imposée par le copy ne veut plus rien
- * dire. Sa fin passe en dégradé d'accent — c'est là que se trouve le
- * différenciateur, et une page entièrement en noir et blanc n'a nulle part
- * où poser l'œil.
- *
- * Les boutons ne portent pas la classe `hero-ctas` : elle les repasse à gauche
- * sous 900 px, ce qui a du sens pour les hero alignés à gauche des pages ville
- * et secteur, pas ici.
+ * La carte est le seul moment coloré de la page : elle montre des workflows
+ * qui tournent (devis envoyé, relance à J+7, appel qualifié, rapport du
+ * lundi), avec le signal « données fictives » lisible avant les données.
+ * Tout le reste du hero reste en neutres : le titre ne porte plus de
+ * dégradé, l'œil se pose sur la carte.
  */
 export default async function HeroDkdp() {
   const t = await getTranslations("hero");
+  const rows = t.raw("card.rows") as ActivityRow[];
 
   return (
-    <section style={{ padding: "104px 28px 88px", position: "relative" }}>
+    <section style={{ padding: "96px 28px 0", position: "relative" }}>
       <div style={{
-        maxWidth: 1000, margin: "0 auto",
+        maxWidth: 1200, margin: "0 auto",
         display: "flex", flexDirection: "column", alignItems: "center",
         textAlign: "center",
       }}>
@@ -35,41 +28,44 @@ export default async function HeroDkdp() {
 
         <h1 style={{
           fontFamily: "var(--font-sans)",
-          fontSize: "clamp(32px, 5.6vw, 70px)",
-          fontWeight: 700,
-          letterSpacing: "-0.04em",
-          lineHeight: 1.04,
-          margin: "28px 0 0",
+          fontSize: "clamp(36px, 5.2vw, 64px)",
+          fontWeight: 500,
+          letterSpacing: "-0.03em",
+          lineHeight: 1.06,
+          margin: "24px 0 0",
+          maxWidth: 880,
           color: "var(--text)",
         }}>
           {t("h1_line1")}<br />
-          {t("h1_line2")}{" "}
-          <span style={{
-            background: "var(--accent-gradient)",
-            WebkitBackgroundClip: "text", backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}>
-            {t("h1_accent")}
-          </span>
+          {t("h1_line2")} {t("h1_accent")}
         </h1>
 
         <p style={{
           fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.55,
-          color: "var(--dim)", margin: 0, marginTop: 28, maxWidth: 640,
+          color: "var(--dim)", margin: 0, marginTop: 24, maxWidth: 576,
         }}>
           {t("subtitle")}
         </p>
 
         <div style={{
-          display: "flex", gap: 12, marginTop: 36,
+          display: "flex", gap: 12, marginTop: 32,
           flexWrap: "wrap", justifyContent: "center",
         }}>
           <PillPrimary href={CONTACT_HREF} large>
-            {t("cta_primary")} <Arrow color="#fff" size={14} />
+            {t("cta_primary")} <Arrow size={14} />
           </PillPrimary>
           <PillGhost href="#solutions" large>
             {t("cta_secondary")}
           </PillGhost>
+        </div>
+
+        <div style={{ width: "100%", maxWidth: 880, marginTop: 64, textAlign: "left" }}>
+          <HeroActivityCard
+            badge={t("card.badge")}
+            source={t("card.source")}
+            status={t("card.status")}
+            rows={rows}
+          />
         </div>
       </div>
     </section>

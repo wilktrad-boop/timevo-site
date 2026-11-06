@@ -43,20 +43,20 @@ export default function StickyMobileCta() {
         bottom: 16, left: 16, right: 16,
         display: "none",
         alignItems: "center", justifyContent: "center", gap: 10,
-        padding: "14px 22px",
-        background: "var(--accent-gradient)",
-        color: "#fff", borderRadius: 999,
-        fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 600,
+        height: 48, padding: "0 20px",
+        background: "var(--accent)",
+        color: "var(--accent-ink)", borderRadius: 12,
+        fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 500,
         textDecoration: "none",
-        boxShadow: "0 0 0 1px var(--accent), 0 12px 32px var(--accent-glow)",
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18), var(--shadow)",
         zIndex: 25,
         opacity: show ? 1 : 0,
         transform: show ? "translateY(0)" : "translateY(80px)",
         pointerEvents: show ? "auto" : "none",
-        transition: "opacity .2s ease, transform .2s ease",
+        transition: "opacity .2s var(--ease), transform .2s var(--ease)",
       }}
     >
-      {t("cta")} <Arrow size={14} color="#fff" />
+      {t("cta")} <Arrow size={14} />
     </a>
   );
 }

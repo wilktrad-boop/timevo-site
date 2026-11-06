@@ -4,7 +4,7 @@ import React from "react";
 
 // ── SVG Glyphs ────────────────────────────────────────────────────────
 
-export const Arrow = ({ size = 14, color = "currentColor", stroke = 1.6 }) => (
+export const Arrow = ({ size = 14, color = "currentColor", stroke = 1.5 }) => (
   <svg width={size} height={size} viewBox="0 0 14 14" fill="none" style={{ flex: "0 0 auto" }}>
     <path d="M2 7h10M8 3l4 4-4 4" stroke={color} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round" />
   </svg>
@@ -12,7 +12,7 @@ export const Arrow = ({ size = 14, color = "currentColor", stroke = 1.6 }) => (
 
 export const ArrowDown = ({ size = 14, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 14 14" fill="none">
-    <path d="M7 2v10M3 8l4 4 4-4" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M7 2v10M3 8l4 4 4-4" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -36,42 +36,34 @@ export const Sparkle = ({ size = 10, color }: { size?: number; color: string }) 
 // ── Eyebrow ───────────────────────────────────────────────────────────
 
 /**
- * Pastille d'intitulé de section, posée au-dessus du titre.
+ * Intitulé de section, posé au-dessus du titre.
  *
- * Elle remplace le label mono en capitales espacées : à côté d'un titre en
- * 700, un label technique tenait le second rôle sans le dire. La pastille
- * l'assume — fond de carte, bordure, casse normale, et un point d'accent qui
- * pulse pour rappeler que la page est vivante.
+ * Un libellé discret en casse normale, avec l'icône du bloc à sa gauche.
+ * Pas de boîte, pas de point qui pulse : il introduit, il ne décore pas.
  */
 export const Eyebrow = ({ children, icon }: {
   children: React.ReactNode;
-  /** Icône du bloc. Sans elle, la pastille retombe sur le point qui pulse. */
+  /** Icône du bloc, à la couleur du texte secondaire. */
   icon?: React.ReactNode;
 }) => (
   <span style={{
-    display: "inline-flex", alignItems: "center", gap: 9,
-    padding: "7px 15px",
-    background: "var(--card)",
+    display: "inline-flex", alignItems: "center", gap: 8,
     color: "var(--dim)",
-    borderRadius: 999,
-    border: "1px solid var(--border)",
-    fontSize: 13, fontWeight: 500,
+    fontSize: 14, fontWeight: 500,
     fontFamily: "var(--font-sans)",
-    letterSpacing: "-0.005em",
     whiteSpace: "nowrap",
   }}>
-    {icon ?? (
-      <span className="eyebrow-dot" style={{
-        width: 7, height: 7, borderRadius: 999,
-        background: "var(--accent)", flexShrink: 0,
-      }} />
-    )}
+    {icon}
     {children}
   </span>
 );
 
 // ── Buttons ───────────────────────────────────────────────────────────
 
+/**
+ * Bouton principal : aplat d'accent, texte sombre (≈8:1), un liseré clair en
+ * haut pour la profondeur. Pas de halo, pas de dégradé.
+ */
 export const PillPrimary = ({
   children, large, fullWidth, href, onClick,
 }: {
@@ -82,21 +74,25 @@ export const PillPrimary = ({
   onClick?: () => void;
 }) => {
   const style: React.CSSProperties = {
-    display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10,
-    padding: large ? "16px 26px" : "13px 22px",
-    background: "var(--accent-gradient)",
-    color: "#fff", borderRadius: 999,
-    fontSize: large ? 14 : 13, fontWeight: 600,
+    display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
+    height: large ? 48 : 40,
+    padding: large ? "0 20px" : "0 16px",
+    background: "var(--accent)",
+    color: "var(--accent-ink)", borderRadius: 10,
+    fontSize: large ? 15 : 14, fontWeight: 500,
     border: "none",
     fontFamily: "var(--font-sans)",
     cursor: "pointer",
     width: fullWidth ? "100%" : "auto",
-    boxShadow: "0 0 0 1px var(--accent), 0 12px 32px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.18)",
-    letterSpacing: "-0.01em",
-    transition: "transform .15s ease, box-shadow .15s ease",
+    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18)",
+    transition: "background-color .15s var(--ease), transform .12s var(--ease)",
     textDecoration: "none",
     whiteSpace: "nowrap",
   };
+  const enter = (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.background = "var(--accent-strong)"; };
+  const leave = (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.background = "var(--accent)"; };
+  const down = (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.transform = "scale(0.98)"; };
+  const up = (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.transform = "scale(1)"; };
   if (href) {
     const external = /^https?:/i.test(href);
     return (
@@ -105,8 +101,7 @@ export const PillPrimary = ({
         target={external ? "_blank" : undefined}
         rel={external ? "noopener noreferrer" : undefined}
         style={style}
-        onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-1px)")}
-        onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}
+        onMouseEnter={enter} onMouseLeave={leave} onMouseDown={down} onMouseUp={up}
       >
         {children}
       </a>
@@ -114,13 +109,13 @@ export const PillPrimary = ({
   }
   return (
     <button style={style} onClick={onClick}
-      onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-1px)")}
-      onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}>
+      onMouseEnter={enter} onMouseLeave={leave} onMouseDown={down} onMouseUp={up}>
       {children}
     </button>
   );
 };
 
+/** Bouton secondaire : surface relevée et filet, texte principal. */
 export const PillGhost = ({
   children, large, href,
 }: {
@@ -129,17 +124,18 @@ export const PillGhost = ({
   href?: string;
 }) => {
   const style: React.CSSProperties = {
-    display: "inline-flex", alignItems: "center", gap: 10,
-    padding: large ? "15px 25px" : "12px 21px",
-    background: "transparent", color: "var(--text)",
-    borderRadius: 999,
-    fontSize: large ? 14 : 13, fontWeight: 600,
+    display: "inline-flex", alignItems: "center", gap: 8,
+    height: large ? 48 : 40,
+    padding: large ? "0 20px" : "0 16px",
+    background: "var(--card-soft)", color: "var(--text)",
+    borderRadius: 10,
+    fontSize: large ? 15 : 14, fontWeight: 500,
     border: "1px solid var(--border-strong)",
     fontFamily: "var(--font-sans)",
     cursor: "pointer",
-    letterSpacing: "-0.01em",
     textDecoration: "none",
     whiteSpace: "nowrap",
+    transition: "border-color .15s var(--ease)",
   };
   if (href) return <a href={href} style={style}>{children}</a>;
   return <button style={style}>{children}</button>;
@@ -150,8 +146,7 @@ export const PillGhost = ({
 export const MonoLabel = ({ children }: { children: React.ReactNode }) => (
   <div style={{
     fontFamily: "var(--font-mono)",
-    fontSize: 11, color: "var(--dim)",
-    letterSpacing: "0.12em", textTransform: "uppercase",
+    fontSize: 12, color: "var(--dim-2)",
     marginBottom: 16,
   }}>
     {children}

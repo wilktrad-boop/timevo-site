@@ -3,20 +3,16 @@ import { getTranslations } from "next-intl/server";
 /**
  * Bandeau de trois repères, juste sous le hero.
  *
- * Il remplace l'ancien StatsBlock, qui animait des compteurs : « 0 », « 24/7 »
- * et « J+21 » ne se comptent pas, et faire monter un compteur jusqu'à zéro n'a
- * pas de sens. Les trois valeurs sont posées, sans mouvement.
- *
- * Le « 0 » se lit mal seul en gros corps — on croit à une valeur manquante.
- * Sa légende commence donc par le nom de la chose comptée, « relance
- * oubliée », pour que la ligne se lise d'un bloc.
+ * « 0 », « 24/7 » et « J+21 » ne se comptent pas : les trois valeurs sont
+ * posées, sans mouvement, en texte principal. Le « 0 » se lit mal seul en gros
+ * corps — sa légende commence donc par le nom de la chose comptée.
  */
 export default async function StatsBand() {
   const t = await getTranslations("band");
   const items = t.raw("items") as { big: string; cap: string }[];
 
   return (
-    <section style={{ padding: "8px 28px 72px" }}>
+    <section style={{ padding: "64px 28px 80px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div
           className="band-grid"
@@ -24,22 +20,20 @@ export default async function StatsBand() {
         >
           {items.map(({ big, cap }) => (
             <div key={big} style={{
-              padding: "26px 8px", borderTop: "1px solid var(--border-strong)",
+              padding: "24px 8px 0", borderTop: "1px solid var(--border-strong)",
               display: "flex", flexDirection: "column", alignItems: "center",
               textAlign: "center",
             }}>
               <div style={{
-                fontFamily: "var(--font-sans)", fontSize: "clamp(38px, 4.6vw, 66px)",
-                fontWeight: 700, letterSpacing: "-0.05em", lineHeight: 0.95,
-                background: "var(--accent-gradient)",
-                WebkitBackgroundClip: "text", backgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                fontFamily: "var(--font-sans)", fontSize: "clamp(36px, 4vw, 56px)",
+                fontWeight: 500, letterSpacing: "-0.02em", lineHeight: 1,
+                color: "var(--text)", fontVariantNumeric: "tabular-nums",
               }}>
                 {big}
               </div>
               <p style={{
-                fontFamily: "var(--font-sans)", fontSize: 14.5, lineHeight: 1.5,
-                color: "var(--dim)", margin: 0, marginTop: 14, maxWidth: 300,
+                fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: "20px",
+                color: "var(--dim)", margin: 0, marginTop: 12, maxWidth: 300,
               }}>
                 {cap}
               </p>

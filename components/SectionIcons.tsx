@@ -9,13 +9,13 @@ import React from "react";
  * une grille, une étoile.
  *
  * Toutes sont dessinées dans une grille de 16, au même poids de trait, et
- * héritent de la couleur d'accent plutôt que de la couleur du texte : c'est
- * le seul point coloré de la pastille.
+ * prennent la couleur du texte qui les accompagne : elles ne portent pas de
+ * couleur propre.
  */
 
 const S = {
-  width: 14, height: 14, viewBox: "0 0 16 16", fill: "none",
-  stroke: "var(--accent)", strokeWidth: 1.5,
+  width: 16, height: 16, viewBox: "0 0 16 16", fill: "none",
+  stroke: "currentColor", strokeWidth: 1.5,
   strokeLinecap: "round", strokeLinejoin: "round",
   style: { flexShrink: 0 },
 } as const;

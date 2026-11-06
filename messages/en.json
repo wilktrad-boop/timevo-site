@@ -26,6 +26,9 @@
     "cta_primary": "Book a free diagnostic",
     "cta_secondary": "See what we put in place",
     "card": {
+      "badge": "Sample data",
+      "source": "pool installer demo",
+      "status": "Running · Monday 08:00",
       "rows": [
         {
           "label": "Quote sent · M. family — Publier",
@@ -54,15 +57,15 @@
     "items": [
       {
         "big": "0",
-        "cap": "follow-ups forgotten. No more deals lost to oversight."
+        "cap": "follow-ups forgotten. No more deals lost to oversight"
       },
       {
         "big": "24/7",
-        "cap": "your clients get an answer, nights and weekends included."
+        "cap": "your clients get an answer, nights and weekends included"
       },
       {
         "big": "D+21",
-        "cap": "your first system live in production."
+        "cap": "your first system live in production"
       }
     ]
   },
@@ -130,7 +133,7 @@
       },
       {
         "lead": "Growing organisations",
-        "rest": "that want to scale without reorganising"
+        "rest": "that want to grow without reorganising"
       },
       {
         "lead": "Service agencies",

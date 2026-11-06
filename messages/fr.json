@@ -26,6 +26,9 @@
     "cta_primary": "Demander un diagnostic gratuit",
     "cta_secondary": "Voir ce qu'on met en place",
     "card": {
+      "badge": "Données fictives",
+      "source": "démo pisciniste",
+      "status": "En cours · lundi 08:00",
       "rows": [
         {
           "label": "Devis envoyé · Famille M. — Publier",
@@ -54,15 +57,15 @@
     "items": [
       {
         "big": "0",
-        "cap": "relance oubliée. Plus jamais une affaire perdue par oubli."
+        "cap": "relance oubliée. Plus jamais une affaire perdue par oubli"
       },
       {
         "big": "24/7",
-        "cap": "vos clients obtiennent une réponse, la nuit et le week-end compris."
+        "cap": "vos clients obtiennent une réponse, la nuit et le week-end compris"
       },
       {
         "big": "J+21",
-        "cap": "votre premier système en production."
+        "cap": "votre premier système en production"
       }
     ]
   },
@@ -130,11 +133,11 @@
       },
       {
         "lead": "Les structures en croissance",
-        "rest": "qui veulent scaler sans tout réorganiser"
+        "rest": "qui veulent grandir sans tout réorganiser"
       },
       {
         "lead": "Les agences de services",
-        "rest": "qui souhaitent booster leur productivité"
+        "rest": "qui veulent produire plus avec la même équipe"
       }
     ],
     "punch": {

@@ -36,17 +36,17 @@ export default function FaqAccordion({
                   background: "transparent", border: "none",
                   display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24,
                   fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 500,
-                  letterSpacing: "-0.01em", color: "var(--text)", textAlign: "left",
+                  color: "var(--text)", textAlign: "left",
                 }}>
                 <span style={{ flex: 1 }}>{q}</span>
                 <span aria-hidden="true" style={{
-                  width: 32, height: 32, borderRadius: 999, flexShrink: 0,
+                  width: 32, height: 32, borderRadius: 8, flexShrink: 0,
                   border: "1px solid var(--border-strong)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   color: isOpen ? "var(--accent)" : "var(--dim)",
                   fontSize: 16,
                   transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
-                  transition: "transform .2s ease, color .2s ease",
+                  transition: "transform .2s var(--ease), color .2s var(--ease)",
                 }}>+</span>
               </button>
             </h3>

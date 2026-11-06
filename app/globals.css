@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  /* Fond violet très sombre plutôt que noir : le noir pur écrase les cartes,
-     qui ne se distinguaient plus que par leur bordure. La teinte suit celle
-     du dégradé d'accent, pour que le fond et l'accent viennent de la même
-     famille au lieu de se croiser. */
-  --bg: #100c18;
-  --card: #191424;
-  --card-soft: #201a2e;
-  --border: #2c2440;
-  --border-strong: #3c3355;
-  --text: #efecf5;
-  --dim: #9990ac; /* AA sur --bg (≈6,3:1) */
-  --dim-2: #8c82a0; /* AA sur --bg pour le petit texte (≈5,3:1) */
+  /* Rampe neutre « encre » : un sombre froid, presque gris, pour que les
+     surfaces ne se lisent jamais comme une couleur. L'accent bleu de la
+     marque reste le seul point coloré du chrome ; le violet a disparu. */
+  --bg: #0c0e14;
+  --card: #12151d;
+  --card-soft: #1a1e28;
+  --border: rgba(238, 240, 245, 0.08);
+  --border-strong: rgba(238, 240, 245, 0.14);
+  --text: #eef0f5;
+  --dim: #a3a9b8; /* AA sur --bg (≈7,5:1) */
+  --dim-2: #7a8296; /* texte discret et icônes (≈4,6:1) */
 
   --accent: #5fa8ff;
-  --accent-strong: #8ec4ff; /* hover state for accent elements */
-  --accent-soft: #a98aff;
-  --accent-glow: rgba(124, 77, 255, 0.22);
-  --accent-tint: rgba(124, 77, 255, 0.10);
-  --accent-gradient: linear-gradient(135deg, #4ec3ff 0%, #7c4dff 100%);
+  --accent-strong: #8ec4ff; /* survol des éléments en accent */
+  --accent-ink: #0c0e14; /* texte posé sur l'accent (≈8:1) */
+  --accent-soft: #5fa8ff;
+  --accent-glow: rgba(0, 0, 0, 0); /* plus de halo : conservé pour les pages qui le consomment encore */
+  --accent-tint: rgba(95, 168, 255, 0.10);
+  --accent-gradient: linear-gradient(135deg, #5fa8ff 0%, #5fa8ff 100%); /* aplat : plus de dégradé */
 
-  /* En sombre les surfaces se séparent d'abord par leurs bordures. Les ombres
-     restent définies parce que la nav, le hero et les dashboards de démo les
-     consomment : elles portent de la profondeur, plus de la séparation. */
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.40);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.40);
+  /* En sombre la profondeur vient des paliers de surface et des filets.
+     Les ombres restent définies pour les menus et les démos. */
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -63,17 +64,11 @@ section[id],
 .ticker-track      { animation: timevo-ticker 40s linear infinite; }
 .ticker-track-slow { animation: timevo-ticker 60s linear infinite; }
 
-/* Point de la pastille d'intitulé : une pulsation lente, jamais un clignotement. */
-@keyframes eyebrow-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: .45; transform: scale(.82); }
-}
-.eyebrow-dot { animation: eyebrow-pulse 2.6s ease-in-out infinite; }
 
 .fade-up {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(8px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
 }
 .fade-up.visible {
   opacity: 1;
@@ -84,7 +79,6 @@ section[id],
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .ticker-track, .ticker-track-slow { animation: none; }
-  .eyebrow-dot { animation: none; }
 }
 
 /* Footer links: hover handled in CSS so the footer can stay a Server Component */
@@ -97,11 +91,10 @@ section[id],
 
 /* Cartes de la section « ce qu'on fait » : même raison, hover en CSS */
 .hover-card {
-  transition: border-color .15s, transform .15s;
+  transition: border-color .15s var(--ease);
 }
 .hover-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+  border-color: var(--border-strong);
 }
 
 /* Maillage interne : bloc RelatedLinks + fil d'Ariane */

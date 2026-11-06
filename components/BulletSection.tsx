@@ -9,10 +9,9 @@ type Bullet = string | { lead: string; rest: string };
  * Résultats. Les trois ont la même partition dans le copy v5 : ils ne
  * diffèrent que par leur contenu et par la présence d'un sous-titre.
  *
- * Les puces sont des cartes empilées, comme chez Vista, et non une liste à
- * tirets : à la taille de corps de la home, une liste serrée se lit comme une
- * note de bas de page. Chaque carte porte à gauche une pastille d'accent qui
- * tient le rôle de puce.
+ * Les puces sont des lignes séparées par des filets, dans une colonne de
+ * lecture, sans carte ni pastille : à cette taille de corps, c'est le texte
+ * qui porte, pas le cadre.
  */
 export default async function BulletSection({
   ns, id, icon, dimSecondLine = true,
@@ -38,42 +37,21 @@ export default async function BulletSection({
           dimSecondLine={dimSecondLine}
         />
 
-        <div style={{
-          display: "flex", flexDirection: "column", gap: 12,
-          maxWidth: 860, margin: "0 auto",
-        }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", borderTop: "1px solid var(--border)" }}>
           {bullets.map((b) => {
             const lead = typeof b === "string" ? b : b.lead;
             const rest = typeof b === "string" ? null : b.rest;
             return (
-              <div key={lead} style={{
-                display: "grid", gridTemplateColumns: "auto 1fr", gap: 16,
-                alignItems: "center",
-                background: "var(--card)", border: "1px solid var(--border)",
-                borderRadius: 14, padding: "18px 22px",
+              <p key={lead} style={{
+                fontFamily: "var(--font-sans)", fontSize: 17,
+                fontWeight: 500, lineHeight: 1.45,
+                margin: 0, padding: "16px 0", color: "var(--text)",
+                borderBottom: "1px solid var(--border)",
               }}>
-                <span aria-hidden="true" style={{
-                  width: 30, height: 30, borderRadius: 9,
-                  background: "var(--accent-tint)",
-                  border: "1px solid var(--border)",
-                  display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
-                }}>
-                  <span style={{
-                    width: 8, height: 8, borderRadius: 999,
-                    background: "var(--accent-gradient)",
-                  }} />
-                </span>
-                <p style={{
-                  fontFamily: "var(--font-sans)", fontSize: "clamp(15px, 1.5vw, 17px)",
-                  fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4,
-                  margin: 0, color: "var(--text)",
-                }}>
-                  {rest
-                    ? <>{lead} <span style={{ color: "var(--dim)", fontWeight: 400 }}>{rest}</span></>
-                    : lead}
-                </p>
-              </div>
+                {rest
+                  ? <>{lead} <span style={{ color: "var(--dim)", fontWeight: 400 }}>{rest}</span></>
+                  : lead}
+              </p>
             );
           })}
         </div>

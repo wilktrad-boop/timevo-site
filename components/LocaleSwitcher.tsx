@@ -19,13 +19,12 @@ export default function LocaleSwitcher() {
     <button onClick={toggle} style={{
       background: "transparent",
       border: "1px solid var(--border-strong)",
-      borderRadius: 999,
-      padding: "6px 14px",
+      borderRadius: 8,
+      height: 36, padding: "0 12px",
       fontFamily: "var(--font-mono)",
-      fontSize: 11,
+      fontSize: 12,
       fontWeight: 500,
       color: "var(--dim)",
-      letterSpacing: "0.06em",
       cursor: "pointer",
       transition: "color .15s, border-color .15s",
     }}

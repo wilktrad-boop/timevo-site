@@ -37,7 +37,7 @@ export default function NavDkdp() {
       position: "sticky", top: 0, zIndex: 30,
       padding: "20px 28px",
       display: "flex", justifyContent: "space-between", alignItems: "center",
-      background: "rgba(16,12,24,0.92)",
+      background: "rgba(12,14,20,0.92)",
       backdropFilter: "blur(12px)",
       WebkitBackdropFilter: "blur(12px)",
       borderBottom: "1px solid var(--border)",
@@ -47,11 +47,7 @@ export default function NavDkdp() {
         letterSpacing: "-0.04em", color: "var(--text)",
         textDecoration: "none",
       }}>
-        Timevo<span style={{
-          background: "var(--accent-gradient)",
-          WebkitBackgroundClip: "text", backgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}>.</span>
+        Timevo<span style={{ color: "var(--accent)" }}>.</span>
       </a>
 
       <div style={{ display: "flex", gap: 28, fontFamily: "var(--font-sans)", fontSize: 13, color: "var(--dim)" }}
@@ -76,7 +72,7 @@ export default function NavDkdp() {
             style={{
               color: solutionsOpen ? "var(--text)" : "var(--dim)",
               textDecoration: "none",
-              transition: "color .15s",
+              transition: "color .15s var(--ease)",
               display: "inline-flex", alignItems: "center", gap: 6,
             }}
           >
@@ -152,10 +148,11 @@ export default function NavDkdp() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            padding: "10px 18px",
+            height: 36, padding: "0 16px",
             background: "var(--text)", color: "var(--bg)",
-            borderRadius: 999,
-            fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600,
+            borderRadius: 10,
+            fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 500,
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.12)",
             display: "inline-flex", alignItems: "center", gap: 8,
             textDecoration: "none", whiteSpace: "nowrap",
             transition: "opacity .15s",
@@ -174,10 +171,10 @@ export default function NavDkdp() {
           className="nav-hamburger"
           style={{
             display: "none",
-            width: 40, height: 40,
+            width: 36, height: 36,
             background: "transparent",
             border: "1px solid var(--border-strong)",
-            borderRadius: 999,
+            borderRadius: 10,
             alignItems: "center", justifyContent: "center",
             cursor: "pointer",
             color: "var(--text)",
@@ -210,9 +207,8 @@ export default function NavDkdp() {
       }}
     >
         <div style={{
-          fontFamily: "var(--font-mono)", fontSize: 11,
-          color: "var(--dim-2)", letterSpacing: "0.12em",
-          textTransform: "uppercase", margin: "12px 16px 8px",
+          fontFamily: "var(--font-mono)", fontSize: 12,
+          color: "var(--dim-2)", margin: "12px 16px 8px",
         }}>
           {t("solutions")}
         </div>
@@ -257,16 +253,16 @@ export default function NavDkdp() {
           onClick={() => setMobileOpen(false)}
           style={{
             marginTop: 24,
-            padding: "16px 22px",
-            background: "var(--accent-gradient)",
-            color: "#fff", borderRadius: 999,
-            fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 600,
+            height: 48, padding: "0 20px",
+            background: "var(--accent)",
+            color: "var(--accent-ink)", borderRadius: 10,
+            fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 500,
             display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
             textDecoration: "none",
-            boxShadow: "0 0 0 1px var(--accent), 0 12px 32px var(--accent-glow)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18)",
           }}
         >
-          {t("cta")} <Arrow size={14} color="#fff" />
+          {t("cta")} <Arrow size={14} />
         </a>
     </div>
     </>
