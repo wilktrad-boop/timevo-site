@@ -28,7 +28,7 @@ export type SectorContent = {
 export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
   cuisiniste: {
     fr: {
-      metaTitle: "Automatisation pour cuisiniste — Devis, suivi chantier, relances",
+      metaTitle: "Automatisation pour cuisiniste — devis et relances",
       metaDescription:
         "Automatisation pour cuisinistes : devis post-showroom en 12 min, relances multi-canal, suivi chantier auto. Workflows n8n compatibles avec vos outils métier.",
       eyebrow: "AUTOMATISATION · CUISINISTE",
@@ -125,7 +125,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
         "On regarde votre flux devis → showroom → chantier et on identifie les 2 ou 3 points où l'automatisation rend du temps tout de suite.",
     },
     en: {
-      metaTitle: "Automation for kitchen installers — Quotes, project tracking, follow-up",
+      metaTitle: "Automation for kitchen installers — quotes, follow-up",
       metaDescription:
         "Automation for kitchen installers: showroom-to-quote in 12 minutes, multi-channel follow-up, automated project tracking. n8n workflows compatible with your industry tools.",
       eyebrow: "AUTOMATION · KITCHEN INSTALLERS",
@@ -225,7 +225,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
 
   pisciniste: {
     fr: {
-      metaTitle: "Automatisation pour pisciniste — Devis, relances, entretien",
+      metaTitle: "Automatisation pour pisciniste — devis et entretien",
       metaDescription:
         "Automatisation pour piscinistes : qualif appels saison haute, devis sur site, planning entretien et hivernage. Workflows n8n et agent IA téléphonique.",
       eyebrow: "AUTOMATISATION · PISCINISTE",
@@ -322,7 +322,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
         "On regarde votre flux d'appels, votre devis moyen et votre récurrence d'entretien. On identifie les workflows qui paient avant la prochaine saison.",
     },
     en: {
-      metaTitle: "Automation for pool builders — Quotes, follow-up, maintenance",
+      metaTitle: "Automation for pool builders — quotes, follow-up",
       metaDescription:
         "Automation for pool builders: peak-season call qualification, on-site quotes, maintenance and winterization scheduling. n8n workflows and AI voice agent.",
       eyebrow: "AUTOMATION · POOL BUILDERS",
@@ -423,7 +423,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
   "panneaux-solaires": {
     fr: {
       metaTitle:
-        "Automatisation pour installateur panneaux solaires — Leads, qualif, suivi",
+        "Automatisation pour installateur solaire — leads, suivi",
       metaDescription:
         "Automatisation pour installateurs photovoltaïques : qualif leads MaPrimeRénov, suivi installation, monitoring post-pose. Workflows n8n et agents IA.",
       eyebrow: "AUTOMATISATION · PHOTOVOLTAÏQUE",
@@ -520,7 +520,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
         "On regarde votre volume de leads, votre process de qualification et votre suivi installation. On identifie où l'automatisation rend le plus de marge.",
     },
     en: {
-      metaTitle: "Automation for solar installers — Leads, qualification, tracking",
+      metaTitle: "Automation for solar installers — leads, tracking",
       metaDescription:
         "Automation for photovoltaic installers: lead qualification, install tracking, post-install monitoring. n8n workflows and AI agents tailored to the long sales cycle.",
       eyebrow: "AUTOMATION · PHOTOVOLTAIC",

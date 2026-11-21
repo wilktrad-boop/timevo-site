@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/pageLabels";
 
 const CITY_SLUG = "thonon-les-bains";
 
-export const alt = "Timevo — agence d'automatisation";
+export const alt = "Timevo — agence IA";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 

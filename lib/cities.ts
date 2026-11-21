@@ -66,11 +66,11 @@ export const CITIES: Record<string, {
         city: "Thonon-les-Bains",
         region: "Haute-Savoie",
         metaTitle:
-          "Agence d'automatisation à Thonon-les-Bains — n8n, agents IA, sites web",
+          "Agence IA à Thonon-les-Bains — automatisation pour PME",
         metaDescription:
-          "Agence d'automatisation à Thonon-les-Bains. Workflows n8n, agents IA, sites web et SEO pour PME du bassin lémanique. Déplacements Évian, Annecy, Genève.",
-        eyebrow: "AGENCE AUTOMATISATION · BASSIN LÉMANIQUE",
-        h1: "Agence d'automatisation à Thonon-les-Bains.",
+          "Agence IA à Thonon-les-Bains. Workflows n8n, agents IA, sites web et SEO pour PME du bassin lémanique. Déplacements Évian, Annecy, Genève.",
+        eyebrow: "AGENCE IA · BASSIN LÉMANIQUE",
+        h1: "Agence IA à Thonon-les-Bains.",
         subtitle:
           "PME haut-savoyardes et frontalières : on automatise vos process pour vous rendre du temps. Présentiel sur Thonon, Évian, Annecy et Genève. Distanciel partout ailleurs.",
         audienceLabel: "Pour qui",
@@ -166,11 +166,11 @@ export const CITIES: Record<string, {
         city: "Thonon-les-Bains",
         region: "Haute-Savoie",
         metaTitle:
-          "Automation agency in Thonon-les-Bains — n8n, AI agents, websites",
+          "AI agency in Thonon-les-Bains — automation for SMBs",
         metaDescription:
-          "Automation agency in Thonon-les-Bains. n8n workflows, AI agents, websites and SEO for SMBs of the Lake Geneva basin. Visits Évian, Annecy, Geneva.",
-        eyebrow: "AUTOMATION AGENCY · LAKE GENEVA BASIN",
-        h1: "Automation agency in Thonon-les-Bains.",
+          "AI agency in Thonon-les-Bains. n8n workflows, AI agents, websites and SEO for SMBs of the Lake Geneva basin. Visits Évian, Annecy, Geneva.",
+        eyebrow: "AI AGENCY · LAKE GENEVA BASIN",
+        h1: "AI agency in Thonon-les-Bains.",
         subtitle:
           "Haute-Savoie and cross-border SMBs: we automate your processes to give you time back. On-site in Thonon, Évian, Annecy and Geneva. Remote everywhere else.",
         audienceLabel: "For",
@@ -278,11 +278,11 @@ export const CITIES: Record<string, {
         city: "Montpellier",
         region: "Hérault",
         metaTitle:
-          "Agence d'automatisation à Montpellier — n8n, agents IA, sites web",
+          "Agence IA à Montpellier — automatisation pour PME",
         metaDescription:
-          "Agence d'automatisation à Montpellier. Workflows n8n, agents IA, sites web et SEO pour PME et SaaS de l'Hérault. Déplacements Béziers, Nîmes, Sète.",
-        eyebrow: "AGENCE AUTOMATISATION · HÉRAULT",
-        h1: "Agence d'automatisation à Montpellier.",
+          "Agence IA à Montpellier. Workflows n8n, agents IA, sites web et SEO pour PME et SaaS de l'Hérault. Déplacements Béziers, Nîmes, Sète.",
+        eyebrow: "AGENCE IA · HÉRAULT",
+        h1: "Agence IA à Montpellier.",
         subtitle:
           "PME, cabinets et SaaS du bassin montpelliérain : on automatise vos process pour vous rendre du temps. Présentiel à Montpellier, Béziers, Nîmes, Sète. Distanciel partout ailleurs.",
         audienceLabel: "Pour qui",
@@ -378,11 +378,11 @@ export const CITIES: Record<string, {
         city: "Montpellier",
         region: "Hérault",
         metaTitle:
-          "Automation agency in Montpellier — n8n, AI agents, websites",
+          "AI agency in Montpellier — automation for SMBs",
         metaDescription:
-          "Automation agency in Montpellier. n8n workflows, AI agents, websites and SEO for SMBs and SaaS in Hérault. Visits Béziers, Nîmes, Sète.",
-        eyebrow: "AUTOMATION AGENCY · HÉRAULT",
-        h1: "Automation agency in Montpellier.",
+          "AI agency in Montpellier. n8n workflows, AI agents, websites and SEO for SMBs and SaaS in Hérault. Visits Béziers, Nîmes, Sète.",
+        eyebrow: "AI AGENCY · HÉRAULT",
+        h1: "AI agency in Montpellier.",
         subtitle:
           "SMBs, firms and SaaS in the Montpellier area: we automate your processes to give you time back. On-site in Montpellier, Béziers, Nîmes, Sète. Remote everywhere else.",
         audienceLabel: "For",

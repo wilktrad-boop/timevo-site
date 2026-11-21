@@ -20,10 +20,10 @@ const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", 
  */
 const UPDATED = {
   home: "2026-07-23",         // ajout de la section démos
-  services: "2026-05-13",     // création des 6 pages service + index
+  services: "2026-11-21",     // titre de l'index /solutions raccourci
   realisations: "2026-11-21", // ajout de Yannick Hulin (site + Instagram)
-  sectors: "2026-05-29",      // création des 3 pages secteur
-  cities: "2026-05-29",       // création des 2 pages ville
+  sectors: "2026-11-21",      // titres raccourcis sous 70 caractères
+  cities: "2026-11-21",       // « Agence IA » : titre, H1, en-tête, description
   demos: "2026-07-23",        // création des 3 démos
   facturation: "2026-08-28",  // retrait du prix affiché sur la page facturation électronique
 } as const;
