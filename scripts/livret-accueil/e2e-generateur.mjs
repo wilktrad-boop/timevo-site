@@ -22,7 +22,7 @@ const LOGO_PNG = Buffer.from(
 );
 
 /** Passe l'écran d'entrée : email, puis code si le serveur en envoie un. */
-async function ouvrirOutil(page, email = "test@exemple.fr") {
+async function ouvrirOutil(page, email = "test@livret.invalid") {
   await page.waitForSelector("[data-acces]");
   await page.fill('[name="email"]', email);
   await page.selectOption('[name="logements"]', "6 à 15");
@@ -121,7 +121,7 @@ try {
     const boite = process.env.E2E_BOITE;
     const pj = fs.readdirSync(boite).filter(f => f.endsWith(".eml")).map(f => fs.readFileSync(path.join(boite, f), "latin1"))
       .find(m => /Subject: Votre livret d'accueil/.test(m) && /filename="?livret-accueil-chalet-des-pins\.pdf/.test(m));
-    assert.ok(pj && /^To: test@exemple\.fr/m.test(pj), "PDF non reçu à l'adresse vérifiée");
+    assert.ok(pj && /^To: test@livret.invalid/m.test(pj), "PDF non reçu à l'adresse vérifiée");
     console.log("ok   PDF envoyé en pièce jointe à l'adresse vérifiée");
   }
   const encart = p.locator('.livret-gen [data-apres-telechargement]');
@@ -173,7 +173,7 @@ try {
   const [gw, giw] = await m.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
   assert.equal(gw, giw, `écran d'entrée : défilement horizontal à 375 px (${gw} > ${giw})`);
   await m.screenshot({ path: path.join(OUT, "acces-375.jpg"), quality: 70, type: "jpeg" });
-  await ouvrirOutil(m, "mobile@exemple.fr");
+  await ouvrirOutil(m, "mobile@livret.invalid");
   const [sw, iw] = await m.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
   assert.equal(sw, iw, `défilement horizontal à 375 px (${sw} > ${iw})`);
   assert.equal(await m.locator("[data-apercu]").isVisible(), false);
