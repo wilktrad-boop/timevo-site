@@ -73,6 +73,9 @@ export default function Apercu({ livret, etapeActive, nomsEtapes, onModifier }: 
         {c.surtitre && <div style={{ fontWeight: 700, fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: couleur, marginBottom: 8 }}>{c.surtitre}</div>}
         <div style={{ fontWeight: 700, fontSize: 28, lineHeight: 1.1, marginBottom: 8 }}>{c.titre}</div>
         <div style={{ color: "#5B6670", fontSize: 15, marginBottom: 20 }}>{c.sousTitre}</div>
+        {/* eslint-disable-next-line @next/next/no-img-element -- photo locale (data URL), jamais envoyée */}
+        {livret.photo && <img src={livret.photo} alt="Photo du logement" data-photo-couverture
+          style={{ display: "block", width: "100%", aspectRatio: "12 / 5", objectFit: "cover", borderRadius: 8, marginBottom: 16 }} />}
         {c.tableau.length > 0 && <Bloc b={{ type: "tableau", lignes: c.tableau }} couleur={couleur} />}
         {c.intro && <p style={{ margin: "14px 0 0", whiteSpace: "pre-line" }}>{c.intro}</p>}
         </Rubrique>

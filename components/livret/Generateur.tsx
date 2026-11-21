@@ -11,6 +11,38 @@ import { Arrow } from "../primitives";
 import { CONTACT_HREF } from "@/lib/contact";
 
 const LOGO_MAX = 1024 * 1024;
+/** Photo brute acceptée avant réduction (une photo de téléphone pèse 3 à 8 Mo). */
+const PHOTO_BRUTE_MAX = 20 * 1024 * 1024;
+/** Plus grand côté de la photo réduite : net en A4, léger dans le brouillon. */
+const PHOTO_COTE_MAX = 1600;
+
+/**
+ * Réduit la photo et la réencode en JPEG. Le réencodage retire aussi les
+ * métadonnées du fichier d'origine (position GPS, appareil) : elles ne
+ * finissent ni dans le brouillon ni dans le PDF.
+ */
+function reduirePhoto(fichier: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(fichier);
+    const img = new window.Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      if (!img.naturalWidth) { reject(new Error("illisible")); return; }
+      const echelle = Math.min(1, PHOTO_COTE_MAX / Math.max(img.naturalWidth, img.naturalHeight));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(img.naturalWidth * echelle);
+      canvas.height = Math.round(img.naturalHeight * echelle);
+      const ctx = canvas.getContext("2d");
+      if (!ctx) { reject(new Error("canvas")); return; }
+      ctx.fillStyle = "#ffffff"; // fond blanc sous les PNG transparents
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL("image/jpeg", 0.82));
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("illisible")); };
+    img.src = url;
+  });
+}
 
 const label = { display: "block", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, color: "var(--text)", marginBottom: 6 } as const;
 const champStyle = {
@@ -66,6 +98,10 @@ export default function Generateur() {
   const haut = useRef<HTMLDivElement>(null);
   const logoInput = useRef<HTMLInputElement>(null);
   const viderLogoInput = () => { if (logoInput.current) logoInput.current.value = ""; };
+  const photoInput = useRef<HTMLInputElement>(null);
+  const viderPhotoInput = () => { if (photoInput.current) photoInput.current.value = ""; };
+  const [erreurPhoto, setErreurPhoto] = useState("");
+  const [photoEnCours, setPhotoEnCours] = useState(false);
 
   // Le brouillon n'est lu qu'après le montage : le rendu serveur reste identique au premier rendu client.
   useEffect(() => { setData(lire()); setCharge(true); }, []);
@@ -106,6 +142,23 @@ export default function Generateur() {
     viderLogoInput();
   }
 
+  async function choisirPhoto(fichier: File | undefined) {
+    setErreurPhoto("");
+    if (!fichier) return;
+    if (!fichier.type.startsWith("image/")) { setErreurPhoto("Choisissez une photo (JPG, PNG ou WebP)."); viderPhotoInput(); return; }
+    if (fichier.size > PHOTO_BRUTE_MAX) { setErreurPhoto("La photo doit faire moins de 20 Mo."); viderPhotoInput(); return; }
+    setPhotoEnCours(true);
+    try {
+      const photo = await reduirePhoto(fichier);
+      setData(d => ({ ...d, photo }));
+    } catch {
+      setErreurPhoto("La photo n'a pas pu être lue. Essayez en JPG ou PNG.");
+    } finally {
+      setPhotoEnCours(false);
+      viderPhotoInput();
+    }
+  }
+
   async function telecharger() {
     setPdfEtat("encours");
     try {
@@ -126,7 +179,7 @@ export default function Generateur() {
   function effacer() {
     if (!confirmeEffacer) { setConfirmeEffacer(true); return; }
     try { window.localStorage.removeItem(CLE_BROUILLON); } catch { /* rien à effacer */ }
-    setData(brouillonVide()); setErreurLogo(""); setPdfEtat("idle"); viderLogoInput(); setConfirmeEffacer(false); aller(0);
+    setData(brouillonVide()); setErreurLogo(""); setErreurPhoto(""); setPdfEtat("idle"); viderLogoInput(); viderPhotoInput(); setConfirmeEffacer(false); aller(0);
   }
 
   return (
@@ -175,6 +228,23 @@ export default function Generateur() {
                   onChange={ev => setData(d => ({ ...d, marque: { ...d.marque, couleur: couleurValide(ev.target.value) } }))}
                   style={{ ...champStyle, padding: 4, height: 46 }} />
               </div>
+            </div>
+          )}
+          {etape === 0 && (
+            <div>
+              <label htmlFor="livret-photo" style={label}>Photo du logement <span style={{ fontWeight: 400, color: "var(--dim)" }}>· facultatif, en couverture</span></label>
+              <input ref={photoInput} id="livret-photo" name="photo" type="file" accept="image/*" onChange={ev => choisirPhoto(ev.target.files?.[0])}
+                style={{ ...champStyle, padding: 9, fontSize: 13 }} />
+              {photoEnCours && <p role="status" style={{ color: "var(--dim)", fontSize: 13, margin: "6px 0 0" }}>Préparation de la photo…</p>}
+              {erreurPhoto && <p role="alert" style={{ color: "#ff8a8a", fontSize: 13, margin: "6px 0 0" }}>{erreurPhoto}</p>}
+              {data.photo && (
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 10 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element -- photo locale (data URL), jamais envoyée */}
+                  <img src={data.photo} alt="" style={{ width: 72, height: 48, objectFit: "cover", borderRadius: 6, border: "1px solid var(--border)" }} />
+                  <button type="button" onClick={() => { setData(d => ({ ...d, photo: null })); viderPhotoInput(); }}
+                    style={{ ...bouton, padding: "6px 0", border: "none", background: "none", color: "var(--accent-soft)", fontSize: 13 }}>Retirer la photo</button>
+                </div>
+              )}
             </div>
           )}
           {e.champs.map(c => <ChampSaisie key={c.id} c={c} valeur={data.valeurs[c.id] ?? ""} onChange={v => maj(c.id, v)} />)}

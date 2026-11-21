@@ -17,6 +17,9 @@ const s = StyleSheet.create({
   titre: { fontSize: 32, lineHeight: 1.15, fontFamily: "Helvetica-Bold", marginBottom: 10 },
   sousTitre: { fontSize: 14, lineHeight: 1.3, color: DIM, marginBottom: 28 },
   logo: { maxWidth: 160, maxHeight: 64, objectFit: "contain", marginBottom: 36 },
+  // 483 pt = largeur utile de l'A4. Bandeau 12:5 recadré au centre : assez bas
+  // pour que la couverture la plus remplie (6 lignes + mot d'accueil) tienne sur une page.
+  photo: { width: 483, height: 200, objectFit: "cover", borderRadius: 6, marginTop: -10, marginBottom: 20 },
   h1: { fontSize: 17, lineHeight: 1.25, fontFamily: "Helvetica-Bold", paddingBottom: 5, borderBottomWidth: 1.2, marginTop: 18, marginBottom: 10 },
   h2: { fontSize: 12, fontFamily: "Helvetica-Bold", marginTop: 12, marginBottom: 5 },
   p: { marginBottom: 6 },
@@ -67,12 +70,15 @@ function LivretDocument({ livret }: { livret: LivretRendu }) {
   return (
     <Document creator="Timevo" producer="Timevo" title={c.sousTitre}>
       <Page size="A4" style={s.page}>
-        <View style={{ marginTop: 90 }}>
+        {/* Avec une photo, la couverture remonte pour tenir sur une page. */}
+        <View style={{ marginTop: livret.photo ? 0 : 90 }}>
           {/* eslint-disable-next-line jsx-a11y/alt-text -- Image de @react-pdf/renderer, sans attribut alt */}
-          {livret.logo ? <Image src={livret.logo} style={s.logo} /> : null}
+          {livret.logo ? <Image src={livret.logo} style={[s.logo, livret.photo ? { marginBottom: 22 } : {}]} /> : null}
           {c.surtitre ? <Text style={[s.surtitre, { color: couleur }]}>{c.surtitre}</Text> : null}
           <Text style={s.titre}>{c.titre}</Text>
           <Text style={s.sousTitre}>{c.sousTitre}</Text>
+          {/* eslint-disable-next-line jsx-a11y/alt-text -- Image de @react-pdf/renderer, sans attribut alt */}
+          {livret.photo ? <Image src={livret.photo} style={s.photo} /> : null}
           {c.tableau.length > 0 && <Bloc b={{ type: "tableau", lignes: c.tableau }} couleur={couleur} />}
           {c.intro ? <Text style={[s.p, { marginTop: 18 }]}>{c.intro}</Text> : null}
         </View>

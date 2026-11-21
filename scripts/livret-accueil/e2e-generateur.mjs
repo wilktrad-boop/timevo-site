@@ -35,6 +35,31 @@ try {
   await p.waitForSelector('[data-apercu] img');
   assert.equal(await p.locator('.livret-gen [role="alert"]').count(), 0, "logo valide refusé");
   console.log("ok   logo PNG accepté");
+
+  // Photo du logement : une grande photo (4000 × 3000) est réduite à 1600 px et réencodée en JPEG
+  const grande = path.join(OUT, "photo-grande.png");
+  const b64 = await p.evaluate(() => {
+    const c = document.createElement("canvas"); c.width = 4000; c.height = 3000;
+    const x = c.getContext("2d"); const g = x.createLinearGradient(0, 0, 4000, 3000);
+    g.addColorStop(0, "#3a6ea5"); g.addColorStop(1, "#e3b04b"); x.fillStyle = g; x.fillRect(0, 0, 4000, 3000);
+    return c.toDataURL("image/png").split(",")[1];
+  });
+  fs.writeFileSync(grande, Buffer.from(b64, "base64"));
+  await p.setInputFiles('input[name="photo"]', grande);
+  const photo = p.locator("[data-photo-couverture]");
+  await photo.waitFor({ state: "visible" });
+  const [pw, ph, src] = await photo.evaluate(img => [img.naturalWidth, img.naturalHeight, img.src.slice(0, 23)]);
+  assert.deepEqual([pw, ph, src], [1600, 1200, "data:image/jpeg;base64,"], "photo non réduite");
+  console.log("ok   photo réduite à 1600 px, en JPEG");
+
+  // Un fichier qui n'est pas une image est refusé, la photo en place reste
+  const pasPhoto = path.join(OUT, "pas-une-photo.txt");
+  fs.writeFileSync(pasPhoto, "texte");
+  await p.setInputFiles('input[name="photo"]', pasPhoto);
+  await p.waitForSelector('[role="alert"]:has-text("Choisissez une photo")');
+  assert.equal(await photo.isVisible(), true, "photo perdue après un refus");
+  console.log("ok   fichier non image refusé");
+
   await p.fill('input[name="couleur"]', "#aa3355");
   assert.match(await p.locator("[data-apercu]").innerText(), /Chalet des Pins/);
   await p.click('[data-action="suivant"]');
@@ -68,10 +93,12 @@ try {
   // 2. Brouillon retrouvé après rechargement, puis effacé
   await p.reload({ waitUntil: "networkidle" });
   await p.waitForFunction(() => document.querySelector('[name="nomLogement"]')?.value === "Chalet des Pins");
-  console.log("ok   brouillon restauré");
+  await p.locator("[data-photo-couverture]").waitFor({ state: "visible" });
+  console.log("ok   brouillon restauré (photo comprise)");
   await p.click('[data-action="effacer"]');
   await p.click('[data-action="effacer"]');
   await p.waitForFunction(() => document.querySelector('[name="nomLogement"]')?.value === "");
+  assert.equal(await p.locator("[data-photo-couverture]").count(), 0, "photo restée après effacement");
   console.log("ok   brouillon effacé");
 
   // 3. Logo refusé (format)

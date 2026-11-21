@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   brouillonVide, remplir, lignes, couleurValide, restaurerBrouillon,
-  construireLivret, nomFichier, pourPdf, type LivretData,
+  construireLivret, nomFichier, pourPdf, PHOTO_MAX_DATA_URL, type LivretData,
 } from "../../lib/livret/livret.ts";
 import { CHAMPS, COULEUR_DEFAUT } from "../../lib/livret/contenu.ts";
 
@@ -17,6 +17,7 @@ test("brouillonVide reprend les textes par défaut et laisse le reste vide", () 
   assert.match(d.valeurs.intro, /^Merci d'avoir choisi/);
   assert.equal(d.valeurs.nomLogement, "");
   assert.deepEqual(d.marque, { couleur: COULEUR_DEFAUT, logo: null });
+  assert.equal(d.photo, null);
 });
 
 test("remplir remplace les champs et renvoie null si un champ manque", () => {
@@ -44,6 +45,15 @@ test("restaurerBrouillon ignore les champs inconnus et les types invalides", () 
   assert.equal(d.marque.logo, "data:image/png;base64,AA");
   assert.deepEqual(restaurerBrouillon("n'importe quoi"), brouillonVide());
   assert.equal(restaurerBrouillon({ marque: { logo: "javascript:alert(1)" } }).marque.logo, null);
+});
+
+test("restaurerBrouillon ne garde qu'une photo JPEG en data URL, sous le plafond", () => {
+  const jpeg = "data:image/jpeg;base64,/9j/AA";
+  assert.equal(restaurerBrouillon({ photo: jpeg }).photo, jpeg);
+  assert.equal(restaurerBrouillon({ photo: "data:image/png;base64,AA" }).photo, null);
+  assert.equal(restaurerBrouillon({ photo: "https://exemple.fr/photo.jpg" }).photo, null);
+  assert.equal(restaurerBrouillon({ photo: jpeg + "A".repeat(PHOTO_MAX_DATA_URL) }).photo, null);
+  assert.equal(construireLivret({ ...brouillonVide(), photo: jpeg }).photo, jpeg);
 });
 
 test("construireLivret retire les lignes, blocs et sections vides", () => {

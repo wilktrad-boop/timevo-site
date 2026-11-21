@@ -10,7 +10,12 @@ export const CLE_BROUILLON = "timevo-livret-brouillon-v1";
 export type LivretData = {
   valeurs: Record<string, string>;
   marque: { couleur: string; logo: string | null };
+  /** Photo du logement, déjà réduite et réencodée en JPEG dans le navigateur (data URL). */
+  photo: string | null;
 };
+
+/** Plafond de la photo stockée (data URL) : une photo réduite à 1600 px pèse bien moins. */
+export const PHOTO_MAX_DATA_URL = 2_000_000;
 
 export type LigneRendue = { label: string; valeur: string };
 
@@ -34,12 +39,14 @@ export type LivretRendu = {
   pied: string | null;
   couleur: string;
   logo: string | null;
+  photo: string | null;
 };
 
 export function brouillonVide(): LivretData {
   return {
     valeurs: Object.fromEntries(CHAMPS.map(c => [c.id, c.defaut ?? ""])),
     marque: { couleur: COULEUR_DEFAUT, logo: null },
+    photo: null,
   };
 }
 
@@ -66,7 +73,7 @@ export function couleurValide(couleur: string): string {
 export function restaurerBrouillon(brut: unknown): LivretData {
   const base = brouillonVide();
   if (!brut || typeof brut !== "object") return base;
-  const b = brut as { valeurs?: unknown; marque?: unknown };
+  const b = brut as { valeurs?: unknown; marque?: unknown; photo?: unknown };
   if (b.valeurs && typeof b.valeurs === "object") {
     for (const c of CHAMPS) {
       const v = (b.valeurs as Record<string, unknown>)[c.id];
@@ -77,6 +84,9 @@ export function restaurerBrouillon(brut: unknown): LivretData {
     const m = b.marque as { couleur?: unknown; logo?: unknown };
     if (typeof m.couleur === "string") base.marque.couleur = couleurValide(m.couleur);
     if (typeof m.logo === "string" && /^data:image\/(png|jpeg);base64,/.test(m.logo)) base.marque.logo = m.logo;
+  }
+  if (typeof b.photo === "string" && b.photo.startsWith("data:image/jpeg;base64,") && b.photo.length <= PHOTO_MAX_DATA_URL) {
+    base.photo = b.photo;
   }
   return base;
 }
@@ -121,6 +131,7 @@ export function construireLivret(data: LivretData): LivretRendu {
     pied: remplir(COUVERTURE.pied, v),
     couleur: couleurValide(data.marque.couleur),
     logo: data.marque.logo,
+    photo: data.photo,
   };
 }
 
