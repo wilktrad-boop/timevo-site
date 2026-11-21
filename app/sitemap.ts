@@ -21,7 +21,7 @@ const SERVICE_SLUGS = ["automatisation", "agents-ia", "formation", "sites-web", 
 const UPDATED = {
   home: "2026-07-23",         // ajout de la section démos
   services: "2026-05-13",     // création des 6 pages service + index
-  realisations: "2026-07-14", // création de la page
+  realisations: "2026-11-21", // ajout de Yannick Hulin (site + Instagram)
   sectors: "2026-05-29",      // création des 3 pages secteur
   cities: "2026-05-29",       // création des 2 pages ville
   demos: "2026-07-23",        // création des 3 démos

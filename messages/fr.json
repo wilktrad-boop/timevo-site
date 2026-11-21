@@ -574,13 +574,14 @@
   },
   "realisations": {
     "meta_title": "Réalisations : les sites qu'on a conçus et développés",
-    "meta_description": "Les sites que nous avons construits : pisciniste, habitat et jardin, traduction juridique. Vitrines, devis en ligne, SEO.",
+    "meta_description": "Les sites que nous avons construits : pisciniste, courtier en crédit, habitat et jardin, traduction juridique. Vitrines, devis en ligne, SEO, Instagram.",
     "eyebrow": "RÉALISATIONS",
     "h1_line1": "Des sites qui travaillent.",
     "h1_line2": "Pas des brochures en ligne.",
     "subtitle": "Chaque site qu'on livre a un travail à faire : faire venir en magasin, remplir un formulaire, sortir un devis. Voici ce qu'on a construit.",
     "section_label": "SITES CONÇUS ET DÉVELOPPÉS PAR TIMEVO",
     "cta_site": "Voir le site",
+    "cta_instagram": "Voir le compte Instagram",
     "shot_alt": "Page d'accueil du site {name}",
     "items": [
       {
@@ -591,6 +592,16 @@
           "Site vitrine",
           "Devis en ligne",
           "SEO local"
+        ]
+      },
+      {
+        "meta": "Courtier en crédit — Thonon-les-Bains (74)",
+        "title": "Yannick Hulin",
+        "description": "Page d'atterrissage sur l'investissement locatif sans apport, et compte Instagram tenu par Timevo : posts, carrousels et reels produits par le studio de contenu IA, publiés deux fois par semaine.",
+        "chips": [
+          "Landing page",
+          "Instagram",
+          "Studio de contenu IA"
         ]
       },
       {

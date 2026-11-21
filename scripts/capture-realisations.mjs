@@ -16,6 +16,7 @@ const OUT_DIR = path.join(process.cwd(), "public", "realisations");
 
 const SITES = [
   ["mon-espace-piscine", "https://www.monespacepiscine.fr/"],
+  ["yannick-hulin", "https://yannickhulin.fr/"],
   ["agence-laverne", "https://www.agencelavernepaysagistes.fr/"],
   ["agence-traduction-juridique", "https://www.agence-traduction-juridique.fr/"],
 ];

@@ -28,6 +28,8 @@ export default async function Realisations() {
               image={site.image}
               alt={t("shot_alt", { name: items[i].title })}
               cta={t("cta_site")}
+              instagram={site.instagram}
+              ctaInstagram={t("cta_instagram")}
             />
           ))}
         </div>
@@ -36,8 +38,14 @@ export default async function Realisations() {
   );
 }
 
-function RealisationCard({ meta, title, description, chips, url, image, alt, cta }: Item & {
-  url: string; image: string; alt: string; cta: string;
+const linkStyle = {
+  display: "inline-flex", alignItems: "center", gap: 8,
+  color: "var(--accent-soft)", fontFamily: "var(--font-sans)",
+  fontSize: 13, fontWeight: 600, textDecoration: "none",
+} as const;
+
+function RealisationCard({ meta, title, description, chips, url, image, alt, cta, instagram, ctaInstagram }: Item & {
+  url: string; image: string; alt: string; cta: string; instagram?: string; ctaInstagram: string;
 }) {
   return (
     <article style={{
@@ -95,19 +103,28 @@ function RealisationCard({ meta, title, description, chips, url, image, alt, cta
           ))}
         </div>
 
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${cta} — ${title}`}
-          style={{
-            marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 8,
-            color: "var(--accent-soft)", fontFamily: "var(--font-sans)",
-            fontSize: 13, fontWeight: 600, textDecoration: "none",
-          }}
-        >
-          {cta} <Arrow size={12} />
-        </a>
+        <div style={{ marginTop: "auto", display: "flex", flexWrap: "wrap", gap: "10px 24px" }}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${cta} — ${title}`}
+            style={linkStyle}
+          >
+            {cta} <Arrow size={12} />
+          </a>
+          {instagram && (
+            <a
+              href={instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${ctaInstagram} — ${title}`}
+              style={linkStyle}
+            >
+              {ctaInstagram} <Arrow size={12} />
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
