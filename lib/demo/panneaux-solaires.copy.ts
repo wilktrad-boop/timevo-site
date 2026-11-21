@@ -130,7 +130,7 @@ export const SOLAIRE_FR: DemoCopy = {
   ctaH2: "Le vôtre ressemblerait à quoi ?",
   ctaSubtitle:
     "En 30 minutes on regarde votre volume de leads, votre process de qualification et votre suivi d'installation. Vous repartez avec les points où l'automatisation rend le plus de marge.",
-  ctaButton: "Réserver l'audit gratuit",
+  ctaButton: "Réserver le diagnostic gratuit",
   ctaReassurance: "30 minutes · Gratuit · Sans engagement · Diagnostic écrit",
 };
 
@@ -145,7 +145,7 @@ export const SOLAIRE_EN: DemoCopy = {
 
   demoBadge: "Demonstration — fictional data",
   demoNote:
-    "Typical scenario, not an existing client. Every piece of data on this page is fictional: names, amounts, transcripts. The buttons respond but send nothing. The interface is the one we ship. Real figures are established during the free audit.",
+    "Typical scenario, not an existing client. Every piece of data on this page is fictional: names, amounts, transcripts. The buttons respond but send nothing. The interface is the one we ship. Real figures are established during the free diagnostic.",
 
   sections: {
     overview: "Overview",
@@ -257,6 +257,6 @@ export const SOLAIRE_EN: DemoCopy = {
   ctaH2: "What would yours look like?",
   ctaSubtitle:
     "In 30 minutes we look at your lead volume, your qualification process and your installation tracking. You leave with the points where automation returns the most margin.",
-  ctaButton: "Book the free audit",
+  ctaButton: "Book the free diagnostic",
   ctaReassurance: "30 minutes · Free · No commitment · Written diagnostic",
 };

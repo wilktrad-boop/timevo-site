@@ -138,7 +138,7 @@ export const CITIES: Record<string, {
         roiLabel: "Retour sur investissement",
         roiValue: "10 semaines",
         caseFootnote:
-          "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
+          "Scénario type, pas un client existant. Les chiffres réels sont validés lors du diagnostic gratuit.",
         faqH2: "Avant d'en parler.",
         faqs: [
           [
@@ -160,7 +160,7 @@ export const CITIES: Record<string, {
         ],
         ctaH2: "30 minutes pour cartographier votre semaine.",
         ctaSubtitle:
-          "Audit gratuit en visio ou sur place à Thonon. On vous dit honnêtement où votre temps part et ce qu'on peut récupérer — que vous bossiez avec nous ou pas.",
+          "Diagnostic gratuit en visio ou sur place à Thonon. On vous dit honnêtement où votre temps part et ce qu'on peut récupérer — que vous bossiez avec nous ou pas.",
       },
       en: {
         city: "Thonon-les-Bains",
@@ -238,7 +238,7 @@ export const CITIES: Record<string, {
         roiLabel: "Return on investment",
         roiValue: "10 weeks",
         caseFootnote:
-          "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+          "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         faqH2: "Before we talk.",
         faqs: [
           [
@@ -260,7 +260,7 @@ export const CITIES: Record<string, {
         ],
         ctaH2: "30 minutes to map your week.",
         ctaSubtitle:
-          "Free audit via video or on-site in Thonon. We tell you honestly where your time goes and what we can recover — whether you work with us or not.",
+          "Free diagnostic via video or on-site in Thonon. We tell you honestly where your time goes and what we can recover — whether you work with us or not.",
       },
     },
   },
@@ -350,7 +350,7 @@ export const CITIES: Record<string, {
         roiLabel: "Retour sur investissement",
         roiValue: "12 semaines",
         caseFootnote:
-          "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
+          "Scénario type, pas un client existant. Les chiffres réels sont validés lors du diagnostic gratuit.",
         faqH2: "Avant d'en parler.",
         faqs: [
           [
@@ -372,7 +372,7 @@ export const CITIES: Record<string, {
         ],
         ctaH2: "30 minutes pour cartographier votre semaine.",
         ctaSubtitle:
-          "Audit gratuit en visio ou sur place à Montpellier. On vous dit honnêtement où votre temps part et ce qu'on peut récupérer — que vous bossiez avec nous ou pas.",
+          "Diagnostic gratuit en visio ou sur place à Montpellier. On vous dit honnêtement où votre temps part et ce qu'on peut récupérer — que vous bossiez avec nous ou pas.",
       },
       en: {
         city: "Montpellier",
@@ -450,7 +450,7 @@ export const CITIES: Record<string, {
         roiLabel: "Return on investment",
         roiValue: "12 weeks",
         caseFootnote:
-          "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+          "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         faqH2: "Before we talk.",
         faqs: [
           [
@@ -472,7 +472,7 @@ export const CITIES: Record<string, {
         ],
         ctaH2: "30 minutes to map your week.",
         ctaSubtitle:
-          "Free audit via video or on-site in Montpellier. We tell you honestly where your time goes and what we can recover — whether you work with us or not.",
+          "Free diagnostic via video or on-site in Montpellier. We tell you honestly where your time goes and what we can recover — whether you work with us or not.",
       },
     },
   },

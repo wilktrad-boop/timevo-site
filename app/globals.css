@@ -239,11 +239,12 @@ details[open] > .demo-summary::before {
   .nav-hamburger { display: flex !important; }
 
   .hero-subrow {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     gap: 28px !important;
   }
   .hero-ctas {
     justify-content: flex-start !important;
+    flex-wrap: wrap !important;
   }
 
   .pain-grid {

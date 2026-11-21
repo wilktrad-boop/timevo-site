@@ -100,7 +100,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
       roiLabel: "Retour sur investissement",
       roiValue: "8 semaines",
       caseFootnote:
-        "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
+        "Scénario type, pas un client existant. Les chiffres réels sont validés lors du diagnostic gratuit.",
       faqH2: "Avant d'en parler.",
       faqs: [
         [
@@ -197,7 +197,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
       roiLabel: "Return on investment",
       roiValue: "8 weeks",
       caseFootnote:
-        "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
       faqH2: "Before we talk.",
       faqs: [
         [
@@ -297,7 +297,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
       roiLabel: "Retour sur investissement",
       roiValue: "1 saison",
       caseFootnote:
-        "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
+        "Scénario type, pas un client existant. Les chiffres réels sont validés lors du diagnostic gratuit.",
       faqH2: "Avant d'en parler.",
       faqs: [
         [
@@ -394,7 +394,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
       roiLabel: "Return on investment",
       roiValue: "1 season",
       caseFootnote:
-        "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
       faqH2: "Before we talk.",
       faqs: [
         [
@@ -495,7 +495,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
       roiLabel: "Retour sur investissement",
       roiValue: "10 semaines",
       caseFootnote:
-        "Scénario type, pas un client existant. Les chiffres réels sont validés lors de l'audit gratuit.",
+        "Scénario type, pas un client existant. Les chiffres réels sont validés lors du diagnostic gratuit.",
       faqH2: "Avant d'en parler.",
       faqs: [
         [
@@ -592,7 +592,7 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
       roiLabel: "Return on investment",
       roiValue: "10 weeks",
       caseFootnote:
-        "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
       faqH2: "Before we talk.",
       faqs: [
         [

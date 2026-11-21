@@ -132,7 +132,7 @@ export const PISCINISTE_FR: DemoCopy = {
   ctaH2: "Le vôtre ressemblerait à quoi ?",
   ctaSubtitle:
     "En 30 minutes on regarde votre volume d'appels, votre délai de devis et votre récurrence d'entretien. Vous repartez avec la liste des workflows qui paient avant la prochaine saison.",
-  ctaButton: "Réserver l'audit gratuit",
+  ctaButton: "Réserver le diagnostic gratuit",
   ctaReassurance: "30 minutes · Gratuit · Sans engagement · Diagnostic écrit",
 };
 
@@ -147,7 +147,7 @@ export const PISCINISTE_EN: DemoCopy = {
 
   demoBadge: "Demonstration — fictional data",
   demoNote:
-    "Typical scenario, not an existing client. Every piece of data on this page is fictional: names, amounts, transcripts. The buttons respond but send nothing. The interface is the one we ship. Real figures are established during the free audit.",
+    "Typical scenario, not an existing client. Every piece of data on this page is fictional: names, amounts, transcripts. The buttons respond but send nothing. The interface is the one we ship. Real figures are established during the free diagnostic.",
 
   sections: {
     overview: "Overview",
@@ -259,6 +259,6 @@ export const PISCINISTE_EN: DemoCopy = {
   ctaH2: "What would yours look like?",
   ctaSubtitle:
     "In 30 minutes we look at your call volume, your quote turnaround and your maintenance recurrence. You leave with the list of workflows that pay for themselves before next season.",
-  ctaButton: "Book the free audit",
+  ctaButton: "Book the free diagnostic",
   ctaReassurance: "30 minutes · Free · No commitment · Written diagnostic",
 };

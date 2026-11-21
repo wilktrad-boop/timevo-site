@@ -553,8 +553,8 @@
     "result_hours_label": "recoverable hours / month",
     "result_value_label": "estimated monthly value",
     "result_yearly_label": "value over 12 months",
-    "result_disclaimer": "Estimate based on averages observed with our clients. Exact figures validated during the free audit.",
-    "result_cta": "Book the free audit"
+    "result_disclaimer": "Estimate based on averages observed with our clients. Exact figures validated during the free diagnostic.",
+    "result_cta": "Book the free diagnostic"
   },
   "demo_teaser": {
     "eyebrow": "DEMOS",
@@ -634,7 +634,7 @@
         "eyebrow": "BUSINESS PROCESS AUTOMATION",
         "h1": "Business process automation. Your repetitive tasks, running quietly.",
         "subtitle": "We automate quotes, follow-ups, reporting and the sync between your tools. Your teams gain time every day, with nothing new to learn.",
-        "cta_primary": "Book a free audit",
+        "cta_primary": "Book a free diagnostic",
         "cta_secondary": "↓ See the workflows"
       },
       "audience": {
@@ -714,7 +714,7 @@
           "Signature rate × 2 over 6 weeks",
           "27h recovered every month"
         ],
-        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         "roi_label": "Payback period",
         "roi_value": "6 weeks"
       },
@@ -790,7 +790,7 @@
       "cta": {
         "h2": "30 minutes to map your week.",
         "subtitle": "We identify 2 or 3 processes to automate. You walk away with a written diagnosis, whether you work with us or not.",
-        "cta": "Book the free audit",
+        "cta": "Book the free diagnostic",
         "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
       }
     },
@@ -801,7 +801,7 @@
         "eyebrow": "AI AGENTS FOR BUSINESS",
         "h1": "AI agents for business. Your repetitive questions, handled 24/7.",
         "subtitle": "Available day and night, trained on your documents, in your brand voice. The Timevo AI agent absorbs support, qualifies leads, and frees your teams from everything that repeats.",
-        "cta_primary": "Book a free audit",
+        "cta_primary": "Book a free diagnostic",
         "cta_secondary": "↓ See the solutions"
       },
       "audience": {
@@ -881,7 +881,7 @@
           "Instant 24/7 response on WhatsApp",
           "Automated qualification in 60 seconds"
         ],
-        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         "roi_label": "Payback period",
         "roi_value": "8 weeks"
       },
@@ -931,7 +931,7 @@
       "cta": {
         "h2": "30 minutes to identify your first agent.",
         "subtitle": "We look at your request volumes, the recurring questions, and we tell you which of the 4 standard agents is the right place to start.",
-        "cta": "Book the free audit",
+        "cta": "Book the free diagnostic",
         "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
       }
     },
@@ -942,7 +942,7 @@
         "eyebrow": "AI & AUTOMATION TRAINING",
         "h1": "AI and automation training for your teams.",
         "subtitle": "Five short modules so your teams master AI, automation and online visibility. On-site or remote, for groups of 3 to 15.",
-        "cta_primary": "Book a free audit",
+        "cta_primary": "Book a free diagnostic",
         "cta_secondary": "↓ See the modules"
       },
       "audience": {
@@ -1022,7 +1022,7 @@
           "Framed and automated LinkedIn prospecting",
           "Collective editorial calendar"
         ],
-        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         "roi_label": "Payback period",
         "roi_value": "1 month"
       },
@@ -1072,7 +1072,7 @@
       "cta": {
         "h2": "30 minutes to calibrate the programme.",
         "subtitle": "We look at your team, your tools, what's blocking, and we propose a programme. No off-the-shelf catalogue.",
-        "cta": "Book the free audit",
+        "cta": "Book the free diagnostic",
         "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
       }
     },
@@ -1083,7 +1083,7 @@
         "eyebrow": "WEBSITE CREATION",
         "h1": "Website creation for SMBs. Built to convert, not to decorate.",
         "subtitle": "Showcase sites, landing pages, e-commerce, redesigns. Clean, performant code, SEO-ready. You stay the owner of everything.",
-        "cta_primary": "Book a free audit",
+        "cta_primary": "Book a free diagnostic",
         "cta_secondary": "↓ See the formats"
       },
       "audience": {
@@ -1163,7 +1163,7 @@
           "Page 1 on Google for 12 local keywords",
           "Free edits, owner of the code"
         ],
-        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         "roi_label": "Payback period",
         "roi_value": "14 weeks"
       },
@@ -1213,7 +1213,7 @@
       "cta": {
         "h2": "30 minutes to frame your web project.",
         "subtitle": "We look at your current site (or lack thereof), your audiences, your constraints, and propose a clear route.",
-        "cta": "Book the free audit",
+        "cta": "Book the free diagnostic",
         "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
       }
     },
@@ -1224,7 +1224,7 @@
         "eyebrow": "SEARCH ENGINE OPTIMISATION",
         "h1": "SEO agency for SMBs.",
         "subtitle": "Local, technical, content, international SEO. We aim for qualified traffic that converts, not empty volume. Method, not dark magic.",
-        "cta_primary": "Book a free audit",
+        "cta_primary": "Book a free diagnostic",
         "cta_secondary": "↓ See the expertise"
       },
       "audience": {
@@ -1304,7 +1304,7 @@
           "Complete GBP with automated reviews",
           "Organic traffic × 5 in 4 months"
         ],
-        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         "roi_label": "Payback period",
         "roi_value": "4 months"
       },
@@ -1354,7 +1354,7 @@
       "cta": {
         "h2": "30 minutes to audit your SEO.",
         "subtitle": "We look at your current rankings, your competitors, your site. You walk away with 3 clear priorities, whether you work with us or not.",
-        "cta": "Book the free audit",
+        "cta": "Book the free diagnostic",
         "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
       }
     },
@@ -1365,7 +1365,7 @@
         "eyebrow": "SOCIAL MEDIA",
         "h1": "Social media on autopilot. Your audience grows, your content follows.",
         "subtitle": "Strategy, content creation, publishing, engagement. We handle the full chain while you run your business. Brand voice preserved, no generic content.",
-        "cta_primary": "Book a free audit",
+        "cta_primary": "Book a free diagnostic",
         "cta_secondary": "↓ See the solutions"
       },
       "audience": {
@@ -1445,7 +1445,7 @@
           "Consistent calendar (4 posts / week on average)",
           "+35% inbound enquiries attributed to social"
         ],
-        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free audit.",
+        "footnote": "Typical scenario, not an existing client. Real figures are validated during the free diagnostic.",
         "roi_label": "Payback period",
         "roi_value": "5 months"
       },
@@ -1495,7 +1495,7 @@
       "cta": {
         "h2": "30 minutes to frame your social strategy.",
         "subtitle": "We look at your accounts, your market, your audiences. You walk away with a concrete action plan, whether you work with us or not.",
-        "cta": "Book the free audit",
+        "cta": "Book the free diagnostic",
         "reassurance": "30 minutes · Free · No commitment · Written diagnosis"
       }
     }

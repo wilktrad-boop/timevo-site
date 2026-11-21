@@ -70,7 +70,7 @@ export default async function ConfidentialitePage({
           </li>
           <li>
             <Strong>Prise de contact et réservation d&apos;un rendez-vous.</Strong> Lorsque vous nous écrivez ou
-            réservez un audit, nous traitons les données que vous fournissez (nom, adresse e-mail, et le cas
+            réservez un diagnostic, nous traitons les données que vous fournissez (nom, adresse e-mail, et le cas
             échéant nom de votre entreprise et informations communiquées) afin de répondre à votre demande et de
             préparer notre échange.
           </li>
