@@ -48,7 +48,7 @@ function runsGabarit(gabarit: string, mode: Mode, base: Record<string, unknown>)
 
 const corps = { font: FONT, size: 22, color: INK };
 
-function para(runs: unknown[], spacing = { after: 120, line: 300 }) {
+function para(runs: unknown[], spacing: { before?: number; after: number; line: number } = { after: 120, line: 300 }) {
   return new Paragraph({ spacing, children: runs });
 }
 
