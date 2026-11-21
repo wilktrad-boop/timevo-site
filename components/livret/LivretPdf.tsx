@@ -14,10 +14,10 @@ const INK = "#1F2A2E", DIM = "#5B6670", LINE = "#D5DCD9", SOFT = "#F1F4F3";
 const s = StyleSheet.create({
   page: { paddingTop: 56, paddingBottom: 64, paddingHorizontal: 56, fontFamily: "Helvetica", fontSize: 10.5, color: INK, lineHeight: 1.45 },
   surtitre: { fontSize: 9.5, fontFamily: "Helvetica-Bold", letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10 },
-  titre: { fontSize: 32, fontFamily: "Helvetica-Bold", marginBottom: 10 },
-  sousTitre: { fontSize: 14, color: DIM, marginBottom: 28 },
+  titre: { fontSize: 32, lineHeight: 1.15, fontFamily: "Helvetica-Bold", marginBottom: 10 },
+  sousTitre: { fontSize: 14, lineHeight: 1.3, color: DIM, marginBottom: 28 },
   logo: { maxWidth: 160, maxHeight: 64, objectFit: "contain", marginBottom: 36 },
-  h1: { fontSize: 17, fontFamily: "Helvetica-Bold", paddingBottom: 5, borderBottomWidth: 1.2, marginTop: 18, marginBottom: 10 },
+  h1: { fontSize: 17, lineHeight: 1.25, fontFamily: "Helvetica-Bold", paddingBottom: 5, borderBottomWidth: 1.2, marginTop: 18, marginBottom: 10 },
   h2: { fontSize: 12, fontFamily: "Helvetica-Bold", marginTop: 12, marginBottom: 5 },
   p: { marginBottom: 6 },
   table: { borderWidth: 0.6, borderColor: LINE, marginBottom: 8 },

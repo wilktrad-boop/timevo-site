@@ -69,6 +69,13 @@ try {
   await p.setInputFiles('input[name="logo"]', txt);
   await p.waitForSelector('[role="alert"]');
   console.log("ok   logo invalide refusé");
+
+  // 3b. Logo corrompu (type PNG, données illisibles) refusé avec un message
+  const bad = path.join(OUT, "bad.png");
+  fs.writeFileSync(bad, "not a png");
+  await p.setInputFiles('input[name="logo"]', bad);
+  await p.waitForSelector('[role="alert"]:has-text("pas pu être lu")');
+  console.log("ok   logo corrompu refusé");
   await p.screenshot({ path: path.join(OUT, "generateur-desktop.jpg"), quality: 70, type: "jpeg" });
   await ctx.close();
 

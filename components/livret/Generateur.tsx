@@ -83,7 +83,16 @@ export default function Generateur() {
     if (!["image/png", "image/jpeg"].includes(fichier.type)) { setErreurLogo("Format accepté : PNG ou JPG."); viderLogoInput(); return; }
     if (fichier.size > LOGO_MAX) { setErreurLogo("Le logo doit faire moins de 1 Mo."); viderLogoInput(); return; }
     const lecteur = new FileReader();
-    lecteur.onload = () => setData(d => ({ ...d, marque: { ...d.marque, logo: String(lecteur.result) } }));
+    lecteur.onload = () => {
+      const dataUrl = String(lecteur.result);
+      const img = new window.Image();
+      img.onload = () => {
+        if (img.naturalWidth > 0) setData(d => ({ ...d, marque: { ...d.marque, logo: dataUrl } }));
+        else setErreurLogo("Le logo n'a pas pu être lu.");
+      };
+      img.onerror = () => setErreurLogo("Le logo n'a pas pu être lu.");
+      img.src = dataUrl;
+    };
     lecteur.onerror = () => setErreurLogo("Le logo n'a pas pu être lu.");
     lecteur.readAsDataURL(fichier);
     viderLogoInput();
