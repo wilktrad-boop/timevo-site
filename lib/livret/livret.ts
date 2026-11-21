@@ -20,8 +20,8 @@ export const PHOTO_MAX_DATA_URL = 2_000_000;
 export type LigneRendue = { label: string; valeur: string };
 
 export type BlocRendu =
-  | { type: "tableau"; titre?: string; lignes: LigneRendue[] }
-  | { type: "texte"; titre?: string; texte: string }
+  | { type: "tableau"; titre?: string; lignes: LigneRendue[]; style?: "carte" }
+  | { type: "texte"; titre?: string; texte: string; encadre?: boolean }
   | { type: "liste"; titre?: string; style: "puces" | "cases"; items: string[] };
 
 /** `etape` : index dans ETAPES de l'étape où l'on remplit cette section (l'aperçu y renvoie). */
@@ -63,6 +63,16 @@ export function remplir(gabarit: string, valeurs: Record<string, string>): strin
 
 export function lignes(texte: string): string[] {
   return texte.split("\n").map(l => l.trim()).filter(Boolean);
+}
+
+/** Mélange la couleur avec du blanc : `part` = part de la couleur (0 à 1). Sert aux fonds teintés. */
+export function teinte(couleur: string, part: number): string {
+  const c = couleurValide(couleur);
+  const canal = (i: number) => {
+    const v = parseInt(c.slice(i, i + 2), 16);
+    return Math.round(255 - (255 - v) * part).toString(16).padStart(2, "0");
+  };
+  return `#${canal(1)}${canal(3)}${canal(5)}`;
 }
 
 export function couleurValide(couleur: string): string {
@@ -107,10 +117,10 @@ export function construireLivret(data: LivretData): LivretRendu {
       for (const b of s.blocs) {
         if (b.type === "tableau") {
           const l = tableau(b.lignes, v);
-          if (l.length) blocs.push({ type: "tableau", ...(b.titre ? { titre: b.titre } : {}), lignes: l });
+          if (l.length) blocs.push({ type: "tableau", ...(b.titre ? { titre: b.titre } : {}), lignes: l, ...(b.style ? { style: b.style } : {}) });
         } else if (b.type === "texte") {
           const t = (v[b.champ] ?? "").trim();
-          if (t) blocs.push({ type: "texte", ...(b.titre ? { titre: b.titre } : {}), texte: t });
+          if (t) blocs.push({ type: "texte", ...(b.titre ? { titre: b.titre } : {}), texte: t, ...(b.encadre ? { encadre: true } : {}) });
         } else {
           const items = lignes(v[b.champ] ?? "");
           if (items.length) blocs.push({ type: "liste", ...(b.titre ? { titre: b.titre } : {}), style: b.style, items });

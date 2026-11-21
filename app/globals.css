@@ -212,6 +212,14 @@ details[open] > .demo-summary::before {
   }
 }
 
+/* Titres du livret (aperçu du générateur), même police que le PDF. Licence OFL. */
+@font-face {
+  font-family: "Livret Serif";
+  src: url("/fonts/fraunces/fraunces-latin-600-normal.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+
 /* ── Générateur de livret : rubriques de l'aperçu ───────── */
 
 /* Chaque rubrique renvoie à l'étape où on la remplit ; celle de l'étape en

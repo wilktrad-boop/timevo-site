@@ -25,9 +25,14 @@ export type Champ = {
 
 export type LigneTableau = { label: string; gabarit: string };
 
+/**
+ * Variantes de mise en page, pour le PDF et l'aperçu (le modèle Word les ignore) :
+ * `style: "carte"` met un tableau en valeur (Wi-Fi), `encadre` met un texte dans
+ * un encadré teinté (ce qu'on lit en cas d'imprévu).
+ */
 export type Bloc =
-  | { type: "tableau"; titre?: string; lignes: LigneTableau[] }
-  | { type: "texte"; titre?: string; champ: string }
+  | { type: "tableau"; titre?: string; lignes: LigneTableau[]; style?: "carte" }
+  | { type: "texte"; titre?: string; champ: string; encadre?: boolean }
   | { type: "liste"; titre?: string; champ: string; style: "puces" | "cases" };
 
 /**
@@ -87,7 +92,7 @@ export const ETAPES: Etape[] = [
           { label: "Clés", gabarit: "{cles}" },
         ] },
         { type: "texte", titre: "Stationnement", champ: "parking" },
-        { type: "texte", titre: "Arrivée tardive", champ: "arriveeTardive" },
+        { type: "texte", titre: "Arrivée tardive", champ: "arriveeTardive", encadre: true },
       ],
     }],
   },
@@ -111,13 +116,13 @@ export const ETAPES: Etape[] = [
     sections: [{
       titre: "Le logement",
       blocs: [
-        { type: "tableau", titre: "Wi-Fi et télévision", lignes: [
+        { type: "tableau", titre: "Wi-Fi et télévision", style: "carte", lignes: [
           { label: "Réseau Wi-Fi", gabarit: "{wifiReseau}" },
           { label: "Mot de passe", gabarit: "{wifiMotDePasse}" },
           { label: "Télévision", gabarit: "{television}" },
         ] },
         { type: "liste", titre: "Équipements", champ: "equipements", style: "puces" },
-        { type: "texte", titre: "En cas de souci", champ: "souci" },
+        { type: "texte", titre: "En cas de souci", champ: "souci", encadre: true },
         { type: "tableau", lignes: [
           { label: "Compteur électrique", gabarit: "{compteur}" },
           { label: "Arrivée d'eau", gabarit: "{arriveeEau}" },
@@ -200,16 +205,18 @@ export const ETAPES: Etape[] = [
       {
         titre: "Votre départ",
         sautAvant: true,
+        // Dans le PDF, le départ suit le quartier : un saut forcé laissait la page précédente à moitié vide.
+        sautAvantPdf: false,
         blocs: [
           { type: "tableau", lignes: [{ label: "Départ", gabarit: "Avant {heureDepart}" }] },
           { type: "texte", champ: "departInfo" },
           { type: "liste", titre: "Avant de partir", champ: "checklist", style: "cases" },
-          { type: "texte", titre: "Un dernier mot", champ: "motFin" },
+          { type: "texte", titre: "Un dernier mot", champ: "motFin", encadre: true },
         ],
       },
       {
         titre: "Numéros utiles",
-        blocs: [{ type: "tableau", lignes: [
+        blocs: [{ type: "tableau", style: "carte", lignes: [
           { label: "Votre conciergerie", gabarit: "{contactPrenom}, {contactTelephone}" },
           { label: "Urgences (Europe)", gabarit: "112" },
           { label: "SAMU", gabarit: "15" },

@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   brouillonVide, remplir, lignes, couleurValide, restaurerBrouillon,
-  construireLivret, nomFichier, pourPdf, PHOTO_MAX_DATA_URL, type LivretData,
+  construireLivret, nomFichier, pourPdf, PHOTO_MAX_DATA_URL, teinte, type LivretData,
 } from "../../lib/livret/livret.ts";
 import { CHAMPS, COULEUR_DEFAUT } from "../../lib/livret/contenu.ts";
 
@@ -63,7 +63,7 @@ test("construireLivret retire les lignes, blocs et sections vides", () => {
   // Numéros utiles se remplit à l'étape « Le départ », la dernière.
   assert.equal(vide.sections[0].etape, 5);
   assert.deepEqual(vide.sections[0].blocs[0], {
-    type: "tableau", lignes: [
+    type: "tableau", style: "carte", lignes: [
       { label: "Urgences (Europe)", valeur: "112" }, { label: "SAMU", valeur: "15" },
       { label: "Police", valeur: "17" }, { label: "Pompiers", valeur: "18" },
       { label: "Pharmacie de garde", valeur: "3237" },
@@ -83,12 +83,28 @@ test("construireLivret remplit couverture, listes et pied de page", () => {
   assert.deepEqual(l.couverture.tableau.map(r => r.label), ["Départ", "Votre contact"]);
   assert.equal(l.pied, "Rive Gauche · 01 99 00 12 34");
   const depart = l.sections.find(s => s.titre === "Votre départ")!;
-  assert.equal(depart.sautAvant, true);
+  assert.equal(depart.sautAvant, false);
   // Pas de saut forcé avant les règles dans le PDF (il laissait une page presque vide)
   assert.equal(l.sections.find(s => s.titre === "Les règles de la maison")!.sautAvant, false);
   const cases = depart.blocs.find(b => b.type === "liste")!;
   assert.equal(cases.type === "liste" && cases.style, "cases");
   assert.equal(cases.type === "liste" && cases.items.length, 6);
+});
+
+test("teinte mélange la couleur avec du blanc", () => {
+  assert.equal(teinte("#000000", 0), "#ffffff");
+  assert.equal(teinte("#1f4d3a", 1), "#1f4d3a");
+  assert.equal(teinte("#000000", 0.5), "#808080");
+  assert.equal(teinte("pas une couleur", 1), COULEUR_DEFAUT.toLowerCase());
+});
+
+test("construireLivret garde les variantes de mise en page", () => {
+  const l = construireLivret(avec({ wifiReseau: "Box", wifiMotDePasse: "x" }));
+  const logement = l.sections.find(s => s.titre === "Le logement")!;
+  const wifi = logement.blocs.find(b => b.titre === "Wi-Fi et télévision")!;
+  assert.equal(wifi.type === "tableau" && wifi.style, "carte");
+  const souci = logement.blocs.find(b => b.titre === "En cas de souci")!;
+  assert.equal(souci.type === "texte" && souci.encadre, true);
 });
 
 test("nomFichier produit un nom de fichier sans accents ni espaces", () => {
