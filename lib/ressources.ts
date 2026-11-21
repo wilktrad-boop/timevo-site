@@ -39,7 +39,7 @@ export const LIVRET = {
     { title: "Le départ", desc: "Une liste à cocher avant de partir, les numéros utiles, et la demande d'avis au bon moment." },
   ],
   creerCta: "Créer mon livret en ligne",
-  creerNote: "Gratuit, sans inscription.",
+  creerNote: "Gratuit. Le PDF vous est envoyé par email.",
   formH2: "Ou recevez le modèle Word.",
   formSubtitle: "Le Word modifiable et l'exemple rempli, en téléchargement immédiat.",
   form: {
@@ -73,7 +73,22 @@ export const GENERATEUR = {
     "Créez votre livret d'accueil Airbnb en ligne : arrivée, Wi-Fi, règles, bonnes adresses, départ. Votre logo, votre couleur, un PDF prêt à envoyer. Gratuit.",
   h1: "Créez votre livret d'accueil.",
   subtitle:
-    "Six étapes, un aperçu en direct, et un PDF à votre marque prêt à envoyer à vos voyageurs. Vos informations restent dans votre navigateur : rien n'est envoyé.",
+    "Six étapes, un aperçu en direct, et un PDF à votre marque prêt à envoyer à vos voyageurs. Votre brouillon reste dans votre navigateur ; le PDF terminé vous est envoyé par email.",
+  acces: {
+    h2: "Avant de commencer.",
+    texte: "Indiquez votre email : vous y recevrez un code pour ouvrir l'outil, puis votre livret en PDF une fois terminé.",
+    consent:
+      "J'accepte que Timevo utilise ces informations pour m'envoyer mon livret et me recontacter au sujet de ma conciergerie. Je peux m'y opposer à tout moment.",
+    errorConsent: "Cochez la case pour recevoir votre livret.",
+    errorEnvoi: "Le code n'a pas pu être envoyé. Vérifiez votre adresse, ou réessayez dans un instant.",
+    submit: "Recevoir mon code",
+    codeH2: "Votre code.",
+    codeEnvoye: "Nous venons d'envoyer un code à 6 chiffres à",
+    codeAide: "Pensez à regarder dans les indésirables.",
+    codeLabel: "Code reçu par email",
+    ouvrir: "Ouvrir l'outil",
+    autreAdresse: "Changer d'adresse ou recevoir un nouveau code",
+  },
   bridge:
     "Chez les conciergeries qu'on accompagne, ce livret devient un guide voyageur digital, multilingue, avec un assistant qui répond aux voyageurs à toute heure.",
   bridgeCta: "Voir l'offre conciergerie",

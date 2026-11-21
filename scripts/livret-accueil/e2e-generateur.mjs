@@ -1,6 +1,9 @@
 /**
  * Vérification de bout en bout du générateur de livret.
  *   node scripts/livret-accueil/e2e-generateur.mjs http://localhost:3456 <dossier de sortie>
+ * L'outil s'ouvre après l'écran d'email. Si le serveur envoie un code (LIVRET_SECRET et
+ * SMTP configurés), E2E_BOITE doit désigner le dossier où un faux SMTP écrit les messages
+ * (.eml) : le code y est lu. Sans configuration, l'outil s'ouvre sans code.
  * Écrit le PDF téléchargé et des captures dans le dossier de sortie.
  * Sort avec le code 1 au premier échec.
  */
@@ -18,12 +21,44 @@ const LOGO_PNG = Buffer.from(
   "base64",
 );
 
+/** Passe l'écran d'entrée : email, puis code si le serveur en envoie un. */
+async function ouvrirOutil(page, email = "test@exemple.fr") {
+  await page.waitForSelector("[data-acces]");
+  await page.fill('[name="email"]', email);
+  await page.selectOption('[name="logements"]', "6 à 15");
+  await page.check('[name="consent"]');
+  await page.click('[data-acces] button[type="submit"]');
+  const etape = await Promise.race([
+    page.waitForSelector('[name="code"]').then(() => "code"),
+    page.waitForSelector(".livret-gen").then(() => "ouvert"),
+  ]);
+  if (etape === "code") {
+    const boite = process.env.E2E_BOITE;
+    assert.ok(boite, "le serveur envoie un code : définir E2E_BOITE");
+    const dernier = fs.readdirSync(boite).filter(f => f.endsWith(".eml")).map(f => path.join(boite, f))
+      .sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)[0];
+    const code = fs.readFileSync(dernier, "latin1").match(/Subject: Votre code : (\d{6})/)[1];
+    await page.fill('[name="code"]', "000000");
+    await page.click('[data-acces] button[type="submit"]');
+    await page.waitForSelector('#livret-code-error');
+    await page.fill('[name="code"]', code);
+    await page.click('[data-acces] button[type="submit"]');
+    await page.waitForSelector(".livret-gen");
+  }
+  return etape;
+}
+
 const browser = await chromium.launch();
 try {
   // 1. Desktop : parcours complet jusqu'au PDF
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true, reducedMotion: "reduce" });
   const p = await ctx.newPage();
   await p.goto(URL, { waitUntil: "networkidle" });
+  const mode = await ouvrirOutil(p);
+  console.log(`ok   outil ouvert (${mode === "code" ? "code vérifié, mauvais code refusé" : "sans code : serveur non configuré"})`);
+  await p.reload({ waitUntil: "networkidle" });
+  await p.waitForSelector(".livret-gen");
+  console.log("ok   accès gardé au rechargement");
   await p.fill('[name="nomConciergerie"]', "Conciergerie Test");
   await p.fill('[name="nomLogement"]', "Chalet des Pins");
   await p.fill('[name="contactPrenom"]', "Alex");
@@ -81,6 +116,14 @@ try {
   await dl.saveAs(pdfPath);
   assert.ok(fs.statSync(pdfPath).size > 3000, "PDF trop petit");
   await p.waitForSelector('[role="status"]');
+  if (mode === "code") {
+    await p.waitForSelector('[data-envoi="ok"]', { timeout: 30_000 });
+    const boite = process.env.E2E_BOITE;
+    const pj = fs.readdirSync(boite).filter(f => f.endsWith(".eml")).map(f => fs.readFileSync(path.join(boite, f), "latin1"))
+      .find(m => /Subject: Votre livret d'accueil/.test(m) && /filename="?livret-accueil-chalet-des-pins\.pdf/.test(m));
+    assert.ok(pj && /^To: test@exemple\.fr/m.test(pj), "PDF non reçu à l'adresse vérifiée");
+    console.log("ok   PDF envoyé en pièce jointe à l'adresse vérifiée");
+  }
   const encart = p.locator('.livret-gen [data-apres-telechargement]');
   await encart.waitFor({ state: "visible" });
   assert.equal(await encart.locator('a[href="/fr/automatisation-pour/conciergerie"]').count(), 1, "lien conciergerie absent");
@@ -127,6 +170,10 @@ try {
   // 4. Mobile 375 px : onglets, pas de défilement horizontal
   const m = await (await browser.newContext({ viewport: { width: 375, height: 812 }, deviceScaleFactor: 2, reducedMotion: "reduce" })).newPage();
   await m.goto(URL, { waitUntil: "networkidle" });
+  const [gw, giw] = await m.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
+  assert.equal(gw, giw, `écran d'entrée : défilement horizontal à 375 px (${gw} > ${giw})`);
+  await m.screenshot({ path: path.join(OUT, "acces-375.jpg"), quality: 70, type: "jpeg" });
+  await ouvrirOutil(m, "mobile@exemple.fr");
   const [sw, iw] = await m.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
   assert.equal(sw, iw, `défilement horizontal à 375 px (${sw} > ${iw})`);
   assert.equal(await m.locator("[data-apercu]").isVisible(), false);

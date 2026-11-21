@@ -1,19 +1,12 @@
 "use server";
 
-import nodemailer from "nodemailer";
 import { LOGEMENTS_OPTIONS } from "@/lib/ressources";
+import { boiteEnvoi, clean, EMAIL_RE } from "@/lib/mail";
 
 /**
  * Reçoit le formulaire du livret d'accueil et envoie le contact par mail.
  *
- * Variables d'environnement (Vercel, jamais dans le dépôt) :
- *   SMTP_USER      boîte d'envoi dédiée à ce formulaire, ex. site@timevo.io
- *   SMTP_PASSWORD  son mot de passe
- *   SMTP_HOST      facultatif, smtp.hostinger.com par défaut
- *   SMTP_PORT      facultatif, 465 par défaut (SSL)
- *   LEAD_TO        facultatif, hello@timevo.io par défaut
- *
- * Sans SMTP_USER / SMTP_PASSWORD, le visiteur reçoit quand même ses fichiers
+ * Boîte d'envoi : lib/mail.ts. Sans SMTP_USER / SMTP_PASSWORD, le visiteur reçoit quand même ses fichiers
  * et l'absence de configuration est journalisée : on ne bloque pas un
  * prospect pour un problème de notre côté.
  */
@@ -26,13 +19,6 @@ export type LivretState =
   | { status: "idle" }
   | { status: "error"; field: "email" | "consent" | "logements"; values: LivretValues }
   | { status: "ok" };
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-/** Une ligne, sans retour chariot, bornée : rien ne déborde dans l'en-tête du mail. */
-function clean(value: FormDataEntryValue | null, max: number): string {
-  return String(value ?? "").replace(/[\r\n\t]+/g, " ").trim().slice(0, max);
-}
 
 export async function requestLivret(_prev: LivretState, formData: FormData): Promise<LivretState> {
   // Champ piège : invisible pour un humain, rempli par les robots.
@@ -50,26 +36,18 @@ export async function requestLivret(_prev: LivretState, formData: FormData): Pro
   }
   if (!consent) return { status: "error", field: "consent", values };
 
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASSWORD;
-  if (!user || !pass) {
+  const boite = boiteEnvoi();
+  if (!boite) {
     console.error("[livret] SMTP_USER / SMTP_PASSWORD absents : contact non transmis (fichiers servis quand même).");
     return { status: "ok" };
   }
-
-  const port = Number(process.env.SMTP_PORT || 465);
-  const transport = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || "smtp.hostinger.com",
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  });
+  const { transport, user } = boite;
 
   const when = new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" });
   try {
     await transport.sendMail({
       from: `"Site Timevo" <${user}>`,
-      to: process.env.LEAD_TO || "hello@timevo.io",
+      to: boite.leadTo,
       replyTo: email,
       subject: `Livret d'accueil téléchargé : ${company || email}`,
       text: [

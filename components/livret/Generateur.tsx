@@ -1,12 +1,25 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ETAPES, type Champ } from "@/lib/livret/contenu";
 import {
   brouillonVide, restaurerBrouillon, construireLivret, nomFichier, couleurValide,
   CLE_BROUILLON, type LivretData,
 } from "@/lib/livret/livret";
 import Apercu from "./Apercu";
+import AccesGenerateur, { type Acces } from "./Acces";
+import { envoyerPdf } from "@/app/[locale]/ressources/livret-accueil-airbnb/creer/actions";
+
+const CLE_ACCES = "timevo-livret-acces-v1";
+
+function lireAcces(): Acces | null {
+  try {
+    const a = JSON.parse(window.localStorage.getItem(CLE_ACCES) ?? "null");
+    return a && typeof a.email === "string" && (typeof a.acces === "string" || a.acces === null) ? a : null;
+  } catch {
+    return null;
+  }
+}
 import { Arrow } from "../primitives";
 import { CONTACT_HREF } from "@/lib/contact";
 
@@ -103,8 +116,15 @@ export default function Generateur() {
   const [erreurPhoto, setErreurPhoto] = useState("");
   const [photoEnCours, setPhotoEnCours] = useState(false);
 
+  const [acces, setAcces] = useState<Acces | null>(null);
+  const [envoi, setEnvoi] = useState<"aucun" | "encours" | "ok" | "echec">("aucun");
+  const ouvrir = useCallback((a: Acces) => {
+    setAcces(a);
+    try { window.localStorage.setItem(CLE_ACCES, JSON.stringify(a)); } catch { /* accès redemandé à la prochaine visite */ }
+  }, []);
+
   // Le brouillon n'est lu qu'après le montage : le rendu serveur reste identique au premier rendu client.
-  useEffect(() => { setData(lire()); setCharge(true); }, []);
+  useEffect(() => { setData(lire()); setAcces(lireAcces()); setCharge(true); }, []);
   useEffect(() => { if (charge) ecrire(data); }, [data, charge]);
 
   const livret = useMemo(() => construireLivret(data), [data]);
@@ -161,6 +181,7 @@ export default function Generateur() {
 
   async function telecharger() {
     setPdfEtat("encours");
+    setEnvoi("aucun");
     try {
       const { genererPdf } = await import("./LivretPdf");
       const blob = await genererPdf(livret);
@@ -170,6 +191,14 @@ export default function Generateur() {
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 10_000);
       setPdfEtat("ok");
+      // Copie par email, à l'adresse vérifiée seulement (sans jeton : outil ouvert sans code).
+      if (acces?.acces) {
+        setEnvoi("encours");
+        const fd = new FormData();
+        fd.append("acces", acces.acces);
+        fd.append("pdf", new File([blob], nomFichier(data), { type: "application/pdf" }));
+        envoyerPdf(fd).then(r => setEnvoi(r.ok ? "ok" : "echec"), () => setEnvoi("echec"));
+      }
     } catch (err) {
       console.error("[livret] génération PDF :", err);
       setPdfEtat("erreur");
@@ -181,6 +210,10 @@ export default function Generateur() {
     try { window.localStorage.removeItem(CLE_BROUILLON); } catch { /* rien à effacer */ }
     setData(brouillonVide()); setErreurLogo(""); setErreurPhoto(""); setPdfEtat("idle"); viderLogoInput(); viderPhotoInput(); setConfirmeEffacer(false); aller(0);
   }
+
+  // Avant le montage, rien : on ne sait pas encore si l'accès est déjà ouvert dans ce navigateur.
+  if (!charge) return <div style={{ minHeight: 420 }} />;
+  if (!acces) return <AccesGenerateur onOuvert={ouvrir} />;
 
   return (
     <div ref={haut} className="livret-gen rr-block" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 40, alignItems: "start" }}>
@@ -272,8 +305,13 @@ export default function Generateur() {
         )}
         {pdfEtat === "ok" && (
           <>
-            <p role="status" style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--dim)", margin: "14px 0 0" }}>
-              Votre livret est téléchargé. Il reste enregistré dans ce navigateur : vous pouvez revenir le modifier.
+            <p role="status" data-envoi={envoi} style={{ fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.5, color: "var(--dim)", margin: "14px 0 0" }}>
+              Votre livret est téléchargé
+              {envoi === "encours" && <>, et nous l&apos;envoyons à {acces?.email}…</>}
+              {envoi === "ok" && <> et envoyé à <strong style={{ color: "var(--text)" }}>{acces?.email}</strong>.</>}
+              {envoi === "echec" && <>. L&apos;envoi par email n&apos;a pas abouti : gardez le fichier téléchargé.</>}
+              {envoi === "aucun" && "."}
+              {" "}Il reste enregistré dans ce navigateur : vous pouvez revenir le modifier.
             </p>
             <div data-apres-telechargement style={{ background: "var(--card-soft)", border: "1px solid var(--border)", borderRadius: 16, padding: 20, marginTop: 16 }}>
               <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.5, color: "var(--text)", margin: "0 0 14px" }}>

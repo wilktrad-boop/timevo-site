@@ -6,7 +6,7 @@ import { LegalShell, Article, P, Strong, A, Ul } from "@/components/legal";
 import type { Locale } from "@/lib/pageLabels";
 
 const BASE_URL = "https://www.timevo.io";
-const LAST_UPDATE = "17 juin 2026";
+const LAST_UPDATE = "21 novembre 2026";
 
 function isValidLocale(v: string): v is Locale {
   return (routing.locales as readonly string[]).includes(v);
@@ -80,6 +80,13 @@ export default async function ConfidentialitePage({
             que vous gérez et, si vous l&apos;indiquez, le nom de votre entreprise, afin de vous remettre le
             document et de vous recontacter au sujet de votre activité.
           </li>
+          <li>
+            <Strong>Générateur de livret d&apos;accueil.</Strong> Pour ouvrir l&apos;outil, vous indiquez votre adresse
+            e-mail, à laquelle nous envoyons un code de vérification, ainsi que le nombre de logements gérés et, si vous
+            le souhaitez, le nom de votre conciergerie. Le contenu de votre livret (textes, logo, photo) reste dans votre
+            navigateur pendant que vous le rédigez. Le PDF terminé transite par nos serveurs le temps de vous être envoyé
+            par e-mail, à l&apos;adresse vérifiée uniquement ; nous ne le conservons pas.
+          </li>
         </Ul>
       </Article>
 
@@ -94,7 +101,7 @@ export default async function ConfidentialitePage({
             intérêt légitime à traiter votre sollicitation (art. 6.1.b et 6.1.f du RGPD).
           </li>
           <li>
-            <Strong>Téléchargement d&apos;une ressource</Strong> : votre consentement, donné en cochant la case du
+            <Strong>Téléchargement d&apos;une ressource et générateur de livret</Strong> : votre consentement, donné en cochant la case du
             formulaire (art. 6.1.a du RGPD). Vous pouvez le retirer à tout moment en écrivant à hello@timevo.io.
           </li>
         </Ul>
