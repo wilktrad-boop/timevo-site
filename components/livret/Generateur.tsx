@@ -8,6 +8,7 @@ import {
 } from "@/lib/livret/livret";
 import Apercu from "./Apercu";
 import { Arrow } from "../primitives";
+import { CONTACT_HREF } from "@/lib/contact";
 
 const LOGO_MAX = 1024 * 1024;
 
@@ -77,11 +78,16 @@ export default function Generateur() {
   const maj = (id: string, v: string) => { setData(d => ({ ...d, valeurs: { ...d.valeurs, [id]: v } })); setConfirmeEffacer(false); };
   const aller = (i: number) => { setEtape(i); setPdfEtat("idle"); setConfirmeEffacer(false); haut.current?.scrollIntoView({ block: "start" }); };
 
-  function choisirLogo(fichier: File | undefined) {
+  async function choisirLogo(fichier: File | undefined) {
     setErreurLogo("");
     if (!fichier) return;
     if (!["image/png", "image/jpeg"].includes(fichier.type)) { setErreurLogo("Format accepté : PNG ou JPG."); viderLogoInput(); return; }
     if (fichier.size > LOGO_MAX) { setErreurLogo("Le logo doit faire moins de 1 Mo."); viderLogoInput(); return; }
+    // Le type déclaré vient du nom du fichier : on vérifie la signature réelle (PNG ou JPEG).
+    const o = new Uint8Array(await fichier.slice(0, 4).arrayBuffer());
+    const png = o[0] === 0x89 && o[1] === 0x50 && o[2] === 0x4e && o[3] === 0x47;
+    const jpeg = o[0] === 0xff && o[1] === 0xd8 && o[2] === 0xff;
+    if (!png && !jpeg) { setErreurLogo("Format accepté : PNG ou JPG."); viderLogoInput(); return; }
     const lecteur = new FileReader();
     lecteur.onload = () => {
       const dataUrl = String(lecteur.result);
@@ -122,7 +128,7 @@ export default function Generateur() {
   }
 
   return (
-    <div ref={haut} className="livret-gen" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 40, alignItems: "start" }}>
+    <div ref={haut} className="livret-gen rr-block" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 40, alignItems: "start" }}>
       <div className="livret-tabs" role="tablist" aria-label="Affichage" style={{ display: "none", gap: 8 }}>
         {(["saisie", "apercu"] as const).map(o => (
           <button key={o} type="button" role="tab" aria-selected={onglet === o} onClick={() => setOnglet(o)} style={{
@@ -193,9 +199,20 @@ export default function Generateur() {
           </p>
         )}
         {pdfEtat === "ok" && (
-          <p role="status" style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--dim)", margin: "14px 0 0" }}>
-            Votre livret est téléchargé. Il reste enregistré dans ce navigateur : vous pouvez revenir le modifier.
-          </p>
+          <>
+            <p role="status" style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--dim)", margin: "14px 0 0" }}>
+              Votre livret est téléchargé. Il reste enregistré dans ce navigateur : vous pouvez revenir le modifier.
+            </p>
+            <div data-apres-telechargement style={{ background: "var(--card-soft)", border: "1px solid var(--border)", borderRadius: 16, padding: 20, marginTop: 16 }}>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.5, color: "var(--text)", margin: "0 0 14px" }}>
+                Ce livret, chez les conciergeries qu&apos;on accompagne, devient un guide voyageur digital avec un assistant qui répond aux voyageurs. On en parle en 30 minutes ?
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
+                <a href="/fr/automatisation-pour/conciergerie" style={{ fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 600, color: "var(--accent-soft)" }}>Voir l&apos;offre conciergerie</a>
+                <a href={CONTACT_HREF} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 600, color: "var(--accent-soft)" }}>Réserver un diagnostic gratuit</a>
+              </div>
+            </div>
+          </>
         )}
         <button type="button" data-action="effacer" onClick={effacer}
           style={{ ...bouton, marginTop: 20, padding: 0, border: "none", background: "none", color: "var(--dim)", fontSize: 13, fontWeight: 500 }}>

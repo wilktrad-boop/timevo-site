@@ -28,9 +28,13 @@ try {
   await p.fill('[name="nomLogement"]', "Chalet des Pins");
   await p.fill('[name="contactPrenom"]', "Alex");
   await p.fill('[name="contactTelephone"]', "01 99 00 55 66");
+  await p.fill('[name="contactDispo"]', "tous les jours 📞 8 h → 21 h");
   const logo = path.join(OUT, "logo-test.png");
   fs.writeFileSync(logo, LOGO_PNG);
   await p.setInputFiles('input[name="logo"]', logo);
+  await p.waitForSelector('[data-apercu] img');
+  assert.equal(await p.locator('.livret-gen [role="alert"]').count(), 0, "logo valide refusé");
+  console.log("ok   logo PNG accepté");
   await p.fill('input[name="couleur"]', "#aa3355");
   assert.match(await p.locator("[data-apercu]").innerText(), /Chalet des Pins/);
   await p.click('[data-action="suivant"]');
@@ -52,6 +56,13 @@ try {
   await dl.saveAs(pdfPath);
   assert.ok(fs.statSync(pdfPath).size > 3000, "PDF trop petit");
   await p.waitForSelector('[role="status"]');
+  const encart = p.locator('.livret-gen [data-apres-telechargement]');
+  await encart.waitFor({ state: "visible" });
+  assert.equal(await encart.locator('a[href="/fr/automatisation-pour/conciergerie"]').count(), 1, "lien conciergerie absent");
+  assert.equal(await encart.locator('a[target="_blank"]').count(), 1, "lien diagnostic absent");
+  assert.ok(await p.locator('.livret-gen.rr-block').count() === 1, "rr-block absent");
+  await encart.screenshot({ path: path.join(OUT, "encart-apres-telechargement.png") });
+  console.log("ok   encart après téléchargement");
   console.log("ok   PDF téléchargé", pdfPath);
 
   // 2. Brouillon retrouvé après rechargement, puis effacé
@@ -70,9 +81,16 @@ try {
   await p.waitForSelector('[role="alert"]');
   console.log("ok   logo invalide refusé");
 
+  // 3a. Faux PNG : un WebP renommé .png est refusé (signature vérifiée)
+  const faux = path.join(OUT, "faux.png");
+  fs.writeFileSync(faux, Buffer.from("UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAUAmJaQAA3AA/vuUAAA=", "base64"));
+  await p.setInputFiles('input[name="logo"]', faux);
+  await p.waitForSelector('[role="alert"]:has-text("PNG ou JPG")');
+  console.log("ok   WebP renommé .png refusé");
+
   // 3b. Logo corrompu (type PNG, données illisibles) refusé avec un message
   const bad = path.join(OUT, "bad.png");
-  fs.writeFileSync(bad, "not a png");
+  fs.writeFileSync(bad, Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47]), Buffer.from("not a png")]));
   await p.setInputFiles('input[name="logo"]', bad);
   await p.waitForSelector('[role="alert"]:has-text("pas pu être lu")');
   console.log("ok   logo corrompu refusé");

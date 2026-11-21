@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   brouillonVide, remplir, lignes, couleurValide, restaurerBrouillon,
-  construireLivret, nomFichier, type LivretData,
+  construireLivret, nomFichier, pourPdf, type LivretData,
 } from "../../lib/livret/livret.ts";
 import { CHAMPS, COULEUR_DEFAUT } from "../../lib/livret/contenu.ts";
 
@@ -80,4 +80,15 @@ test("construireLivret remplit couverture, listes et pied de page", () => {
 test("nomFichier produit un nom de fichier sans accents ni espaces", () => {
   assert.equal(nomFichier(avec({ nomLogement: "Le Loft du Marais — 3e" })), "livret-accueil-le-loft-du-marais-3e.pdf");
   assert.equal(nomFichier(avec({ nomLogement: "" })), "livret-accueil.pdf");
+});
+
+test("pourPdf retire ce que la police ne sait pas dessiner et garde le français", () => {
+  assert.equal(pourPdf("Appelez-nous 📞 vite"), "Appelez-nous vite");
+  assert.equal(pourPdf("8 h → 21 h"), "8 h -> 21 h");
+  assert.equal(pourPdf("a ← b"), "a <- b");
+  assert.equal(pourPdf("11\u202Fh 9\u2009h 5\u2007h"), "11\u00A0h 9\u00A0h 5\u00A0h");
+  assert.equal(pourPdf("Cœur à l’œuvre : 20 € … « oui » – ça"), "Cœur à l’œuvre : 20 € … « oui » – ça");
+  assert.equal(pourPdf("Łódź"), "ód");
+  assert.equal(pourPdf("une\nligne"), "une\nligne");
+  assert.equal(pourPdf("e\u0301te\u0301"), "été");
 });

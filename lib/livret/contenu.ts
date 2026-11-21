@@ -47,7 +47,7 @@ export const ETAPES: Etape[] = [
       { id: "adresse", label: "Adresse du logement", type: "court", exemple: "8 rue de l'Exemple, 75003 Paris", sensible: true },
       { id: "contactPrenom", label: "Prénom du contact", type: "court", exemple: "Camille" },
       { id: "contactTelephone", label: "Téléphone du contact", type: "court", exemple: "01 99 00 12 34", sensible: true },
-      { id: "contactDispo", label: "Disponibilités", type: "court", exemple: "tous les jours de 8 h à 21 h" },
+      { id: "contactDispo", label: "Disponibilités", type: "court", exemple: "tous les jours de 8 h à 21 h" },
       {
         id: "intro", label: "Mot d'accueil", type: "long",
         exemple: "Merci d'avoir choisi notre logement…",
@@ -61,11 +61,11 @@ export const ETAPES: Etape[] = [
     titre: "L'arrivée",
     intro: "Tout ce qu'il faut pour entrer dans le logement sans vous appeler.",
     champs: [
-      { id: "heureArrivee", label: "Heure d'arrivée (à partir de)", type: "court", exemple: "16 h", sensible: true },
+      { id: "heureArrivee", label: "Heure d'arrivée", type: "court", exemple: "16 h", sensible: true },
       { id: "codeImmeuble", label: "Code de l'immeuble", type: "court", exemple: "4815B", sensible: true },
-      { id: "etagePorte", label: "Étage et porte", type: "court", exemple: "3e étage, porte de droite" },
-      { id: "cles", label: "Remise des clés", type: "long", exemple: "Boîte à clés à gauche de la porte, code envoyé le jour de l'arrivée." },
-      { id: "parking", label: "Stationnement", type: "long", exemple: "Pas de place privée. Parking public à 4 minutes à pied ; stationnement en rue payant de 9 h à 20 h." },
+      { id: "etagePorte", label: "Étage et porte", type: "court", exemple: "3e étage, porte de droite", sensible: true },
+      { id: "cles", label: "Remise des clés", type: "long", exemple: "Boîte à clés à gauche de la porte, code envoyé le jour de l'arrivée.", sensible: true },
+      { id: "parking", label: "Stationnement", type: "long", exemple: "Pas de place privée. Parking public à 4 minutes à pied ; stationnement en rue payant de 9 h à 20 h." },
       {
         id: "arriveeTardive", label: "Arrivée tardive", type: "long", exemple: "",
         defaut: "Vous arrivez tard ? Prévenez-nous la veille : l'accès autonome fonctionne à toute heure, mais nous préférons savoir que vous êtes bien arrivés.",
@@ -130,10 +130,10 @@ export const ETAPES: Etape[] = [
         id: "reglesIntro", label: "Introduction", type: "long", exemple: "",
         defaut: "Le logement est un lieu de vie dans un immeuble habité. Quelques règles pour que votre séjour se passe bien, pour vous comme pour les voisins :",
       },
-      { id: "capacite", label: "Capacité maximale", type: "court", exemple: "4 personnes" },
+      { id: "capacite", label: "Capacité", type: "court", exemple: "4 personnes" },
       {
         id: "regles", label: "Règles", type: "liste", exemple: "",
-        defaut: "Fêtes et événements : non autorisés\nCalme : à partir de 22 h, dans le logement comme dans les parties communes\nTabac : logement non-fumeur, y compris à la fenêtre\nAnimaux : non acceptés\nClés : à ne pas reproduire ni confier à des personnes extérieures à la réservation",
+        defaut: "Fêtes et événements : non autorisés\nCalme : à partir de 22 h, dans le logement comme dans les parties communes\nTabac : logement non-fumeur, y compris à la fenêtre\nAnimaux : non acceptés\nClés : à ne pas reproduire ni confier à des personnes extérieures à la réservation",
       },
       { id: "tri", label: "Tri et déchets", type: "long", exemple: "Poubelles dans la cour, à gauche en entrant. Bac jaune : emballages et papiers. Le verre se dépose dans la colonne au coin de la rue." },
     ],
@@ -154,8 +154,8 @@ export const ETAPES: Etape[] = [
     intro: "Vos bonnes adresses : la rubrique que les voyageurs lisent le plus.",
     champs: [
       { id: "quartierIntro", label: "Introduction", type: "long", exemple: "", defaut: "Nos adresses préférées, testées par l'équipe." },
-      { id: "manger", label: "Pour manger", type: "liste", exemple: "Le Petit Comptoir, à 3 minutes : cuisine de saison, réservez le week-end\nLa Fournée, en bas de la rue : boulangerie ouverte dès 7 h" },
-      { id: "quotidien", label: "Au quotidien", type: "liste", exemple: "Supérette : au coin de la rue, ouverte jusqu'à 22 h\nPharmacie : à 2 minutes, place du marché" },
+      { id: "manger", label: "Pour manger", type: "liste", exemple: "Le Petit Comptoir, à 3 minutes : cuisine de saison, réservez le week-end\nLa Fournée, en bas de la rue : boulangerie ouverte dès 7 h" },
+      { id: "quotidien", label: "Au quotidien", type: "liste", exemple: "Supérette : au coin de la rue, ouverte jusqu'à 22 h\nPharmacie : à 2 minutes, place du marché" },
       { id: "transports", label: "Se déplacer", type: "liste", exemple: "Métro : à 4 minutes, ligne 11\nGare : 15 minutes en métro" },
     ],
     sections: [{
@@ -173,7 +173,7 @@ export const ETAPES: Etape[] = [
     titre: "Le départ",
     intro: "L'heure, la liste à cocher et les numéros utiles.",
     champs: [
-      { id: "heureDepart", label: "Heure de départ (avant)", type: "court", exemple: "11 h", sensible: true },
+      { id: "heureDepart", label: "Heure de départ", type: "court", exemple: "11 h", sensible: true },
       {
         id: "departInfo", label: "Informations de départ", type: "long", exemple: "",
         defaut: "Besoin de plus de temps ? Demandez-nous la veille : selon les réservations, nous pouvons parfois décaler l'heure.",

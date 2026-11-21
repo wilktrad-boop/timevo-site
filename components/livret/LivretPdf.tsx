@@ -7,7 +7,7 @@
  * à cocher sont dessinées (le caractère ☐ n'existe pas dans Helvetica).
  */
 import { Document, Page, View, Text, Image, StyleSheet, pdf } from "@react-pdf/renderer";
-import type { BlocRendu, LivretRendu } from "@/lib/livret/livret";
+import { pourPdf, type BlocRendu, type LivretRendu } from "@/lib/livret/livret";
 
 const INK = "#1F2A2E", DIM = "#5B6670", LINE = "#D5DCD9", SOFT = "#F1F4F3";
 
@@ -91,6 +91,29 @@ function LivretDocument({ livret }: { livret: LivretRendu }) {
   );
 }
 
+/** Copie du livret dont tous les textes sont compatibles avec la police du PDF. */
+function nettoyer(l: LivretRendu): LivretRendu {
+  const lignes = (ls: { label: string; valeur: string }[]) => ls.map(x => ({ label: pourPdf(x.label), valeur: pourPdf(x.valeur) }));
+  const titre = (t: string | undefined) => (t ? { titre: pourPdf(t) } : {});
+  const bloc = (b: BlocRendu): BlocRendu => {
+    if (b.type === "tableau") return { type: "tableau", ...titre(b.titre), lignes: lignes(b.lignes) };
+    if (b.type === "texte") return { type: "texte", ...titre(b.titre), texte: pourPdf(b.texte) };
+    return { type: "liste", ...titre(b.titre), style: b.style, items: b.items.map(pourPdf) };
+  };
+  return {
+    ...l,
+    couverture: {
+      surtitre: l.couverture.surtitre === null ? null : pourPdf(l.couverture.surtitre),
+      titre: pourPdf(l.couverture.titre),
+      sousTitre: pourPdf(l.couverture.sousTitre),
+      tableau: lignes(l.couverture.tableau),
+      intro: l.couverture.intro === null ? null : pourPdf(l.couverture.intro),
+    },
+    sections: l.sections.map(sec => ({ ...sec, titre: pourPdf(sec.titre), blocs: sec.blocs.map(bloc) })),
+    pied: l.pied === null ? null : pourPdf(l.pied),
+  };
+}
+
 export async function genererPdf(livret: LivretRendu): Promise<Blob> {
-  return pdf(<LivretDocument livret={livret} />).toBlob();
+  return pdf(<LivretDocument livret={nettoyer(livret)} />).toBlob();
 }

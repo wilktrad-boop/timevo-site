@@ -123,6 +123,29 @@ export function construireLivret(data: LivretData): LivretRendu {
   };
 }
 
+const AUTORISES_WIN1252 = new Set(Array.from("€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ"));
+
+/**
+ * Texte compatible avec la police Helvetica du PDF (WinAnsi / Windows-1252).
+ * Les espaces fines deviennent des insécables, les flèches des équivalents
+ * ASCII, et tout caractère que la police ne sait pas dessiner est retiré
+ * (sinon il s'affiche sous la forme d'un autre caractère).
+ */
+export function pourPdf(texte: string): string {
+  const net = texte
+    .normalize("NFC")
+    .replace(/[\u202F\u2009\u2007]/g, "\u00A0")
+    .replace(/→/g, "->")
+    .replace(/←/g, "<-");
+  let sortie = "";
+  for (const car of net) {
+    const n = car.codePointAt(0) ?? 0;
+    if (car === "\n" || (n >= 0x20 && n <= 0x7e) || (n >= 0xa0 && n <= 0xff) || AUTORISES_WIN1252.has(car)) sortie += car;
+  }
+  // Un emoji retiré entre deux espaces ne doit pas laisser un double espace.
+  return sortie.replace(/ {2,}/g, " ");
+}
+
 export function nomFichier(data: LivretData): string {
   const slug = (data.valeurs.nomLogement ?? "")
     .normalize("NFD").replace(/[̀-ͯ]/g, "")

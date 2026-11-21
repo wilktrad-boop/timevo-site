@@ -23,7 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: GENERATEUR.metaTitle,
     description: GENERATEUR.metaDescription,
     alternates: { canonical: PAGE_URL },
-    openGraph: { title: GENERATEUR.metaTitle, description: GENERATEUR.metaDescription, url: PAGE_URL, siteName: "Timevo", locale: "fr_FR", type: "website" },
+    openGraph: { title: GENERATEUR.metaTitle, description: GENERATEUR.metaDescription, url: PAGE_URL, siteName: "Timevo", locale: "fr_FR", type: "website", images: [{ url: `${BASE}/ressources/livret-apercu-1.webp`, width: 620, height: 877 }] },
+    twitter: { card: "summary_large_image", title: GENERATEUR.metaTitle, description: GENERATEUR.metaDescription },
   };
 }
 
@@ -38,6 +39,7 @@ export default async function CreerLivretPage({ params }: { params: Promise<{ lo
       <main>
         <Breadcrumb label="Fil d'Ariane" items={[
           { href: "/fr", label: "Accueil" },
+          { href: "/fr/automatisation-pour/conciergerie", label: "Conciergerie" },
           { href: LIVRET_PATH, label: "Livret d'accueil" },
           { label: "Créer mon livret" },
         ]} />

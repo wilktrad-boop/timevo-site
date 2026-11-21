@@ -39,7 +39,7 @@ export const LIVRET = {
     { title: "Le départ", desc: "Une liste à cocher avant de partir, les numéros utiles, et la demande d'avis au bon moment." },
   ],
   creerCta: "Créer mon livret en ligne",
-  creerNote: "Gratuit, sans inscription. Ou recevez le modèle Word ci-contre.",
+  creerNote: "Gratuit, sans inscription.",
   formH2: "Ou recevez le modèle Word.",
   formSubtitle: "Le Word modifiable et l'exemple rempli, en téléchargement immédiat.",
   form: {
