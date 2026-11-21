@@ -23,7 +23,21 @@ export type SectorContent = {
   faqs: [string, string][];
   ctaH2: string;
   ctaSubtitle: string;
+  /** Captures d'écran d'une plateforme livrée, affichées après les workflows. */
+  screens?: {
+    h2: string;
+    subtitle: string;
+    items: { src: string; alt: string; caption: string; mobile?: boolean }[];
+  };
 };
+
+/** Dimensions natives des captures de `screens` (desktop 1200×750, mobile 600×1298). */
+export const SCREEN_SIZES = {
+  desktop: { width: 1200, height: 750 },
+  mobile: { width: 600, height: 1298 },
+} as const;
+
+const CONCIERGERIE_SHOTS = "/secteurs/conciergerie";
 
 export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
   cuisiniste: {
@@ -615,6 +629,278 @@ export const SECTORS: Record<string, Record<Locale, SectorContent>> = {
       ctaH2: "30 minutes to map your solar funnel.",
       ctaSubtitle:
         "We look at your lead volume, qualification process and install tracking. We identify where automation returns the most margin.",
+    },
+  },
+  conciergerie: {
+    fr: {
+      metaTitle: "Logiciel de conciergerie sur mesure — automatisations et IA",
+      metaDescription:
+        "Logiciel de conciergerie sur mesure : messages automatiques Airbnb et Booking, missions ménage, espace propriétaire, agents IA. Branché sur votre PMS.",
+      eyebrow: "AUTOMATISATION · CONCIERGERIE",
+      h1: "Logiciel de conciergerie sur mesure.",
+      subtitle:
+        "Messages voyageurs, ménage, propriétaires : on construit la plateforme de votre conciergerie, branchée sur votre PMS et vos canaux, avec des agents IA qui travaillent pour vous. Et on reste après.",
+      audienceLabel: "Pour qui",
+      audience: [
+        "Conciergeries Airbnb",
+        "Gestion locative courte durée",
+        "Conciergeries multi-propriétaires",
+      ],
+      problemH2: "Ce qui ronge vos semaines.",
+      problems: [
+        {
+          n: "01",
+          title: "Les messages voyageurs tombent à toute heure",
+          desc: "Arrivée tardive, boîte à clés, lit bébé : sur Airbnb, Booking et WhatsApp, chaque question coupe la journée, le soir et le week-end compris.",
+        },
+        {
+          n: "02",
+          title: "Le ménage se coordonne par SMS",
+          desc: "Une mission par départ, des équipes à relancer, un remplaçant à trouver quand quelqu'un ne peut pas. Tout repose sur votre téléphone.",
+        },
+        {
+          n: "03",
+          title: "Les propriétaires veulent des comptes",
+          desc: "Revenus, nuits louées, séjours à venir : chaque mois, les tableaux se refont à la main, logement par logement.",
+        },
+      ],
+      workflowsH2: "Ce qu'on met en place dans une conciergerie.",
+      workflowsSubtitle:
+        "Une plateforme à votre marque, branchée sur votre PMS et vos canaux de réservation. Le premier système part en production en trois semaines.",
+      workflows: [
+        {
+          title: "Un tableau de pilotage",
+          desc: "Messages Airbnb et Booking, réservations modifiées ou annulées, numéros de voyageurs manquants : tout ce qui demande une action, sur un seul écran.",
+        },
+        {
+          title: "Messages automatiques aux voyageurs",
+          desc: "Un agent IA répond dans la langue du voyageur à partir du guide du logement, et prépare vos réponses Airbnb et Booking. Ce qui engage la conciergerie attend votre accord.",
+        },
+        {
+          title: "Un livret d'accueil digital",
+          desc: "Un guide par séjour : arrivée, parking, équipements, bonnes adresses. Multilingue, avec un assistant qui répond aux questions du voyageur.",
+        },
+        {
+          title: "Les missions ménage sur mobile",
+          desc: "Chaque départ crée sa mission. L'équipe confirme ou refuse depuis son téléphone ; si elle ne peut pas, la mission passe à une autre équipe.",
+        },
+        {
+          title: "Un espace propriétaire",
+          desc: "Chiffre d'affaires, net propriétaire, calendrier et prochains séjours, en français, anglais et allemand. À jour en continu, sans export.",
+        },
+        {
+          title: "La rentabilité par logement",
+          desc: "Statistiques par exercice et par logement, et un agent qui répond à vos questions sur les chiffres sans jamais les modifier.",
+        },
+      ],
+      screens: {
+        h2: "La plateforme, écran par écran.",
+        subtitle:
+          "Captures de notre version de démonstration : les mêmes écrans que ceux livrés à nos clients, avec des données fictives.",
+        items: [
+          {
+            src: `${CONCIERGERIE_SHOTS}/dashboard.webp`,
+            alt: "Tableau de pilotage de la conciergerie : messages Airbnb et Booking à traiter",
+            caption: "Le pilotage : messages voyageurs, annulations, numéros à récupérer.",
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/agents.webp`,
+            alt: "Page des agents IA : assistant de direction, rentabilité, SAV voyageurs",
+            caption: "Les agents IA : chacun un rôle, rien d'engageant ne part sans validation.",
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/proprietaire.webp`,
+            alt: "Espace propriétaire : chiffre d'affaires, logements et prochains séjours",
+            caption: "L'espace propriétaire : revenus, séjours et calendrier, en trois langues.",
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/menage.webp`,
+            alt: "Espace ménage sur mobile : missions à confirmer",
+            caption: "L'espace ménage : confirmer ou refuser une mission depuis le téléphone.",
+            mobile: true,
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/guide.webp`,
+            alt: "Guide voyageur sur mobile : livret d'accueil digital du séjour",
+            caption: "Le guide voyageur : un livret d'accueil digital, avec son assistant.",
+            mobile: true,
+          },
+        ],
+      },
+      caseH2: "Une conciergerie d'une trentaine de logements, au bord du Léman.",
+      before: [
+        "Des outils séparés qui ne se parlent pas",
+        "Les messages voyageurs traités à la main, soir et week-end compris",
+        "Le ménage coordonné par messages, mission par mission",
+        "Les comptes propriétaires refaits chaque mois",
+      ],
+      after: [
+        "Une seule plateforme, à la marque de la conciergerie",
+        "Un agent IA qui répond aux voyageurs, avec validation sur ce qui engage",
+        "Les missions ménage confirmées depuis le téléphone",
+        "Un espace propriétaire à jour en continu",
+      ],
+      roiLabel: "Réponses aux voyageurs",
+      roiValue: "24/7",
+      caseFootnote:
+        "Plateforme construite pour une conciergerie cliente à Thonon-les-Bains. Les captures ci-dessus viennent de la version de démonstration : mêmes écrans, données fictives.",
+      faqH2: "Avant d'en parler.",
+      faqs: [
+        [
+          "Ça remplace notre PMS ?",
+          "Non. Votre PMS reste la source des réservations : on se branche dessus, on récupère les séjours, les modifications et les annulations, et on construit autour ce qu'il ne fait pas.",
+        ],
+        [
+          "Les agents IA répondent seuls aux voyageurs ?",
+          "Sur ce que couvre le guide du logement, oui, à toute heure et dans la langue du voyageur. Ce qui engage la conciergerie, un geste commercial ou une exception, attend votre validation.",
+        ],
+        [
+          "Nos propriétaires et nos équipes ménage y ont accès ?",
+          "Oui, chacun avec son espace : le propriétaire voit ses logements, ses revenus et ses séjours ; l'équipe ménage voit ses missions et les confirme depuis son téléphone.",
+        ],
+        [
+          "Pourquoi du sur-mesure plutôt qu'un logiciel du marché ?",
+          "Parce que les logiciels du marché vous font adapter votre fonctionnement à leurs écrans. On part de vos process, de vos outils et de vos cas particuliers. Et on reste après la livraison pour faire évoluer la plateforme avec votre activité.",
+        ],
+      ],
+      ctaH2: "30 minutes pour regarder votre conciergerie.",
+      ctaSubtitle:
+        "On passe en revue vos réservations, votre ménage et vos messages voyageurs, et on identifie ce qui vous coûte le plus de temps aujourd'hui.",
+    },
+    en: {
+      metaTitle: "Custom software for Airbnb concierge businesses",
+      metaDescription:
+        "Custom concierge software: automated Airbnb and Booking messages, cleaning missions, owner portal, AI agents. Connected to your PMS.",
+      eyebrow: "AUTOMATION · CONCIERGE SERVICES",
+      h1: "Custom software for concierge businesses.",
+      subtitle:
+        "Guest messages, cleaning, owners: we build your concierge platform, connected to your PMS and your channels, with AI agents working for you. And we stay afterwards.",
+      audienceLabel: "Who it's for",
+      audience: [
+        "Airbnb concierge services",
+        "Short-term rental managers",
+        "Multi-owner concierge businesses",
+      ],
+      problemH2: "What eats up your weeks.",
+      problems: [
+        {
+          n: "01",
+          title: "Guest messages arrive at all hours",
+          desc: "Late arrival, key box, baby cot: on Airbnb, Booking and WhatsApp, every question breaks up the day, evenings and weekends included.",
+        },
+        {
+          n: "02",
+          title: "Cleaning is coordinated by text message",
+          desc: "One mission per checkout, teams to chase, a replacement to find when someone can't make it. It all runs through your phone.",
+        },
+        {
+          n: "03",
+          title: "Owners want reports",
+          desc: "Revenue, nights booked, upcoming stays: every month the spreadsheets are rebuilt by hand, property by property.",
+        },
+      ],
+      workflowsH2: "What we put in place for a concierge business.",
+      workflowsSubtitle:
+        "A platform under your brand, connected to your PMS and booking channels. The first system goes live within three weeks.",
+      workflows: [
+        {
+          title: "An operations dashboard",
+          desc: "Airbnb and Booking messages, changed or cancelled bookings, missing guest numbers: everything that needs action, on one screen.",
+        },
+        {
+          title: "Automated guest messages",
+          desc: "An AI agent replies in the guest's language from the property guide, and drafts your Airbnb and Booking replies. Anything that commits the business waits for your approval.",
+        },
+        {
+          title: "A digital welcome book",
+          desc: "One guide per stay: arrival, parking, amenities, local tips. Multilingual, with an assistant that answers the guest's questions.",
+        },
+        {
+          title: "Cleaning missions on mobile",
+          desc: "Every checkout creates its mission. The team confirms or declines from their phone; if they can't, the mission moves to another team.",
+        },
+        {
+          title: "An owner portal",
+          desc: "Revenue, owner net, calendar and upcoming stays, in French, English and German. Always up to date, no exports.",
+        },
+        {
+          title: "Profitability per property",
+          desc: "Statistics per financial year and per property, and an agent that answers your questions about the numbers without ever changing them.",
+        },
+      ],
+      screens: {
+        h2: "The platform, screen by screen.",
+        subtitle:
+          "Screenshots from our demo version: the same screens we deliver to our clients, with fictional data.",
+        items: [
+          {
+            src: `${CONCIERGERIE_SHOTS}/dashboard.webp`,
+            alt: "Concierge operations dashboard: Airbnb and Booking messages to handle",
+            caption: "Operations: guest messages, cancellations, missing numbers.",
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/agents.webp`,
+            alt: "AI agents page: executive assistant, profitability, guest support",
+            caption: "The AI agents: one role each, nothing that commits you goes out without approval.",
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/proprietaire.webp`,
+            alt: "Owner portal: revenue, properties and upcoming stays",
+            caption: "The owner portal: revenue, stays and calendar, in three languages.",
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/menage.webp`,
+            alt: "Cleaning space on mobile: missions to confirm",
+            caption: "The cleaning space: confirm or decline a mission from the phone.",
+            mobile: true,
+          },
+          {
+            src: `${CONCIERGERIE_SHOTS}/guide.webp`,
+            alt: "Guest guide on mobile: digital welcome book for the stay",
+            caption: "The guest guide: a digital welcome book, with its assistant.",
+            mobile: true,
+          },
+        ],
+      },
+      caseH2: "A concierge business with around thirty properties, on Lake Geneva.",
+      before: [
+        "Separate tools that don't talk to each other",
+        "Guest messages handled by hand, evenings and weekends included",
+        "Cleaning coordinated by text, mission by mission",
+        "Owner reports rebuilt every month",
+      ],
+      after: [
+        "A single platform, under the concierge's brand",
+        "An AI agent that answers guests, with approval on anything that commits",
+        "Cleaning missions confirmed from the phone",
+        "An owner portal that is always up to date",
+      ],
+      roiLabel: "Guest replies",
+      roiValue: "24/7",
+      caseFootnote:
+        "Platform built for a concierge client in Thonon-les-Bains. The screenshots above come from the demo version: same screens, fictional data.",
+      faqH2: "Before we talk.",
+      faqs: [
+        [
+          "Does it replace our PMS?",
+          "No. Your PMS stays the source of bookings: we connect to it, pull stays, changes and cancellations, and build around it what it doesn't do.",
+        ],
+        [
+          "Do the AI agents answer guests on their own?",
+          "For what the property guide covers, yes, at any hour and in the guest's language. Anything that commits the business, a commercial gesture or an exception, waits for your approval.",
+        ],
+        [
+          "Do our owners and cleaning teams have access?",
+          "Yes, each with their own space: owners see their properties, revenue and stays; cleaning teams see their missions and confirm them from their phone.",
+        ],
+        [
+          "Why custom software rather than an off-the-shelf tool?",
+          "Because off-the-shelf tools make you fit your operations to their screens. We start from your processes, your tools and your edge cases. And we stay after delivery to keep the platform moving with your business.",
+        ],
+      ],
+      ctaH2: "30 minutes to look at your concierge business.",
+      ctaSubtitle:
+        "We go through your bookings, your cleaning and your guest messages, and identify what costs you the most time today.",
     },
   },
 };

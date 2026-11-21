@@ -1,7 +1,7 @@
 import { Arrow, PillPrimary, PillGhost, MonoLabel } from "./primitives";
 import ScrollFadeIn from "./ScrollFadeIn";
 import FaqAccordion from "./FaqAccordion";
-import type { SectorContent } from "@/lib/sectors";
+import { SCREEN_SIZES, type SectorContent } from "@/lib/sectors";
 import { SECTOR_LABELS, type Locale } from "@/lib/pageLabels";
 import { CONTACT_HREF } from "@/lib/contact";
 
@@ -21,6 +21,7 @@ export default function SectorPage({
       <SectorHero s={s} L={L} demo={demo} />
       <ScrollFadeIn><SectorProblem s={s} L={L} /></ScrollFadeIn>
       <ScrollFadeIn><SectorWorkflows s={s} L={L} /></ScrollFadeIn>
+      {s.screens && <ScrollFadeIn><SectorScreens screens={s.screens} /></ScrollFadeIn>}
       <ScrollFadeIn><SectorCase s={s} L={L} /></ScrollFadeIn>
       <ScrollFadeIn><SectorFaq s={s} L={L} /></ScrollFadeIn>
       <ScrollFadeIn><SectorCta s={s} L={L} /></ScrollFadeIn>
@@ -205,6 +206,78 @@ function SectorWorkflows({ s, L }: { s: SectorContent; L: Labels }) {
         </div>
       </div>
     </section>
+  );
+}
+
+type Screens = NonNullable<SectorContent["screens"]>;
+
+function SectorScreens({ screens }: { screens: Screens }) {
+  const desktop = screens.items.filter(i => !i.mobile);
+  const mobile = screens.items.filter(i => i.mobile);
+  return (
+    <section id="ecrans" style={{ padding: "96px 28px", borderTop: "1px solid var(--border)" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <h2 style={{
+          fontFamily: "var(--font-sans)", fontSize: "clamp(32px, 4.5vw, 56px)",
+          fontWeight: 500, letterSpacing: "-0.04em", lineHeight: 1.0,
+          margin: 0, marginBottom: 16, color: "var(--text)", maxWidth: 800,
+        }}>
+          {screens.h2}
+        </h2>
+        <p style={{
+          fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--dim)",
+          maxWidth: 640, marginBottom: 48,
+        }}>
+          {screens.subtitle}
+        </p>
+
+        <div className="screens-desktop" style={{
+          display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16,
+        }}>
+          {desktop.map((item, i) => (
+            <Shot key={item.src} item={item} wide={i === 0} />
+          ))}
+        </div>
+
+        {mobile.length > 0 && (
+          <div className="screens-mobile" style={{
+            marginTop: 16,
+            display: "grid", gridTemplateColumns: `repeat(${mobile.length}, minmax(0, 300px))`,
+            gap: 16, justifyContent: "center",
+          }}>
+            {mobile.map(item => <Shot key={item.src} item={item} />)}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function Shot({ item, wide = false }: { item: Screens["items"][number]; wide?: boolean }) {
+  const size = item.mobile ? SCREEN_SIZES.mobile : SCREEN_SIZES.desktop;
+  return (
+    <figure style={{
+      margin: 0, gridColumn: wide ? "1 / -1" : undefined,
+      background: "var(--card)", border: "1px solid var(--border)",
+      borderRadius: 20, overflow: "hidden",
+    }}>
+      {/* eslint-disable-next-line @next/next/no-img-element -- capture statique déjà optimisée en WebP */}
+      <img
+        src={item.src}
+        alt={item.alt}
+        width={size.width}
+        height={size.height}
+        loading="lazy"
+        decoding="async"
+        style={{ display: "block", width: "100%", height: "auto", borderBottom: "1px solid var(--border)" }}
+      />
+      <figcaption style={{
+        padding: "16px 20px",
+        fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.5, color: "var(--dim)",
+      }}>
+        {item.caption}
+      </figcaption>
+    </figure>
   );
 }
 

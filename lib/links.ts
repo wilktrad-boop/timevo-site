@@ -74,11 +74,13 @@ const SECTOR_LABELS: Record<Locale, Record<string, { label: string; desc: string
     cuisiniste: { label: "Cuisiniste", desc: "Devis configurés, relances showroom, suivi chantier." },
     pisciniste: { label: "Pisciniste", desc: "Devis, relances saisonnières, contrats d'entretien." },
     "panneaux-solaires": { label: "Panneaux solaires", desc: "Qualification des leads, suivi de dossier." },
+    conciergerie: { label: "Conciergerie", desc: "Messages voyageurs, ménage, espace propriétaire." },
   },
   en: {
     cuisiniste: { label: "Kitchen installers", desc: "Configured quotes, showroom follow-up, project tracking." },
     pisciniste: { label: "Pool builders", desc: "Quotes, seasonal follow-up, maintenance contracts." },
     "panneaux-solaires": { label: "Solar installers", desc: "Lead qualification, application tracking." },
+    conciergerie: { label: "Concierge services", desc: "Guest messages, cleaning, owner portal." },
   },
 };
 
