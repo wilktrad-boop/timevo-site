@@ -255,6 +255,20 @@ details[open] > .demo-summary::before {
   .livret-digital figure {
     max-width: 300px;
   }
+  .livret-gen {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+  .livret-tabs {
+    display: flex !important;
+  }
+  .livret-saisie[data-visible="false"],
+  .livret-apercu[data-visible="false"] {
+    display: none !important;
+  }
+  .livret-apercu {
+    position: static !important;
+  }
 
   .pain-grid {
     grid-template-columns: 1fr !important;
@@ -361,6 +375,12 @@ details[open] > .demo-summary::before {
   }
   #telecharger {
     padding: 24px !important;
+  }
+  .livret-saisie {
+    padding: 20px !important;
+  }
+  .livret-marque {
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 
   .footer-grid {
