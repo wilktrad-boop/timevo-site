@@ -7,7 +7,7 @@ import ScrollFadeIn from "@/components/ScrollFadeIn";
 import StickyMobileCta from "@/components/StickyMobileCta";
 import Breadcrumb from "@/components/Breadcrumb";
 import LivretForm from "@/components/LivretForm";
-import { Arrow, MonoLabel, PillGhost } from "@/components/primitives";
+import { Arrow, MonoLabel, PillGhost, PillPrimary } from "@/components/primitives";
 import { LIVRET, LIVRET_PATH } from "@/lib/ressources";
 import { SCREEN_SIZES } from "@/lib/sectors";
 
@@ -112,10 +112,16 @@ export default async function LivretPage({ params }: { params: Promise<{ locale:
               </h1>
               <p style={{
                 fontFamily: "var(--font-sans)", fontSize: 18, lineHeight: 1.5, color: "var(--dim)",
-                margin: "28px 0 40px", maxWidth: 560,
+                margin: "28px 0 28px", maxWidth: 560,
               }}>
                 {LIVRET.subtitle}
               </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center", margin: "0 0 36px" }}>
+                <PillPrimary href={`${LIVRET_PATH}/creer`} large>
+                  {LIVRET.creerCta} <Arrow color="#fff" size={14} />
+                </PillPrimary>
+                <span style={{ fontFamily: "var(--font-sans)", fontSize: 13, color: "var(--dim)" }}>{LIVRET.creerNote}</span>
+              </div>
               <div className="livret-preview" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 12, maxWidth: 560 }}>
                 {[1, 2, 3].map(i => (
                   // eslint-disable-next-line @next/next/no-img-element -- aperçus statiques déjà en WebP

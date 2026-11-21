@@ -27,7 +27,7 @@ const UPDATED = {
   cities: "2026-11-21",       // « Agence IA », bouton « diagnostic gratuit »
   demos: "2026-11-21",        // bouton « diagnostic gratuit » au lieu d'« audit »
   facturation: "2026-08-28",  // retrait du prix affiché sur la page facturation électronique
-  ressources: "2026-11-21",   // création du livret d'accueil Airbnb
+  ressources: "2026-11-21",   // livret d'accueil : modèle Word et générateur en ligne
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -120,6 +120,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Ressources (français uniquement, sans alternate hreflang)
     {
       url: `${BASE}${LIVRET_PATH}`,
+      lastModified: UPDATED.ressources,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE}${LIVRET_PATH}/creer`,
       lastModified: UPDATED.ressources,
       changeFrequency: "monthly",
       priority: 0.6,
