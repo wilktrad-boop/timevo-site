@@ -18,7 +18,7 @@ export const SOLAIRE_FR: DemoCopy = {
 
   demoBadge: "Démonstration — données fictives",
   demoNote:
-    "Scénario type, pas un client existant. Toutes les données de cette page sont fictives : noms, montants, transcriptions. Les boutons réagissent mais n'envoient rien. L'interface, elle, est celle qu'on livre. Les chiffres réels sont établis pendant l'audit gratuit.",
+    "Scénario type, pas un client existant. Toutes les données de cette page sont fictives : noms, montants, transcriptions. Les boutons réagissent mais n'envoient rien. L'interface, elle, est celle qu'on livre. Les chiffres réels sont établis pendant le diagnostic gratuit.",
 
   sections: {
     overview: "Vue d'ensemble",
