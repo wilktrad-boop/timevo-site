@@ -77,6 +77,8 @@ export default function Generateur() {
 
   const maj = (id: string, v: string) => { setData(d => ({ ...d, valeurs: { ...d.valeurs, [id]: v } })); setConfirmeEffacer(false); };
   const aller = (i: number) => { setEtape(i); setPdfEtat("idle"); setConfirmeEffacer(false); haut.current?.scrollIntoView({ block: "start" }); };
+  // Depuis l'aperçu : sur mobile, l'aperçu est un onglet, on revient au formulaire.
+  const modifier = (i: number) => { setOnglet("saisie"); aller(i); };
 
   async function choisirLogo(fichier: File | undefined) {
     setErreurLogo("");
@@ -221,10 +223,13 @@ export default function Generateur() {
       </div>
 
       <div className="livret-apercu" data-visible={onglet === "apercu"} style={{ position: "sticky", top: 96 }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim-2)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 12 }}>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--dim-2)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>
           Aperçu
         </div>
-        <Apercu livret={livret} />
+        <p data-aide-apercu style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.5, color: "var(--dim)", margin: "0 0 12px" }}>
+          Le livret entier, toutes étapes confondues. En couleur : ce que vous remplissez à cette étape. Cliquez sur une rubrique pour la modifier.
+        </p>
+        <Apercu livret={livret} etapeActive={etape} nomsEtapes={ETAPES.map(x => x.titre)} onModifier={modifier} />
       </div>
     </div>
   );

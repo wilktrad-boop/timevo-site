@@ -19,7 +19,8 @@ export type BlocRendu =
   | { type: "texte"; titre?: string; texte: string }
   | { type: "liste"; titre?: string; style: "puces" | "cases"; items: string[] };
 
-export type SectionRendu = { titre: string; sautAvant: boolean; blocs: BlocRendu[] };
+/** `etape` : index dans ETAPES de l'étape où l'on remplit cette section (l'aperçu y renvoie). */
+export type SectionRendu = { titre: string; sautAvant: boolean; etape: number; blocs: BlocRendu[] };
 
 export type LivretRendu = {
   couverture: {
@@ -90,7 +91,7 @@ function tableau(lignesTableau: LigneTableau[], valeurs: Record<string, string>)
 export function construireLivret(data: LivretData): LivretRendu {
   const v = data.valeurs;
   const sections: SectionRendu[] = [];
-  for (const etape of ETAPES) {
+  for (const [indexEtape, etape] of ETAPES.entries()) {
     for (const s of etape.sections) {
       const blocs: BlocRendu[] = [];
       for (const b of s.blocs) {
@@ -105,7 +106,7 @@ export function construireLivret(data: LivretData): LivretRendu {
           if (items.length) blocs.push({ type: "liste", ...(b.titre ? { titre: b.titre } : {}), style: b.style, items });
         }
       }
-      if (blocs.length) sections.push({ titre: s.titre, sautAvant: Boolean(s.sautAvant), blocs });
+      if (blocs.length) sections.push({ titre: s.titre, sautAvant: Boolean(s.sautAvant), etape: indexEtape, blocs });
     }
   }
   return {

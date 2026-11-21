@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { BlocRendu, LivretRendu } from "@/lib/livret/livret";
 
 /** Aperçu HTML du livret : mêmes blocs que le PDF (construireLivret). Papier blanc, quel que soit le thème du site. */
@@ -37,11 +38,36 @@ function Bloc({ b, couleur }: { b: BlocRendu; couleur: string }) {
   );
 }
 
-export default function Apercu({ livret }: { livret: LivretRendu }) {
+/**
+ * Une rubrique de l'aperçu : un clic n'importe où ouvre l'étape où on la remplit
+ * (le bouton « Modifier » porte la même action pour le clavier et les lecteurs d'écran).
+ * La rubrique de l'étape en cours est mise en valeur.
+ */
+function Rubrique({ etape, active, nomEtape, couleur, onModifier, children }: {
+  etape: number; active: boolean; nomEtape: string; couleur: string;
+  onModifier: (etape: number) => void; children: ReactNode;
+}) {
+  return (
+    <div className="apercu-rubrique" data-active={active} data-etape={etape} onClick={() => onModifier(etape)}
+      style={{ ["--rubrique" as string]: couleur }}>
+      <button type="button" className="apercu-modifier" onClick={ev => { ev.stopPropagation(); onModifier(etape); }}
+        aria-label={`Modifier : étape ${nomEtape}`} style={{ color: couleur }}>
+        {active ? "En cours" : "Modifier"}
+      </button>
+      {children}
+    </div>
+  );
+}
+
+export default function Apercu({ livret, etapeActive, nomsEtapes, onModifier }: {
+  livret: LivretRendu; etapeActive: number; nomsEtapes: string[]; onModifier: (etape: number) => void;
+}) {
   const { couverture: c, couleur } = livret;
+  const props = (etape: number) => ({ etape, active: etape === etapeActive, nomEtape: nomsEtapes[etape], couleur, onModifier });
   return (
     <div data-apercu style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={papier}>
+        <Rubrique {...props(0)}>
         {/* eslint-disable-next-line @next/next/no-img-element -- logo local (data URL), jamais envoyé */}
         {livret.logo && <img src={livret.logo} alt="Logo de la conciergerie" style={{ maxWidth: 140, maxHeight: 56, objectFit: "contain", marginBottom: 24 }} />}
         {c.surtitre && <div style={{ fontWeight: 700, fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: couleur, marginBottom: 8 }}>{c.surtitre}</div>}
@@ -49,14 +75,17 @@ export default function Apercu({ livret }: { livret: LivretRendu }) {
         <div style={{ color: "#5B6670", fontSize: 15, marginBottom: 20 }}>{c.sousTitre}</div>
         {c.tableau.length > 0 && <Bloc b={{ type: "tableau", lignes: c.tableau }} couleur={couleur} />}
         {c.intro && <p style={{ margin: "14px 0 0", whiteSpace: "pre-line" }}>{c.intro}</p>}
+        </Rubrique>
       </div>
       {livret.sections.length > 0 && (
         <div style={papier}>
           {livret.sections.map((sec, si) => (
-            <section key={`${si}-${sec.titre}`} style={{ marginBottom: 16 }}>
-              <div style={{ fontWeight: 700, fontSize: 18, borderBottom: `2px solid ${couleur}`, paddingBottom: 4, marginBottom: 8 }}>{sec.titre}</div>
-              {sec.blocs.map((b, i) => <Bloc key={i} b={b} couleur={couleur} />)}
-            </section>
+            <Rubrique key={`${si}-${sec.titre}`} {...props(sec.etape)}>
+              <section style={{ marginBottom: 6 }}>
+                <div style={{ fontWeight: 700, fontSize: 18, borderBottom: `2px solid ${couleur}`, paddingBottom: 4, marginBottom: 8 }}>{sec.titre}</div>
+                {sec.blocs.map((b, i) => <Bloc key={i} b={b} couleur={couleur} />)}
+              </section>
+            </Rubrique>
           ))}
         </div>
       )}

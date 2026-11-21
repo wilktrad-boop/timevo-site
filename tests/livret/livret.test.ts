@@ -50,6 +50,8 @@ test("construireLivret retire les lignes, blocs et sections vides", () => {
   const vide = construireLivret(avec({ intro: "", arriveeTardive: "", souci: "", reglesIntro: "", regles: "", quartierIntro: "", departInfo: "", checklist: "", motFin: "" }));
   const titres = vide.sections.map(s => s.titre);
   assert.deepEqual(titres, ["Numéros utiles"]);
+  // Numéros utiles se remplit à l'étape « Le départ », la dernière.
+  assert.equal(vide.sections[0].etape, 5);
   assert.deepEqual(vide.sections[0].blocs[0], {
     type: "tableau", lignes: [
       { label: "Urgences (Europe)", valeur: "112" }, { label: "SAMU", valeur: "15" },
