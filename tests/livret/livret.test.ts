@@ -84,6 +84,8 @@ test("construireLivret remplit couverture, listes et pied de page", () => {
   assert.equal(l.pied, "Rive Gauche · 01 99 00 12 34");
   const depart = l.sections.find(s => s.titre === "Votre départ")!;
   assert.equal(depart.sautAvant, true);
+  // Pas de saut forcé avant les règles dans le PDF (il laissait une page presque vide)
+  assert.equal(l.sections.find(s => s.titre === "Les règles de la maison")!.sautAvant, false);
   const cases = depart.blocs.find(b => b.type === "liste")!;
   assert.equal(cases.type === "liste" && cases.style, "cases");
   assert.equal(cases.type === "liste" && cases.items.length, 6);

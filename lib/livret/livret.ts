@@ -116,7 +116,7 @@ export function construireLivret(data: LivretData): LivretRendu {
           if (items.length) blocs.push({ type: "liste", ...(b.titre ? { titre: b.titre } : {}), style: b.style, items });
         }
       }
-      if (blocs.length) sections.push({ titre: s.titre, sautAvant: Boolean(s.sautAvant), etape: indexEtape, blocs });
+      if (blocs.length) sections.push({ titre: s.titre, sautAvant: Boolean(s.sautAvantPdf ?? s.sautAvant), etape: indexEtape, blocs });
     }
   }
   return {

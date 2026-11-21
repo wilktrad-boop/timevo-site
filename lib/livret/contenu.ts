@@ -30,7 +30,12 @@ export type Bloc =
   | { type: "texte"; titre?: string; champ: string }
   | { type: "liste"; titre?: string; champ: string; style: "puces" | "cases" };
 
-export type Section = { titre: string; blocs: Bloc[]; sautAvant?: boolean };
+/**
+ * `sautAvant` : nouvelle page avant la section dans le modèle Word, au contenu fixe.
+ * `sautAvantPdf` : idem dans le PDF du générateur, où la longueur du contenu varie ;
+ * par défaut il suit `sautAvant`.
+ */
+export type Section = { titre: string; blocs: Bloc[]; sautAvant?: boolean; sautAvantPdf?: boolean };
 
 export type Etape = { id: string; titre: string; intro: string; champs: Champ[]; sections: Section[] };
 
@@ -140,6 +145,9 @@ export const ETAPES: Etape[] = [
     sections: [{
       titre: "Les règles de la maison",
       sautAvant: true,
+      // Dans le PDF, « Le logement » déborde souvent de quelques lignes : un saut
+      // forcé ici laissait une page presque vide.
+      sautAvantPdf: false,
       blocs: [
         { type: "texte", champ: "reglesIntro" },
         { type: "tableau", lignes: [{ label: "Capacité", gabarit: "{capacite} maximum" }] },

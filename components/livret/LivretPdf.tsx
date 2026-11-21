@@ -16,7 +16,8 @@ const s = StyleSheet.create({
   surtitre: { fontSize: 9.5, fontFamily: "Helvetica-Bold", letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10 },
   titre: { fontSize: 32, lineHeight: 1.15, fontFamily: "Helvetica-Bold", marginBottom: 10 },
   sousTitre: { fontSize: 14, lineHeight: 1.3, color: DIM, marginBottom: 28 },
-  logo: { maxWidth: 160, maxHeight: 64, objectFit: "contain", marginBottom: 36 },
+  // objectPositionX 0 : un logo carré reste calé à gauche, aligné sur le texte (centré par défaut).
+  logo: { maxWidth: 160, maxHeight: 64, objectFit: "contain", objectPositionX: 0, marginBottom: 36 },
   // 483 pt = largeur utile de l'A4. Bandeau 12:5 recadré au centre : assez bas
   // pour que la couverture la plus remplie (6 lignes + mot d'accueil) tienne sur une page.
   photo: { width: 483, height: 200, objectFit: "cover", borderRadius: 6, marginTop: -10, marginBottom: 20 },
@@ -62,11 +63,9 @@ function Bloc({ b, couleur }: { b: BlocRendu; couleur: string }) {
 
 function LivretDocument({ livret }: { livret: LivretRendu }) {
   const { couverture: c, couleur } = livret;
-  const pied = livret.pied ? (
-    <Text style={s.pied} fixed render={({ pageNumber }) => `${livret.pied}  ·  ${pageNumber}`} />
-  ) : (
-    <Text style={s.pied} fixed render={({ pageNumber }) => `${pageNumber}`} />
-  );
+  // Texte fixe, sans numéro de page : avec @react-pdf/renderer 4.9 et React 19,
+  // un <Text render={…}> ne s'affiche pas, et le pied de page entier disparaissait.
+  const pied = livret.pied ? <Text style={s.pied} fixed>{livret.pied}</Text> : null;
   return (
     <Document creator="Timevo" producer="Timevo" title={c.sousTitre}>
       <Page size="A4" style={s.page}>
