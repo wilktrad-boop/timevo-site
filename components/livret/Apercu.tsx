@@ -13,8 +13,8 @@ function Bloc({ b, couleur }: { b: BlocRendu; couleur: string }) {
       {b.type === "tableau" && (
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
           <tbody>
-            {b.lignes.map(l => (
-              <tr key={l.label}>
+            {b.lignes.map((l, i) => (
+              <tr key={`${i}-${l.label}`}>
                 <th style={{ textAlign: "left", width: "34%", background: "#F1F4F3", border: "1px solid #D5DCD9", padding: "6px 8px", verticalAlign: "top" }}>{l.label}</th>
                 <td style={{ border: "1px solid #D5DCD9", padding: "6px 8px" }}>{l.valeur}</td>
               </tr>
@@ -25,8 +25,8 @@ function Bloc({ b, couleur }: { b: BlocRendu; couleur: string }) {
       {b.type === "texte" && <p style={{ margin: "0 0 6px", whiteSpace: "pre-line" }}>{b.texte}</p>}
       {b.type === "liste" && (
         <ul style={{ margin: 0, paddingLeft: b.style === "cases" ? 0 : 18, listStyle: b.style === "cases" ? "none" : "disc" }}>
-          {b.items.map(item => (
-            <li key={item} style={{ marginBottom: 3 }}>
+          {b.items.map((item, i) => (
+            <li key={`${i}-${item}`} style={{ marginBottom: 3 }}>
               {b.style === "cases" && <span aria-hidden="true" style={{ display: "inline-block", width: 10, height: 10, border: "1px solid #1F2A2E", marginRight: 8 }} />}
               {item}
             </li>
@@ -52,8 +52,8 @@ export default function Apercu({ livret }: { livret: LivretRendu }) {
       </div>
       {livret.sections.length > 0 && (
         <div style={papier}>
-          {livret.sections.map(sec => (
-            <section key={sec.titre} style={{ marginBottom: 16 }}>
+          {livret.sections.map((sec, si) => (
+            <section key={`${si}-${sec.titre}`} style={{ marginBottom: 16 }}>
               <div style={{ fontWeight: 700, fontSize: 18, borderBottom: `2px solid ${couleur}`, paddingBottom: 4, marginBottom: 8 }}>{sec.titre}</div>
               {sec.blocs.map((b, i) => <Bloc key={i} b={b} couleur={couleur} />)}
             </section>

@@ -30,8 +30,14 @@ function lire(): LivretData {
   }
 }
 
+const VIDE_JSON = JSON.stringify(brouillonVide());
+
 function ecrire(data: LivretData) {
-  try { window.localStorage.setItem(CLE_BROUILLON, JSON.stringify(data)); } catch { /* stockage indisponible : pas de brouillon */ }
+  try {
+    const json = JSON.stringify(data);
+    if (json === VIDE_JSON) window.localStorage.removeItem(CLE_BROUILLON);
+    else window.localStorage.setItem(CLE_BROUILLON, json);
+  } catch { /* stockage indisponible : pas de brouillon */ }
 }
 
 function ChampSaisie({ c, valeur, onChange }: { c: Champ; valeur: string; onChange: (v: string) => void }) {
@@ -57,6 +63,8 @@ export default function Generateur() {
   const [pdfEtat, setPdfEtat] = useState<"idle" | "encours" | "erreur" | "ok">("idle");
   const [confirmeEffacer, setConfirmeEffacer] = useState(false);
   const haut = useRef<HTMLDivElement>(null);
+  const logoInput = useRef<HTMLInputElement>(null);
+  const viderLogoInput = () => { if (logoInput.current) logoInput.current.value = ""; };
 
   // Le brouillon n'est lu qu'après le montage : le rendu serveur reste identique au premier rendu client.
   useEffect(() => { setData(lire()); setCharge(true); }, []);
@@ -66,17 +74,19 @@ export default function Generateur() {
   const e = ETAPES[etape];
   const derniere = etape === ETAPES.length - 1;
 
-  const maj = (id: string, v: string) => setData(d => ({ ...d, valeurs: { ...d.valeurs, [id]: v } }));
-  const aller = (i: number) => { setEtape(i); setPdfEtat("idle"); haut.current?.scrollIntoView({ block: "start" }); };
+  const maj = (id: string, v: string) => { setData(d => ({ ...d, valeurs: { ...d.valeurs, [id]: v } })); setConfirmeEffacer(false); };
+  const aller = (i: number) => { setEtape(i); setPdfEtat("idle"); setConfirmeEffacer(false); haut.current?.scrollIntoView({ block: "start" }); };
 
   function choisirLogo(fichier: File | undefined) {
     setErreurLogo("");
     if (!fichier) return;
-    if (!["image/png", "image/jpeg"].includes(fichier.type)) { setErreurLogo("Format accepté : PNG ou JPG."); return; }
-    if (fichier.size > LOGO_MAX) { setErreurLogo("Le logo doit faire moins de 1 Mo."); return; }
+    if (!["image/png", "image/jpeg"].includes(fichier.type)) { setErreurLogo("Format accepté : PNG ou JPG."); viderLogoInput(); return; }
+    if (fichier.size > LOGO_MAX) { setErreurLogo("Le logo doit faire moins de 1 Mo."); viderLogoInput(); return; }
     const lecteur = new FileReader();
     lecteur.onload = () => setData(d => ({ ...d, marque: { ...d.marque, logo: String(lecteur.result) } }));
+    lecteur.onerror = () => setErreurLogo("Le logo n'a pas pu être lu.");
     lecteur.readAsDataURL(fichier);
+    viderLogoInput();
   }
 
   async function telecharger() {
@@ -99,7 +109,7 @@ export default function Generateur() {
   function effacer() {
     if (!confirmeEffacer) { setConfirmeEffacer(true); return; }
     try { window.localStorage.removeItem(CLE_BROUILLON); } catch { /* rien à effacer */ }
-    setData(brouillonVide()); setConfirmeEffacer(false); aller(0);
+    setData(brouillonVide()); setErreurLogo(""); setPdfEtat("idle"); viderLogoInput(); setConfirmeEffacer(false); aller(0);
   }
 
   return (
@@ -134,11 +144,11 @@ export default function Generateur() {
             <div className="livret-marque" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) 140px", gap: 16 }}>
               <div>
                 <label htmlFor="livret-logo" style={label}>Logo <span style={{ fontWeight: 400, color: "var(--dim)" }}>· PNG ou JPG, 1 Mo maximum</span></label>
-                <input id="livret-logo" name="logo" type="file" accept="image/png,image/jpeg" onChange={ev => choisirLogo(ev.target.files?.[0])}
+                <input ref={logoInput} id="livret-logo" name="logo" type="file" accept="image/png,image/jpeg" onChange={ev => choisirLogo(ev.target.files?.[0])}
                   style={{ ...champStyle, padding: 9, fontSize: 13 }} />
                 {erreurLogo && <p role="alert" style={{ color: "#ff8a8a", fontSize: 13, margin: "6px 0 0" }}>{erreurLogo}</p>}
                 {data.marque.logo && (
-                  <button type="button" onClick={() => setData(d => ({ ...d, marque: { ...d.marque, logo: null } }))}
+                  <button type="button" onClick={() => { setData(d => ({ ...d, marque: { ...d.marque, logo: null } })); viderLogoInput(); }}
                     style={{ ...bouton, padding: "6px 0", border: "none", background: "none", color: "var(--accent-soft)", fontSize: 13 }}>Retirer le logo</button>
                 )}
               </div>

@@ -9,7 +9,7 @@ import { Arrow, PillGhost } from "@/components/primitives";
 import { GENERATEUR, LIVRET_PATH } from "@/lib/ressources";
 
 const BASE = "https://www.timevo.io";
-const URL = `${BASE}${LIVRET_PATH}/creer`;
+const PAGE_URL = `${BASE}${LIVRET_PATH}/creer`;
 
 // Page française uniquement (cf. lib/ressources.ts) : /en/... renvoie 404.
 export function generateStaticParams() {
@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: GENERATEUR.metaTitle,
     description: GENERATEUR.metaDescription,
-    alternates: { canonical: URL },
-    openGraph: { title: GENERATEUR.metaTitle, description: GENERATEUR.metaDescription, url: URL, siteName: "Timevo", locale: "fr_FR", type: "website" },
+    alternates: { canonical: PAGE_URL },
+    openGraph: { title: GENERATEUR.metaTitle, description: GENERATEUR.metaDescription, url: PAGE_URL, siteName: "Timevo", locale: "fr_FR", type: "website" },
   };
 }
 

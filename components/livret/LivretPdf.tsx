@@ -39,7 +39,7 @@ function Bloc({ b, couleur }: { b: BlocRendu; couleur: string }) {
       {b.type === "tableau" && (
         <View style={s.table} wrap={false}>
           {b.lignes.map((l, i) => (
-            <View key={l.label} style={i === b.lignes.length - 1 ? s.rowLast : s.row}>
+            <View key={`${i}-${l.label}`} style={i === b.lignes.length - 1 ? s.rowLast : s.row}>
               <Text style={s.cellLabel}>{l.label}</Text>
               <Text style={s.cellValue}>{l.valeur}</Text>
             </View>
@@ -47,8 +47,8 @@ function Bloc({ b, couleur }: { b: BlocRendu; couleur: string }) {
         </View>
       )}
       {b.type === "texte" && <Text style={s.p}>{b.texte}</Text>}
-      {b.type === "liste" && b.items.map(item => (
-        <View key={item} style={s.item} wrap={false}>
+      {b.type === "liste" && b.items.map((item, i) => (
+        <View key={`${i}-${item}`} style={s.item} wrap={false}>
           {b.style === "cases" ? <View style={s.caseBox} /> : <Text style={s.puce}>•</Text>}
           <Text style={s.itemTexte}>{item}</Text>
         </View>
@@ -80,7 +80,7 @@ function LivretDocument({ livret }: { livret: LivretRendu }) {
       </Page>
       <Page size="A4" style={s.page}>
         {livret.sections.map((sec, i) => (
-          <View key={sec.titre} break={i > 0 && sec.sautAvant}>
+          <View key={`${i}-${sec.titre}`} break={i > 0 && sec.sautAvant}>
             <Text style={[s.h1, { borderBottomColor: couleur }]} minPresenceAhead={60}>{sec.titre}</Text>
             {sec.blocs.map((b, j) => <Bloc key={j} b={b} couleur={couleur} />)}
           </View>
