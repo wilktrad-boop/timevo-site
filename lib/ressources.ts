@@ -38,7 +38,9 @@ export const LIVRET = {
     { title: "Le quartier", desc: "Vos bonnes adresses, le quotidien, les transports : la rubrique que les voyageurs lisent le plus." },
     { title: "Le départ", desc: "Une liste à cocher avant de partir, les numéros utiles, et la demande d'avis au bon moment." },
   ],
-  formH2: "Recevez le modèle.",
+  creerCta: "Créer mon livret en ligne",
+  creerNote: "Gratuit, sans inscription.",
+  formH2: "Ou recevez le modèle Word.",
   formSubtitle: "Le Word modifiable et l'exemple rempli, en téléchargement immédiat.",
   form: {
     email: "Email professionnel",
@@ -63,4 +65,16 @@ export const LIVRET = {
   digitalCta: "Voir l'offre conciergerie",
   digitalAlt: "Guide voyageur digital sur mobile, version de démonstration",
   digitalCaption: "Le guide voyageur, version de démonstration (données fictives).",
+};
+
+export const GENERATEUR = {
+  metaTitle: "Créer son livret d'accueil Airbnb en ligne",
+  metaDescription:
+    "Créez votre livret d'accueil Airbnb en ligne : arrivée, Wi-Fi, règles, bonnes adresses, départ. Votre logo, votre couleur, un PDF prêt à envoyer. Gratuit.",
+  h1: "Créez votre livret d'accueil.",
+  subtitle:
+    "Six étapes, un aperçu en direct, et un PDF à votre marque prêt à envoyer à vos voyageurs. Vos informations restent dans votre navigateur : rien n'est envoyé.",
+  bridge:
+    "Chez les conciergeries qu'on accompagne, ce livret devient un guide voyageur digital, multilingue, avec un assistant qui répond aux voyageurs à toute heure.",
+  bridgeCta: "Voir l'offre conciergerie",
 };
