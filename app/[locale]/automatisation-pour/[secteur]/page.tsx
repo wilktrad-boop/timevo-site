@@ -9,6 +9,7 @@ import StickyMobileCta from "@/components/StickyMobileCta";
 import Breadcrumb from "@/components/Breadcrumb";
 import RelatedLinks from "@/components/RelatedLinks";
 import { SECTORS, SECTOR_SLUGS } from "@/lib/sectors";
+import { LIVRET_PATH } from "@/lib/ressources";
 import type { Locale } from "@/lib/pageLabels";
 import {
   serviceLinks,
@@ -155,6 +156,13 @@ export default async function SectorPageRoute({
             { title: L.cities, items: cityLinks(locale) },
             // Groupe omis par RelatedLinks tant que le secteur n'a pas de démo.
             { title: L.demo, items: demo ? [demo] : [] },
+            // Le livret n'existe qu'en français (cf. lib/ressources.ts).
+            {
+              title: "Ressource gratuite",
+              items: secteur === "conciergerie" && locale === "fr"
+                ? [{ href: LIVRET_PATH, label: "Modèle de livret d'accueil", desc: "Word modifiable et exemple PDF, à télécharger." }]
+                : [],
+            },
           ]}
         />
       </main>

@@ -247,6 +247,15 @@ details[open] > .demo-summary::before {
     flex-wrap: wrap !important;
   }
 
+  .livret-hero,
+  .livret-digital {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 40px !important;
+  }
+  .livret-digital figure {
+    max-width: 300px;
+  }
+
   .pain-grid {
     grid-template-columns: 1fr !important;
   }
@@ -346,6 +355,12 @@ details[open] > .demo-summary::before {
   }
   .screens-mobile {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .livret-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  #telecharger {
+    padding: 24px !important;
   }
 
   .footer-grid {

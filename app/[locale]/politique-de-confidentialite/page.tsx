@@ -74,6 +74,12 @@ export default async function ConfidentialitePage({
             échéant nom de votre entreprise et informations communiquées) afin de répondre à votre demande et de
             préparer notre échange.
           </li>
+          <li>
+            <Strong>Téléchargement d&apos;une ressource.</Strong> Lorsque vous téléchargez un modèle proposé sur le
+            site (par exemple le livret d&apos;accueil), nous recueillons votre adresse e-mail, le nombre de logements
+            que vous gérez et, si vous l&apos;indiquez, le nom de votre entreprise, afin de vous remettre le
+            document et de vous recontacter au sujet de votre activité.
+          </li>
         </Ul>
       </Article>
 
@@ -86,6 +92,10 @@ export default async function ConfidentialitePage({
           <li>
             <Strong>Prise de contact / réservation</Strong> : mesures précontractuelles prises à votre demande et
             intérêt légitime à traiter votre sollicitation (art. 6.1.b et 6.1.f du RGPD).
+          </li>
+          <li>
+            <Strong>Téléchargement d&apos;une ressource</Strong> : votre consentement, donné en cochant la case du
+            formulaire (art. 6.1.a du RGPD). Vous pouvez le retirer à tout moment en écrivant à hello@timevo.io.
           </li>
         </Ul>
       </Article>

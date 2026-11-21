@@ -1,0 +1,66 @@
+/**
+ * Ressource « Livret d'accueil Airbnb » (page /fr/ressources/livret-accueil-airbnb).
+ *
+ * Page en français uniquement : le modèle s'adresse aux conciergeries
+ * françaises et n'existe qu'en français. La route /en/... renvoie 404 et la
+ * page n'a pas d'alternate hreflang.
+ *
+ * Les fichiers sont générés par scripts/livret-accueil/build-livret.cjs.
+ * Ils sont dans public/ : l'email est demandé, mais un lien direct reste
+ * accessible. C'est assumé — le formulaire sert à récupérer le contact, pas
+ * à protéger le fichier.
+ */
+
+export const LIVRET_PATH = "/fr/ressources/livret-accueil-airbnb";
+
+export const LIVRET_FILES = {
+  modele: { href: "/ressources/livret-accueil-modele.docx", label: "Modèle Word à compléter", meta: "DOCX · 4 pages" },
+  exemple: { href: "/ressources/livret-accueil-exemple.pdf", label: "Exemple rempli", meta: "PDF · 4 pages" },
+} as const;
+
+/** Choix proposés dans le formulaire. Sert aussi de liste blanche côté serveur. */
+export const LOGEMENTS_OPTIONS = ["1 à 5", "6 à 15", "16 à 30", "Plus de 30", "Je me lance"] as const;
+
+export const LIVRET = {
+  metaTitle: "Livret d'accueil Airbnb : modèle Word gratuit",
+  metaDescription:
+    "Modèle de livret d'accueil Airbnb à télécharger : arrivée, Wi-Fi, règles de la maison, bonnes adresses, départ. Word modifiable et exemple PDF, gratuits.",
+  eyebrow: "RESSOURCE GRATUITE · CONCIERGERIES",
+  h1: "Livret d'accueil Airbnb : le modèle à télécharger.",
+  subtitle:
+    "Le livret qu'on recommande aux conciergeries que l'on accompagne : quatre pages, tout ce qu'un voyageur cherche pendant son séjour, à compléter pour chacun de vos logements.",
+  contentsH2: "Ce que contient le livret.",
+  contents: [
+    { title: "La première page", desc: "Adresse, horaires d'arrivée et de départ, Wi-Fi, votre contact : l'essentiel, visible d'un coup d'œil." },
+    { title: "L'arrivée", desc: "Accès à l'immeuble, remise des clés, stationnement, arrivée tardive." },
+    { title: "Le logement", desc: "Wi-Fi, télévision, équipements, et quoi faire en cas de souci." },
+    { title: "Les règles de la maison", desc: "Capacité, calme, tabac, animaux, tri des déchets. Formulées sans ton de règlement." },
+    { title: "Le quartier", desc: "Vos bonnes adresses, le quotidien, les transports : la rubrique que les voyageurs lisent le plus." },
+    { title: "Le départ", desc: "Une liste à cocher avant de partir, les numéros utiles, et la demande d'avis au bon moment." },
+  ],
+  formH2: "Recevez le modèle.",
+  formSubtitle: "Le Word modifiable et l'exemple rempli, en téléchargement immédiat.",
+  form: {
+    email: "Email professionnel",
+    company: "Nom de la conciergerie",
+    companyHint: "Facultatif",
+    logements: "Logements gérés",
+    logementsPlaceholder: "Choisir",
+    consent:
+      "J'accepte que Timevo utilise ces informations pour m'envoyer ce modèle et me recontacter au sujet de ma conciergerie. Je peux m'y opposer à tout moment.",
+    privacy: "Politique de confidentialité",
+    submit: "Télécharger le modèle",
+    pending: "Envoi…",
+    errorEmail: "Indiquez une adresse email valide.",
+    errorConsent: "Cochez la case pour recevoir le modèle.",
+    errorLogements: "Indiquez le nombre de logements.",
+    successTitle: "C'est à vous.",
+    successText: "Vos deux fichiers sont prêts. Remplacez les champs surlignés en jaune, ajoutez votre logo, et le livret est prêt à imprimer ou à envoyer.",
+  },
+  digitalH2: "Et quand le livret ne suffit plus.",
+  digitalText:
+    "Chez les conciergeries qu'on accompagne, ce livret devient un guide voyageur digital : un lien par séjour, en plusieurs langues, avec un assistant IA qui répond aux questions du voyageur à toute heure, à partir du contenu du livret.",
+  digitalCta: "Voir l'offre conciergerie",
+  digitalAlt: "Guide voyageur digital sur mobile, version de démonstration",
+  digitalCaption: "Le guide voyageur, version de démonstration (données fictives).",
+};

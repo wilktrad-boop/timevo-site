@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { SECTOR_SLUGS } from "@/lib/sectors";
 import { CITY_SLUGS } from "@/lib/cities";
 import { DEMO_SLUGS } from "@/lib/demoDashboards";
+import { LIVRET_PATH } from "@/lib/ressources";
 
 const BASE = "https://www.timevo.io";
 
@@ -26,6 +27,7 @@ const UPDATED = {
   cities: "2026-11-21",       // « Agence IA », bouton « diagnostic gratuit »
   demos: "2026-11-21",        // bouton « diagnostic gratuit » au lieu d'« audit »
   facturation: "2026-08-28",  // retrait du prix affiché sur la page facturation électronique
+  ressources: "2026-11-21",   // création du livret d'accueil Airbnb
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -113,6 +115,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
           "x-default": `${BASE}/fr/realisations`,
         },
       },
+    },
+
+    // Ressources (français uniquement, sans alternate hreflang)
+    {
+      url: `${BASE}${LIVRET_PATH}`,
+      lastModified: UPDATED.ressources,
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
 
     // Facturation électronique
