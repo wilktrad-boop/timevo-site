@@ -48,7 +48,8 @@
           "badge": "Sent"
         }
       ]
-    }
+    },
+    "research_link": "Market research team? Translation pipelines for multi-country studies"
   },
   "band": {
     "items": [
@@ -1704,6 +1705,184 @@
     },
     "related_eyebrow": "Go further",
     "related_h2": "What we also do."
+  },
+  "research": {
+    "meta_title": "Market research translation: surveys and open ends",
+    "meta_description": "Survey translation for market research teams: questionnaires, open ends and interviews translated and checked. A linguist reviews only what gets flagged.",
+    "og_eyebrow": "For market research teams",
+    "og_title": "Multi-country research shouldn't wait on translation.",
+    "breadcrumb": "Research teams",
+    "hero": {
+      "eyebrow": "For market research teams",
+      "h1_line1": "Multi-country research",
+      "h1_line2": "shouldn't wait",
+      "h1_accent": "on translation.",
+      "subtitle": "We build translation pipelines for research teams. Your export comes back translated and checked, in its original format. A linguist only reviews what gets flagged."
+    },
+    "problem": {
+      "label": "Where it slows down",
+      "h2_line1": "In market research, translation sits on the critical path.",
+      "h2_line2": "Before fieldwork, and after it.",
+      "bullets": [
+        {
+          "lead": "Before fieldwork.",
+          "rest": "The questionnaire is signed off in English, then waits for its translations before each market can be scripted, checked and launched."
+        },
+        {
+          "lead": "After fieldwork.",
+          "rest": "Open ends come back in every language at once, and coding can't start until someone can read them."
+        },
+        {
+          "lead": "On qual projects.",
+          "rest": "IDIs and groups have to be transcribed and translated before analysis begins."
+        },
+        {
+          "lead": "Wave after wave.",
+          "rest": "The same questions and the same scales are translated again, and not always the same way."
+        }
+      ],
+      "punch": {
+        "lead": "Most segments are routine.",
+        "accent": "The few that aren't are where a study breaks."
+      }
+    },
+    "how": {
+      "label": "How it works",
+      "h2": "One file in. The same file out, translated and checked.",
+      "subtitle": "A pipeline set up for your team, your tools and your terminology. It is not a self-service tool: we build it, we run it, we maintain it.",
+      "flow": {
+        "aria": "Path of a file through the pipeline: file in, AI translation, second pass against the source, automated checks. Segments that pass go straight to the output file; flagged segments go to a linguist first.",
+        "file_in": "Your file",
+        "file_in_sub": "as exported",
+        "translate": "AI translation",
+        "translate_sub": "your glossary, your past translations",
+        "review": "Second pass",
+        "review_sub": "against the source",
+        "checks": "Automated checks",
+        "checks_sub": "tags, numbers, scales",
+        "passed": "Passed",
+        "passed_sub": "straight through",
+        "flagged": "Flagged",
+        "flagged_sub": "to a linguist",
+        "file_out": "Your file",
+        "file_out_sub": "original format, with change log"
+      },
+      "steps": [
+        [
+          "01",
+          "Your file goes in as it is",
+          "Survey platform export, open-end file, interview audio or transcript. No reformatting on your side."
+        ],
+        [
+          "02",
+          "AI translation, properly briefed",
+          "It works from your glossary, your past translations and your instructions, not from a blank page."
+        ],
+        [
+          "03",
+          "A second pass against the source",
+          "A separate review reads every translation against the original, then corrects it or flags it."
+        ],
+        [
+          "04",
+          "Automated checks",
+          "Tags and piped variables intact, numbers unchanged, scale wording identical from one wave to the next, nothing left untranslated."
+        ],
+        [
+          "05",
+          "A linguist reviews what was flagged",
+          "Human attention goes where it is needed, instead of being spread thinly across every segment."
+        ],
+        [
+          "06",
+          "The file comes back in its original format",
+          "Ready to load back in, with a log of everything that was changed."
+        ]
+      ]
+    },
+    "uses": {
+      "label": "Four uses",
+      "h2_line1": "From survey translation to reports:",
+      "h2_line2": "what goes in, what comes out, what a human still reviews.",
+      "in": "In",
+      "out": "Out",
+      "human": "Human review",
+      "items": [
+        {
+          "when": "Before fieldwork",
+          "title": "Questionnaires",
+          "in": "The master questionnaire, as a platform export or a translation overlay.",
+          "out": "The same file for each language: tags and piping intact, scales worded as in previous waves, ready for scripting.",
+          "human": "A native read before launch is still recommended. A badly worded question can't be fixed once fieldwork is live. The reviewer starts from a checked draft and a list of flagged segments."
+        },
+        {
+          "when": "After fieldwork",
+          "title": "Open ends",
+          "in": "Verbatims in the languages of the study, straight from the data export, respondent IDs untouched.",
+          "out": "An English translation next to each original, and a first grouping by theme as a starting point for coding.",
+          "human": "Close to none. Open ends are read for meaning, not published. A linguist looks only at the responses flagged as ambiguous."
+        },
+        {
+          "when": "Qualitative",
+          "title": "IDIs and groups",
+          "in": "Interview recordings or existing transcripts. The discussion guide helps with names and terminology.",
+          "out": "A checked English transcript, with the uncertain passages marked.",
+          "human": "A linguist listens to the uncertain passages only: crosstalk, poor audio, names, strong accents."
+        },
+        {
+          "when": "Delivery",
+          "title": "Reports and presentations",
+          "in": "Decks, reports and toplines.",
+          "out": "The translated document in the same format, with terminology consistent with the questionnaire.",
+          "human": "It depends on the reader. Flagged segments only for internal use; a full read by a native linguist for anything client-facing."
+        }
+      ]
+    },
+    "who": {
+      "label": "Who's behind it",
+      "h2_line1": "Built by a translator,",
+      "h2_line2": "not by a software vendor.",
+      "p1": "Willy Paul is a professional translator. He has worked on survey questionnaires and open ends himself, and he trains other translators in post-editing machine translation. The pipeline checks for the errors that matter in research because he has had to catch them by hand.",
+      "p2": "He is also the co-founder of <home>Timevo</home>, an independent agency that builds <agents>AI agents</agents> and automations for companies, then stays on to maintain them.",
+      "breaks_title": "Where machine translation breaks a study",
+      "breaks": [
+        {
+          "lead": "A tag or a piped variable is altered.",
+          "rest": "The script fails, or a respondent sees the wrong text."
+        },
+        {
+          "lead": "A scale is worded differently from the last wave.",
+          "rest": "The two waves are no longer comparable."
+        },
+        {
+          "lead": "A number, a currency or a time frame shifts in passing.",
+          "rest": "Nobody notices until the data looks odd."
+        },
+        {
+          "lead": "A segment stays in English, or gets translated when it shouldn't.",
+          "rest": "Brand names and answer codes are the usual suspects."
+        }
+      ]
+    },
+    "trial": {
+      "label": "Trial",
+      "h2": "Try it on a study you have already run.",
+      "text": "Send an old questionnaire or an old interview, ideally one you already have a translation for. We run it through the pipeline and send back the output, the flagged segments and the change log. You compare it with what you received at the time."
+    },
+    "contact": {
+      "label": "Get in touch",
+      "h2": "Tell us where translation slows you down.",
+      "text": "Book a free 30-minute diagnostic: we look at one of your studies and at where translation holds it up, before fieldwork or after."
+    },
+    "footer": {
+      "sender": "Emails about this service are sent by Willy Paul, Timevo.",
+      "identity": "Timevo is the trading name of Maxime Doublet, sole trader. 13 route de la Visitation, 74200 Thonon-les-Bains, France. Registered in France, RCS Thonon-les-Bains 843 505 249.",
+      "optout": "If you would rather not hear from us again, reply to say so and we won't write again.",
+      "home": "Timevo home",
+      "privacy": "Privacy policy",
+      "legal": "Legal notice",
+      "copyright": "© 2026 Timevo"
+    }
   },
   "metadata": {
     "title": "Timevo — AI agency in Thonon-les-Bains | Automations and AI agents",

@@ -48,7 +48,8 @@
           "badge": "Envoyé"
         }
       ]
-    }
+    },
+    "research_link": ""
   },
   "band": {
     "items": [
@@ -1704,6 +1705,184 @@
     },
     "related_eyebrow": "Aller plus loin",
     "related_h2": "Ce qu'on fait aussi."
+  },
+  "research": {
+    "meta_title": "Traduction de questionnaires et d'études de marché",
+    "meta_description": "Traduction de questionnaires, de questions ouvertes et d'entretiens pour vos études de marché multi-pays. Un linguiste ne relit que ce qui est signalé.",
+    "og_eyebrow": "Pour les instituts d'études",
+    "og_title": "Vos études multi-pays ne devraient pas attendre la traduction.",
+    "breadcrumb": "Instituts d'études",
+    "hero": {
+      "eyebrow": "Pour les instituts d'études",
+      "h1_line1": "Vos études multi-pays",
+      "h1_line2": "ne devraient pas attendre",
+      "h1_accent": "la traduction.",
+      "subtitle": "On monte des chaînes de traduction pour les équipes d'études. Votre export revient traduit et contrôlé, dans son format d'origine. Un linguiste ne relit que ce qui est signalé."
+    },
+    "problem": {
+      "label": "Là où ça ralentit",
+      "h2_line1": "Dans une étude de marché, la traduction est sur le chemin critique.",
+      "h2_line2": "Avant le terrain, et après.",
+      "bullets": [
+        {
+          "lead": "Avant le terrain.",
+          "rest": "Le questionnaire est validé, puis il attend ses traductions avant que chaque pays puisse être programmé, testé et lancé."
+        },
+        {
+          "lead": "Après le terrain.",
+          "rest": "Les questions ouvertes reviennent dans toutes les langues à la fois, et la codification ne démarre pas tant que personne ne peut les lire."
+        },
+        {
+          "lead": "En quali.",
+          "rest": "Entretiens individuels et réunions de groupe doivent être transcrits et traduits avant que l'analyse commence."
+        },
+        {
+          "lead": "Vague après vague.",
+          "rest": "Les mêmes questions et les mêmes échelles sont retraduites, et pas toujours de la même façon."
+        }
+      ],
+      "punch": {
+        "lead": "La plupart des segments sont de la routine.",
+        "accent": "C'est sur les autres qu'une étude casse."
+      }
+    },
+    "how": {
+      "label": "Le fonctionnement",
+      "h2": "Un fichier entre. Le même ressort, traduit et contrôlé.",
+      "subtitle": "Une chaîne montée pour votre équipe, vos outils et votre terminologie. Ce n'est pas un outil en libre-service : on la construit, on la fait tourner, on la maintient.",
+      "flow": {
+        "aria": "Parcours d'un fichier dans la chaîne : entrée du fichier, traduction par IA, relecture contre la source, contrôles automatiques. Les segments conformes vont directement au fichier de sortie ; les segments signalés passent d'abord devant un linguiste.",
+        "file_in": "Votre fichier",
+        "file_in_sub": "tel qu'exporté",
+        "translate": "Traduction par IA",
+        "translate_sub": "votre glossaire, vos traductions passées",
+        "review": "Second passage",
+        "review_sub": "contre la source",
+        "checks": "Contrôles automatiques",
+        "checks_sub": "balises, nombres, échelles",
+        "passed": "Conforme",
+        "passed_sub": "passe directement",
+        "flagged": "Signalé",
+        "flagged_sub": "devant un linguiste",
+        "file_out": "Votre fichier",
+        "file_out_sub": "format d'origine, avec journal"
+      },
+      "steps": [
+        [
+          "01",
+          "Le fichier entre tel quel",
+          "Export de l'outil d'enquête, fichier de réponses libres, audio ou transcription d'entretien. Rien à reformater de votre côté."
+        ],
+        [
+          "02",
+          "Traduction par IA, avec vos consignes",
+          "Elle part de votre glossaire, de vos traductions passées et de vos instructions, pas d'une page blanche."
+        ],
+        [
+          "03",
+          "Un second passage contre la source",
+          "Une relecture distincte confronte chaque traduction à l'original, puis la corrige ou la signale."
+        ],
+        [
+          "04",
+          "Contrôles automatiques",
+          "Balises et variables intactes, nombres inchangés, formulation des échelles identique d'une vague à l'autre, aucun segment laissé non traduit."
+        ],
+        [
+          "05",
+          "Un linguiste relit ce qui est signalé",
+          "L'attention humaine va là où elle sert, au lieu de se diluer sur tous les segments."
+        ],
+        [
+          "06",
+          "Le fichier ressort dans son format d'origine",
+          "Prêt à réintégrer, avec le journal de tout ce qui a été modifié."
+        ]
+      ]
+    },
+    "uses": {
+      "label": "Quatre usages",
+      "h2_line1": "De la traduction de questionnaires aux rapports :",
+      "h2_line2": "ce qui entre, ce qui sort, la part d'humain qui reste.",
+      "in": "Entrée",
+      "out": "Sortie",
+      "human": "Relecture humaine",
+      "items": [
+        {
+          "when": "Avant le terrain",
+          "title": "Questionnaires",
+          "in": "Le questionnaire maître, en export de l'outil d'enquête ou en fichier de traduction.",
+          "out": "Le même fichier pour chaque langue : balises et variables intactes, échelles formulées comme aux vagues précédentes, prêt pour la programmation.",
+          "human": "Une relecture par un natif avant le lancement reste recommandée. Une question mal formulée ne se corrige plus une fois le terrain ouvert. Le relecteur part d'une version contrôlée et de la liste des segments signalés."
+        },
+        {
+          "when": "Après le terrain",
+          "title": "Questions ouvertes",
+          "in": "Les verbatims dans les langues de l'étude, tels qu'ils sortent de l'export, identifiants de répondants intacts.",
+          "out": "La traduction en regard de chaque original, et un premier classement par thèmes comme point de départ de la codification.",
+          "human": "Presque aucune. Les verbatims sont lus pour leur sens, pas publiés. Un linguiste ne regarde que les réponses signalées comme ambiguës."
+        },
+        {
+          "when": "Quali",
+          "title": "Entretiens et groupes",
+          "in": "Les enregistrements d'entretiens, ou des transcriptions existantes. Le guide d'entretien aide pour les noms et la terminologie.",
+          "out": "Une transcription traduite et contrôlée, avec les passages incertains repérés.",
+          "human": "Un linguiste n'écoute que les passages incertains : paroles qui se chevauchent, son médiocre, noms propres, accents marqués."
+        },
+        {
+          "when": "Restitution",
+          "title": "Rapports et présentations",
+          "in": "Présentations, rapports et synthèses.",
+          "out": "Le document traduit dans le même format, avec une terminologie cohérente avec celle du questionnaire.",
+          "human": "Cela dépend du lecteur. Les segments signalés seulement pour un usage interne ; une relecture complète par un natif pour tout ce qui part chez le client."
+        }
+      ]
+    },
+    "who": {
+      "label": "Qui est derrière",
+      "h2_line1": "Conçue par un traducteur,",
+      "h2_line2": "pas par un éditeur de logiciel.",
+      "p1": "Willy Paul est traducteur professionnel. Il a lui-même traduit des questionnaires et des réponses d'enquêtes, et il forme d'autres traducteurs à la post-édition. La chaîne contrôle les erreurs qui comptent dans une étude parce qu'il a dû les repérer à la main.",
+      "p2": "Il est aussi cofondateur de <home>Timevo</home>, une agence indépendante qui construit des <agents>agents IA</agents> et des automatisations pour les entreprises, puis reste pour les faire vivre.",
+      "breaks_title": "Là où une traduction automatique casse une étude",
+      "breaks": [
+        {
+          "lead": "Une balise ou une variable est modifiée.",
+          "rest": "Le script plante, ou le répondant voit le mauvais texte."
+        },
+        {
+          "lead": "Une échelle n'est pas formulée comme à la vague précédente.",
+          "rest": "Les deux vagues ne sont plus comparables."
+        },
+        {
+          "lead": "Un nombre, une devise ou une période change au passage.",
+          "rest": "Personne ne le voit avant que les données paraissent étranges."
+        },
+        {
+          "lead": "Un segment reste dans la langue source, ou est traduit alors qu'il ne devait pas l'être.",
+          "rest": "Noms de marque et codes de réponse, le plus souvent."
+        }
+      ]
+    },
+    "trial": {
+      "label": "Essai",
+      "h2": "Essayez sur une étude déjà terminée.",
+      "text": "Envoyez un ancien questionnaire ou un ancien entretien, idéalement un dont vous avez déjà la traduction. On le passe dans la chaîne et on vous renvoie le résultat, les segments signalés et le journal des modifications. Vous comparez avec ce que vous aviez reçu à l'époque."
+    },
+    "contact": {
+      "label": "Prendre contact",
+      "h2": "Dites-nous où la traduction vous ralentit.",
+      "text": "Réservez un diagnostic gratuit de 30 minutes : on regarde une de vos études et l'endroit où la traduction la retarde, avant le terrain ou après."
+    },
+    "footer": {
+      "sender": "Les emails au sujet de ce service sont envoyés par Willy Paul, Timevo.",
+      "identity": "Timevo est le nom commercial de Maxime Doublet, entrepreneur individuel. 13 route de la Visitation, 74200 Thonon-les-Bains, France. RCS Thonon-les-Bains 843 505 249.",
+      "optout": "Si vous ne souhaitez plus recevoir nos messages, répondez-nous : nous n'écrirons plus.",
+      "home": "Accueil Timevo",
+      "privacy": "Politique de confidentialité",
+      "legal": "Mentions légales",
+      "copyright": "© 2026 Timevo"
+    }
   },
   "metadata": {
     "title": "Timevo — Agence IA à Thonon-les-Bains | Automatisations et agents IA",
