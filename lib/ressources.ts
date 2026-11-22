@@ -13,6 +13,9 @@
 
 export const LIVRET_PATH = "/fr/ressources/livret-accueil-airbnb";
 
+/** Ressource « Répondre à un avis Google » et son outil d'analyse (français uniquement). */
+export const AVIS_PATH = "/fr/ressources/repondre-avis-google";
+
 export const LIVRET_FILES = {
   modele: { href: "/ressources/livret-accueil-modele.docx", label: "Modèle Word à compléter", meta: "DOCX · 4 pages" },
   exemple: { href: "/ressources/livret-accueil-exemple.pdf", label: "Exemple rempli", meta: "PDF · 4 pages" },
