@@ -13,11 +13,11 @@ const virgule = (n: number) => n.toLocaleString("fr-FR", { maximumFractionDigits
 export function Comparaison({ fiche, concurrents }: { fiche: Fiche; concurrents: Fiche[] }) {
   const lignes = [{ f: fiche, moi: true }, ...concurrents.map(f => ({ f, moi: false }))];
   return (
-    <div role="img" aria-label={`Note Google de ${fiche.nom} comparée à ${concurrents.length} concurrents`} style={{ display: "grid", gap: 12 }}>
+    <div style={{ display: "grid", gap: 12 }}>
       {lignes.map(({ f, moi }) => (
-        <div key={f.placeId} data-comparaison-ligne style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr) auto", gap: 12, alignItems: "center", fontFamily: "var(--font-sans)", fontSize: 14 }}>
+        <div key={f.placeId} data-comparaison-ligne className="avis-comparaison-ligne" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr) auto", gap: 12, alignItems: "center", fontFamily: "var(--font-sans)", fontSize: 14 }}>
           <span style={{ color: moi ? "var(--text)" : "var(--dim)", fontWeight: moi ? 600 : 400, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{moi ? `${f.nom} (vous)` : f.nom}</span>
-          <span style={{ height: 10, borderRadius: 999, background: "var(--border)", overflow: "hidden" }}>
+          <span aria-hidden="true" style={{ height: 10, borderRadius: 999, background: "var(--border)", overflow: "hidden" }}>
             <span style={{ display: "block", height: "100%", width: `${((f.note ?? 0) / 5) * 100}%`, borderRadius: 999, background: moi ? "var(--accent)" : "var(--dim)" }} />
           </span>
           <span style={{ color: moi ? "var(--text)" : "var(--dim)", fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>
@@ -29,12 +29,20 @@ export function Comparaison({ fiche, concurrents }: { fiche: Fiche; concurrents:
   );
 }
 
-function Copier({ texte }: { texte: string }) {
-  const [fait, setFait] = useState(false);
+function Copier({ texte, libelle }: { texte: string; libelle: string }) {
+  const [etat, setEtat] = useState<"" | "ok" | "ko">("");
+  async function copier() {
+    try {
+      await navigator.clipboard.writeText(texte);
+      setEtat("ok");
+    } catch {
+      setEtat("ko");
+    }
+  }
   return (
-    <button type="button" onClick={() => navigator.clipboard.writeText(texte).then(() => setFait(true), () => setFait(false))}
+    <button type="button" onClick={copier} aria-label={libelle} aria-live="polite"
       style={{ background: "none", border: "1px solid var(--border-strong)", borderRadius: 999, padding: "5px 12px", color: "var(--text)", fontFamily: "var(--font-sans)", fontSize: 13, cursor: "pointer" }}>
-      {fait ? "Copié" : "Copier"}
+      {etat === "ok" ? "Copié" : etat === "ko" ? "Sélectionnez le texte pour le copier" : "Copier"}
     </button>
   );
 }
@@ -95,10 +103,10 @@ export default function Rapport({ rapport: r }: { rapport: RapportType }) {
               {[{ titre: "Ce que vos clients apprécient", themes: a.pointsForts }, { titre: "Ce qu'ils vous reprochent", themes: a.reproches }].map(bloc => (
                 <div key={bloc.titre} style={carte}>
                   <h3 style={h3}>{bloc.titre}</h3>
-                  {bloc.themes.length === 0 ? <p style={petit}>Rien de récurrent.</p> : bloc.themes.map(t => (
-                    <div key={t.titre} style={{ marginBottom: 14 }}>
+                  {bloc.themes.length === 0 ? <p style={petit}>Rien de récurrent.</p> : bloc.themes.map((t, i) => (
+                    <div key={`${i}-${t.titre}`} style={{ marginBottom: 14 }}>
                       <div style={{ fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 600, color: "var(--text)" }}>{t.titre}</div>
-                      {t.citations.map(c => <p key={c} style={{ ...petit, fontStyle: "italic", margin: "4px 0 0" }}>« {c} »</p>)}
+                      {t.citations.map((c, j) => <p key={`${j}-${c}`} style={{ ...petit, fontStyle: "italic", margin: "4px 0 0" }}>« {c} »</p>)}
                     </div>
                   ))}
                 </div>
@@ -119,7 +127,7 @@ export default function Rapport({ rapport: r }: { rapport: RapportType }) {
                     {reponses.get(av.id) && (
                       <div style={{ display: "flex", gap: 12, alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap" }}>
                         <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.55, color: "var(--text)", margin: 0, flex: "1 1 260px" }}>{reponses.get(av.id)}</p>
-                        <Copier texte={reponses.get(av.id)!} />
+                        <Copier texte={reponses.get(av.id)!} libelle={`Copier la réponse à l'avis noté ${av.note} sur 5`} />
                       </div>
                     )}
                   </div>
@@ -132,7 +140,7 @@ export default function Rapport({ rapport: r }: { rapport: RapportType }) {
             <div style={carte}>
               <h3 style={h3}>Trois choses à faire</h3>
               <ol style={{ margin: 0, paddingLeft: 20, fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.6, color: "var(--text)" }}>
-                {a.recommandations.map(x => <li key={x} style={{ marginBottom: 8 }}>{x}</li>)}
+                {a.recommandations.map((x, i) => <li key={`${i}-${x}`} style={{ marginBottom: 8 }}>{x}</li>)}
               </ol>
             </div>
           )}
