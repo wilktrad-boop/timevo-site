@@ -13,7 +13,7 @@ import { AVIS_PATH } from "@/lib/ressources";
  * Analyse d'avis Google : recherche et aperçu gratuits (limités par IP), puis email vérifié
  * par code, puis analyse complète en deux temps (lancerAudit, suivreAudit).
  * Clés Redis : avis:ip:*, avis:email:*, avis:jour, avis:audit:*, avis:resultat:*,
- * avis:rapport:<placeId> (cache 24 h), avis:verrou:*, avis:rendu:*, avis:contact:*.
+ * avis:rapport:<placeId>:<email> (cache 24 h, par adresse vérifiée), avis:code:ip:*, avis:code:email:*, avis:verrou:*, avis:rendu:*, avis:contact:*.
  */
 
 const TACHE_MAX_MS = 3 * 60 * 1000;
@@ -23,12 +23,12 @@ const OUTIL_URL = `https://www.timevo.io${AVIS_PATH}`;
 type Indispo = { etat: "indisponible" };
 export type ResultatRecherche = { etat: "ok"; fiches: Fiche[] } | { etat: "limite" } | Indispo | { etat: "erreur" };
 export type ResultatComparaison = { etat: "ok"; concurrents: Fiche[] } | { etat: "limite" } | Indispo | { etat: "erreur" };
-export type ResultatCode = { etat: "code"; email: string; jeton: string } | { etat: "erreur"; champ: "email" | "consent" | "envoi" } | Indispo;
+export type ResultatCode = { etat: "code"; email: string; jeton: string } | { etat: "erreur"; champ: "email" | "consent" | "envoi" | "limite" } | Indispo;
 export type ResultatValidation = { etat: "ouvert"; email: string; acces: string } | { etat: "erreur"; message: string } | Indispo;
 export type ResultatLancement = { etat: "lance"; auditId: string } | { etat: "acces" } | { etat: "limite" } | { etat: "erreur" } | Indispo;
 export type ResultatSuivi = { etat: "encours" } | { etat: "pret"; rapport: Rapport } | { etat: "erreur"; message: string } | Indispo;
 
-type Audit = { email: string; fiche: Fiche; concurrents: Fiche[]; tacheId: string | null; debut: number };
+type Audit = { email: string; fiche: Fiche; concurrents: Fiche[]; tacheId: string | null; debut: number; deCache: boolean };
 
 async function ipVisiteur(): Promise<string> {
   const h = await headers();
@@ -57,7 +57,7 @@ export async function comparerFiche(fiche: Fiche, ville: string): Promise<Result
   if (!c) return { etat: "indisponible" };
   const f = ficheValide(fiche);
   const v = ligne(ville, 80);
-  if (!f || !v) return { etat: "erreur" };
+  if (!f || v.length < 2) return { etat: "erreur" };
   if (!f.categorie) return { etat: "ok", concurrents: [] };
   if (!(await autoriser(c.magasin, `avis:ip:${await ipVisiteur()}`, LIMITES.recherchesParIp))) return { etat: "limite" };
   try {
@@ -74,6 +74,12 @@ export async function demanderCodeAvis(email: string, consent: boolean, entrepri
   const e = ligne(email, 200).toLowerCase();
   if (!EMAIL_RE.test(e)) return { etat: "erreur", champ: "email" };
   if (consent !== true) return { etat: "erreur", champ: "consent" };
+  const cleIp = `avis:code:ip:${await ipVisiteur()}`;
+  if (!(await autoriser(c.magasin, cleIp, LIMITES.codesParIp))) return { etat: "erreur", champ: "limite" };
+  if (!(await autoriser(c.magasin, `avis:code:email:${e}`, LIMITES.codesParEmail))) {
+    await rendre(c.magasin, cleIp);
+    return { etat: "erreur", champ: "limite" };
+  }
   const code = creerCode();
   try {
     await c.boite.transport.sendMail({
@@ -116,9 +122,9 @@ export async function lancerAudit(acces: string, fiche: Fiche, concurrents: Fich
   const auditId = crypto.randomUUID();
 
   // Rapport de moins de 24 h pour cette fiche : servi sans rien recompter ni repayer.
-  const enCache = await c.magasin.lire<Rapport>(`avis:rapport:${f.placeId}`);
+  const enCache = await c.magasin.lire<Rapport>(`avis:rapport:${f.placeId}:${email}`);
   if (enCache) {
-    await c.magasin.ecrire(`avis:audit:${auditId}`, { email, fiche: f, concurrents: autres, tacheId: null, debut: Date.now() } satisfies Audit, JOUR_S);
+    await c.magasin.ecrire(`avis:audit:${auditId}`, { email, fiche: f, concurrents: autres, tacheId: null, debut: Date.now(), deCache: true } satisfies Audit, JOUR_S);
     await c.magasin.ecrire(`avis:resultat:${auditId}`, enCache, JOUR_S);
     return { etat: "lance", auditId };
   }
@@ -131,7 +137,7 @@ export async function lancerAudit(acces: string, fiche: Fiche, concurrents: Fich
   }
   try {
     const tacheId = await c.donnees.lancer(f.placeId);
-    await c.magasin.ecrire(`avis:audit:${auditId}`, { email, fiche: f, concurrents: autres, tacheId, debut: Date.now() } satisfies Audit, JOUR_S);
+    await c.magasin.ecrire(`avis:audit:${auditId}`, { email, fiche: f, concurrents: autres, tacheId, debut: Date.now(), deCache: false } satisfies Audit, JOUR_S);
     return { etat: "lance", auditId };
   } catch (err) {
     journal("lancement", err);
@@ -188,7 +194,7 @@ export async function suivreAudit(acces: string, auditId: string): Promise<Resul
 
   const fait = await c.magasin.lire<Rapport>(`avis:resultat:${id}`);
   if (fait) {
-    await prevenirTimevo(c, id, email, fait);
+    if (!a.deCache) await prevenirTimevo(c, id, email, fait);
     return { etat: "pret", rapport: fait };
   }
   if (!a.tacheId) return { etat: "erreur", message: "Cette analyse est introuvable. Relancez-la." };
@@ -213,15 +219,26 @@ export async function suivreAudit(acces: string, auditId: string): Promise<Resul
 
   // Un seul appel à l'IA par analyse, même si la page interroge deux fois en même temps.
   if (!(await c.magasin.prendre(`avis:verrou:${id}`, 300))) return { etat: "encours" };
-  const avis = tache.avis.slice(0, AVIS_MAX);
-  const analyse = avis.length
-    ? await c.ia.analyser({ entreprise: a.fiche.nom, categorie: a.fiche.categorie, avis, sansReponse: avisSansReponse(avis) })
-    : null;
-  const rapport = construireRapport({ fiche: a.fiche, concurrents: a.concurrents, avis, total: tache.total, analyse });
-  await c.magasin.ecrire(`avis:resultat:${id}`, rapport, JOUR_S);
-  await c.magasin.ecrire(`avis:rapport:${a.fiche.placeId}`, rapport, JOUR_S);
-  await prevenirTimevo(c, id, email, rapport);
-  return { etat: "pret", rapport };
+  try {
+    const avis = tache.avis.slice(0, AVIS_MAX);
+    const analyse = avis.length
+      ? await c.ia.analyser({ entreprise: a.fiche.nom, categorie: a.fiche.categorie, avis, sansReponse: avisSansReponse(avis) })
+      : null;
+    const rapport = construireRapport({ fiche: a.fiche, concurrents: a.concurrents, avis, total: tache.total, analyse });
+    await c.magasin.ecrire(`avis:resultat:${id}`, rapport, JOUR_S);
+    if (avis.length > 0 && analyse === null) {
+      // Analyse IA ratée : rapport chiffré servi, mais ni mis en cache ni décompté.
+      await rembourser(c, id, email);
+    } else {
+      await c.magasin.ecrire(`avis:rapport:${a.fiche.placeId}:${email}`, rapport, JOUR_S);
+    }
+    await prevenirTimevo(c, id, email, rapport);
+    return { etat: "pret", rapport };
+  } catch (err) {
+    journal("finalisation", err);
+    await rembourser(c, id, email);
+    return { etat: "erreur", message: "L'analyse n'a pas pu être terminée. Réessayez dans quelques minutes : cette tentative n'est pas décomptée." };
+  }
 }
 
 /** Envoie le PDF du rapport à l'adresse vérifiée du jeton d'accès, et à elle seule. */
