@@ -1867,8 +1867,7 @@
     "trial": {
       "label": "Trial",
       "h2": "Try it on a study you have already run.",
-      "text": "Send an old questionnaire or an old interview, ideally one you already have a translation for. We run it through the pipeline and send back the output, the flagged segments and the change log. You compare it with what you received at the time.",
-      "pending": "Section à valider par Willy : l'essai est-il proposé, gratuit, et sur quel périmètre ?"
+      "text": "Send an old questionnaire or an old interview, ideally one you already have a translation for. We run it through the pipeline and send back the output, the flagged segments and the change log. You compare it with what you received at the time."
     },
     "contact": {
       "label": "Get in touch",

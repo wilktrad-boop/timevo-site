@@ -14,14 +14,10 @@ import { LINK_LABELS, type Locale } from "@/lib/links";
  * Page « /research » : chaînes de traduction pour les sociétés d'études.
  *
  * Elle s'adresse à des prospects contactés par email, qui ne connaissent pas
- * Timevo. D'où deux écarts avec le reste du site :
- *
- * - un en-tête et un pied de page propres, sans le menu : le prospect arrive
- *   pour un seul sujet. Le pied de page porte l'identité de l'expéditeur des
- *   emails (la même que les mentions légales) et RESEARCH_EMAIL ;
- * - des emplacements « À confirmer » (composant Pending) là où la copy dépend
- *   d'une réponse de Willy — aujourd'hui la validation de l'essai. Aucun ne
- *   doit rester à la mise en ligne.
+ * Timevo. D'où un écart avec le reste du site : un en-tête et un pied de page
+ * propres, sans le menu, parce que le prospect arrive pour un seul sujet. Le
+ * pied de page porte l'identité de l'expéditeur des emails (la même que les
+ * mentions légales) et RESEARCH_EMAIL.
  *
  * Le bouton d'action, lui, est celui de tout le site : le diagnostic gratuit
  * (CONTACT_HREF), avec ses libellés tirés de `hero`, `nav` et `contact`.
@@ -45,26 +41,6 @@ const BODY: React.CSSProperties = {
 const CARD: React.CSSProperties = {
   background: "var(--card)", border: "1px solid var(--border)", borderRadius: 20,
 };
-
-/** Emplacement signalé : une information que seul Willy peut confirmer. */
-function Pending({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{
-      border: "1px dashed var(--accent-soft)", borderRadius: 12,
-      padding: "12px 16px", background: "var(--accent-tint)",
-    }}>
-      <div style={{
-        fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em",
-        textTransform: "uppercase", color: "var(--accent-soft)", marginBottom: 6,
-      }}>
-        À confirmer avant mise en ligne
-      </div>
-      <div style={{ fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.5, color: "var(--text)" }}>
-        {children}
-      </div>
-    </div>
-  );
-}
 
 /** Lien dans le corps du texte. */
 function TextLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -357,7 +333,7 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
           </section>
         </ScrollFadeIn>
 
-        {/* Essai — section entière en attente de validation */}
+        {/* Essai */}
         <ScrollFadeIn>
           <section id="trial" style={SECTION}>
             <div style={{ ...SECTION_INNER, maxWidth: 860 }}>
@@ -368,7 +344,6 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
                   letterSpacing: "-0.035em", lineHeight: 1.12, margin: 0, color: "var(--text)",
                 }}>{t("trial.h2")}</h2>
                 <p style={BODY}>{t("trial.text")}</p>
-                <Pending>{t("trial.pending")}</Pending>
               </div>
             </div>
           </section>

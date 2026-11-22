@@ -1867,8 +1867,7 @@
     "trial": {
       "label": "Essai",
       "h2": "Essayez sur une étude déjà terminée.",
-      "text": "Envoyez un ancien questionnaire ou un ancien entretien, idéalement un dont vous avez déjà la traduction. On le passe dans la chaîne et on vous renvoie le résultat, les segments signalés et le journal des modifications. Vous comparez avec ce que vous aviez reçu à l'époque.",
-      "pending": "Section à valider par Willy : l'essai est-il proposé, gratuit, et sur quel périmètre ?"
+      "text": "Envoyez un ancien questionnaire ou un ancien entretien, idéalement un dont vous avez déjà la traduction. On le passe dans la chaîne et on vous renvoie le résultat, les segments signalés et le journal des modifications. Vous comparez avec ce que vous aviez reçu à l'époque."
     },
     "contact": {
       "label": "Prendre contact",
