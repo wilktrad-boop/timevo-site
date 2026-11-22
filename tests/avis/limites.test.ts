@@ -9,7 +9,7 @@ test("autoriser compte jusqu'au maximum puis refuse sans dépasser", async () =>
   assert.equal(await autoriser(m, "email:b", 3), true);
   await rendre(m, "email:a");
   assert.equal(await autoriser(m, "email:a", 3), true);
-  assert.deepEqual(LIMITES, { recherchesParIp: 20, auditsParEmail: 3, auditsParJour: 50, codesParIp: 5, codesParEmail: 3 });
+  assert.deepEqual(LIMITES, { recherchesParIp: 20, recherchesParJour: 1000, auditsParEmail: 3, auditsParJour: 50, codesParIp: 5, codesParEmail: 3, essaisParCode: 5 });
 });
 
 test("les compteurs et les valeurs expirent", async () => {

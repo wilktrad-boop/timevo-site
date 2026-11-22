@@ -145,6 +145,12 @@ export default async function ConfidentialitePage({
           <li>
             <Strong>Calendly</Strong> (réservation de rendez-vous, lorsque vous utilisez ce service)&nbsp;;
           </li>
+          <li>
+            <Strong>Anthropic</Strong> (analyse des avis Google par intelligence artificielle) — États-Unis&nbsp;;
+          </li>
+          <li>
+            <Strong>Upstash</Strong> (stockage temporaire des analyses et des compteurs anti-abus, 24 heures)&nbsp;;
+          </li>
           <li>le fournisseur de messagerie utilisé pour traiter vos e-mails.</li>
         </Ul>
         <P>

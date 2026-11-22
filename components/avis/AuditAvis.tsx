@@ -61,6 +61,8 @@ export default function AuditAvis() {
   const [rapport, setRapport] = useState<RapportType | null>(null);
   const [envoi, setEnvoi] = useState<"aucun" | "encours" | "ok" | "echec">("aucun");
   const pdf = useRef<Blob | null>(null);
+  // Analyse en cours : le serveur n'envoie le PDF qu'une fois par analyse terminée.
+  const auditEnCours = useRef("");
   const haut = useRef<HTMLDivElement>(null);
   const tourEnCours = useRef(0);
 
@@ -100,6 +102,7 @@ export default function AuditAvis() {
     if (r.etat === "acces") { ecrireAcces(null); setAcces(null); setEtape("email"); return; }
     if (r.etat !== "lance") { setEtape("apercu"); setErreur(MESSAGES[r.etat]); return; }
     const jeton = ++tourEnCours.current;
+    auditEnCours.current = r.auditId;
     setDebut(Date.now());
     setEtape("analyse");
     haut.current?.scrollIntoView({ block: "start" });
@@ -141,6 +144,7 @@ export default function AuditAvis() {
       pdf.current = blob;
       const fd = new FormData();
       fd.append("acces", a.acces);
+      fd.append("auditId", auditEnCours.current);
       fd.append("pdf", new File([blob], nomFichierRapport(r), { type: "application/pdf" }));
       const res = await envoyerRapportPdf(fd);
       if (jeton !== tourEnCours.current) return;
@@ -209,7 +213,7 @@ export default function AuditAvis() {
   const recommencer = () => {
     tourEnCours.current++;
     setEtape("recherche"); setFiche(null); setFiches([]); setConcurrents([]); setRapport(null); setErreur("");
-    setEnvoi("aucun"); setJeton(""); setCode(""); setOccupe(false); pdf.current = null;
+    setEnvoi("aucun"); setJeton(""); setCode(""); setOccupe(false); pdf.current = null; auditEnCours.current = "";
     haut.current?.scrollIntoView({ block: "start" });
   };
   const erreurBloc = erreur ? <p role="alert" style={erreurStyle}>{erreur}</p> : null;
@@ -265,6 +269,12 @@ export default function AuditAvis() {
           <button type="button" data-action="analyser" disabled={occupe} onClick={() => (acces ? lancer(acces) : setEtape("email"))} style={{ ...bouton, opacity: occupe ? 0.7 : 1 }}>
             {occupe ? "Lancement…" : "Obtenir l'analyse complète"} {!occupe && <Arrow color="#fff" size={14} />}
           </button>
+          {acces && (
+            <p data-avis-adresse style={{ fontFamily: "var(--font-sans)", fontSize: 13, color: "var(--dim)", margin: 0 }}>
+              Analyse envoyée à <strong style={{ color: "var(--text)" }}>{acces.email}</strong>.{" "}
+              <button type="button" onClick={() => { ecrireAcces(null); setAcces(null); }} disabled={occupe} style={lien}>Changer d&apos;adresse</button>
+            </p>
+          )}
           <button type="button" onClick={recommencer} style={lien}>Chercher une autre entreprise</button>
         </div>
       )}

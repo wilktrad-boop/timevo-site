@@ -5,6 +5,7 @@
 import { Document, Page, View, Text, Font, StyleSheet, pdf } from "@react-pdf/renderer";
 import { pourPdf } from "@/lib/livret/livret";
 import type { Rapport } from "@/lib/avis/types";
+import { CONSEIL_SANS_AVIS, titreRecommandations } from "./Rapport";
 
 Font.register({ family: "Fraunces", src: "/fonts/fraunces/fraunces-latin-600-normal.woff", fontWeight: 600 });
 Font.registerHyphenationCallback(mot => [mot]);
@@ -66,6 +67,16 @@ function Document_({ r }: { r: Rapport }) {
           </View>
         )}
 
+        {r.nbAvisAnalyses === 0 && (
+          <View wrap={false}>
+            <Text style={s.h2}>Pas encore d&apos;avis à analyser</Text>
+            <Text>{t(CONSEIL_SANS_AVIS)}</Text>
+          </View>
+        )}
+        {r.nbAvisAnalyses > 0 && !r.analyse && (
+          <Text style={{ marginTop: 14 }}>L&apos;analyse détaillée n&apos;a pas pu être produite cette fois. Les chiffres ci-dessus restent exacts.</Text>
+        )}
+
         {r.analyse && (
           <View>
             <Text style={s.h2} minPresenceAhead={60}>Ce que vos clients apprécient</Text>
@@ -100,7 +111,7 @@ function Document_({ r }: { r: Rapport }) {
 
         {r.analyse && r.analyse.recommandations.length > 0 && (
           <View wrap={false}>
-            <Text style={s.h2}>Trois choses à faire</Text>
+            <Text style={s.h2}>{titreRecommandations(r.analyse.recommandations.length)}</Text>
             {r.analyse.recommandations.map((x, i) => <Text key={x} style={{ marginBottom: 5 }}>{i + 1}. {t(x)}</Text>)}
           </View>
         )}

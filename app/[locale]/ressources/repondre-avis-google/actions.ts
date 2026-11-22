@@ -1,5 +1,6 @@
 "use server";
 
+import { createHash } from "node:crypto";
 import { headers } from "next/headers";
 import { configAvis, type ConfigAvis } from "@/lib/avis/config";
 import { autoriser, rendre, LIMITES, JOUR_S } from "@/lib/avis/limites";
@@ -13,7 +14,8 @@ import { AVIS_PATH } from "@/lib/ressources";
  * Analyse d'avis Google : recherche et aperçu gratuits (limités par IP), puis email vérifié
  * par code, puis analyse complète en deux temps (lancerAudit, suivreAudit).
  * Clés Redis : avis:ip:*, avis:email:*, avis:jour, avis:audit:*, avis:resultat:*,
- * avis:rapport:<placeId>:<email> (cache 24 h, par adresse vérifiée), avis:code:ip:*, avis:code:email:*, avis:verrou:*, avis:rendu:*, avis:contact:*.
+ * avis:rapport:<placeId>:<email> (cache 24 h, par adresse vérifiée), avis:code:ip:*, avis:code:email:*, avis:verrou:*, avis:rendu:*, avis:contact:*,
+ * avis:recherches:jour (plafond global des recherches Maps), avis:essais:<sha256 du jeton> (essais de code), avis:pdf:<auditId> (un seul PDF par analyse).
  */
 
 const TACHE_MAX_MS = 3 * 60 * 1000;
@@ -38,12 +40,23 @@ async function ipVisiteur(): Promise<string> {
 const ligne = (s: unknown, max: number) => clean(typeof s === "string" ? s : "", max);
 const journal = (quoi: string, err: unknown) => console.error(`[avis] ${quoi} :`, err instanceof Error ? err.message : err);
 
+/** Une recherche Maps : comptée par IP, puis dans le plafond global du site (l'IP est rendue si le plafond refuse). */
+async function autoriserRecherche(c: ConfigAvis): Promise<boolean> {
+  const cleIp = `avis:ip:${await ipVisiteur()}`;
+  if (!(await autoriser(c.magasin, cleIp, LIMITES.recherchesParIp))) return false;
+  if (!(await autoriser(c.magasin, "avis:recherches:jour", LIMITES.recherchesParJour))) {
+    await rendre(c.magasin, cleIp);
+    return false;
+  }
+  return true;
+}
+
 export async function rechercherFiches(nom: string, ville: string): Promise<ResultatRecherche> {
   const c = configAvis();
   if (!c) return { etat: "indisponible" };
   const n = ligne(nom, 120), v = ligne(ville, 80);
   if (n.length < 2 || v.length < 2) return { etat: "erreur" };
-  if (!(await autoriser(c.magasin, `avis:ip:${await ipVisiteur()}`, LIMITES.recherchesParIp))) return { etat: "limite" };
+  if (!(await autoriserRecherche(c))) return { etat: "limite" };
   try {
     return { etat: "ok", fiches: (await c.donnees.rechercher(`${n} ${v}`)).slice(0, 5) };
   } catch (err) {
@@ -59,7 +72,7 @@ export async function comparerFiche(fiche: Fiche, ville: string): Promise<Result
   const v = ligne(ville, 80);
   if (!f || v.length < 2) return { etat: "erreur" };
   if (!f.categorie) return { etat: "ok", concurrents: [] };
-  if (!(await autoriser(c.magasin, `avis:ip:${await ipVisiteur()}`, LIMITES.recherchesParIp))) return { etat: "limite" };
+  if (!(await autoriserRecherche(c))) return { etat: "limite" };
   try {
     return { etat: "ok", concurrents: choisirConcurrents(await c.donnees.rechercher(`${f.categorie} ${v}`), f) };
   } catch (err) {
@@ -100,14 +113,20 @@ export async function demanderCodeAvis(email: string, consent: boolean, entrepri
     journal("envoi du code", err);
     return { etat: "erreur", champ: "envoi" };
   }
-  return { etat: "code", email: e, jeton: jetonCode({ email: e, entreprise: ligne(entreprise, 200) }, code, c.secret) };
+  return { etat: "code", email: e, jeton: jetonCode({ email: e, entreprise: ligne(entreprise, 200), outil: "avis" }, code, c.secret) };
 }
 
 export async function validerCodeAvis(jeton: string, code: string): Promise<ResultatValidation> {
   const c = configAvis();
   if (!c) return { etat: "indisponible" };
-  const infos = verifierCode(ligne(jeton, 3000), ligne(code, 12).replace(/\s/g, ""), c.secret);
-  if (!infos) return { etat: "erreur", message: "Ce code ne correspond pas, ou il a expiré. Vérifiez-le ou demandez-en un nouveau." };
+  const j = ligne(jeton, 3000);
+  // 5 essais par jeton de code : le million de codes possibles ne se parcourt pas.
+  if (!(await autoriser(c.magasin, `avis:essais:${createHash("sha256").update(j).digest("hex")}`, LIMITES.essaisParCode))) {
+    return { etat: "erreur", message: "Trop d'essais. Demandez un nouveau code." };
+  }
+  const infos = verifierCode(j, ligne(code, 12).replace(/\s/g, ""), c.secret);
+  // Un jeton de code d'un autre outil (livret) n'ouvre pas l'analyse.
+  if (!infos || infos.outil !== "avis") return { etat: "erreur", message: "Ce code ne correspond pas, ou il a expiré. Vérifiez-le ou demandez-en un nouveau." };
   return { etat: "ouvert", email: infos.email, acces: jetonAcces(infos.email, c.secret) };
 }
 
@@ -241,7 +260,10 @@ export async function suivreAudit(acces: string, auditId: string): Promise<Resul
   }
 }
 
-/** Envoie le PDF du rapport à l'adresse vérifiée du jeton d'accès, et à elle seule. */
+/**
+ * Envoie le PDF du rapport à l'adresse vérifiée du jeton d'accès, et à elle seule,
+ * une seule fois par analyse terminée de cette adresse.
+ */
 export async function envoyerRapportPdf(formData: FormData): Promise<{ ok: boolean }> {
   const c = configAvis();
   if (!c) return { ok: false };
@@ -250,6 +272,10 @@ export async function envoyerRapportPdf(formData: FormData): Promise<{ ok: boole
   if (!email || !(fichier instanceof File) || fichier.size === 0 || fichier.size > PDF_MAX) return { ok: false };
   const contenu = Buffer.from(await fichier.arrayBuffer());
   if (contenu.subarray(0, 5).toString("latin1") !== "%PDF-") return { ok: false };
+  const auditId = clean(formData.get("auditId"), 80);
+  const a = auditId ? await c.magasin.lire<Audit>(`avis:audit:${auditId}`) : null;
+  if (!a || a.email !== email || !(await c.magasin.lire<Rapport>(`avis:resultat:${auditId}`))) return { ok: false };
+  if (!(await c.magasin.prendre(`avis:pdf:${auditId}`, JOUR_S))) return { ok: false };
   const nom = /^[a-z0-9-]{1,80}\.pdf$/.test(fichier.name) ? fichier.name : "analyse-avis-google.pdf";
   try {
     await c.boite.transport.sendMail({

@@ -74,14 +74,15 @@ export async function demanderCode(_prev: AccesState, formData: FormData): Promi
     console.error("[livret-outil] envoi du code en échec :", err instanceof Error ? err.message : err);
     return { status: "erreur", champ: "envoi", valeurs };
   }
-  return { status: "code", email, jeton: jetonCode({ email, conciergerie, logements }, code, c.secret) };
+  return { status: "code", email, jeton: jetonCode({ email, conciergerie, logements, outil: "livret" }, code, c.secret) };
 }
 
 export async function validerCode(_prev: CodeState, formData: FormData): Promise<CodeState> {
   const c = config();
   if (!c) return { status: "erreur", message: "Le service est momentanément indisponible. Réessayez plus tard." };
   const infos = verifierCode(clean(formData.get("jeton"), 2000), clean(formData.get("code"), 12).replace(/\s/g, ""), c.secret);
-  if (!infos) return { status: "erreur", message: "Ce code ne correspond pas, ou il a expiré. Vérifiez-le ou demandez-en un nouveau." };
+  // Un jeton de l'analyse d'avis n'ouvre pas le livret ; sans « outil », jeton émis avant le cloisonnement : accepté.
+  if (!infos || infos.outil === "avis") return { status: "erreur", message: "Ce code ne correspond pas, ou il a expiré. Vérifiez-le ou demandez-en un nouveau." };
 
   // Le contact n'est transmis qu'une fois l'adresse vérifiée.
   const when = new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" });

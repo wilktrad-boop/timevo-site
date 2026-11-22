@@ -6,7 +6,7 @@
 import { Redis } from "@upstash/redis";
 
 export const JOUR_S = 86_400;
-export const LIMITES = { recherchesParIp: 20, auditsParEmail: 3, auditsParJour: 50, codesParIp: 5, codesParEmail: 3 };
+export const LIMITES = { recherchesParIp: 20, recherchesParJour: 1000, auditsParEmail: 3, auditsParJour: 50, codesParIp: 5, codesParEmail: 3, essaisParCode: 5 };
 
 export interface Magasin {
   /** Incrémente et pose l'expiration au premier incrément. Rend la nouvelle valeur. */

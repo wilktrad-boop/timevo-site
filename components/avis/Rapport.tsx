@@ -9,6 +9,13 @@ const h3 = { fontFamily: "var(--font-sans)", fontSize: 20, fontWeight: 500, lett
 const petit = { fontFamily: "var(--font-sans)", fontSize: 13, color: "var(--dim)" } as const;
 const virgule = (n: number) => n.toLocaleString("fr-FR", { maximumFractionDigits: 1 });
 
+/** Conseil affiché (écran et PDF) quand la fiche n'a encore aucun avis. */
+export const CONSEIL_SANS_AVIS =
+  "Votre fiche n'a pas encore d'avis. Demandez-en un à chaque client satisfait, au moment où il vous remercie : un lien direct vers votre fiche, envoyé par SMS ou par email, suffit. Répondez ensuite à chacun, même brièvement.";
+
+/** Titre des recommandations, accordé à leur nombre. */
+export const titreRecommandations = (n: number) => (n >= 3 ? "Trois choses à faire" : n === 2 ? "Deux choses à faire" : "À faire");
+
 /** Note sur 5 et nombre d'avis, en barres à l'échelle de la note. */
 export function Comparaison({ fiche, concurrents }: { fiche: Fiche; concurrents: Fiche[] }) {
   const lignes = [{ f: fiche, moi: true }, ...concurrents.map(f => ({ f, moi: false }))];
@@ -80,7 +87,7 @@ export default function Rapport({ rapport: r }: { rapport: RapportType }) {
         <div style={carte}>
           <h3 style={h3}>Pas encore d&apos;avis à analyser</h3>
           <p style={{ ...petit, fontSize: 15, lineHeight: 1.6, margin: 0 }}>
-            Votre fiche n&apos;a pas encore d&apos;avis. Demandez-en un à chaque client satisfait, au moment où il vous remercie : un lien direct vers votre fiche, envoyé par SMS ou par email, suffit. Répondez ensuite à chacun, même brièvement.
+            {CONSEIL_SANS_AVIS}
           </p>
         </div>
       ) : (
@@ -138,7 +145,7 @@ export default function Rapport({ rapport: r }: { rapport: RapportType }) {
 
           {a && a.recommandations.length > 0 && (
             <div style={carte}>
-              <h3 style={h3}>Trois choses à faire</h3>
+              <h3 style={h3}>{titreRecommandations(a.recommandations.length)}</h3>
               <ol style={{ margin: 0, paddingLeft: 20, fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.6, color: "var(--text)" }}>
                 {a.recommandations.map((x, i) => <li key={`${i}-${x}`} style={{ marginBottom: 8 }}>{x}</li>)}
               </ol>
