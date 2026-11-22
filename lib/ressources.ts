@@ -22,9 +22,11 @@ export const LIVRET_FILES = {
 export const LOGEMENTS_OPTIONS = ["1 à 5", "6 à 15", "16 à 30", "Plus de 30", "Je me lance"] as const;
 
 export const LIVRET = {
-  metaTitle: "Livret d'accueil Airbnb : modèle Word gratuit",
+  // Titre ≤ 51 caractères (+ « | Timevo » = 60) ; description ≤ 155. Distincte de
+  // celle du générateur (GENERATEUR) pour que les deux pages ne se concurrencent pas.
+  metaTitle: "Livret d'accueil Airbnb : modèle gratuit en ligne",
   metaDescription:
-    "Modèle de livret d'accueil Airbnb à télécharger : arrivée, Wi-Fi, règles de la maison, bonnes adresses, départ. Word modifiable et exemple PDF, gratuits.",
+    "Modèle de livret d'accueil Airbnb gratuit : à créer en ligne avec votre logo et votre photo, ou en Word. Arrivée, Wi-Fi, règles, quartier, départ.",
   eyebrow: "RESSOURCE GRATUITE · CONCIERGERIES",
   h1: "Livret d'accueil Airbnb : le modèle à télécharger.",
   subtitle:
