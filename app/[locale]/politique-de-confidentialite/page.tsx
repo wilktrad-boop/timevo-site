@@ -90,9 +90,12 @@ export default async function ConfidentialitePage({
           <li>
             <Strong>Analyse d&apos;avis Google.</Strong> Pour lancer l&apos;analyse, vous choisissez la fiche Google de votre
             entreprise (données publiques) et indiquez votre adresse e-mail, vérifiée par un code. Les avis publics de la fiche
-            sont transmis à notre prestataire d&apos;intelligence artificielle (Anthropic) pour l&apos;analyse. Le rapport est
-            conservé 24 heures pour éviter de refaire l&apos;analyse, puis supprimé ; le PDF vous est envoyé par e-mail et
-            n&apos;est pas conservé.
+            sont transmis à notre prestataire d&apos;intelligence artificielle (Anthropic) pour l&apos;analyse. Le rapport,
+            associé à votre adresse vérifiée, est conservé 24 heures pour vous éviter de relancer l&apos;analyse, puis
+            supprimé ; le PDF vous est envoyé par e-mail et n&apos;est pas conservé. Timevo reçoit un e-mail récapitulatif
+            (votre adresse, le nom de l&apos;entreprise et ses principaux chiffres) afin de vous recontacter au sujet de
+            l&apos;analyse. Pour limiter les abus, nous comptons pendant 24 heures le nombre de demandes par adresse e-mail
+            et par adresse IP.
           </li>
         </Ul>
       </Article>
