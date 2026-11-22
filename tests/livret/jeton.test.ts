@@ -44,3 +44,9 @@ test("verifierAcces rend l'email jusqu'à l'expiration", () => {
   assert.equal(verifierAcces(j, SECRET, T0 + ACCES_DUREE_MS + 1), null);
   assert.equal(verifierAcces(j, "autre-secret", T0), null);
 });
+
+test("un jeton de code transporte n'importe quels champs texte", () => {
+  const infos = { email: "a@b.fr", entreprise: "Atelier Cuisines", source: "avis" };
+  const j = jetonCode(infos, "654321", SECRET, T0);
+  assert.deepEqual(verifierCode(j, "654321", SECRET, T0), infos);
+});
