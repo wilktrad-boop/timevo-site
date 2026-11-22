@@ -204,3 +204,20 @@ export function realisationsLink(locale: Locale): LinkItem {
     desc: L.realisationsDesc,
   };
 }
+
+// ── Page sociétés d'études ───────────────────────────────────────────
+
+/** Chemin sans locale de la page « chaînes de traduction pour les études ». */
+export const RESEARCH_PATH = "/research";
+
+const RESEARCH_LABELS: Record<Locale, { label: string; desc: string }> = {
+  fr: { label: "Instituts d'études", desc: "Questionnaires, questions ouvertes et entretiens traduits et contrôlés." },
+  en: { label: "Market research", desc: "Questionnaires, open ends and interviews translated and checked." },
+};
+
+export function researchLink(locale: Locale): LinkItem {
+  return {
+    href: `/${locale}${RESEARCH_PATH}`,
+    ...RESEARCH_LABELS[locale],
+  };
+}

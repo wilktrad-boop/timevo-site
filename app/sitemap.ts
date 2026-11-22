@@ -3,6 +3,7 @@ import { SECTOR_SLUGS } from "@/lib/sectors";
 import { CITY_SLUGS } from "@/lib/cities";
 import { DEMO_SLUGS } from "@/lib/demoDashboards";
 import { LIVRET_PATH } from "@/lib/ressources";
+import { RESEARCH_PATH } from "@/lib/links";
 
 const BASE = "https://www.timevo.io";
 
@@ -28,6 +29,7 @@ const UPDATED = {
   demos: "2026-11-21",        // bouton « diagnostic gratuit » au lieu d'« audit »
   facturation: "2026-08-28",  // retrait du prix affiché sur la page facturation électronique
   ressources: "2026-11-22",   // livret d'accueil : aperçus du générateur (habillage), email vérifié
+  research: "2026-11-22",     // création de la page sociétés d'études (fr + en)
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -130,6 +132,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+
+    // Sociétés d'études : chaînes de traduction (FR + EN)
+    ...(["fr", "en"] as const).map(locale => ({
+      url: `${BASE}/${locale}${RESEARCH_PATH}`,
+      lastModified: UPDATED.research,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          fr: `${BASE}/fr${RESEARCH_PATH}`,
+          en: `${BASE}/en${RESEARCH_PATH}`,
+          "x-default": `${BASE}/fr${RESEARCH_PATH}`,
+        },
+      },
+    })),
 
     // Facturation électronique
     {

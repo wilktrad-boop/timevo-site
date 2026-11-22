@@ -1,6 +1,7 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Arrow, Eyebrow, PillPrimary, PillGhost } from "./primitives";
 import { CONTACT_HREF } from "@/lib/contact";
+import { RESEARCH_PATH } from "@/lib/links";
 
 /**
  * Hero centré, sur une seule colonne.
@@ -23,6 +24,11 @@ import { CONTACT_HREF } from "@/lib/contact";
  */
 export default async function HeroDkdp() {
   const t = await getTranslations("hero");
+  const locale = await getLocale();
+  // Point d'entrée vers /research. Les emails envoyés aux sociétés d'études
+  // renvoient à l'accueil : sans ce lien, le prospect ne trouve rien pour lui.
+  // Vide en français, donc absent de l'accueil français.
+  const researchLink = t("research_link");
 
   return (
     <section style={{ padding: "104px 28px 88px", position: "relative" }}>
@@ -71,6 +77,15 @@ export default async function HeroDkdp() {
             {t("cta_secondary")}
           </PillGhost>
         </div>
+
+        {researchLink ? (
+          <a href={`/${locale}${RESEARCH_PATH}`} className="footer-link" style={{
+            marginTop: 28, display: "inline-flex", alignItems: "center", gap: 8,
+            fontFamily: "var(--font-sans)", fontSize: 14,
+          }}>
+            {researchLink} <Arrow size={12} />
+          </a>
+        ) : null}
       </div>
     </section>
   );

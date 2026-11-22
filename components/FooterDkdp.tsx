@@ -3,6 +3,7 @@ import {
   SERVICE_SLUGS,
   sectorLinks,
   cityLinks,
+  researchLink,
   LINK_LABELS,
   type Locale,
 } from "@/lib/links";
@@ -35,7 +36,8 @@ export default async function FooterDkdp() {
   // sitewide vers les pages secteur, qui seraient orphelines sans lui.
   const sectorsCol: Col = {
     title: L.sectors,
-    items: sectorLinks(locale).map(({ label, href }) => ({ label, href })),
+    // La page /research ferme la colonne : c'est son seul lien entrant sitewide.
+    items: [...sectorLinks(locale), researchLink(locale)].map(({ label, href }) => ({ label, href })),
   };
 
   const cols: Col[] = msgCols.map(({ title, items }) => ({

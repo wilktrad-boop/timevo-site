@@ -26,3 +26,12 @@ export function contactEmbedSrc(hostname: string): string {
   });
   return `${CONTACT_HREF}?${params.toString()}`;
 }
+
+/**
+ * Contact de la page /research (chaînes de traduction pour les sociétés
+ * d'études). Adresse distincte de hello@timevo.io : c'est celle d'où partent
+ * les emails de prospection, et la page ne propose aucune autre action — ni
+ * agenda, ni formulaire.
+ */
+export const RESEARCH_EMAIL = "contact@timevo.online";
+export const RESEARCH_MAILTO = `mailto:${RESEARCH_EMAIL}`;
