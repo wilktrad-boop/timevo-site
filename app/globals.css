@@ -376,10 +376,6 @@ details[open] > .demo-summary::before {
   }
   .rs-who,
   .rs-footer { gap: 32px !important; }
-  .rs-qa {
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 12px !important;
-  }
 }
 
 @media (max-width: 600px) {

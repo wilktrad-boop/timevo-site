@@ -1707,25 +1707,21 @@
     "related_h2": "What we also do."
   },
   "research": {
-    "meta_title": "Translation pipelines for market research teams",
-    "meta_description": "Survey questionnaires, open ends and interviews translated and checked for multi-country studies. A linguist reviews only what gets flagged.",
+    "meta_title": "Market research translation: surveys and open ends",
+    "meta_description": "Survey translation for market research teams: questionnaires, open ends and interviews translated and checked. A linguist reviews only what gets flagged.",
     "og_eyebrow": "For market research teams",
     "og_title": "Multi-country research shouldn't wait on translation.",
     "breadcrumb": "Research teams",
-    "header_cta": "Email us",
     "hero": {
       "eyebrow": "For market research teams",
       "h1_line1": "Multi-country research",
       "h1_line2": "shouldn't wait",
       "h1_accent": "on translation.",
-      "subtitle": "We build translation pipelines for research teams. Your export comes back translated and checked, in its original format. A linguist only reviews what gets flagged.",
-      "cta": "Email contact@timevo.online",
-      "note": "Got our email? Just reply to it.",
-      "anchor": "See how a file moves through"
+      "subtitle": "We build translation pipelines for research teams. Your export comes back translated and checked, in its original format. A linguist only reviews what gets flagged."
     },
     "problem": {
       "label": "Where it slows down",
-      "h2_line1": "Translation sits on the critical path.",
+      "h2_line1": "In market research, translation sits on the critical path.",
       "h2_line2": "Before fieldwork, and after it.",
       "bullets": [
         {
@@ -1806,8 +1802,8 @@
     },
     "uses": {
       "label": "Four uses",
-      "h2_line1": "What goes in, what comes out,",
-      "h2_line2": "and how much human review is left.",
+      "h2_line1": "From survey translation to reports:",
+      "h2_line2": "what goes in, what comes out, what a human still reviews.",
       "in": "In",
       "out": "Out",
       "human": "Human review",
@@ -1866,37 +1862,7 @@
           "lead": "A segment stays in English, or gets translated when it shouldn't.",
           "rest": "Brand names and answer codes are the usual suspects."
         }
-      ],
-      "frank": "We don't have research clients to quote yet, and we won't pretend otherwise. That is what the trial is for."
-    },
-    "data": {
-      "label": "Respondent data",
-      "h2_line1": "Respondent data:",
-      "h2_line2": "what happens to your files.",
-      "intro": "It is the first question we would ask too. The answers, in plain terms.",
-      "items": [
-        {
-          "q": "Where are files processed and stored?",
-          "pending": "Réponse de Willy attendue : pays et hébergeur du traitement et du stockage."
-        },
-        {
-          "q": "Which sub-processors are involved?",
-          "pending": "Réponse de Willy attendue : fournisseurs du modèle de traduction et de la transcription audio."
-        },
-        {
-          "q": "Is anything used to train AI models?",
-          "pending": "Réponse de Willy attendue : conditions d'API et engagement de non-entraînement."
-        },
-        {
-          "q": "How long are files kept?",
-          "pending": "Réponse de Willy attendue : durée de conservation après livraison."
-        },
-        {
-          "q": "Can we sign an NDA and a data processing agreement first?",
-          "pending": "Réponse de Willy attendue : NDA et DPA signables avant tout envoi de fichier."
-        }
-      ],
-      "privacy_link": "Timevo privacy policy (in French)"
+      ]
     },
     "trial": {
       "label": "Trial",
@@ -1906,14 +1872,12 @@
     },
     "contact": {
       "label": "Get in touch",
-      "h2": "One email is enough.",
-      "text": "Reply to the email we sent you, or write to us directly. Tell us where translation slows you down most: before fieldwork or after. A translator answers.",
-      "cta": "Email contact@timevo.online",
-      "note": "No form, no call to book."
+      "h2": "Tell us where translation slows you down.",
+      "text": "Book a free 30-minute diagnostic: we look at one of your studies and at where translation holds it up, before fieldwork or after."
     },
     "footer": {
       "sender": "Emails about this service are sent by Willy Paul, Timevo.",
-      "identity_pending": "Raison sociale et adresse postale de l'expéditeur des mails : à confirmer par Willy.",
+      "identity": "Timevo is the trading name of Maxime Doublet, sole trader. 13 route de la Visitation, 74200 Thonon-les-Bains, France. Registered in France, RCS Thonon-les-Bains 843 505 249.",
       "optout": "If you would rather not hear from us again, reply to say so and we won't write again.",
       "home": "Timevo home",
       "privacy": "Privacy policy",

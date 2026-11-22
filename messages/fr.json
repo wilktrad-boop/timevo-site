@@ -1707,25 +1707,21 @@
     "related_h2": "Ce qu'on fait aussi."
   },
   "research": {
-    "meta_title": "Chaînes de traduction pour les instituts d'études",
-    "meta_description": "Questionnaires, questions ouvertes et entretiens traduits et contrôlés pour vos études multi-pays. Un linguiste ne relit que ce qui est signalé.",
+    "meta_title": "Traduction de questionnaires et d'études de marché",
+    "meta_description": "Traduction de questionnaires, de questions ouvertes et d'entretiens pour vos études de marché multi-pays. Un linguiste ne relit que ce qui est signalé.",
     "og_eyebrow": "Pour les instituts d'études",
     "og_title": "Vos études multi-pays ne devraient pas attendre la traduction.",
     "breadcrumb": "Instituts d'études",
-    "header_cta": "Nous écrire",
     "hero": {
       "eyebrow": "Pour les instituts d'études",
       "h1_line1": "Vos études multi-pays",
       "h1_line2": "ne devraient pas attendre",
       "h1_accent": "la traduction.",
-      "subtitle": "On monte des chaînes de traduction pour les équipes d'études. Votre export revient traduit et contrôlé, dans son format d'origine. Un linguiste ne relit que ce qui est signalé.",
-      "cta": "Écrire à contact@timevo.online",
-      "note": "Vous avez reçu notre email ? Il suffit d'y répondre.",
-      "anchor": "Voir le parcours d'un fichier"
+      "subtitle": "On monte des chaînes de traduction pour les équipes d'études. Votre export revient traduit et contrôlé, dans son format d'origine. Un linguiste ne relit que ce qui est signalé."
     },
     "problem": {
       "label": "Là où ça ralentit",
-      "h2_line1": "La traduction est sur le chemin critique.",
+      "h2_line1": "Dans une étude de marché, la traduction est sur le chemin critique.",
       "h2_line2": "Avant le terrain, et après.",
       "bullets": [
         {
@@ -1806,8 +1802,8 @@
     },
     "uses": {
       "label": "Quatre usages",
-      "h2_line1": "Ce qui entre, ce qui sort,",
-      "h2_line2": "et la part d'humain qui reste.",
+      "h2_line1": "De la traduction de questionnaires aux rapports :",
+      "h2_line2": "ce qui entre, ce qui sort, la part d'humain qui reste.",
       "in": "Entrée",
       "out": "Sortie",
       "human": "Relecture humaine",
@@ -1866,37 +1862,7 @@
           "lead": "Un segment reste dans la langue source, ou est traduit alors qu'il ne devait pas l'être.",
           "rest": "Noms de marque et codes de réponse, le plus souvent."
         }
-      ],
-      "frank": "Nous n'avons pas encore de client à citer dans les études, et nous ne ferons pas semblant. L'essai sert à ça."
-    },
-    "data": {
-      "label": "Données de répondants",
-      "h2_line1": "Données de répondants :",
-      "h2_line2": "ce que deviennent vos fichiers.",
-      "intro": "C'est la première question qu'on poserait aussi. Les réponses, sans détour.",
-      "items": [
-        {
-          "q": "Où les fichiers sont-ils traités et stockés ?",
-          "pending": "Réponse de Willy attendue : pays et hébergeur du traitement et du stockage."
-        },
-        {
-          "q": "Quels sous-traitants interviennent ?",
-          "pending": "Réponse de Willy attendue : fournisseurs du modèle de traduction et de la transcription audio."
-        },
-        {
-          "q": "Les données servent-elles à entraîner des modèles d'IA ?",
-          "pending": "Réponse de Willy attendue : conditions d'API et engagement de non-entraînement."
-        },
-        {
-          "q": "Combien de temps les fichiers sont-ils conservés ?",
-          "pending": "Réponse de Willy attendue : durée de conservation après livraison."
-        },
-        {
-          "q": "Peut-on signer un accord de confidentialité et un contrat de sous-traitance avant tout envoi ?",
-          "pending": "Réponse de Willy attendue : NDA et DPA signables avant tout envoi de fichier."
-        }
-      ],
-      "privacy_link": "Politique de confidentialité de Timevo"
+      ]
     },
     "trial": {
       "label": "Essai",
@@ -1905,15 +1871,13 @@
       "pending": "Section à valider par Willy : l'essai est-il proposé, gratuit, et sur quel périmètre ?"
     },
     "contact": {
-      "label": "Nous écrire",
-      "h2": "Un email suffit.",
-      "text": "Répondez à l'email que vous avez reçu, ou écrivez-nous directement. Dites-nous où la traduction vous ralentit le plus : avant le terrain ou après. C'est un traducteur qui répond.",
-      "cta": "Écrire à contact@timevo.online",
-      "note": "Pas de formulaire, pas de rendez-vous à réserver."
+      "label": "Prendre contact",
+      "h2": "Dites-nous où la traduction vous ralentit.",
+      "text": "Réservez un diagnostic gratuit de 30 minutes : on regarde une de vos études et l'endroit où la traduction la retarde, avant le terrain ou après."
     },
     "footer": {
       "sender": "Les emails au sujet de ce service sont envoyés par Willy Paul, Timevo.",
-      "identity_pending": "Raison sociale et adresse postale de l'expéditeur des mails : à confirmer par Willy.",
+      "identity": "Timevo est le nom commercial de Maxime Doublet, entrepreneur individuel. 13 route de la Visitation, 74200 Thonon-les-Bains, France. RCS Thonon-les-Bains 843 505 249.",
       "optout": "Si vous ne souhaitez plus recevoir nos messages, répondez-nous : nous n'écrirons plus.",
       "home": "Accueil Timevo",
       "privacy": "Politique de confidentialité",

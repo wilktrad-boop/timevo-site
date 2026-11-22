@@ -3,31 +3,39 @@ import { getTranslations } from "next-intl/server";
 import LocaleSwitcher from "./LocaleSwitcher";
 import ScrollFadeIn from "./ScrollFadeIn";
 import Breadcrumb from "./Breadcrumb";
+import StickyMobileCta from "./StickyMobileCta";
 import { Arrow, Eyebrow, PillPrimary } from "./primitives";
 import { SECTION, SECTION_INNER, SectionHead, Punchline, type Punch } from "./SectionParts";
-import { IconAlert, IconSteps, IconGrid, IconSpark, IconTarget } from "./SectionIcons";
-import { RESEARCH_EMAIL, RESEARCH_MAILTO } from "@/lib/contact";
+import { IconAlert, IconSteps, IconGrid, IconSpark } from "./SectionIcons";
+import { CONTACT_HREF, RESEARCH_EMAIL, RESEARCH_MAILTO } from "@/lib/contact";
 import { LINK_LABELS, type Locale } from "@/lib/links";
 
 /**
  * Page « /research » : chaînes de traduction pour les sociétés d'études.
  *
  * Elle s'adresse à des prospects contactés par email, qui ne connaissent pas
- * Timevo. D'où trois écarts avec le reste du site :
+ * Timevo. D'où deux écarts avec le reste du site :
  *
- * - un en-tête et un pied de page propres, sans le menu ni le bouton Calendly :
- *   la page ne propose qu'une action, écrire à RESEARCH_EMAIL ;
- * - pas de StickyMobileCta, qui renvoie lui aussi vers l'agenda ;
- * - des emplacements « À confirmer » (composant Pending) partout où la copy
- *   dépend d'une réponse de Willy — confidentialité, essai, identité légale.
- *   Aucun ne doit rester à la mise en ligne.
+ * - un en-tête et un pied de page propres, sans le menu : le prospect arrive
+ *   pour un seul sujet. Le pied de page porte l'identité de l'expéditeur des
+ *   emails (la même que les mentions légales) et RESEARCH_EMAIL ;
+ * - des emplacements « À confirmer » (composant Pending) là où la copy dépend
+ *   d'une réponse de Willy — aujourd'hui la validation de l'essai. Aucun ne
+ *   doit rester à la mise en ligne.
+ *
+ * Le bouton d'action, lui, est celui de tout le site : le diagnostic gratuit
+ * (CONTACT_HREF), avec ses libellés tirés de `hero`, `nav` et `contact`.
+ * L'email n'apparaît plus que dans le pied de page.
+ *
+ * La section « Données de répondants » (questions-réponses sur l'hébergement,
+ * les sous-traitants, la conservation) a été retirée en attendant ces
+ * réponses : elle est dans le commit 9e088f6, composant et copy.
  *
  * Toute la copy vit dans la clé `research` des messages.
  */
 
 type Bullet = { lead: string; rest: string };
 type Use = { when: string; title: string; in: string; out: string; human: string };
-type DataItem = { q: string; a?: string; pending?: string };
 
 const BODY: React.CSSProperties = {
   fontFamily: "var(--font-sans)", fontSize: 17, lineHeight: 1.6,
@@ -89,6 +97,10 @@ const FlowArrow = () => (
 
 export default async function ResearchPage({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "research" });
+  // Libellés du bouton d'action : ceux du reste du site, pas une copie.
+  const tHero = await getTranslations({ locale, namespace: "hero" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const tContact = await getTranslations({ locale, namespace: "contact" });
   const L = LINK_LABELS[locale];
   const path = `/${locale}/research`;
 
@@ -97,7 +109,6 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
   const steps = t.raw("how.steps") as string[][];
   const uses = t.raw("uses.items") as Use[];
   const breaks = t.raw("who.breaks") as Bullet[];
-  const dataItems = t.raw("data.items") as DataItem[];
 
   const ioLabel: React.CSSProperties = {
     fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em",
@@ -127,8 +138,8 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
         </a>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <LocaleSwitcher />
-          <a href={RESEARCH_MAILTO} className="rs-header-cta">
-            {t("header_cta")} <Arrow size={12} color="var(--bg)" />
+          <a href={CONTACT_HREF} target="_blank" rel="noopener noreferrer" className="rs-header-cta">
+            {tNav("cta")} <Arrow size={12} color="var(--bg)" />
           </a>
         </div>
       </nav>
@@ -163,12 +174,9 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
               {t("hero.subtitle")}
             </p>
             <div style={{ marginTop: 36, display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
-              <PillPrimary href={RESEARCH_MAILTO} large>
-                {t("hero.cta")} <Arrow color="#fff" size={14} />
+              <PillPrimary href={CONTACT_HREF} large>
+                {tHero("cta_primary")} <Arrow color="#fff" size={14} />
               </PillPrimary>
-              <span style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--dim)" }}>
-                {t("hero.note")}
-              </span>
             </div>
           </div>
         </section>
@@ -325,12 +333,6 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
                       agents: chunks => <TextLink href={`/${locale}/solutions/agents-ia`}>{chunks}</TextLink>,
                     })}
                   </p>
-                  <p style={{
-                    ...BODY, color: "var(--text)", fontWeight: 500,
-                    borderLeft: "2px solid var(--accent)", paddingLeft: 18,
-                  }}>
-                    {t("who.frank")}
-                  </p>
                 </div>
                 <div style={{ ...CARD, padding: 28 }}>
                   <h3 style={{
@@ -349,39 +351,6 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
                       </li>
                     ))}
                   </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-        </ScrollFadeIn>
-
-        {/* Données de répondants */}
-        <ScrollFadeIn>
-          <section id="data" style={SECTION}>
-            <div style={SECTION_INNER}>
-              <SectionHead
-                label={t("data.label")}
-                icon={<IconTarget />}
-                lines={[t("data.h2_line1"), t("data.h2_line2")]}
-                subtitle={t("data.intro")}
-              />
-              <div style={{ maxWidth: 860, margin: "0 auto" }}>
-                {dataItems.map(item => (
-                  <div key={item.q} className="rs-qa" style={{
-                    display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.2fr)", gap: 32,
-                    padding: "24px 0", borderTop: "1px solid var(--border)", alignItems: "start",
-                  }}>
-                    <h3 style={{
-                      fontFamily: "var(--font-sans)", fontSize: 17, fontWeight: 600,
-                      letterSpacing: "-0.015em", lineHeight: 1.35, margin: 0, color: "var(--text)",
-                    }}>{item.q}</h3>
-                    {item.a
-                      ? <p style={{ ...BODY, fontSize: 15.5 }}>{item.a}</p>
-                      : <Pending>{item.pending}</Pending>}
-                  </div>
-                ))}
-                <div style={{ borderTop: "1px solid var(--border)", paddingTop: 24 }}>
-                  <TextLink href={`/${locale}/politique-de-confidentialite`}>{t("data.privacy_link")}</TextLink>
                 </div>
               </div>
             </div>
@@ -419,11 +388,11 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
               }}>{t("contact.h2")}</h2>
               <p style={{ ...BODY, marginTop: 20, maxWidth: 600 }}>{t("contact.text")}</p>
               <div style={{ marginTop: 32, display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
-                <PillPrimary href={RESEARCH_MAILTO} large>
-                  {t("contact.cta")} <Arrow color="#fff" size={14} />
+                <PillPrimary href={CONTACT_HREF} large>
+                  {tHero("cta_primary")} <Arrow color="#fff" size={14} />
                 </PillPrimary>
                 <span style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--dim)" }}>
-                  {t("contact.note")}
+                  {tContact("reassurance")}
                 </span>
               </div>
             </div>
@@ -447,7 +416,9 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
               <p style={{ fontFamily: "var(--font-sans)", fontSize: 13.5, lineHeight: 1.55, color: "var(--dim)", margin: 0 }}>
                 {t("footer.sender")}
               </p>
-              <Pending>{t("footer.identity_pending")}</Pending>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: 13.5, lineHeight: 1.55, color: "var(--dim)", margin: 0 }}>
+                {t("footer.identity")}
+              </p>
               <p style={{ fontFamily: "var(--font-sans)", fontSize: 13.5, lineHeight: 1.55, color: "var(--dim)", margin: 0 }}>
                 <a href={RESEARCH_MAILTO} className="footer-link">{RESEARCH_EMAIL}</a>
                 <br />
@@ -468,6 +439,7 @@ export default async function ResearchPage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </footer>
+      <StickyMobileCta />
     </>
   );
 }
