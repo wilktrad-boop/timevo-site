@@ -311,6 +311,9 @@ details[open] > .demo-summary::before {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 16px !important;
   }
+  .avis-themes {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
   .livret-tabs {
     display: flex !important;
   }
@@ -403,6 +406,9 @@ details[open] > .demo-summary::before {
 
 /* Mobile ≤ 600px */
 @media (max-width: 600px) {
+  .avis-chiffres {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 
   .pillars-row1,
   .pillars-row2,
