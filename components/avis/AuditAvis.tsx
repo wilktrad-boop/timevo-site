@@ -62,8 +62,10 @@ export default function AuditAvis() {
   const [envoi, setEnvoi] = useState<"aucun" | "encours" | "ok" | "echec">("aucun");
   const pdf = useRef<Blob | null>(null);
   const haut = useRef<HTMLDivElement>(null);
+  const tourEnCours = useRef(0);
 
   useEffect(() => { setAcces(lireAcces()); }, []);
+  useEffect(() => () => { tourEnCours.current++; }, []);
 
   async function rechercher(e: React.FormEvent) {
     e.preventDefault();
@@ -96,50 +98,74 @@ export default function AuditAvis() {
     const r = await lancerAudit(a.acces, fiche, concurrents).catch(() => ({ etat: "erreur" as const }));
     setOccupe(false);
     if (r.etat === "acces") { ecrireAcces(null); setAcces(null); setEtape("email"); return; }
-    if (r.etat !== "lance") { setErreur(MESSAGES[r.etat]); return; }
+    if (r.etat !== "lance") { setEtape("apercu"); setErreur(MESSAGES[r.etat]); return; }
+    const jeton = ++tourEnCours.current;
     setDebut(Date.now());
     setEtape("analyse");
     haut.current?.scrollIntoView({ block: "start" });
-    suivre(a, r.auditId);
+    suivre(a, r.auditId, jeton);
   }
 
-  function suivre(a: Acces, auditId: string) {
+  function suivre(a: Acces, auditId: string, jeton: number) {
+    const limite = Date.now() + 5 * 60 * 1000;
+    let echecs = 0;
+    const abandon = () => {
+      setErreur("L'analyse ne répond pas. Vérifiez votre connexion et réessayez dans quelques minutes.");
+      setEtape(fiche ? "apercu" : "recherche");
+    };
     const tour = async () => {
-      const r = await suivreAudit(a.acces, auditId).catch(() => ({ etat: "encours" as const }));
+      if (jeton !== tourEnCours.current) return;
+      if (Date.now() > limite) { abandon(); return; }
+      let reseau = true;
+      const r = await suivreAudit(a.acces, auditId).then(x => { reseau = false; return x; }).catch(() => ({ etat: "encours" as const }));
+      if (jeton !== tourEnCours.current) return;
+      if (reseau) {
+        echecs++;
+        if (echecs >= 6) { abandon(); return; }
+      } else echecs = 0;
       if (r.etat === "encours") { setTimeout(tour, 5000); return; }
-      if (r.etat === "pret") { setRapport(r.rapport); setEtape("rapport"); envoyer(a, r.rapport); return; }
+      if (r.etat === "pret") { setRapport(r.rapport); setEtape("rapport"); envoyer(a, r.rapport, jeton); return; }
       setErreur(r.etat === "indisponible" ? MESSAGES.indisponible : r.message);
-      setEtape("apercu");
+      setEtape(fiche ? "apercu" : "recherche");
     };
     setTimeout(tour, 3000);
   }
 
-  async function envoyer(a: Acces, r: RapportType) {
+  async function envoyer(a: Acces, r: RapportType, jeton: number) {
     setEnvoi("encours");
     try {
       const { genererPdfRapport, nomFichierRapport } = await import("./RapportPdf");
+      if (jeton !== tourEnCours.current) return;
       const blob = await genererPdfRapport(r);
+      if (jeton !== tourEnCours.current) return;
       pdf.current = blob;
       const fd = new FormData();
       fd.append("acces", a.acces);
       fd.append("pdf", new File([blob], nomFichierRapport(r), { type: "application/pdf" }));
       const res = await envoyerRapportPdf(fd);
+      if (jeton !== tourEnCours.current) return;
       setEnvoi(res.ok ? "ok" : "echec");
     } catch (err) {
       console.error("[avis] PDF :", err);
+      if (jeton !== tourEnCours.current) return;
       setEnvoi("echec");
     }
   }
 
   async function telecharger() {
     if (!rapport) return;
-    const { genererPdfRapport, nomFichierRapport } = await import("./RapportPdf");
-    const blob = pdf.current ?? (await genererPdfRapport(rapport));
-    const url = URL.createObjectURL(blob);
-    const lienDl = document.createElement("a");
-    lienDl.href = url; lienDl.download = nomFichierRapport(rapport);
-    document.body.appendChild(lienDl); lienDl.click(); lienDl.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 10_000);
+    try {
+      const { genererPdfRapport, nomFichierRapport } = await import("./RapportPdf");
+      const blob = pdf.current ?? (await genererPdfRapport(rapport));
+      const url = URL.createObjectURL(blob);
+      const lienDl = document.createElement("a");
+      lienDl.href = url; lienDl.download = nomFichierRapport(rapport);
+      document.body.appendChild(lienDl); lienDl.click(); lienDl.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 10_000);
+    } catch (err) {
+      console.error("[avis] PDF :", err);
+      setErreur("Le PDF n'a pas pu être généré. Réessayez.");
+    }
   }
 
   async function demanderCode(e: React.FormEvent) {
@@ -156,6 +182,7 @@ export default function AuditAvis() {
     }
     setJeton(r.jeton);
     setCode("");
+    setErreur("");
     setEtape("code");
   }
 
@@ -179,7 +206,12 @@ export default function AuditAvis() {
     return () => clearInterval(t);
   }, [etape, debut]);
 
-  const recommencer = () => { setEtape("recherche"); setFiche(null); setFiches([]); setRapport(null); setErreur(""); setEnvoi("aucun"); pdf.current = null; };
+  const recommencer = () => {
+    tourEnCours.current++;
+    setEtape("recherche"); setFiche(null); setFiches([]); setConcurrents([]); setRapport(null); setErreur("");
+    setEnvoi("aucun"); setJeton(""); setCode(""); setOccupe(false); pdf.current = null;
+    haut.current?.scrollIntoView({ block: "start" });
+  };
   const erreurBloc = erreur ? <p role="alert" style={erreurStyle}>{erreur}</p> : null;
 
   return (
@@ -270,7 +302,7 @@ export default function AuditAvis() {
               </div>
               {erreurBloc}
               <button type="submit" disabled={occupe} style={{ ...bouton, opacity: occupe ? 0.7 : 1 }}>{occupe ? "Vérification…" : "Lancer l'analyse"} {!occupe && <Arrow color="#fff" size={14} />}</button>
-              <button type="button" onClick={() => setEtape("email")} style={lien}>Changer d&apos;adresse ou recevoir un nouveau code</button>
+              <button type="button" onClick={() => { setErreur(""); setEtape("email"); }} style={lien}>Changer d&apos;adresse ou recevoir un nouveau code</button>
             </form>
           )}
         </div>
@@ -301,6 +333,7 @@ export default function AuditAvis() {
               <button type="button" onClick={recommencer} style={lien}>Analyser une autre entreprise</button>
             </span>
           </div>
+          {erreurBloc}
           <RapportVue rapport={rapport} />
         </>
       )}
