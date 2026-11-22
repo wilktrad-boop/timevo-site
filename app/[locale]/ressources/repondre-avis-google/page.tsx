@@ -13,6 +13,9 @@ const BASE = "https://www.timevo.io";
 const PAGE_URL = `${BASE}${AVIS_PATH}`;
 const AGENTS = "/fr/solutions/agents-ia";
 
+// Délai maximal des Server Actions de la page (récupération des avis et analyse IA).
+export const maxDuration = 300;
+
 // Page française uniquement : /en/... renvoie 404.
 export function generateStaticParams() {
   return [{ locale: "fr" }];

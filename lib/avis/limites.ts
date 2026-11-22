@@ -63,7 +63,8 @@ export function magasinRedis(): Magasin {
   return {
     async incr(cle, ttlSec) {
       const n = await r.incr(cle);
-      if (n === 1) await r.expire(cle, ttlSec);
+      // Pose l'expiration au premier incrément, et répare une clé restée sans expiration.
+      if (n === 1 || (await r.ttl(cle)) < 0) await r.expire(cle, ttlSec);
       return n;
     },
     async decr(cle) {

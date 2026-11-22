@@ -59,7 +59,7 @@ export function jetonCode(infos: InfosCode, code: string, secret: string, mainte
 /** Les infos du formulaire si le code est le bon et n'a pas expiré, sinon null. */
 export function verifierCode(jeton: string, code: string, secret: string, maintenant = Date.now()): InfosCode | null {
   const charge = lire(jeton, secret, maintenant);
-  if (!charge || charge.t !== "code") return null;
+  if (!charge || charge.t !== "code" || !charge.infos || typeof charge.infos.email !== "string") return null;
   if (!egal(charge.c, hmac(secret, `code:${charge.infos.email}:${String(code).trim()}`))) return null;
   return charge.infos;
 }

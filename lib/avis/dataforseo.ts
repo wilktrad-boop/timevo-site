@@ -26,6 +26,7 @@ export function donneesDataForSEO(login: string, motDePasse: string, f: typeof f
       headers: { Authorization: auth, "Content-Type": "application/json" },
       body: corps === undefined ? undefined : JSON.stringify(corps),
       cache: "no-store",
+      signal: AbortSignal.timeout(20_000),
     });
     if (!r.ok) throw new Error(`DataForSEO HTTP ${r.status}`);
     const json = obj(await r.json());

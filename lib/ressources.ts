@@ -117,6 +117,6 @@ export const AVIS = {
   ],
   bridgeH2: "Et quand les avis s'accumulent.",
   bridgeText:
-    "Chez nos clients, un agent IA lit chaque nouvel avis, rédige la réponse dans le ton de l'entreprise, et la soumet pour validation. Vous gardez la main, sans y passer vos soirées.",
+    "Un agent IA peut lire chaque nouvel avis, rédiger la réponse dans le ton de votre entreprise et vous la soumettre pour validation. Vous gardez la main, sans y passer vos soirées.",
   bridgeCta: "Voir nos agents IA",
 };

@@ -149,7 +149,7 @@ export default function Rapport({ rapport: r }: { rapport: RapportType }) {
 
       <div data-rapport-offre style={{ ...carte, background: "var(--card-soft)" }}>
         <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, lineHeight: 1.55, color: "var(--text)", margin: "0 0 14px" }}>
-          Chez nos clients, un agent IA rédige chaque jour la réponse à chaque nouvel avis ; vous la validez en un clic. On en parle en 30 minutes ?
+          Un agent IA peut rédiger chaque jour la réponse à chaque nouvel avis ; vous la validez en un clic. On en parle en 30 minutes ?
         </p>
         <a href={CONTACT_HREF} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 600, color: "var(--accent-soft)" }}>Réserver un diagnostic gratuit</a>
       </div>

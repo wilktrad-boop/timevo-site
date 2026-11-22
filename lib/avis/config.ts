@@ -37,7 +37,7 @@ export function configAvis(): ConfigAvis | null {
   if (!login || !motDePasse || !cle || !redisConfigure()) return null;
   return {
     donnees: donneesDataForSEO(login, motDePasse),
-    ia: iaClaude(new Anthropic({ apiKey: cle })),
+    ia: iaClaude(new Anthropic({ apiKey: cle, timeout: 240_000, maxRetries: 1 })),
     magasin: magasinRedis(),
     secret,
     boite,

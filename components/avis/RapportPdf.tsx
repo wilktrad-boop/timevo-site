@@ -106,7 +106,7 @@ function Document_({ r }: { r: Rapport }) {
         )}
 
         <View wrap={false} style={{ marginTop: 18, padding: 12, backgroundColor: TEINTE, borderRadius: 6 }}>
-          <Text>Chez nos clients, un agent IA rédige chaque jour la réponse à chaque nouvel avis ; vous la validez en un clic.</Text>
+          <Text>Un agent IA peut rédiger chaque jour la réponse à chaque nouvel avis ; vous la validez en un clic.</Text>
           <Text style={{ marginTop: 4, fontFamily: "Helvetica-Bold" }}>Diagnostic gratuit de 30 minutes : timevo.io</Text>
         </View>
         <Text style={s.pied} fixed>Analyse réalisée par Timevo · timevo.io</Text>
