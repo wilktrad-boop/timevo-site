@@ -27,7 +27,7 @@ const UPDATED = {
   cities: "2026-11-21",       // « Agence IA », bouton « diagnostic gratuit »
   demos: "2026-11-21",        // bouton « diagnostic gratuit » au lieu d'« audit »
   facturation: "2026-08-28",  // retrait du prix affiché sur la page facturation électronique
-  ressources: "2026-11-21",   // livret d'accueil : modèle Word et générateur en ligne
+  ressources: "2026-11-22",   // livret d'accueil : aperçus du générateur (habillage), email vérifié
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
