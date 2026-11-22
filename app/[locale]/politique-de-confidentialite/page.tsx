@@ -6,7 +6,7 @@ import { LegalShell, Article, P, Strong, A, Ul } from "@/components/legal";
 import type { Locale } from "@/lib/pageLabels";
 
 const BASE_URL = "https://www.timevo.io";
-const LAST_UPDATE = "21 novembre 2026";
+const LAST_UPDATE = "22 novembre 2026";
 
 function isValidLocale(v: string): v is Locale {
   return (routing.locales as readonly string[]).includes(v);
@@ -87,6 +87,13 @@ export default async function ConfidentialitePage({
             navigateur pendant que vous le rédigez. Le PDF terminé transite par nos serveurs le temps de vous être envoyé
             par e-mail, à l&apos;adresse vérifiée uniquement ; nous ne le conservons pas.
           </li>
+          <li>
+            <Strong>Analyse d&apos;avis Google.</Strong> Pour lancer l&apos;analyse, vous choisissez la fiche Google de votre
+            entreprise (données publiques) et indiquez votre adresse e-mail, vérifiée par un code. Les avis publics de la fiche
+            sont transmis à notre prestataire d&apos;intelligence artificielle (Anthropic) pour l&apos;analyse. Le rapport est
+            conservé 24 heures pour éviter de refaire l&apos;analyse, puis supprimé ; le PDF vous est envoyé par e-mail et
+            n&apos;est pas conservé.
+          </li>
         </Ul>
       </Article>
 
@@ -101,7 +108,7 @@ export default async function ConfidentialitePage({
             intérêt légitime à traiter votre sollicitation (art. 6.1.b et 6.1.f du RGPD).
           </li>
           <li>
-            <Strong>Téléchargement d&apos;une ressource et générateur de livret</Strong> : votre consentement, donné en cochant la case du
+            <Strong>Téléchargement d&apos;une ressource, générateur de livret et analyse d&apos;avis</Strong> : votre consentement, donné en cochant la case du
             formulaire (art. 6.1.a du RGPD). Vous pouvez le retirer à tout moment en écrivant à hello@timevo.io.
           </li>
         </Ul>

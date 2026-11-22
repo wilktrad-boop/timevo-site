@@ -98,3 +98,25 @@ export const GENERATEUR = {
     "Chez les conciergeries qu'on accompagne, ce livret devient un guide voyageur digital, multilingue, avec un assistant qui répond aux voyageurs à toute heure.",
   bridgeCta: "Voir l'offre conciergerie",
 };
+
+export const AVIS = {
+  // Titre ≤ 51 caractères (+ « | Timevo »), description ≤ 155.
+  metaTitle: "Répondre à un avis Google : guide et analyse",
+  metaDescription:
+    "Comment répondre à un avis Google, positif ou négatif, avec exemples. Et une analyse gratuite de vos avis face à vos concurrents, réponses prêtes à copier.",
+  eyebrow: "RESSOURCE GRATUITE · AVIS GOOGLE",
+  h1: "Répondre à un avis Google.",
+  subtitle:
+    "Trouvez votre fiche : voyez votre note face à vos concurrents, puis recevez l'analyse complète de vos avis, avec une réponse prête pour chacun de ceux restés sans réponse.",
+  guideH2: "Comment répondre à un avis Google.",
+  guide: [
+    { titre: "Répondre à tous les avis", texte: "Les clients qui hésitent lisent vos réponses autant que les avis. Une fiche où chaque avis a sa réponse montre une entreprise présente. Répondez aussi aux avis positifs, en deux phrases." },
+    { titre: "Un avis positif", texte: "Remerciez par le prénom si l'avis le donne, reprenez un détail précis de ce que le client a apprécié, et signez. Exemple : « Merci Sophie pour votre retour. Ravis que le plan de travail en chêne vous plaise autant qu'à nous. Julien, Atelier Cuisines »." },
+    { titre: "Un avis négatif", texte: "Répondez vite et à froid. Remerciez, reconnaissez le point précis sans vous justifier longuement, dites ce qui change, et proposez d'en parler directement. Exemple : « Bonjour, merci pour ce retour. Trois semaines de retard sans nouvelles, ce n'est pas le suivi que nous voulons offrir. Nous prévenons désormais chaque client dès qu'un délai glisse. Appelez-moi si un point reste à reprendre. Julien »." },
+    { titre: "Ce qu'il faut éviter", texte: "Une réponse copiée-collée identique partout, un ton défensif, des détails sur le client, ou une promesse de geste commercial écrite publiquement. Et laisser un avis négatif sans réponse : c'est la réponse que lisent les prochains clients." },
+  ],
+  bridgeH2: "Et quand les avis s'accumulent.",
+  bridgeText:
+    "Chez nos clients, un agent IA lit chaque nouvel avis, rédige la réponse dans le ton de l'entreprise, et la soumet pour validation. Vous gardez la main, sans y passer vos soirées.",
+  bridgeCta: "Voir nos agents IA",
+};
