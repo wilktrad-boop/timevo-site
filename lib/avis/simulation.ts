@@ -59,8 +59,7 @@ export function iaSimulation(): Ia {
       return {
         pointsForts: [{ titre: "Qualité de la pose", citations: ["la pose a été faite avec beaucoup de soin"] }, { titre: "Conseil", citations: ["le plan 3D nous a beaucoup aidés"] }],
         reproches: [{ titre: "Délais et suivi", citations: ["personne ne nous prévenait"] }, { titre: "Devis", citations: ["Devis jamais reçu malgré deux relances"] }],
-        reponses: e.sansReponse.map(a => ({ avisId: a.id, texte: `Bonjour, merci pour votre avis. (réponse simulée à « ${(a.texte ?? "").slice(0, 40)} »)` })),
-        recommandations: ["Prévenir chaque client dès qu'un délai glisse.", "Répondre à chaque avis sous 48 heures.", "Demander un avis à la fin de chaque pose."],
+        reponses: e.sansReponse.map(a => ({ avisId: a.id, texte: a.note <= 3 ? "Merci pour ce retour, ce n'est pas le suivi que nous voulons offrir. Appelez-nous pour en parler directement." : "Merci pour votre avis, ravis que la cuisine vous plaise." })),
       };
     },
   };

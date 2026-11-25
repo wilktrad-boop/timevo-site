@@ -322,7 +322,7 @@ export default function AuditAvis() {
         <div data-avis-progression role="status" style={{ ...cadre, display: "grid", gap: 12 }}>
           <h2 style={{ fontFamily: "var(--font-sans)", fontSize: 22, fontWeight: 500, margin: 0, color: "var(--text)" }}>Analyse en cours</h2>
           <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "var(--dim)", margin: 0 }}>
-            {secondes < 20 ? "Récupération de vos avis Google…" : secondes < 60 ? "Lecture de vos avis…" : "Rédaction des réponses et des recommandations…"} Cela prend environ une minute.
+            {secondes < 20 ? "Récupération de vos avis Google…" : secondes < 60 ? "Lecture de vos avis…" : "Rédaction des réponses…"} Cela prend environ une minute.
           </p>
           <div style={{ height: 6, borderRadius: 999, background: "var(--border)", overflow: "hidden" }}>
             <div style={{ height: "100%", width: `${Math.min(95, (secondes / 90) * 100)}%`, background: "var(--accent-gradient)", transition: "width 1s linear" }} />

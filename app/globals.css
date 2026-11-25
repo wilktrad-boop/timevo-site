@@ -432,7 +432,8 @@ details[open] > .demo-summary::before {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 16px !important;
   }
-  .avis-themes {
+  .avis-themes,
+  .avis-offres {
     grid-template-columns: minmax(0, 1fr) !important;
   }
   .livret-tabs {

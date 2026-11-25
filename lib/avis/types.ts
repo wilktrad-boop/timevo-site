@@ -28,10 +28,26 @@ export type Analyse = {
   pointsForts: Theme[];
   reproches: Theme[];
   reponses: ReponseRedigee[];
-  recommandations: string[];
 };
 
 export type Trimestre = { libelle: string; note: number | null; nb: number };
+
+/** Indicateurs calculés sur les avis récupérés (jamais par l'IA). */
+export type Indicateurs = {
+  /** Avis reçus sur les 365 derniers jours, et moyenne mensuelle (une décimale). */
+  douzeMois: number;
+  parMois: number;
+  /** Nombre d'avis par note, index 0 = 5 étoiles … index 4 = 1 étoile. */
+  repartition: [number, number, number, number, number];
+  /** Part des avis sans texte, en pourcent entier. */
+  partSansTexte: number | null;
+  /** Tous les avis récupérés restés sans réponse. */
+  sansReponseTotal: number;
+  /** Avis de 3 étoiles ou moins sur 12 mois, ceux sans réponse, et l'attente du plus ancien (jours). */
+  negatifs: { douzeMois: number; sansReponse: number; plusAncienJours: number | null };
+  /** Avis 5 étoiles nécessaires pour atteindre la note cible, null si sans objet. */
+  objectif: { cible: number; avisNecessaires: number; concurrent: string | null } | null;
+};
 
 /** Le rapport complet, tel qu'affiché et mis en PDF. */
 export type Rapport = {
@@ -44,6 +60,7 @@ export type Rapport = {
   delaiMoyenJours: number | null;
   trimestres: Trimestre[];
   sansReponse: Avis[];
+  indicateurs: Indicateurs;
   analyse: Analyse | null;
 };
 

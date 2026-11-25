@@ -18,7 +18,6 @@ const SchemaAnalyse = z.object({
   pointsForts: z.array(Theme),
   reproches: z.array(Theme),
   reponses: z.array(z.object({ avisId: z.string(), texte: z.string() })),
-  recommandations: z.array(z.string()),
 });
 
 const SYSTEME = [
@@ -27,11 +26,27 @@ const SYSTEME = [
   "Réponds en français, sans emoji, sur un ton sobre et concret.",
   "pointsForts et reproches : 3 à 5 thèmes chacun (moins s'il n'y a pas matière), titre court, et 1 ou 2 citations recopiées mot pour mot depuis le texte des avis, sans guillemets.",
   "Ne donne aucun chiffre, aucune note, aucun pourcentage : ils sont calculés ailleurs.",
-  "reponses : une réponse par avis de la liste « à répondre », avec son avisId exact. Rédige-la dans la langue de l'avis, au nom de l'entreprise, en 2 à 4 phrases : remercier, reprendre le point précis soulevé, et pour un avis négatif reconnaître le problème et proposer d'en parler directement, sans promettre de remise ni de geste commercial.",
-  "recommandations : exactement 3 actions concrètes, adaptées au métier, d'une ou deux phrases chacune.",
+  "reponses : une réponse par avis de la liste « à répondre », avec son avisId exact. Rédige-la dans la langue de l'avis, au nom de l'entreprise, courte : 1 ou 2 phrases, 35 mots au plus.",
+  "Pour une note sans commentaire, une seule phrase de remerciement. Sinon : remercier en reprenant le point précis soulevé ; pour un avis négatif, reconnaître le problème et proposer d'en parler directement, sans promettre de remise ni de geste commercial.",
 ].join("\n");
 
 const borne = (s: string | null) => (s ?? "").slice(0, TEXTE_MAX);
+export const REPONSE_MAX = 280;
+
+/** Garde des phrases entières tant que la réponse tient en `max` caractères (la première au moins, coupée si besoin). */
+export function raccourcir(texte: string, max = REPONSE_MAX): string {
+  const propre = texte.replace(/\s+/g, " ").trim();
+  if (propre.length <= max) return propre;
+  const phrases = propre.match(/[^.!?]+[.!?]+(\s|$)/g) ?? [];
+  let res = "";
+  for (const p of phrases) {
+    if ((res + p).trim().length > max) break;
+    res += p;
+  }
+  if (res.trim()) return res.trim();
+  const coupe = propre.slice(0, max - 1);
+  return `${coupe.slice(0, Math.max(coupe.lastIndexOf(" "), 1)).trim()}…`;
+}
 
 function message(e: EntreeAnalyse): string {
   const tous = e.avis.map(a => ({ avisId: a.id, note: a.note, date: a.date, texte: borne(a.texte), reponseDuProprietaire: a.reponse ? borne(a.reponse) : null }));
@@ -59,8 +74,8 @@ export function nettoyerAnalyse(a: Analyse, e: EntreeAnalyse): Analyse {
     reproches: themes(a.reproches),
     reponses: a.reponses
       .filter(r => demandes.has(r.avisId) && !vus.has(r.avisId) && r.texte.trim() && vus.add(r.avisId))
-      .slice(0, REPONSES_MAX),
-    recommandations: a.recommandations.map(r => r.trim()).filter(Boolean).slice(0, 3),
+      .slice(0, REPONSES_MAX)
+      .map(r => ({ avisId: r.avisId, texte: raccourcir(r.texte) })),
   };
 }
 

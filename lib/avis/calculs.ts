@@ -2,7 +2,7 @@
  * Chiffres de l'analyse d'avis, calculés sans IA : l'IA ne fournit jamais un nombre.
  * Fonctions pures, testées dans tests/avis/calculs.test.ts.
  */
-import type { Analyse, Avis, Fiche, Rapport, Theme, Trimestre } from "./types.ts";
+import type { Analyse, Avis, Fiche, Indicateurs, Rapport, Theme, Trimestre } from "./types.ts";
 
 export const AVIS_MAX = 200;
 export const REPONSES_MAX = 20;
@@ -70,6 +70,52 @@ export function choisirConcurrents(fiches: Fiche[], choisie: Fiche, n = 3): Fich
     .slice(0, n);
 }
 
+/**
+ * Avis 5 étoiles nécessaires pour que la note affichée (arrondie au dixième) atteigne la cible.
+ * Cible : la note du concurrent le mieux noté s'il fait mieux (jusqu'à 4,9), sinon le dixième suivant.
+ * Calcul sur la note affichée par Google, faute de moyenne exacte.
+ */
+export function objectifNote(fiche: Fiche, concurrents: Fiche[]): Indicateurs["objectif"] {
+  const note = fiche.note;
+  const n = fiche.nbAvis;
+  if (note === null || n <= 0 || note >= 4.95) return null;
+  const leader = concurrents
+    .filter(c => c.note !== null && c.note > note && c.note <= 4.9)
+    .sort((a, b) => (b.note ?? 0) - (a.note ?? 0))[0];
+  const cible = leader ? leader.note! : arrondi1(note + 0.1);
+  if (cible > 5) return null;
+  const seuil = cible - 0.05;
+  const avisNecessaires = Math.max(1, Math.ceil((n * (seuil - note)) / (5 - seuil)));
+  return { cible, avisNecessaires, concurrent: leader ? leader.nom : null };
+}
+
+/** Rythme, répartition, avis négatifs et objectif de note : tout ce qui se compte sans IA. */
+export function indicateurs(avis: Avis[], fiche: Fiche, concurrents: Fiche[], maintenant = new Date()): Indicateurs {
+  const depuis = maintenant.getTime() - 365 * JOUR_MS;
+  const recents = avis.filter(a => a.date && temps(a.date) >= depuis);
+  const repartition: Indicateurs["repartition"] = [0, 0, 0, 0, 0];
+  for (const a of avis) {
+    const etoiles = Math.min(5, Math.max(1, Math.round(a.note)));
+    repartition[5 - etoiles] += 1;
+  }
+  const negatifs = recents.filter(a => a.note <= 3);
+  const negSansReponse = negatifs.filter(a => !a.reponse);
+  const plusAncien = negSansReponse.reduce((m, a) => Math.min(m, temps(a.date)), Infinity);
+  return {
+    douzeMois: recents.length,
+    parMois: arrondi1(recents.length / 12),
+    repartition,
+    partSansTexte: avis.length ? Math.round((100 * avis.filter(a => !a.texte).length) / avis.length) : null,
+    sansReponseTotal: avis.filter(a => !a.reponse).length,
+    negatifs: {
+      douzeMois: negatifs.length,
+      sansReponse: negSansReponse.length,
+      plusAncienJours: Number.isFinite(plusAncien) ? Math.floor((maintenant.getTime() - plusAncien) / JOUR_MS) : null,
+    },
+    objectif: objectifNote(fiche, concurrents),
+  };
+}
+
 const normaliser = (s: string) =>
   s.toLowerCase().replace(/[’`]/g, "'").replace(/^[\s"«»“”]+|[\s"«»“”]+$/g, "").replace(/\s+/g, " ").trim();
 
@@ -99,6 +145,7 @@ export function construireRapport(p: {
     delaiMoyenJours: delaiMoyenJours(p.avis),
     trimestres: noteParTrimestre(p.avis, maintenant),
     sansReponse: avisSansReponse(p.avis),
+    indicateurs: indicateurs(p.avis, p.fiche, p.concurrents, maintenant),
     analyse: p.analyse
       ? { ...p.analyse, pointsForts: verifierCitations(p.analyse.pointsForts, p.avis), reproches: verifierCitations(p.analyse.reproches, p.avis) }
       : null,

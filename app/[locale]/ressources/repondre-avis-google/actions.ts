@@ -14,7 +14,7 @@ import { AVIS_PATH } from "@/lib/ressources";
  * Analyse d'avis Google : recherche et aperçu gratuits (limités par IP), puis email vérifié
  * par code, puis analyse complète en deux temps (lancerAudit, suivreAudit).
  * Clés Redis : avis:ip:*, avis:email:*, avis:jour, avis:audit:*, avis:resultat:*,
- * avis:rapport:<placeId>:<email> (cache 24 h, par adresse vérifiée), avis:code:ip:*, avis:code:email:*, avis:verrou:*, avis:rendu:*, avis:contact:*,
+ * avis:rapport2:<placeId>:<email> (cache 24 h, par adresse vérifiée), avis:code:ip:*, avis:code:email:*, avis:verrou:*, avis:rendu:*, avis:contact:*,
  * avis:recherches:jour (plafond global des recherches Maps), avis:essais:<sha256 du jeton> (essais de code), avis:pdf:<auditId> (un seul PDF par analyse).
  */
 
@@ -141,7 +141,7 @@ export async function lancerAudit(acces: string, fiche: Fiche, concurrents: Fich
   const auditId = crypto.randomUUID();
 
   // Rapport de moins de 24 h pour cette fiche : servi sans rien recompter ni repayer.
-  const enCache = await c.magasin.lire<Rapport>(`avis:rapport:${f.placeId}:${email}`);
+  const enCache = await c.magasin.lire<Rapport>(`avis:rapport2:${f.placeId}:${email}`);
   if (enCache) {
     await c.magasin.ecrire(`avis:audit:${auditId}`, { email, fiche: f, concurrents: autres, tacheId: null, debut: Date.now(), deCache: true } satisfies Audit, JOUR_S);
     await c.magasin.ecrire(`avis:resultat:${auditId}`, enCache, JOUR_S);
@@ -249,7 +249,7 @@ export async function suivreAudit(acces: string, auditId: string): Promise<Resul
       // Analyse IA ratée : rapport chiffré servi, mais ni mis en cache ni décompté.
       await rembourser(c, id, email);
     } else {
-      await c.magasin.ecrire(`avis:rapport:${a.fiche.placeId}:${email}`, rapport, JOUR_S);
+      await c.magasin.ecrire(`avis:rapport2:${a.fiche.placeId}:${email}`, rapport, JOUR_S);
     }
     await prevenirTimevo(c, id, email, rapport);
     return { etat: "pret", rapport };
