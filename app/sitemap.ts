@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { SECTOR_SLUGS } from "@/lib/sectors";
 import { CITY_SLUGS } from "@/lib/cities";
 import { DEMO_SLUGS } from "@/lib/demoDashboards";
-import { LIVRET_PATH } from "@/lib/ressources";
+import { AVIS_PATH, LIVRET_PATH } from "@/lib/ressources";
 import { RESEARCH_PATH } from "@/lib/links";
 
 const BASE = "https://www.timevo.io";
@@ -28,7 +28,7 @@ const UPDATED = {
   cities: "2026-11-21",       // « Agence IA », bouton « diagnostic gratuit »
   demos: "2026-11-21",        // bouton « diagnostic gratuit » au lieu d'« audit »
   facturation: "2026-08-28",  // retrait du prix affiché sur la page facturation électronique
-  ressources: "2026-11-22",   // livret d'accueil : aperçus du générateur (habillage), email vérifié
+  ressources: "2026-11-25",   // analyse d'avis Google ajoutée
   research: "2026-11-22",     // création de la page sociétés d'études (fr + en)
 } as const;
 
@@ -131,6 +131,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: UPDATED.ressources,
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${BASE}${AVIS_PATH}`,
+      lastModified: UPDATED.ressources,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
 
     // Sociétés d'études : chaînes de traduction (FR + EN)

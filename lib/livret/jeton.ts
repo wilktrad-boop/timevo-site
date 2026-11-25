@@ -17,8 +17,11 @@ import { createHmac, randomInt, timingSafeEqual } from "node:crypto";
 export const CODE_DUREE_MS = 15 * 60 * 1000;
 export const ACCES_DUREE_MS = 30 * 24 * 60 * 60 * 1000;
 
+/** Champs portés par un jeton de code : l'email, plus ce que le formulaire veut retrouver après le code. */
+export type InfosCode = { email: string; [cle: string]: string };
+
 type Charge =
-  | { t: "code"; email: string; exp: number; c: string; conciergerie: string; logements: string }
+  | { t: "code"; exp: number; c: string; infos: InfosCode }
   | { t: "acces"; email: string; exp: number };
 
 const b64 = (s: string) => Buffer.from(s, "utf8").toString("base64url");
@@ -49,18 +52,16 @@ export function creerCode(): string {
   return String(randomInt(0, 1_000_000)).padStart(6, "0");
 }
 
-export function jetonCode(
-  infos: { email: string; conciergerie: string; logements: string }, code: string, secret: string, maintenant = Date.now(),
-): string {
-  return signer({ t: "code", ...infos, exp: maintenant + CODE_DUREE_MS, c: hmac(secret, `code:${infos.email}:${code}`) }, secret);
+export function jetonCode(infos: InfosCode, code: string, secret: string, maintenant = Date.now()): string {
+  return signer({ t: "code", infos, exp: maintenant + CODE_DUREE_MS, c: hmac(secret, `code:${infos.email}:${code}`) }, secret);
 }
 
 /** Les infos du formulaire si le code est le bon et n'a pas expiré, sinon null. */
-export function verifierCode(jeton: string, code: string, secret: string, maintenant = Date.now()) {
+export function verifierCode(jeton: string, code: string, secret: string, maintenant = Date.now()): InfosCode | null {
   const charge = lire(jeton, secret, maintenant);
-  if (!charge || charge.t !== "code") return null;
-  if (!egal(charge.c, hmac(secret, `code:${charge.email}:${String(code).trim()}`))) return null;
-  return { email: charge.email, conciergerie: charge.conciergerie, logements: charge.logements };
+  if (!charge || charge.t !== "code" || !charge.infos || typeof charge.infos.email !== "string") return null;
+  if (!egal(charge.c, hmac(secret, `code:${charge.infos.email}:${String(code).trim()}`))) return null;
+  return charge.infos;
 }
 
 export function jetonAcces(email: string, secret: string, maintenant = Date.now()): string {
