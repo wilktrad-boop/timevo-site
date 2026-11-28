@@ -9,7 +9,7 @@ import type { Locale } from "@/lib/pageLabels";
  * (index Solutions, Réalisations, pages légales).
  */
 
-export const alt = "Timevo — automatisation pour PME";
+export const alt = "Timevo — On construit votre IA. On la fait vivre avec vous.";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
@@ -17,14 +17,19 @@ export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
-const COPY: Record<Locale, { eyebrow: string; title: string }> = {
+// Même texte que le H1 de la home (clé `hero` de messages/*.json).
+const COPY: Record<Locale, { eyebrow: string; title: string; suite: string; accent: string }> = {
   fr: {
-    eyebrow: "Automatisation pour PME",
-    title: "Le temps que les tâches répétitives vous volent. On vous le rend.",
+    eyebrow: "Agence IA · Thonon-les-Bains",
+    title: "On construit votre IA.",
+    suite: "On la fait vivre",
+    accent: "avec vous.",
   },
   en: {
-    eyebrow: "Automation for SMBs",
-    title: "The time repetitive tasks steal from you. We give it back.",
+    eyebrow: "AI agency · Thonon-les-Bains, France",
+    title: "We build your AI.",
+    suite: "We keep it running",
+    accent: "with you.",
   },
 };
 

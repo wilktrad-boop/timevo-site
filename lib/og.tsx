@@ -36,6 +36,8 @@ export async function ogImage({
   eyebrow,
   title,
   footnote,
+  suite,
+  accent,
 }: {
   /** Court, en capitales. Ex. « Démonstration · Pisciniste ». */
   eyebrow: string;
@@ -43,6 +45,10 @@ export async function ogImage({
   title: string;
   /** Optionnel, en bas à droite. Ex. « Données fictives ». */
   footnote?: string;
+  /** Optionnel : seconde ligne du titre, comme le H1 de la home… */
+  suite?: string;
+  /** … terminée par une chute en couleur d'accent. */
+  accent?: string;
 }) {
   const font = await interFont();
 
@@ -96,6 +102,12 @@ export async function ogImage({
           >
             {title}
           </div>
+          {suite || accent ? (
+            <div style={{ display: "flex", fontSize: 76, lineHeight: 1.06, letterSpacing: "-3px", maxWidth: 1056 }}>
+              {suite ? <span style={{ marginRight: 20 }}>{suite}</span> : null}
+              {accent ? <span style={{ color: theme.accentSoft }}>{accent}</span> : null}
+            </div>
+          ) : null}
         </div>
 
         {/* Pied */}
